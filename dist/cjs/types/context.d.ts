@@ -1,0 +1,34 @@
+import React, { ReactNode } from "react";
+import { CarouselItemProps } from "./components/CarouselItem";
+import './css/style.css';
+import { CarouselOptions, CarouselElementStyles } from "./types";
+export type CarouselContextInputProps = {
+    carouselContainerRef: React.MutableRefObject<HTMLDivElement> | undefined;
+    children: ReactNode | ReactNode[];
+    hiddenInputRef: React.MutableRefObject<HTMLInputElement>;
+    items: CarouselItemProps[];
+    options: CarouselOptions;
+};
+export type CarouselContextOutputProps = {
+    currentItem: CarouselItemProps;
+    currentItemIndex: number;
+    currentPage: number;
+    currentVideoCurrentTime: number;
+    elementStylings: CarouselElementStyles | undefined;
+    isFullscreenMode: boolean;
+    isModalMinimized: boolean;
+    itemContainerHeight: number | string;
+    itemViewerRef: React.RefObject<HTMLElement>;
+    numberOfPages: number;
+    setCurrentItemIndex: React.Dispatch<React.SetStateAction<number>>;
+    setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+    setCurrentVideoCurrentTime: React.Dispatch<React.SetStateAction<number>>;
+    setIsFullscreenMode: React.Dispatch<React.SetStateAction<boolean>>;
+    setIsModalMinimized: React.Dispatch<React.SetStateAction<boolean>>;
+    setItems: React.Dispatch<React.SetStateAction<CarouselItemProps[]>>;
+    setItemContainerHeight: React.Dispatch<React.SetStateAction<number | string>>;
+    setNumberOfPages: React.Dispatch<React.SetStateAction<number>>;
+    setOptions: React.Dispatch<React.SetStateAction<CarouselOptions>>;
+} & Required<Omit<CarouselContextInputProps, 'children'>>;
+export declare const CarouselProvider: (props: CarouselContextInputProps) => React.JSX.Element;
+export declare function useCarouselContext(): CarouselContextOutputProps;

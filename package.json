@@ -9,7 +9,7 @@
   ],
   "types": "dist/index.d.ts",
   "scripts": {
-    "rollup": "rollup -c",
+    "rollup": "rollup -c --bundleConfigAsCjs",
     "carousel:sass": "sass sass/main.scss src/components/carousel2/css/style.css --watch"
   },
   "keywords": [

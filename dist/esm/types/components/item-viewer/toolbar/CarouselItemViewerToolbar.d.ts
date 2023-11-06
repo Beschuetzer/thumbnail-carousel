@@ -1,0 +1,20 @@
+import React from 'react';
+export type CarouselItemViewerToolbarProps = {
+    currentVideoSection?: number;
+    description: string;
+    imageRef?: React.MutableRefObject<HTMLImageElement | undefined> | null;
+    isProgressBarMouseDownRef?: React.MutableRefObject<boolean | undefined>;
+    isVideo: boolean;
+    itemContainerRef: React.MutableRefObject<HTMLDivElement | undefined> | null;
+    onClose?: () => void;
+    onNextItemClick?: () => void;
+    onPreviousItemClick?: () => void;
+    percent?: number;
+    seekPercent?: number;
+    setCurrentVideoSection?: React.Dispatch<React.SetStateAction<number>>;
+    setPercent?: React.Dispatch<React.SetStateAction<number>>;
+    setSeekPercent?: React.Dispatch<React.SetStateAction<number>>;
+    toggleIsVideoPlaying?: (state?: boolean) => void;
+    videoRef?: React.MutableRefObject<HTMLVideoElement | undefined> | null;
+};
+export declare const CarouselItemViewerToolbar: React.ForwardRefExoticComponent<CarouselItemViewerToolbarProps & React.RefAttributes<HTMLElement>>;
