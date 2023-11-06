@@ -2,9 +2,14 @@
   "name": "thumbnail-carousel",
   "version": "0.0.1",
   "description": "A fully-customizable React carousel with various viewing modes and video support",
-  "main": "index.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "rollup": "rollup -c",
     "carousel:sass": "sass sass/main.scss src/components/carousel2/css/style.css --watch"
   },
   "keywords": [
@@ -35,6 +40,7 @@
     "postcss-cli": "^10.1.0",
     "rollup": "^4.3.0",
     "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-postcss": "^4.0.2",
     "sass": "^1.69.5",
     "typescript": "^5.2.2"
   }
