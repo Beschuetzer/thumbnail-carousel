@@ -1,3 +1,6 @@
+### Simple way to publish
+- run `npm run publish` (username is `beschuetzerman`)
+
 ### Configuring .npmrc
 
 - (`https://www.youtube.com/watch?v=XHQi5a0TmMc` around 33 mins)

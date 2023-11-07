@@ -1,6 +1,4 @@
 import { KeyInput, ValidKey, ModifierKey, CarouselItemViewerAspectRatioPreset } from "./types";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { StylingLogic } from './business-logic/StylingLogic';
 import { getClassname } from "./utils/utils";
 
 export const AUTO_CHANGE_PAGE_DEFAULT = true;
