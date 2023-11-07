@@ -2537,24 +2537,6 @@ enum SectionNames {
 }
 const SECTIONS: Sections = [
 	[
-		SectionNames.maxHeight,
-		[
-			{
-				label: "Max Heigt causes Thumbnail Size to Decrease when ItemDisplayLocation is None",
-				jsx: layoutMaxHeightLessThanThumbnailItemDisplayLocationNone,
-			},
-			{
-				label: "Max Heigt causes Thumbnail Size to Decrease when ItemDisplayLocation is Above",
-				jsx: layoutMaxHeightLessThanThumbnailItemDisplayLocationAbove,
-			},
-			{
-				label: "Max Heigt causes Thumbnail Size to Decrease when ItemDisplayLocation is Below",
-				jsx: layoutMaxHeightLessThanThumbnailItemDisplayLocationBelow,
-			},
-
-		]
-	],
-	[
 		SectionNames.itemPositioning,
 		[
 			{
