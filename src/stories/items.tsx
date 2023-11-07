@@ -1,3 +1,4 @@
+//@ts-nocheck
 import maui01 from "./assets/imgs/about/maui-01.jpg";
 import maui02 from "./assets/imgs/about/maui-02.jpg";
 import maui03 from "./assets/imgs/about/maui-03.jpg";
