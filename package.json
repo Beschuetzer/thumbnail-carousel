@@ -1,6 +1,6 @@
 {
-  "name": "@beschuetzer/thumbnail-carousel",
-  "version": "0.0.1",
+  "name": "react-thumbnail-carousel",
+  "version": "1.0.0",
   "description": "A fully-customizable React carousel with various viewing modes and video support",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -8,10 +8,7 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com/Beschuetzer"
-  },
+
   "scripts": {
     "rollup": "rollup -c --bundleConfigAsCjs",
     "carousel:sass": "sass sass/main.scss src/components/carousel2/css/style.css --watch"
