@@ -2537,39 +2537,6 @@ enum SectionNames {
 }
 const SECTIONS: Sections = [
 	[
-		SectionNames.itemPositioning,
-		[
-			{
-				label: "Thumbnails Positioned Center in Container with Custom Item Spacing and Last Page not Flush",
-				jsx: layoutThumbnailPositioningCenterWithCustomItemSizeAndLastPageNotFlush,
-			},
-			{
-				label: "Thumbnails Positioned Right in Container with Default Spacing",
-				jsx: layoutThumbnailPositioningRight,
-			},
-			{
-				label: "Thumbnails Positioned Right in Container with Custom Item Spacing",
-				jsx: layoutThumbnailPositioningRightWithItemSpacingGiven,
-			},
-			{
-				label: "Thumbnails Positioned Right in Container with Custom Item Spacing and Last Page not Flush",
-				jsx: layoutThumbnailPositioningRightWithCustomItemSizeAndLastPageNotFlush,
-			},
-			{
-				label: "Thumbnails Positioned Left in Container One Page",
-				jsx: layoutThumbnailPositioningLeftNonDefaultCaseOnePage
-			},
-			{
-				label: "Thumbnails Positioned Center in Container One Page",
-				jsx: layoutThumbnailPositioningCenterNonDefaultCaseOnePage
-			},
-			{
-				label: "Thumbnails Positioned Right in Container One Page",
-				jsx: layoutThumbnailPositioningRightNonDefaultCaseOnePage
-			},
-		]
-	],
-	[
 		SectionNames.aboveCustomization,
 		[
 			{
