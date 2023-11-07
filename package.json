@@ -1,5 +1,5 @@
 {
-  "name": "react-thumbnail-carousel-viewer",
+  "name": "react-thumbnail-carousel",
   "version": "1.0.0",
   "description": "A fully-customizable React carousel with various viewing modes and video support",
   "main": "dist/cjs/index.js",
@@ -11,7 +11,7 @@
   "scripts": {
     "build": "npm run build:sass && rollup -c --bundleConfigAsCjs",
     "build:sass": "sass src/sass/main.scss src/components/carousel2/css/style.css",
-    "publish": "npm run build && npm login && npm publish --access public",
+    "publish": "npm run build && npm publish --access public",
     "watch:sass": "sass src/sass/main.scss src/components/carousel2/css/style.css --watch",
     "test": "jest",
     "storybook": "storybook dev -p 6006",
