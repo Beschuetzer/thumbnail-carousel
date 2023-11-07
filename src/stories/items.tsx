@@ -35,6 +35,27 @@ import { CarouselItemProps } from "../components/CarouselItem";
 
 export const items = [
 	{
+		description: "High-res video with Low-res Screenshot Preview",
+		srcMain: {
+			hiRes: clipHighRes,
+			loRes: clipLowRes,
+		},
+		srcThumbnail: clipNavigationThumbnail,
+		modal: {
+			sections: [
+				{
+					title: "High Resolution Video",
+					titleElementType: 'h2',
+					text: "This video is 1080p, but the screenshot viewer that appears when hovering the progress bar is a 480p version of the video.  This improves the \"smoothness\" of the preview.",
+				},
+			]
+		},
+		video: {
+			autoPlay: false,
+			muted: true,
+		}
+	},
+	{
 		description: "Video Sub-sections using numbers",
 		srcMain: clipNavigation,
 		srcThumbnail: clipNavigationThumbnail,
@@ -116,27 +137,6 @@ export const items = [
 				['Left Pane', "5:00"],
 				['Right Pane', "7:00"],
 			]
-		}
-	},
-	{
-		description: "High-res video with Low-res Screenshot Preview",
-		srcMain: {
-			hiRes: clipHighRes,
-			loRes: clipLowRes,
-		},
-		srcThumbnail: clipNavigationThumbnail,
-		modal: {
-			sections: [
-				{
-					title: "High Resolution Video",
-					titleElementType: 'h2',
-					text: "This video is 1080p, but the screenshot viewer that appears when hovering the progress bar is a 480p version of the video.  This improves the \"smoothness\" of the preview.",
-				},
-			]
-		},
-		video: {
-			autoPlay: false,
-			muted: true,
 		}
 	},
 	{

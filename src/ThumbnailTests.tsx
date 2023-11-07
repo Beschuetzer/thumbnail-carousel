@@ -146,52 +146,9 @@ const allCustomSettings = (
 		items={items}
 	/>
 );
-const noItemDisplayedOneItemAllDefaults = (
-	<Carousel
-		items={items.slice(0, 1)}
-	/>
-);
-const noItemDisplayedTwoItemsAllDefaults = (
-	<Carousel
-		items={items.slice(0, 2)}
-	/>
-);
-const noItemDisplayedThreeItemsAllDefaults = (
-	<Carousel
-		items={items.slice(0, 3)}
-	/>
-);
-const noItemDisplayedThreeItemsMaxSpacing = (
-	<Carousel
-		items={items.slice(0, 3)}
-		options={{
-			thumbnail: {
-				spacingStrategy: 'max',
-			}
-		}}
-	/>
-);
-const noItemDisplayedMultiplePagesAllDefaults = (
-	<Carousel items={items} />
-);
-const multiplePagesCustomPaddingAndMargin = (
-	<Carousel items={items} options={{
-		styling: {
-			container: {
-				padding: {
-					left: 40,
-					right: 40,
-				},
-				margin: {
-					bottom: 40,
-					top: 40,
-				},
-			}
-		}
-	}} />
-);
 const noItemDisplayedMultiplePagesCustomItemViewerColors = (
-	<Carousel items={items} options={{
+	<Carousel
+	 items={items} options={{
 		styling: {
 			modal: {
 				backgroundColor: getComputedStyleCustom('--color-primary-4'),
@@ -2579,43 +2536,6 @@ enum SectionNames {
 	thumbnailOptions = "Thumbnail Options",
 }
 const SECTIONS: Sections = [
-	[
-		SectionNames.layouts,
-		[
-			{
-				label: "Multiple Pages - All Defaults",
-				jsx: noItemDisplayedMultiplePagesAllDefaults
-			},
-			{
-				label: "Multiple Pages - Custom Padding and Margin",
-				jsx: multiplePagesCustomPaddingAndMargin
-			},
-			{
-				label: "Multiple Pages - Custom Item Viewer Colors",
-				jsx: noItemDisplayedMultiplePagesCustomItemViewerColors
-			},
-			{
-				label: "Display Current Item Above with Custom itemHeight and Font Family",
-				jsx: layoutAboveWithItemHeightAndFontFamily,
-			},
-			{
-				label: "Display Current Item Above with Max Spacing Strategy",
-				jsx: layoutAboveWithMaxSpacingStrategy,
-			},
-			{
-				label: "Display Current Item Below with Custom Thumbnail Size, Height, and Font-size",
-				jsx: layoutBelowWithCustomThumbnailSizeAndHeight,
-			},
-			{
-				label: "Video Toolbar not Embedded Inside Video",
-				jsx: layoutToolbarNotEmbedded,
-			},
-			{
-				label: "Smaller Screenshot Viewer",
-				jsx: smallerScreenShotViewer,
-			},
-		]
-	],
 	[
 		SectionNames.maxHeight,
 		[
