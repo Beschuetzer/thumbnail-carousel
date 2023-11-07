@@ -2540,26 +2540,6 @@ const SECTIONS: Sections = [
 		SectionNames.itemPositioning,
 		[
 			{
-				label: "Thumbnails Positioned Left in Container with Default Spacing",
-				jsx: layoutThumbnailPositioningLeft,
-			},
-			{
-				label: "Thumbnails Positioned Left in Container with Custom Item Spacing",
-				jsx: layoutThumbnailPositioningLeftWithItemSpacingGiven,
-			},
-			{
-				label: "Thumbnails Positioned Left in Container with Custom Item Spacing and Last Page not Flush",
-				jsx: layoutThumbnailPositioningLeftWithCustomItemSizeAndLastPageNotFlush,
-			},
-			{
-				label: "Thumbnails Positioned Center in Container with Default Spacing",
-				jsx: layoutThumbnailPositioningCenter,
-			},
-			{
-				label: "Thumbnails Positioned Center in Container with Custom Item Spacing",
-				jsx: layoutThumbnailPositioningCenterWithItemSpacingGiven,
-			},
-			{
 				label: "Thumbnails Positioned Center in Container with Custom Item Spacing and Last Page not Flush",
 				jsx: layoutThumbnailPositioningCenterWithCustomItemSizeAndLastPageNotFlush,
 			},
