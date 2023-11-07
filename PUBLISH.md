@@ -7,7 +7,9 @@
 - configure `.npmrc`:
     ```
     registry=https://registry.npmjs.org/
-    @GIT_USERNAME_HERE:registery=https://npm.pkg.github.com/
+    @GIT_ORG_NAME_HERE:registery=https://npm.pkg.github.com/
     //npm.pkg.github.com/:_authToken=YOUR_AUTH_TOKEN
     ```
+- run `npm adduser` (use a username from the org)
 - run `npm publish --access public` in project root
+- see `https://medium.com/@davidagood/how-to-create-and-publish-a-scoped-npm-package-you-package-from-scratch-30c5802b2df0` for details on converting your npm account to an org and publishing publicly to that
