@@ -10,4 +10,4 @@
     @GIT_USERNAME_HERE:registery=https://npm.pkg.github.com/
     //npm.pkg.github.com/:_authToken=YOUR_AUTH_TOKEN
     ```
-- run `npm publish` in project root
+- run `npm publish --access public` in project root
