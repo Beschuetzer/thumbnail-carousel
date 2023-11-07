@@ -38,6 +38,7 @@ export default [
     input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts.default()],
+    //ignore these file types for type exports
     external: [/\.(css|less|scss)$/],
   },
 ];
