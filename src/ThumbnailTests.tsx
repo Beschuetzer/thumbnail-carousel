@@ -2966,36 +2966,6 @@ const SECTIONS: Sections = [
     SectionNames.aboveCustomization,
     [
       {
-        label:
-          "Display Current Item Above Default itemHeight and No Modal Video First",
-        jsx: layoutAboveDefaultItemHeight,
-      },
-      {
-        label:
-          "Display Current Item Above with Custom itemHeight and Thumbnail Size",
-        jsx: layoutAboveWithItemHeightAndThumbnailSize,
-      },
-      {
-        label: "Display Above with Container Padding",
-        jsx: layoutAboveContainerPadding,
-      },
-      {
-        label: "Display Above with Item Viewer Padding",
-        jsx: layoutAboveExtraItemViewerPadding,
-      },
-      {
-        label: "Display Above with Extra Navigation Padding",
-        jsx: layoutAboveExtraNavigationPadding,
-      },
-      {
-        label: "Display Above with Extra Toolbar Padding",
-        jsx: layoutAboveExtraToolbarPadding,
-      },
-      {
-        label: "Display Above with Different Left and Right Padding",
-        jsx: layoutAboveDifferentLeftAndRightPadding,
-      },
-      {
         label: "Display Above Flush and Same Background Color",
         jsx: layoutAboveCompletelyFlushAndSameBackgroundColor,
       },
