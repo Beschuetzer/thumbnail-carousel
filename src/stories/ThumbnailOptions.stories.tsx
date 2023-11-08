@@ -230,7 +230,7 @@ export const ThumbnailOptions10: Story = {
       },
     },
   },
-  name: "Custom Current Item Border - Input Format One",
+  name: "Custom Current Item Border - Using px",
   decorators: maringAllAround,
 };
 
@@ -246,11 +246,28 @@ export const ThumbnailOptions11: Story = {
       },
     },
   },
-  name: "Custom Current Item Border - Input Format Two",
+  name: "Custom Current Item Border - Using mm",
   decorators: maringAllAround,
 };
 
+
 export const ThumbnailOptions12: Story = {
+  args: {
+    items: items.slice(0, items.length - 1),
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+      },
+      thumbnail: {
+        currentItemBorder: `  .25rem  ridge  rgba(255,  255,  255,   .75) `,
+      },
+    },
+  },
+  name: "Custom Current Item Border - Using decimal rem",
+  decorators: maringAllAround,
+};
+
+export const ThumbnailOptions13: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -262,6 +279,22 @@ export const ThumbnailOptions12: Story = {
       },
     },
   },
-  name: "Custom Current Item Border - Input Format Three",
+  name: "Custom Current Item Border - using thick",
+  decorators: maringAllAround,
+};
+
+export const ThumbnailOptions14: Story = {
+  args: {
+    items: items.slice(0, items.length - 1),
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+      },
+      thumbnail: {
+        currentItemBorder: "double #9b9b9b .33rem",
+      },
+    },
+  },
+  name: "Custom Current Item Border - rem is last item",
   decorators: maringAllAround,
 };

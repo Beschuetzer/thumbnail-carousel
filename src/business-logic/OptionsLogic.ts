@@ -911,18 +911,13 @@ export class OptionsLogic {
     const borderStringOffset = getBorderStringSize(
       this.thumbnailBorderString !== undefined ? String(this.thumbnailBorderString) : undefined
     );
-    return `calc(${this.thumbnailSize}${CAROUSEL_SPACING_UNIT} - ${borderStringOffset})`;
+    // console.log({
+    //   input: this.thumbnailBorderString !== undefined ? String(this.thumbnailBorderString) : undefined,
+    //   output: borderStringOffset,
+    //   returning: `calc(${this.thumbnailSize}${CAROUSEL_SPACING_UNIT} - calc(${borderStringOffset} * 2))`,
+    // });
+    return `calc(${this.thumbnailSize}${CAROUSEL_SPACING_UNIT} - calc(${borderStringOffset} * 2))`;
   }
-
-  //todo: is this needed?
-  // get thumbnailSizeAvailableSpace() {
-  //     const maxHeight = this.maxHeight;
-  //     const carouselHeight = this.carouselContainerRef?.current?.getBoundingClientRect().height;
-
-  //     console.log({maxHeight, carouselHeight});
-  //     if (!carouselHeight) return 0;
-  //     return 0;
-  // }
 
   get thumbnailSpacingStrategy() {
     return getCurrentValue(

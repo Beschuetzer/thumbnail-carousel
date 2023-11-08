@@ -1,5 +1,4 @@
 Before Publishing
-  -fix issue where the width and height of CarouselItem (thumbnail) doesn't account for the border width/height when selected (see last case in Above Customization when switching between items on the same page
   -fix width issue of description popup for items
   -write jest tests for utils and other functions?
   -create a CI/CD 
@@ -25,6 +24,7 @@ Enhancements
   -restructure the options object to make things like the progressbar options more accesible (currently in styling.toolbar.progressBar)?  Mabye have an options.elements where all elements are listed?
 
 Known Issues:
+  -specifying a border string value using millimeters or rem may result in the current item's size being incorrectly calculated, especially when using floats
   -having more than 10 instance on the same page can cause issues (need to benchmark this)?
   -small gap at bottom of toolbar (only appears a smaller viewports around 845px)
   -changing items with mid-tier and below setting is sluggish

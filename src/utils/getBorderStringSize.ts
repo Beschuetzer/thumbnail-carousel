@@ -12,8 +12,11 @@ import {
 export function getBorderStringSize(thumbnailBorderString: string | undefined): string {
   if (!thumbnailBorderString) return `${BORDER_STRING_DEFAULT_SIZE}${CAROUSEL_SPACING_UNIT}`;
   const split = thumbnailBorderString?.trim()?.split(" ");
-  if (parseInt(split?.[0], 10)) {
-    return split[0];
+
+  for (const item of split) {
+    if (!!item.match(/^[\s.]*\d+\w*$/i) && !isNaN(parseFloat(item))) {
+      return item;
+    }
   }
 
   let size = BORDER_STRING_MEDIUM_SIZE;
