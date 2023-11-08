@@ -2922,58 +2922,6 @@ const SECTIONS: Sections = [
     SectionNames.otherDynamicSettings,
     [
       {
-        label: "Thumbnail Modal Disabled <= 800px",
-        jsx: dynamicDisablingOfThumbnailModalBelow800,
-      },
-      {
-        label: "Thumbnail Modal Font Size Changes at 800px",
-        jsx: dynamicHidingOfThumbnailFontSize,
-      },
-      {
-        label: "Thumbnail Modal Always Shown > 800px",
-        jsx: dynamicHidingOfThumbnailModal,
-      },
-      {
-        label: "Thumbnail Modal Opacity and Color Change at 800px",
-        jsx: dynamicThumbnailModal,
-      },
-      {
-        label: "Thumbnail Modal Gradient Change at 800px",
-        jsx: dynamicThumbnailModalGradient,
-      },
-      {
-        label: "Dots and Left Arrow Change Svgs and Color at 800px",
-        jsx: dynamicElementsCustomization,
-      },
-      {
-        label: "Video Modal Padding Changes at 800px",
-        jsx: dynamicmodalPadding,
-      },
-      {
-        label: "Font Changes Everywhere at 800px",
-        jsx: dynamicFontFamilyAll,
-      },
-      {
-        label: "Font Changes in ItemViewer at 800px",
-        jsx: dynamicFontFamilyItemViewer,
-      },
-      {
-        label: "Font Changes in Thumbnails at 800px",
-        jsx: dynamicFontFamilyNavigation,
-      },
-      {
-        label: "Seek Amount in ItemViewer Changes at 800px",
-        jsx: dynamicSeekAmount,
-      },
-      {
-        label: "Item Viewer Auto Hide Duration Changes at 800px",
-        jsx: dynamicAutoHideDurationInItemViewer,
-      },
-      {
-        label: "Toolbar Elements' Color Changes at 800px",
-        jsx: dynamicToolbarColor,
-      },
-      {
         label: "ProgressBar Color and Height Change at 800px",
         jsx: dynamicProgressBarColorAndHeight,
       },
