@@ -283,3 +283,164 @@ export const ThumbnailOptions13: Story = {
   },
   name: "Toolbar Elements' Color Changes at 800px",
 };
+
+
+export const ThumbnailOptions15: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+      },
+      styling: {
+        toolbar: {
+          backgroundColor: [["red"], ["black", 800]],
+        },
+        container: {
+          backgroundColor: [["red"], ["black", 800]],
+        },
+        itemViewer: {
+          backgroundColor: [["red"], ["black", 800]],
+        },
+        navigation: {
+          backgroundColor: [["red"], ["black", 800]],
+        },
+        modal: {
+          backgroundColor: [["white"], ["black", 800]],
+          textColor: [["black"], ["white", 800]],
+        },
+      },
+    },
+  },
+  name: "All Background Colors Changes at 800px",
+};
+
+export const ThumbnailOptions16: Story = {
+  args: {
+    items: items,
+    options: {
+      navigation: {
+        disableWrapping: [[false], [true, 800]],
+      },
+    },
+  },
+  name: "Wrapping Disabled < 800px",
+};
+
+export const ThumbnailOptions17: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+      },
+      thumbnail: {
+        size: 100,
+      },
+      navigation: {
+        autoChangePage: [[true], [false, 800]],
+      },
+    },
+  },
+  name: "Auto Change Page Disabled < 800px",
+};
+
+export const ThumbnailOptions18: Story = {
+  args: {
+    items: items,
+    options: {
+      navigation: {
+        maxClickThreshold: [[0], [100, 800]],
+      },
+      itemViewer: {
+        maxClickThreshold: [[0], [100, 800]],
+      },
+    },
+  },
+  name: "The amount of horiztonal movement needed to register swipe event increases < 800px",
+};
+
+
+export const ThumbnailOptions19: Story = {
+  args: {
+    items: items,
+    options: {
+      navigation: {
+        disableSwiping: [[false], [true, 800]],
+      },
+      itemViewer: {
+        disableSwiping: [[false], [true, 800]],
+      },
+    },
+  },
+  name: "Swiping Disabled < 800px",
+};
+
+
+export const ThumbnailOptions20: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        thumbnailPositioning: [["center"], ["right", 800]],
+      },
+      thumbnail: {
+        size: 200,
+      },
+    },
+  },
+  name: "Thumbnail Positioning Right < 800px Otherwise Center",
+};
+
+
+export const ThumbnailOptions21: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        thumbnailPositioning: [["center"], ["right", 800]],
+        itemDisplayLocation: "above",
+      },
+      thumbnail: {
+        size: 100,
+      },
+    },
+  },
+  name: "Display Above Thumbnail Positioning Right < 800px Otherwise Center",
+};
+
+export const ThumbnailOptions22: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        itemDisplayLocation: [["above"], ["none", 800]],
+      },
+      thumbnail: {
+        size: 200,
+      },
+    },
+  },
+  name: "Item Display Location None < 800px Otherwise Above",
+};
+
+export const ThumbnailOptions23: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+      },
+      styling: {
+        toolbar: {
+          progressBar: {
+            textOrForegroundColor: [["red"], ["black", 800]],
+            backgroundColor: [["black"], ["white", 800]],
+            height: [[10], [3, 800]],
+          },
+        },
+      },
+    },
+  },
+  name: "Progressbar Color and Height Change at 800px",
+};

@@ -2922,44 +2922,6 @@ const SECTIONS: Sections = [
     SectionNames.otherDynamicSettings,
     [
       {
-        label: "ProgressBar Color and Height Change at 800px",
-        jsx: dynamicProgressBarColorAndHeight,
-      },
-      {
-        label: "All Background Colors Changes at 800px",
-        jsx: dynamicBackgroundColor,
-      },
-      {
-        label: "Wrapping Disabled < 800px",
-        jsx: dynamicWrappingDisabled,
-      },
-      {
-        label: "Auto Change Page Disabled < 800px",
-        jsx: dynamicAutoChangePage,
-      },
-      {
-        label:
-          "The amount of horiztonal movement needed to register swipe event increases < 800px",
-        jsx: dynamicMaxClickThreshold,
-      },
-      {
-        label: "Swiping Disabled < 800px",
-        jsx: dynamicDisablingOfSwiping,
-      },
-      {
-        label: "Thumbnail Positioning Right < 800px Otherwise Center",
-        jsx: dynamicItemPositioning,
-      },
-      {
-        label:
-          "Display Above Thumbnail Positioning Right < 800px Otherwise Center",
-        jsx: dynamicPoistioning,
-      },
-      {
-        label: "Item Display Location None < 800px Otherwise Above",
-        jsx: dynamicItemDisplayLocation,
-      },
-      {
         label: "Video Modal Styling Changes < 800px",
         jsx: dynamicmodal,
       },
