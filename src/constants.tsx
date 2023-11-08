@@ -6,60 +6,6 @@ import {
 } from "./types";
 import { getClassname } from "./utils/utils";
 
-export const AUTO_CHANGE_PAGE_DEFAULT = true;
-export const AUTO_HIDE_DISABLED_VALUE = 0;
-export const AUTO_HIDE_VIDEO_TOOLBAR_DURATION_DEFAULT = 2500;
-export const CURRENT_ITEM_INDEX_INITIAL = 0;
-export const CURRENT_PAGE_INITIAL = 0;
-export const DISABLE_WRAPPING_DEFAULT = false;
-export const EMPTY_STRING = "";
-export const FONT_WEIGHT_DEFAULT = 400;
-export const GET_CURRENT_VALUE_DEFAULT = 0;
-export const IMAGE_EXTENSIONS = [
-  "apng",
-  "avif",
-  "gif",
-  "jpg",
-  "jpeg",
-  "jfif",
-  "pjpeg",
-  "pjp",
-  "png",
-  "svg",
-  "webp",
-];
-export const IS_LAST_PAGE_FLUSH_DEFAULT = true;
-export const ITEM_CONTAINER_HEIGHT_INITIAL = "auto";
-export const ITEM_CONTAINER_MIN_DEFAULT = 125;
-export const ITEM_VIEWER_USE_RECOMMENDED_ASPECT_RATIO = true;
-export const ITEM_VIEWER_HEIGHT_DEFAULT = "widescreen";
-export const ITEM_VIEWER_ASPECT_RATIOS_TO_DECIMAL_MAPPINGratioValues: {
-  [key in CarouselItemViewerAspectRatioPreset]: number;
-} = {
-  widescreen: 0.5625, //16:9
-  fullscreen: 0.75, //4:3
-};
-export const MAX_CLICK_THRESHOLD_DEFAULT = 15;
-export const MODAL_IS_MINIMIZED_INITIAL = false;
-export const MODAL_TEXT_TAG_DEFAULT = "p";
-export const MODAL_TITLE_TAG_DEFAULT = "h3";
-export const MODAL_MINIMIZE_ON_CLICK_DEFAULT = true;
-export const MODAL_MAINTAIN_MINIMIZED_STATE_DEFAULT = false;
-export const NUMBER_OF_DOTS_MINIMUM_TO_DISPLAY_NAV_ITEMS = 2;
-export const NUMBER_OF_MS_IN_A_SECOND = 1000;
-export const NUMBER_OF_SECONDS_IN_A_MINUTE = 60;
-export const NUMBER_OF_PAGES_INITIAL = 0;
-export const PROGRESS_BAR_PERCENT_INITIAL_VALUE = -1;
-export const PROGRESS_BAR_SHOW_CURRENT_POSITION_ON_CHANGE_DEFAULT = false;
-export const SEEK_AMOUNT_DEFAULT = 5000;
-export const TOOLBAR_TIME_STRING_SECTION_DIVIDER = ":";
-export const TOOLBAR_MARGIN_RIGHT_OFFSET = 1;
-export const THUMBNAIL_OVERLAY_IS_HIDDEN_DEFAULT = true;
-export const TRANSLATION_AMOUNT_INITIAL = 0;
-export const VIDEO_EXTENSIONS = ["mp4", "ogv", "webm", "ogg"];
-export const USE_RECOMMENDEDED_ASPECT_RATIO_INITIAL = Number.MAX_SAFE_INTEGER;
-export const WINDOW_RESIZE_DEBOUNCE = 250;
-
 //#region ClassNames
 export const CLASSNAME__ROOT = "thumbnail-carousel"; //this has to match $carouselClassname in _variables.scss
 export const CLASSNAME__DOTS = getClassname({ elementName: "dots" });
@@ -194,6 +140,67 @@ export const CAROUSEL_VIDEO_SECTION_MIN_LENGTH = 500;
 export const CAROUSEL_VIDEO_SCREENSHOT_VIEWER_WIDTH_DEFAULT = 250;
 export const CURRENT_VIDEO_CURRENT_TIME_DEFAULT = 0;
 export const MOBILE_PIXEL_WIDTH = 655;
+//#endregion
+
+
+//#region Settings
+export const AUTO_CHANGE_PAGE_DEFAULT = true;
+export const AUTO_HIDE_DISABLED_VALUE = 0;
+export const AUTO_HIDE_VIDEO_TOOLBAR_DURATION_DEFAULT = 2500;
+export const BORDER_STRING_DEFAULT_SIZE = 1;
+export const BORDER_STRING_MEDIUM_SIZE = 6;
+export const BORDER_STRING_THICK_SIZE = 10;
+export const BORDER_STRING_THIN_SIZE = 2;
+export const CURRENT_ITEM_INDEX_INITIAL = 0;
+export const CURRENT_PAGE_INITIAL = 0;
+export const DISABLE_WRAPPING_DEFAULT = false;
+export const EMPTY_STRING = "";
+export const FONT_WEIGHT_DEFAULT = 400;
+export const GET_CURRENT_VALUE_DEFAULT = 0;
+export const IMAGE_EXTENSIONS = [
+  "apng",
+  "avif",
+  "gif",
+  "jpg",
+  "jpeg",
+  "jfif",
+  "pjpeg",
+  "pjp",
+  "png",
+  "svg",
+  "webp",
+];
+export const IS_LAST_PAGE_FLUSH_DEFAULT = true;
+export const ITEM_CONTAINER_HEIGHT_INITIAL = "auto";
+export const ITEM_CONTAINER_MIN_DEFAULT = 125;
+export const ITEM_VIEWER_USE_RECOMMENDED_ASPECT_RATIO = true;
+export const ITEM_VIEWER_HEIGHT_DEFAULT = "widescreen";
+export const ITEM_VIEWER_ASPECT_RATIOS_TO_DECIMAL_MAPPINGratioValues: {
+  [key in CarouselItemViewerAspectRatioPreset]: number;
+} = {
+  widescreen: 0.5625, //16:9
+  fullscreen: 0.75, //4:3
+};
+export const MAX_CLICK_THRESHOLD_DEFAULT = 15;
+export const MODAL_IS_MINIMIZED_INITIAL = false;
+export const MODAL_TEXT_TAG_DEFAULT = "p";
+export const MODAL_TITLE_TAG_DEFAULT = "h3";
+export const MODAL_MINIMIZE_ON_CLICK_DEFAULT = true;
+export const MODAL_MAINTAIN_MINIMIZED_STATE_DEFAULT = false;
+export const NUMBER_OF_DOTS_MINIMUM_TO_DISPLAY_NAV_ITEMS = 2;
+export const NUMBER_OF_MS_IN_A_SECOND = 1000;
+export const NUMBER_OF_SECONDS_IN_A_MINUTE = 60;
+export const NUMBER_OF_PAGES_INITIAL = 0;
+export const PROGRESS_BAR_PERCENT_INITIAL_VALUE = -1;
+export const PROGRESS_BAR_SHOW_CURRENT_POSITION_ON_CHANGE_DEFAULT = false;
+export const SEEK_AMOUNT_DEFAULT = 5000;
+export const TOOLBAR_TIME_STRING_SECTION_DIVIDER = ":";
+export const TOOLBAR_MARGIN_RIGHT_OFFSET = 1;
+export const THUMBNAIL_OVERLAY_IS_HIDDEN_DEFAULT = true;
+export const TRANSLATION_AMOUNT_INITIAL = 0;
+export const VIDEO_EXTENSIONS = ["mp4", "ogv", "webm", "ogg"];
+export const USE_RECOMMENDEDED_ASPECT_RATIO_INITIAL = Number.MAX_SAFE_INTEGER;
+export const WINDOW_RESIZE_DEBOUNCE = 250;
 //#endregion
 
 //#region ItemViewer Shortcuts

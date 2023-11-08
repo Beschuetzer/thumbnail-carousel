@@ -28,6 +28,7 @@ import {
   FONT_WEIGHT_DEFAULT,
   TOOLBAR_MARGIN_RIGHT_OFFSET,
   CAROUSEL_VIDEO_SCREENSHOT_VIEWER_WIDTH_DEFAULT,
+  BORDER_STRING_DEFAULT_SIZE,
 } from "../constants";
 import { CarouselModalInternalProps } from "../components/modal/CarouselModal";
 import {
@@ -239,15 +240,14 @@ export class StylingLogic {
 
   get carouselItemStyle() {
     const customCurrenItemBorder = this.optionsLogic.thumbnailBorderString;
-
     const marginStyle = this.optionsLogic.isDefaultItemDisplayLocation
       ? ({
           margin: 0,
         } as CSSProperties)
       : {};
     const widthStyle = {
-      width: this.optionsLogic.thumbnailSize,
-      height: this.optionsLogic.thumbnailSize,
+      width: this.isCurrentItem ? this.optionsLogic.thumbnailSizeCurrentItem : this.optionsLogic.thumbnailSize,
+      height: this.isCurrentItem ? this.optionsLogic.thumbnailSizeCurrentItem : this.optionsLogic.thumbnailSize,
     } as CSSProperties;
     const selectionStyle = this.isCurrentItemSelected
       ? ({
@@ -1997,7 +1997,7 @@ export class StylingLogic {
    */
   private getBorderStringToUse(
     borderStr: CSSProperties["border"],
-    defaultValue = `1${CAROUSEL_SPACING_UNIT} solid ${this.optionsLogic.theme.colorFour}`,
+    defaultValue = `${BORDER_STRING_DEFAULT_SIZE}${CAROUSEL_SPACING_UNIT} solid ${this.optionsLogic.theme.colorFour}`,
   ) {
     const borderStrToUse = borderStr?.toString();
     const isValid =

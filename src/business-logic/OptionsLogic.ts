@@ -70,6 +70,7 @@ import {
   CLASSNAME__NAVIGATION,
   CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
   CAROUSEL_ITEM_HOVER_TRANSLATE_UP_AMOUNT,
+  CAROUSEL_SPACING_UNIT,
 } from "../constants";
 import {
   CarouselElement,
@@ -81,10 +82,12 @@ import {
 import { convertHexToRgba, getBoundValue, getIsMobile } from "../utils/utils";
 import { getCurrentValue } from "../utils/getCurrentValue";
 import { CarouselContextInputProps } from "../context";
+import { getBorderStringSize } from "../utils/getBorderStringSize";
 
 export type OptionsConstructor = {
   options: CarouselOptions;
   currentItem?: CarouselItemProps;
+  isCurrentItem?: boolean;
   isFullscreenMode: boolean;
   numberOfPages?: number;
   items?: CarouselItemProps[];
@@ -97,6 +100,7 @@ export class OptionsLogic {
   public carouselContainerRef;
   private currentItem;
   private defaultFontFamily: string = "sans-serif";
+  private isCurrentItem;
   private isFullscreenMode;
   private items;
   private numberOfPages;
@@ -107,12 +111,14 @@ export class OptionsLogic {
       carouselContainerRef,
       options,
       currentItem,
+      isCurrentItem,
       numberOfPages,
       items,
       isFullscreenMode,
     } = constructor;
     this.currentItem = currentItem;
     this.carouselContainerRef = carouselContainerRef;
+    this.isCurrentItem = isCurrentItem;
     this.isFullscreenMode = isFullscreenMode;
     this.items = items || [];
     this.numberOfPages = numberOfPages || 0;
@@ -125,7 +131,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.elements?.all?.fillColor,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -133,7 +139,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.fontFamily?.all,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -141,7 +147,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.navigation?.autoChangePage,
       AUTO_CHANGE_PAGE_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -149,7 +155,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.itemViewer?.autoHideToolbarDuration,
       AUTO_HIDE_VIDEO_TOOLBAR_DURATION_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -157,7 +163,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.container?.backgroundColor,
       this.theme.colorOne,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -165,22 +171,22 @@ export class OptionsLogic {
     const bottom = getCurrentValue(
       this.options?.styling?.container?.margin?.bottom,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const left = getCurrentValue(
       this.options?.styling?.container?.margin?.left,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const right = getCurrentValue(
       this.options?.styling?.container?.margin?.right,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const top = getCurrentValue(
       this.options?.styling?.container?.margin?.top,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     return {
       [SpacingDirection.bottom]: bottom,
@@ -194,22 +200,22 @@ export class OptionsLogic {
     const bottom = getCurrentValue(
       this.options?.styling?.container?.padding?.bottom,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const left = getCurrentValue(
       this.options?.styling?.container?.padding?.left,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const right = getCurrentValue(
       this.options?.styling?.container?.padding?.right,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const top = getCurrentValue(
       this.options?.styling?.container?.padding?.top,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     return {
       [SpacingDirection.bottom]: bottom,
@@ -233,7 +239,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.layout?.itemDisplayLocation,
       "none",
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -259,7 +265,7 @@ export class OptionsLogic {
       getCurrentValue(
         this.options?.itemViewer?.disableSwiping,
         defaultToUse,
-        this.isFullscreenMode,
+        this.isFullscreenMode
       )
     );
   }
@@ -268,7 +274,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.navigation?.isLastPageFlush,
       IS_LAST_PAGE_FLUSH_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -282,7 +288,7 @@ export class OptionsLogic {
       getCurrentValue(
         this.options?.navigation?.disableSwiping,
         false,
-        this.isFullscreenMode,
+        this.isFullscreenMode
       )
     );
   }
@@ -292,7 +298,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.layout?.isToolbarPositionedInVideo,
       this.isMobile ? false : true,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -300,7 +306,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.navigation?.disableWrapping,
       DISABLE_WRAPPING_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -326,7 +332,7 @@ export class OptionsLogic {
       ...getCurrentValue(
         this.currentItem?.itemStyles,
         undefined,
-        this.isFullscreenMode,
+        this.isFullscreenMode
       ),
     } as CSSProperties;
   }
@@ -335,7 +341,7 @@ export class OptionsLogic {
     const value = getCurrentValue(
       this.options?.itemViewer?.aspectRatio,
       this.useDefaultVideoControls ? ITEM_VIEWER_HEIGHT_DEFAULT : "auto",
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     return typeof value === "string" && value !== "auto"
       ? ITEM_VIEWER_ASPECT_RATIOS_TO_DECIMAL_MAPPINGratioValues[value]
@@ -347,7 +353,7 @@ export class OptionsLogic {
       getCurrentValue(
         this.options?.styling?.itemViewer?.backgroundColor,
         undefined,
-        this.isFullscreenMode,
+        this.isFullscreenMode
       ) || this.containerBackgroundColor
     );
   }
@@ -357,7 +363,7 @@ export class OptionsLogic {
     const secondary = getCurrentValue(
       this.options?.styling?.fontFamily?.itemViewer,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     return (
       primary || secondary || this.bodyFontFamily || this.defaultFontFamily
@@ -368,7 +374,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.itemViewer?.maxClickThreshold,
       MAX_CLICK_THRESHOLD_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -376,7 +382,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.itemViewerPreview?.backgroundColor,
       this.theme.colorOne,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -385,7 +391,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.itemViewerPreview?.border,
       defaultBorder,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -393,7 +399,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.itemViewerPreview?.borderRadius,
       CAROUSEL_ITEM_VIEWER_PREVIEW_BORDER_RADIUS_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -401,7 +407,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.itemViewerPreview?.height,
       CAROUSEL_ITEM_VIEWER_PREVIEW_WIDTH_DEFAULT / 2,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -409,7 +415,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.itemViewerPreview?.image?.fit,
       CAROUSEL_ITEM_VIEWER_PREVIEW_IMAGE_FIT_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -420,7 +426,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.itemViewerPreview?.image?.position,
       defaultToUse,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -428,7 +434,7 @@ export class OptionsLogic {
     const value = getCurrentValue(
       this.options?.styling?.itemViewerPreview?.isVisibleInNonFullscreenMode,
       CAROUSEL_ITEM_VIEWER_PREVIEW_IS_VISIBLE_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     return this.isFullscreenMode ? true : value;
   }
@@ -437,7 +443,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.itemViewerPreview?.opacity,
       CAROUSEL_ITEM_VIEWER_PREVIEW_OPACITY_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -445,7 +451,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.itemViewerPreview?.swapImageAndText,
       CAROUSEL_ITEM_VIEWER_PREVIEW_SWAP_IMAGE_AND_TEXT_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -453,7 +459,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.itemViewerPreview?.text?.body?.color,
       this.theme.colorFive,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -461,7 +467,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.itemViewerPreview?.text?.body?.fontFamily,
       CAROUSEL_ITEM_VIEWER_PREVIEW_TEXT_FONT_FAMILY_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -469,7 +475,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.itemViewerPreview?.text?.body?.size,
       CAROUSEL_ITEM_VIEWER_PREVIEW_TEXT_SIZE_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -477,7 +483,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.itemViewerPreview?.text?.header?.color,
       this.theme.colorGreyOne,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -485,7 +491,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.itemViewerPreview?.text?.header?.fontFamily,
       CAROUSEL_ITEM_VIEWER_PREVIEW_TEXT_FONT_FAMILY_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -493,7 +499,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.itemViewerPreview?.text?.header?.size,
       CAROUSEL_ITEM_VIEWER_PREVIEW_TEXT_SIZE_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -503,7 +509,7 @@ export class OptionsLogic {
     const padding = getCurrentValue(
       paddingStyle,
       CAROUSEL_PADDING_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const paddingLeftStatic = (paddingStyle as any)?.left;
     const paddingRightStatic = (paddingStyle as any)?.right;
@@ -526,7 +532,7 @@ export class OptionsLogic {
       this.options?.styling?.itemViewerPreview?.text?.container
         ?.verticalAlignment,
       CAROUSEL_ITEM_VIEWER_PREVIEW_TEXT_VERTICAL_ALIGNMENT_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -534,7 +540,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.itemViewerPreview?.width,
       CAROUSEL_ITEM_VIEWER_PREVIEW_WIDTH_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -542,7 +548,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.itemViewer?.useRecommendedAspectRatio,
       !this.isItemVierAspectRatioGiven,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -550,7 +556,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.layout?.maxHeight,
       CAROUSEL_MAX_HEIGHT_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -558,7 +564,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.modal?.backgroundColor,
       this.theme.colorOne,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -566,7 +572,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.modal?.closeButton?.fill,
       this.modalTextColor,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -574,7 +580,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.modal?.closeButton?.size,
       this.defaultButtonSize,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -593,7 +599,7 @@ export class OptionsLogic {
       this.isFullscreenMode
         ? CAROUSEL_OVERLAY_FONT_SIZE_DEFAULT
         : CAROUSEL_OVERLAY_FONT_SIZE_NON_ITEM_VIEWER_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -601,7 +607,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.modal?.maintainMinimizedStateAcrossItems,
       MODAL_MAINTAIN_MINIMIZED_STATE_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -609,7 +615,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.modal?.minimizeOnClick,
       MODAL_MINIMIZE_ON_CLICK_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -618,29 +624,29 @@ export class OptionsLogic {
     const padding = getCurrentValue(
       paddingStyle,
       CAROUSEL_MODAL_PADDING_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const { left, right, top, bottom } = paddingStyle || {};
     return {
       top: getCurrentValue(
         top !== undefined ? top : padding.top,
         CAROUSEL_MODAL_PADDING_DEFAULT.top,
-        this.isFullscreenMode,
+        this.isFullscreenMode
       ),
       bottom: getCurrentValue(
         bottom !== undefined ? bottom : padding.bottom,
         CAROUSEL_MODAL_PADDING_DEFAULT.bottom,
-        this.isFullscreenMode,
+        this.isFullscreenMode
       ),
       left: getCurrentValue(
         left !== undefined ? left : padding.left,
         CAROUSEL_MODAL_PADDING_DEFAULT.left,
-        this.isFullscreenMode,
+        this.isFullscreenMode
       ),
       right: getCurrentValue(
         right !== undefined ? right : padding.right,
         CAROUSEL_MODAL_PADDING_DEFAULT.right,
-        this.isFullscreenMode,
+        this.isFullscreenMode
       ),
     };
   }
@@ -649,7 +655,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.modal?.opacityWhenMinimized,
       CAROUSEL_MODAL_MINIMIZED_OPACITY_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     ).toString();
   }
 
@@ -657,7 +663,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.modal?.textColor,
       this.theme.colorFive,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -666,7 +672,7 @@ export class OptionsLogic {
     return `${getCurrentValue(
       this.options?.styling?.modal?.widthInPercent,
       100,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     )}%`;
   }
 
@@ -675,7 +681,7 @@ export class OptionsLogic {
     const secondary = getCurrentValue(
       this.options?.styling?.fontFamily?.navigation,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     return (
       primary || secondary || this.bodyFontFamily || this.defaultFontFamily
@@ -686,7 +692,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.navigation?.backgroundColor,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -694,7 +700,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.navigation?.maxClickThreshold,
       MAX_CLICK_THRESHOLD_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -702,7 +708,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.toolbar?.progressBar?.shouldSpanContainerWidth,
       CAROUSEL_PROGRESS_BAR_SHOULD_SPAN_ENTIRE_WIDTH_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -710,32 +716,32 @@ export class OptionsLogic {
     const colorOne = getCurrentValue(
       this.options?.styling?.colorTheme?.colorOne,
       CAROUSEL_COLOR_ONE,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const colorTwo = getCurrentValue(
       this.options?.styling?.colorTheme?.colorTwo,
       CAROUSEL_COLOR_TWO,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const colorThree = getCurrentValue(
       this.options?.styling?.colorTheme?.colorThree,
       CAROUSEL_COLOR_THREE,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const colorFour = getCurrentValue(
       this.options?.styling?.colorTheme?.colorFour,
       CAROUSEL_COLOR_FOUR,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const colorFive = getCurrentValue(
       this.options?.styling?.colorTheme?.colorFive,
       CAROUSEL_COLOR_FIVE,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const colorGreyOne = getCurrentValue(
       this.options?.styling?.colorTheme?.colorGreyOne,
       CAROUSEL_COLOR_GREY_ONE,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     return {
       colorOne,
@@ -751,7 +757,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.thumbnail?.currentItemBorder,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -759,12 +765,12 @@ export class OptionsLogic {
     const opacity = getCurrentValue(
       this.options?.thumbnail?.descriptionOverlay?.background?.solid?.opacity,
       CAROUSEL_ITEM_THUMBNAIL_BACKGROUND_OPACITY_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const color = getCurrentValue(
       this.options?.thumbnail?.descriptionOverlay?.background?.solid?.color,
       this.theme.colorOne,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     ).trim();
     return {
       opacity,
@@ -778,27 +784,27 @@ export class OptionsLogic {
     const angle = getCurrentValue(
       gradient?.angle,
       CAROUSEL_THUMBNAIL_OVERLAY_BACKGROUND_GRADIENT_ANGLE_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const startColor = getCurrentValue(
       gradient?.start?.color,
       this.theme.colorFive,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const startOpacity = getCurrentValue(
       gradient?.start?.opacity,
       CAROUSEL_THUMBNAIL_OVERLAY_BACKGROUND_GRADIENT_START_OPACITY_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const endColor = getCurrentValue(
       gradient?.end?.color,
       this.theme.colorOne,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const endOpacity = getCurrentValue(
       gradient?.end?.opacity,
       CAROUSEL_THUMBNAIL_OVERLAY_BACKGROUND_GRADIENT_END_OPACITY_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     return {
       angle,
@@ -819,7 +825,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.thumbnail?.descriptionOverlay?.isDisabled,
       defaultValue,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -828,7 +834,7 @@ export class OptionsLogic {
       this.options?.thumbnail?.descriptionOverlay
         ?.hideDescriptionOverlayUnlessHovered,
       THUMBNAIL_OVERLAY_IS_HIDDEN_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -836,24 +842,24 @@ export class OptionsLogic {
     const color = getCurrentValue(
       this.options?.thumbnail?.descriptionOverlay?.textColor,
       this.theme.colorFive,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const maxLineCount = getCurrentValue(
       this.options?.thumbnail?.descriptionOverlay?.maxLineCount,
       CAROUSEL_ITEM_THUMBNAIL_DESCRIPTION_OVERLAY_MAX_LINE_COUNT_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const fontSizeDefault = Math.floor(
       getBoundValue(
         this.thumbnailSize / 10,
         CAROUSEL_THUMBNAIL_OVERLAY_FONT_SIZE_MIN_DEFAULT,
-        CAROUSEL_THUMBNAIL_OVERLAY_FONT_SIZE_MAX_DEFAULT,
-      ),
+        CAROUSEL_THUMBNAIL_OVERLAY_FONT_SIZE_MAX_DEFAULT
+      )
     );
     const fontSize = getCurrentValue(
       this.options?.thumbnail?.descriptionOverlay?.fontSize,
       fontSizeDefault,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     return {
       color,
@@ -866,23 +872,24 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.layout?.thumbnailPositioning,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
   get thumbnailSize() {
     const maxHeight = this.maxHeight;
     const navigationDiv = this.carouselContainerRef?.current?.querySelector(
-      `.${CLASSNAME__NAVIGATION}`,
+      `.${CLASSNAME__NAVIGATION}`
     ) as HTMLElement;
     const navigationHeight = navigationDiv?.getBoundingClientRect().height || 0;
     const navigationMarginBottom =
       parseFloat(navigationDiv?.style?.marginBottom) || 0;
+
     if (this.isDefaultItemDisplayLocation) {
       const thumbnailSizeGiven = getCurrentValue(
         this.options?.thumbnail?.size,
         CAROUSEL_ITEM_SIZE_DEFAULT,
-        this.isFullscreenMode,
+        this.isFullscreenMode
       );
       const maxThumbnailSize =
         maxHeight - navigationHeight - navigationMarginBottom;
@@ -895,9 +902,16 @@ export class OptionsLogic {
     const thumbnailSizeGiven = getCurrentValue(
       this.options?.thumbnail?.size,
       CAROUSEL_ITEM_SIZE_DISPLAY_NON_ITEM_VIEWER_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     return thumbnailSizeGiven;
+  }
+
+  get thumbnailSizeCurrentItem() {
+    const borderStringOffset = getBorderStringSize(
+      this.thumbnailBorderString !== undefined ? String(this.thumbnailBorderString) : undefined
+    );
+    return `calc(${this.thumbnailSize}${CAROUSEL_SPACING_UNIT} - ${borderStringOffset})`;
   }
 
   //todo: is this needed?
@@ -914,7 +928,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.thumbnail?.spacingStrategy,
       "min",
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -922,7 +936,7 @@ export class OptionsLogic {
     const primary = getCurrentValue(
       this.options?.styling?.toolbar?.backgroundColor,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     return primary || this.containerBackgroundColor;
   }
@@ -931,12 +945,12 @@ export class OptionsLogic {
     const backgroundColor = getCurrentValue(
       this.options?.styling?.toolbar?.shortcutIndicator?.backgroundColor,
       this.theme.colorTwo,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const textColor = getCurrentValue(
       this.options?.styling?.toolbar?.shortcutIndicator?.backgroundColor,
       this.theme.colorFive,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     return {
       backgroundColor,
@@ -948,12 +962,12 @@ export class OptionsLogic {
     const priorityColor = getCurrentValue(
       this.options?.styling?.toolbar?.textColor,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const secondaryColor = getCurrentValue(
       this.options?.styling?.toolbar?.elements?.color,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     return (
       priorityColor ||
@@ -967,7 +981,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.layout?.useDefaultVideoControls,
       this.isMobile ? true : false,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -975,7 +989,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.videoCurrentStateIndicator?.backgroundColor,
       this.theme.colorOne,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -983,7 +997,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.videoCurrentStateIndicator?.textOrForegroundColor,
       this.theme.colorFive,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -991,7 +1005,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.videoCurrentStateIndicator?.size,
       this.defaultButtonSize,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -1002,7 +1016,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.toolbar?.progressBar?.backgroundColor,
       backgroundColorToUse,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -1010,17 +1024,17 @@ export class OptionsLogic {
     const diameter = getCurrentValue(
       this.options?.styling?.toolbar?.progressBar?.dot?.diameter,
       CAROUSEL_PROGRESS_BAR_DOT_DIAMETER,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const isAlwaysVisible = getCurrentValue(
       this.options?.styling?.toolbar?.progressBar?.dot?.isAlwaysVisible,
       CAROUSEL_PROGRESS_BAR_DOT_IS_ALWAYS_VISIBLE,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const transitionDuration = getCurrentValue(
       this.options?.styling?.toolbar?.progressBar?.dot?.transitionDuration,
       CAROUSEL_PROGRESS_BAR_DOT_TRANSITION_DURATION,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     return {
       diameter,
@@ -1033,7 +1047,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.toolbar?.progressBar?.textOrForegroundColor,
       this.theme.colorThree,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -1041,12 +1055,12 @@ export class OptionsLogic {
     const top = getCurrentValue(
       this.options?.styling?.toolbar?.progressBar?.hitSlop?.top,
       CAROUSEL_PROGRESS_BAR_CONTAINER_HEIGHT_DEFAULT * 1,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const bottom = getCurrentValue(
       this.options?.styling?.toolbar?.progressBar?.hitSlop?.bottom,
       CAROUSEL_PROGRESS_BAR_CONTAINER_HEIGHT_DEFAULT / 2,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
 
     return {
@@ -1066,7 +1080,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.toolbar?.progressBar?.scaleAmount,
       defaultToUse,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -1075,12 +1089,12 @@ export class OptionsLogic {
       this.options?.styling?.toolbar?.progressBar?.screenshotViewer
         ?.thumbnailWidth,
       CAROUSEL_VIDEO_SCREENSHOT_VIEWER_WIDTH_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const textColor = getCurrentValue(
       this.options?.styling?.toolbar?.progressBar?.textOrForegroundColor,
       this.theme.colorFive,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
 
     return {
@@ -1094,7 +1108,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.toolbar?.progressBar?.sectionGap,
       CAROUSEL_PROGRESS_BAR_SECTION_GAP,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -1102,7 +1116,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.toolbar?.progressBar?.seekColor,
       convertHexToRgba(this.theme.colorFive, 0.5),
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -1110,7 +1124,7 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.styling?.toolbar?.progressBar?.showCurrentPositionOnChange,
       PROGRESS_BAR_SHOW_CURRENT_POSITION_ON_CHANGE_DEFAULT,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -1119,7 +1133,7 @@ export class OptionsLogic {
     const heightGiven = getCurrentValue(
       this.options?.styling?.toolbar?.progressBar?.height,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const defaultBasedOnEmbedded = isEmbedded
       ? CAROUSEL_PROGRESS_BAR_HEIGHT_DEFAULT_EMBEDDED
@@ -1144,7 +1158,7 @@ export class OptionsLogic {
       getCurrentValue(
         this.options?.itemViewer?.seekAmount,
         SEEK_AMOUNT_DEFAULT,
-        this.isFullscreenMode,
+        this.isFullscreenMode
       ) / 1000
     );
   }
@@ -1156,7 +1170,7 @@ export class OptionsLogic {
     const specificFillColor = getCurrentValue(
       this.options?.styling?.elements?.[buttonName]?.fillColor,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
 
     switch (buttonName) {
@@ -1166,7 +1180,7 @@ export class OptionsLogic {
         const navigationElementsColor = getCurrentValue(
           this.options?.styling?.navigation?.elements?.color,
           undefined,
-          this.isFullscreenMode,
+          this.isFullscreenMode
         );
         return (
           specificFillColor ||
@@ -1185,7 +1199,7 @@ export class OptionsLogic {
         const toolbarElementsColor = getCurrentValue(
           this.options?.styling?.toolbar?.elements?.color,
           undefined,
-          this.isFullscreenMode,
+          this.isFullscreenMode
         );
         return (
           specificFillColor ||
@@ -1207,7 +1221,7 @@ export class OptionsLogic {
         sectionButtonSize = getCurrentValue(
           this.options?.styling?.navigation?.elements?.size,
           this.defaultButtonSize,
-          this.isFullscreenMode,
+          this.isFullscreenMode
         );
         break;
       case CarouselElement.closeButton:
@@ -1221,7 +1235,7 @@ export class OptionsLogic {
         sectionButtonSize = getCurrentValue(
           this.options?.styling?.toolbar?.elements?.size,
           this.defaultButtonSize,
-          this.isFullscreenMode,
+          this.isFullscreenMode
         );
         break;
     }
@@ -1234,7 +1248,7 @@ export class OptionsLogic {
   getPaddingAmount(
     direction: SpacingDirection,
     item: CarouselSection,
-    defaultOverride?: number,
+    defaultOverride?: number
   ) {
     let defaultPadding: number;
 
@@ -1267,10 +1281,10 @@ export class OptionsLogic {
   }
 
   getThumbnailSpacingBasedOnThumbnailPositioning(
-    valueToUseIfNoPositioningGiven = CAROUSEL_ITEM_SPACING_DEFAULT / 2,
+    valueToUseIfNoPositioningGiven = CAROUSEL_ITEM_SPACING_DEFAULT / 2
   ) {
     const currentItemSpacing = this.getThumbnailSpacing(
-      CAROUSEL_ITEM_SPACING_DEFAULT / 2,
+      CAROUSEL_ITEM_SPACING_DEFAULT / 2
     );
     return this.thumbnailPositioning !== undefined
       ? currentItemSpacing
@@ -1281,18 +1295,18 @@ export class OptionsLogic {
     return getCurrentValue(
       this.options?.thumbnail?.spacing,
       defaultValue,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
   getVideoCurrentStateIndicatorButtonColor(
-    buttonName: CarouselVideoCurrentStateIndicatorButtonName,
+    buttonName: CarouselVideoCurrentStateIndicatorButtonName
   ) {
     return getCurrentValue(
       this.options?.styling?.videoCurrentStateIndicator?.[buttonName]
         ?.fillColor,
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
   }
 
@@ -1305,24 +1319,24 @@ export class OptionsLogic {
   private getCustomPadding(
     direction: SpacingDirection,
     item: CarouselSection,
-    defaultPadding = CAROUSEL_ITEMS_MARGIN_HORIZONTAL_DEFAULT,
+    defaultPadding = CAROUSEL_ITEMS_MARGIN_HORIZONTAL_DEFAULT
   ) {
     const containerPadding = this.containerPadding?.[direction];
     const itemPadding = (this.options?.styling?.[item] as any)?.padding;
     const itemPaddingFullscreen = getCurrentValue(
       itemPadding?.fullscreen?.[direction],
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const itemPaddingNonFullscreen = getCurrentValue(
       itemPadding?.nonFullscreen?.[direction],
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const itemPaddingAll = getCurrentValue(
       itemPadding?.[direction],
       undefined,
-      this.isFullscreenMode,
+      this.isFullscreenMode
     );
     const itemPaddingToUse = this.isFullscreenMode
       ? itemPaddingFullscreen || itemPaddingAll

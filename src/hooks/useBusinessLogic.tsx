@@ -67,6 +67,7 @@ export const useBusinessLogic = (
     getOptionsLogic({
       carouselContainerRef,
       currentItem,
+      isCurrentItem,
       isFullscreenMode,
       items,
       numberOfPages,
@@ -107,6 +108,7 @@ export const useBusinessLogic = (
     const newOptionsLogic = getOptionsLogic({
       carouselContainerRef,
       currentItem,
+      isCurrentItem,
       isFullscreenMode,
       items,
       numberOfPages,
