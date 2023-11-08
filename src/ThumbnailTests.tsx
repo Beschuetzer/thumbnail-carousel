@@ -2919,47 +2919,6 @@ enum SectionNames {
 }
 const SECTIONS: Sections = [
   [
-    SectionNames.dynamicLayout,
-    [
-      {
-        label: "Dynamic Thumbnail Spacing",
-        jsx: dynamicSpacingOnly,
-      },
-      {
-        label: "Dynamic Thumbnail Sizing and Automatic Spacing",
-        jsx: dynamicSizeOnly,
-      },
-      {
-        label: "Dynamic Thumbnail Sizing and Spacing",
-        jsx: dynamicSizeAndSpacing,
-      },
-      {
-        label: "Dynamic Thumbnail Spacing",
-        jsx: dynamicSpacingOnlyDisplayAbove,
-      },
-      {
-        label: "Dynamic Thumbnail Sizing and Automatic Spacing",
-        jsx: dynamicSizeOnlyDisplayAbove,
-      },
-      {
-        label: "Dynamic Thumbnail Sizing and Spacing",
-        jsx: dynamicSizeAndSpacingDisplayAbove,
-      },
-      {
-        label: "Dynamic Thumbnail Sizing and Spacing and Positioned Left",
-        jsx: dynamicSizeAndSpacingDisplayAbovePositionedLeft,
-      },
-      {
-        label: "Dynamic Thumbnail Sizing and Spacing and Positioned Center",
-        jsx: dynamicSizeAndSpacingDisplayAbovePositionedCenter,
-      },
-      {
-        label: "Dynamic Thumbnail Sizing and Spacing and Positioned Right",
-        jsx: dynamicSizeAndSpacingDisplayAbovePositionedRight,
-      },
-    ],
-  ],
-  [
     SectionNames.otherDynamicSettings,
     [
       {

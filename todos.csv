@@ -1,4 +1,5 @@
 Before Publishing
+  -add .mdx files for each story file (google), with details on how to test (e.g. dynamic layout)
   -fix width issue of description popup for items
   -write jest tests for utils and other functions?
   -create a CI/CD 
