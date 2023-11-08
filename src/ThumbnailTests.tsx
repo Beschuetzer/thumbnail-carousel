@@ -2966,10 +2966,6 @@ const SECTIONS: Sections = [
     SectionNames.aboveCustomization,
     [
       {
-        label: "Display Above Flush and Same Background Color",
-        jsx: layoutAboveCompletelyFlushAndSameBackgroundColor,
-      },
-      {
         label: "Display Above Flush with Progress Bar Whole Width",
         jsx: layoutAboveCompletelyFlushAndSameBackgroundColorProgressSpanWhole,
       },
