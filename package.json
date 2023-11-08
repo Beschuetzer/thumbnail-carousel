@@ -10,10 +10,11 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "npm run build:sass && rollup -c --bundleConfigAsCjs",
-    "build:sass": "sass src/sass/main.scss src/components/carousel2/css/style.css",
+    "build:sass": "sass src/sass/main.scss src/css/style.css",
     "lint": "npx prettier --write **/*",
+    "lint:check": "npx prettier --check **/*",
     "publish": "npm run build && npm publish --access public",
-    "watch:sass": "sass src/sass/main.scss src/components/carousel2/css/style.css --watch",
+    "watch:sass": "sass src/sass/main.scss src/css/style.css --watch",
     "test": "jest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

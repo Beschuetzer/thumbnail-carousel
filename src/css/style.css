@@ -602,8 +602,8 @@
   transform: translate(-50%, -50%) rotate(0);
 }
 .thumbnail-carousel-button--restart-circle-inner {
-  height: calc((24px * 0.85) - 12px);
-  width: calc((24px * 0.85) - 12px);
+  height: calc(24px * 0.85 - 12px);
+  width: calc(24px * 0.85 - 12px);
   background-color: rgba(29, 14, 11, 0);
 }
 .thumbnail-carousel-button--restart-circle-outer {
