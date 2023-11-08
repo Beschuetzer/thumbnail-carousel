@@ -13,14 +13,23 @@ export const RestartButton = ({
   //todo: would need to follow pattern in other buttons if using though and test
   // const colorStyle = optionsLogic.getButtonColorStyle(style, fillColor, CarouselButton.restartButton);
   // const fillColorToUse = fillColor || optionsLogic.theme.colorFive;
-  const colorStyle = {}
+  const colorStyle = {};
 
   return (
     <button onClick={onClick} className={className}>
-      <div style={colorStyle} className={`${className}--restart-circle-outer`} />
-      <div style={colorStyle} className={`${className}--restart-circle-inner`} />
-      <div style={colorStyle} className={`${className}--restart-triangle-cutout`} />
+      <div
+        style={colorStyle}
+        className={`${className}--restart-circle-outer`}
+      />
+      <div
+        style={colorStyle}
+        className={`${className}--restart-circle-inner`}
+      />
+      <div
+        style={colorStyle}
+        className={`${className}--restart-triangle-cutout`}
+      />
       <div style={colorStyle} className={`${className}--restart-arrow`} />
     </button>
-  )
-}
+  );
+};

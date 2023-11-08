@@ -1,12 +1,15 @@
-import { forwardRef } from 'react';
+import { forwardRef } from "react";
 import { CLASSNAME__BUTTON } from "../../constants";
 import { ButtonProps, CarouselElement } from "../../types";
-import { StylingLogic } from '../../business-logic/StylingLogic';
-import { useBusinessLogic } from '../../hooks/useBusinessLogic';
+import { StylingLogic } from "../../business-logic/StylingLogic";
+import { useBusinessLogic } from "../../hooks/useBusinessLogic";
 
 type SeekBackButtonProps = {} & ButtonProps;
 
-export const SeekBackButton = forwardRef<HTMLButtonElement, SeekBackButtonProps>((props, ref) => {
+export const SeekBackButton = forwardRef<
+  HTMLButtonElement,
+  SeekBackButtonProps
+>((props, ref) => {
   const {
     className = CLASSNAME__BUTTON,
     fillColor,
@@ -16,13 +19,20 @@ export const SeekBackButton = forwardRef<HTMLButtonElement, SeekBackButtonProps>
   } = props;
   const { stylingLogic, optionsLogic } = useBusinessLogic();
   const fillColorToUse = fillColor || optionsLogic.theme.colorFive;
-  const colorStyle = StylingLogic.getColorStyle(fillColorToUse, 'borderLeftColor', childStyle);
+  const colorStyle = StylingLogic.getColorStyle(
+    fillColorToUse,
+    "borderLeftColor",
+    childStyle,
+  );
   const instanceWidth = parseInt(style.width as string, 10) || 0;
   const buttonName = CarouselElement.seekBackButton;
 
   return (
     <button
-      style={stylingLogic.getCarouselElementSizeStlye(buttonName, instanceWidth)}
+      style={stylingLogic.getCarouselElementSizeStlye(
+        buttonName,
+        instanceWidth,
+      )}
       ref={ref}
       onClick={onClick}
       className={className}
@@ -30,17 +40,25 @@ export const SeekBackButton = forwardRef<HTMLButtonElement, SeekBackButtonProps>
       <div
         style={{
           ...colorStyle,
-          ...stylingLogic.getCarouselElementChildSizeStlye({ buttonName, subElementName: 'triangle', style: { ...style, ...colorStyle } })
+          ...stylingLogic.getCarouselElementChildSizeStlye({
+            buttonName,
+            subElementName: "triangle",
+            style: { ...style, ...colorStyle },
+          }),
         }}
         className={`${className}--seek-back-left`}
       />
       <div
         style={{
           ...colorStyle,
-          ...stylingLogic.getCarouselElementChildSizeStlye({ buttonName, subElementName: 'triangle', style: { ...style, ...colorStyle } })
+          ...stylingLogic.getCarouselElementChildSizeStlye({
+            buttonName,
+            subElementName: "triangle",
+            style: { ...style, ...colorStyle },
+          }),
         }}
         className={`${className}--seek-back-right`}
       />
     </button>
-  )
-})
+  );
+});

@@ -1,26 +1,24 @@
 import { CarouselItemProps } from "../components/CarouselItem";
 
 export type ToolbarLogicConstructor = {
-    items: CarouselItemProps[];
-}
+  items: CarouselItemProps[];
+};
 
 /*
-*Use this for logic related to the Item Viewer toolbar
-*/
+ *Use this for logic related to the Item Viewer toolbar
+ */
 export class ToolbarLogic {
-    private items;
+  private items;
 
-    constructor({
-        items,
-    }: ToolbarLogicConstructor) {
-        this.items = items;
-    }
+  constructor({ items }: ToolbarLogicConstructor) {
+    this.items = items;
+  }
 
-    getShouldDisplayNextAndBackButton() {
-        return this.items?.length > 1;
-    }
+  getShouldDisplayNextAndBackButton() {
+    return this.items?.length > 1;
+  }
 
-    getShouldSkipKeyboardShortcuts() {
-        return !this.items || this.items?.length === 0;
-    }
+  getShouldSkipKeyboardShortcuts() {
+    return !this.items || this.items?.length === 0;
+  }
 }

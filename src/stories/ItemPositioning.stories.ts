@@ -205,7 +205,7 @@ export const ItemPositioning10: Story = {
       layout: {
         itemDisplayLocation: "below",
       },
-       thumbnail: {
+      thumbnail: {
         size: 150,
       },
     },
@@ -237,7 +237,7 @@ export const ItemPositioning12: Story = {
         thumbnailPositioning: "right",
         itemDisplayLocation: "above",
       },
-       thumbnail: {
+      thumbnail: {
         size: 150,
       },
     },

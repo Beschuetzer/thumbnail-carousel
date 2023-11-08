@@ -8,11 +8,11 @@ const packageJson = require("./package.json");
 
 //an array of configuration objects
 export default [
-    //handles the js files (components)
+  //handles the js files (components)
   {
     input: "src/index.ts",
     output: [
-        //output input file as  common js
+      //output input file as  common js
       {
         file: packageJson.main,
         format: "cjs",

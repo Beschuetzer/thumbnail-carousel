@@ -1,4 +1,5 @@
 ### Simple way to publish
+
 - run `npm run publish` (username is `beschuetzerman`)
 
 ### Configuring .npmrc
