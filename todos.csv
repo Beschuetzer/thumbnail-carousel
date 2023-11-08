@@ -24,12 +24,8 @@ Enhancements
   -restructure the options object to make things like the progressbar options more accesible (currently in styling.toolbar.progressBar)?  Mabye have an options.elements where all elements are listed?
 
 Known Issues:
-  -some videos when played cause changing the navigation page to be less smooth?
-  -progress bar for non-embedded case a bit sloppy (try changing widths to flat px amount (width of middle section, non embedded case grows on hover))
+  -having more than 10 instance on the same page can cause issues (need to benchmark this)?
   -small gap at bottom of toolbar (only appears a smaller viewports around 845px)
   -changing items with mid-tier and below setting is sluggish
   -CarouselElementValue only updates when CarouselContent re-renders; if dynamic spacing is on, then re-renders occur much more often
   -cursor only changes properly after going into full screen once
-  -having more than 10 instance on the same page can cause issues (need to benchmark this)?
-  -figure out why CarouselVideoCurrentTimeViewer doesn't seems to work at some spots in some videos (e.g. 1st video middle area)
-  -swipe handler gets trigger sometimes when it shouldn't?
