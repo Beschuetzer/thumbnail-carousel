@@ -2,8 +2,9 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Carousel } from "../components/Carousel";
 import { items } from "./assets/items";
-import { decorators } from "./decorators";
+import { marginTop } from "./decorators";
 import { COLORS } from "./assets/colors";
+import { customButtons } from "./custom-buttons";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -15,7 +16,7 @@ const meta = {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
-  decorators: decorators,
+  decorators: marginTop,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } satisfies Meta<typeof Carousel>;
 
@@ -235,4 +236,113 @@ export const AboveCustomization9: Story = {
     },
   },
   name: "Progress Bar Shows Previous Location on Change",
+};
+
+export const AboveCustomization10: Story = {
+  args: {
+    items: items.slice(0, items.length - 1),
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+      },
+      thumbnail: {
+        size: 100,
+      },
+      styling: {
+        fontFamily: {
+          itemViewer: "monospace",
+        },
+        container: {
+          backgroundColor: COLORS.primary4,
+          padding: {
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+          },
+        },
+        elements: {
+          all: {
+            fillColor: COLORS.primary1,
+          },
+        },
+      },
+    },
+  },
+  name: "Changing All Element Colors",
+};
+
+export const AboveCustomization11: Story = {
+  args: {
+    items: items.slice(0, items.length - 1),
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+      },
+      thumbnail: {
+        size: 100,
+      },
+      styling: {
+        elements: {
+        //   fullscreenButton: {
+        //     fillColor: COLORS.primary1,
+        //     svgHref: customButtons.fullScreenButton.svgHref,
+        //   },
+        //   closeButton: {
+        //     fillColor: COLORS.primary1,
+        //     svgHref: customButtons.closeButton.svgHref,
+        //   },
+          arrowLeft: {
+            ...customButtons.arrowLeft,
+            fillColor: COLORS.primary1,
+          },
+          arrowRight: {
+            ...customButtons.arrowRight,
+            fillColor: COLORS.primary1,
+          },
+        //   dots: {
+        //     fillColor: COLORS.primary1,
+        //     svgHref: customButtons.dots.svgHref,
+        //   },
+        //   nextButton: {
+        //     fillColor: COLORS.primary1,
+        //     svgHref: customButtons.nextButton.svgHref,
+        //   },
+        //   pauseButton: {
+        //     fillColor: COLORS.primary1,
+        //     svgHref: customButtons.pauseButton.svgHref,
+        //   },
+        //   playButton: {
+        //     fillColor: COLORS.primary1,
+        //     svgHref: customButtons.playButton.svgHref,
+        //   },
+        //   previousButton: {
+        //     fillColor: COLORS.primary1,
+        //     svgHref: customButtons.previousButton.svgHref,
+        //   },
+        //   seekBackButton: {
+        //     fillColor: COLORS.primary1,
+        //     svgHref: customButtons.seekBackButton.svgHref,
+        //   },
+        //   seekForwardButton: {
+        //     fillColor: COLORS.primary1,
+        //     svgHref: customButtons.seekForwardButton.svgHref,
+        //   },
+        },
+        fontFamily: {
+          itemViewer: "monospace",
+        },
+        container: {
+          backgroundColor: COLORS.primary4,
+          padding: {
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+          },
+        },
+      },
+    },
+  },
+  name: "Custom Icons with Same Background Color",
 };
