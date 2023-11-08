@@ -283,15 +283,18 @@ export const AboveCustomization11: Story = {
         size: 100,
       },
       styling: {
+        toolbar: {
+            textColor: COLORS.primary1
+        },
         elements: {
-        //   fullscreenButton: {
-        //     fillColor: COLORS.primary1,
-        //     svgHref: customButtons.fullScreenButton.svgHref,
-        //   },
-        //   closeButton: {
-        //     fillColor: COLORS.primary1,
-        //     svgHref: customButtons.closeButton.svgHref,
-        //   },
+          fullscreenButton: {
+            ...customButtons.fullScreenButton,
+            fillColor: COLORS.primary1,
+          },
+          closeButton: {
+            fillColor: COLORS.primary1,
+            svgHref: customButtons.closeButton.svgHref,
+          },
           arrowLeft: {
             ...customButtons.arrowLeft,
             fillColor: COLORS.primary1,
@@ -300,34 +303,34 @@ export const AboveCustomization11: Story = {
             ...customButtons.arrowRight,
             fillColor: COLORS.primary1,
           },
-        //   dots: {
-        //     fillColor: COLORS.primary1,
-        //     svgHref: customButtons.dots.svgHref,
-        //   },
-        //   nextButton: {
-        //     fillColor: COLORS.primary1,
-        //     svgHref: customButtons.nextButton.svgHref,
-        //   },
-        //   pauseButton: {
-        //     fillColor: COLORS.primary1,
-        //     svgHref: customButtons.pauseButton.svgHref,
-        //   },
-        //   playButton: {
-        //     fillColor: COLORS.primary1,
-        //     svgHref: customButtons.playButton.svgHref,
-        //   },
-        //   previousButton: {
-        //     fillColor: COLORS.primary1,
-        //     svgHref: customButtons.previousButton.svgHref,
-        //   },
-        //   seekBackButton: {
-        //     fillColor: COLORS.primary1,
-        //     svgHref: customButtons.seekBackButton.svgHref,
-        //   },
-        //   seekForwardButton: {
-        //     fillColor: COLORS.primary1,
-        //     svgHref: customButtons.seekForwardButton.svgHref,
-        //   },
+          dots: {
+            fillColor: COLORS.primary1,
+            svgHref: customButtons.dots.svgHref,
+          },
+          nextButton: {
+            fillColor: COLORS.primary1,
+            svgHref: customButtons.nextButton.svgHref,
+          },
+          pauseButton: {
+            fillColor: COLORS.primary1,
+            svgHref: customButtons.pauseButton.svgHref,
+          },
+          playButton: {
+            fillColor: COLORS.primary1,
+            svgHref: customButtons.playButton.svgHref,
+          },
+          previousButton: {
+            fillColor: COLORS.primary1,
+            svgHref: customButtons.previousButton.svgHref,
+          },
+          seekBackButton: {
+            fillColor: COLORS.primary1,
+            svgHref: customButtons.seekBackButton.svgHref,
+          },
+          seekForwardButton: {
+            fillColor: COLORS.primary1,
+            svgHref: customButtons.seekForwardButton.svgHref,
+          },
         },
         fontFamily: {
           itemViewer: "monospace",
