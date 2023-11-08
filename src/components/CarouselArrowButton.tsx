@@ -1,3 +1,4 @@
+import React from "react";
 import { CarouselItemViewerCustomButton } from "./item-viewer/toolbar/CarouselItemViewerCustomButton";
 import {
   ArrowButtonDirection,
@@ -34,7 +35,7 @@ export const CarouselArrowButton = (props: CarouselArrowButtonProps) => {
     direction === ArrowButtonDirection.previous
       ? CarouselElement.arrowLeft
       : CarouselElement.arrowRight,
-    defaultColor,
+    defaultColor
   );
 
   if (

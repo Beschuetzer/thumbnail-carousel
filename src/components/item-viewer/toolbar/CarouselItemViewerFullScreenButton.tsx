@@ -1,4 +1,4 @@
-import { forwardRef, useCallback } from "react";
+import React, { forwardRef, useCallback } from "react";
 import {
   CLASSNAME__BUTTON_SCALE_ON_HOVER,
   CURRENT_VIDEO_CURRENT_TIME_DEFAULT,

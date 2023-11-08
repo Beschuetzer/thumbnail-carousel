@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import { CLASSNAME__BUTTON } from "../../constants";
 import { ButtonProps, CarouselElement } from "../../types";
 import { StylingLogic } from "../../business-logic/StylingLogic";
@@ -28,7 +28,7 @@ export const CloseButton = forwardRef<HTMLButtonElement, CloseButtonProps>(
     const colorStyle = StylingLogic.getColorStyle(
       fillColorToUse,
       "backgroundColor",
-      childStyle,
+      childStyle
     );
     const instanceWidth = parseInt(style.width as string, 10) || 0;
     const buttonName = CarouselElement.closeButton;
@@ -39,7 +39,7 @@ export const CloseButton = forwardRef<HTMLButtonElement, CloseButtonProps>(
           ...style,
           ...stylingLogic.getCarouselElementSizeStlye(
             buttonName,
-            instanceWidth,
+            instanceWidth
           ),
         }}
         ref={ref}
@@ -72,5 +72,5 @@ export const CloseButton = forwardRef<HTMLButtonElement, CloseButtonProps>(
         />
       </button>
     );
-  },
+  }
 );

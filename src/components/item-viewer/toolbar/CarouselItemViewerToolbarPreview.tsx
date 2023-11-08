@@ -1,3 +1,4 @@
+import React, { useMemo } from "react";
 import {
   getClassname,
   getIsVideo,
@@ -7,7 +8,6 @@ import { LoadingSpinner } from "../../LoadingSpinner";
 import { CLASSNAME__HIDDEN } from "../../../constants";
 import { CarouselItemProps } from "../../CarouselItem";
 import { CarouselItemViewerButtonProps, KeyInput } from "../../../types";
-import { useMemo } from "react";
 import { useBusinessLogic } from "../../../hooks/useBusinessLogic";
 
 export enum ToolbarPreviewDirection {

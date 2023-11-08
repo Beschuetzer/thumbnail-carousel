@@ -153,12 +153,14 @@ export const AboveCustomization7: Story = {
           padding: {
             left: 5,
             right: 50,
+            top: 5,
+            bottom: 50,
           },
         },
       },
     },
   },
-  name: "Different Left and Right Container Padding",
+  name: "Disparate Container Padding",
 };
 
 export const AboveCustomization8: Story = {

@@ -1,3 +1,4 @@
+import React from "react";
 import { useCarouselContext } from "../context";
 import { CarouselVideo, CarouselVideoOptions } from "./CarouselVideo";
 import {

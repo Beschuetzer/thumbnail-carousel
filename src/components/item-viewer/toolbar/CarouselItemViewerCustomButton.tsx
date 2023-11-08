@@ -1,4 +1,4 @@
-import { CSSProperties, forwardRef, useMemo } from "react";
+import React, { CSSProperties, forwardRef, useMemo } from "react";
 import {
   CLASSNAME__HIDDEN,
   CLASSNAME__ITEM_VIEWER_BUTTON,

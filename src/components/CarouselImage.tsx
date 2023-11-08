@@ -1,4 +1,4 @@
-import { useCallback, useLayoutEffect, useRef, useState } from "react";
+import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { CarouselItemProps } from "./CarouselItem";
 import {
   CarouselItemViewerToolbar,

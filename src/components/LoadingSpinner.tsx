@@ -1,4 +1,4 @@
-import { ReactNode, useCallback } from "react";
+import React, { ReactNode, useCallback } from "react";
 import { StylingLogic } from "../business-logic/StylingLogic";
 import { useCarouselContext } from "../context";
 import { CLASSNAME__LOADING_SPINNER } from "../constants";

@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+import React, { useCallback, useMemo, useRef, useState } from "react";
 import { CarouselItemViewerContainer } from "./item-viewer/toolbar/CarouselItemViewerContainer";
 import { useCarouselContext } from "../context";
 import { getIsVideo } from "../utils/utils";

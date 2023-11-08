@@ -1,4 +1,4 @@
-import { forwardRef, useCallback } from "react";
+import React, { forwardRef, useCallback } from "react";
 import { useCarouselContext } from "../../../context";
 import { CarouselItemViewerCustomButton } from "./CarouselItemViewerCustomButton";
 import { CloseButton } from "../../buttons/CloseButton";

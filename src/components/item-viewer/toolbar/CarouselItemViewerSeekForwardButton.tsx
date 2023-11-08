@@ -1,4 +1,4 @@
-import { forwardRef, useMemo } from "react";
+import React, { forwardRef, useMemo } from "react";
 import { useCarouselContext } from "../../../context";
 import { CarouselElement, CarouselItemViewerButtonProps } from "../../../types";
 import { SeekForwardButton } from "../../buttons/SeekForwardButton";

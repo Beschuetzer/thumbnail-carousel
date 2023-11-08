@@ -1,6 +1,6 @@
+import React, { forwardRef, useRef, useImperativeHandle, useMemo } from "react";
 import { getClassname } from "../../utils/utils";
 import { CLASSNAME__ITEM_VIEWER } from "../../constants";
-import { forwardRef, useRef, useImperativeHandle, useMemo } from "react";
 import { useCarouselContext } from "../../context";
 import { useBusinessLogic } from "../../hooks/useBusinessLogic";
 import { CarouselItemToRender } from "../CarouselItemToRender";

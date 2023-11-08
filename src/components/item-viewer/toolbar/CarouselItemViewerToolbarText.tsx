@@ -1,3 +1,4 @@
+import React from "react";
 import { CLASSNAME__ITEM_VIEWER_TOOLBAR_TEXT } from "../../../constants";
 import { useBusinessLogic } from "../../../hooks/useBusinessLogic";
 import { VideoTimeStrings } from "../../../types";

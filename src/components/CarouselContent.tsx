@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { ArrowButtonDirection, CarouselNavigationOptions } from "../types";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { CarouselProps } from "./Carousel";
 import {
   CAROUSEL_ITEM_SPACING_DEFAULT,
@@ -403,9 +403,9 @@ export const CarouselContent = (props: CarouselContentProps) => {
     function handleFullscreenChange() {
       //@ts-ignore
       const wasFullscreen =
-        !document.webkitIsFullScreen &&
-        !document.mozFullScreen &&
-        !document.msFullscreenElement;
+        !(document as any)?.webkitIsFullScreen &&
+        !(document as any)?.mozFullScreen &&
+        !(document as any)?.msFullscreenElement;
       if (wasFullscreen) {
         setIsFullscreenMode(false);
       }

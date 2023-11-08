@@ -1,4 +1,4 @@
-import { forwardRef, useCallback, useMemo } from "react";
+import React, { forwardRef, useCallback, useMemo } from "react";
 import { useCarouselContext } from "../context";
 import { useBusinessLogic } from "../hooks/useBusinessLogic";
 import { CarouselItemViewerCustomButton } from "./item-viewer/toolbar/CarouselItemViewerCustomButton";
