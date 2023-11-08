@@ -1,4 +1,6 @@
 Before Publishing
+  -fix issue where the width and height of CarouselItem (thumbnail) doesn't account for the border width/height when selected (see last case in Above Customization when switching between items on the same page
+  -fix width issue of description popup for items
   -write jest tests for utils and other functions?
   -create a CI/CD 
 

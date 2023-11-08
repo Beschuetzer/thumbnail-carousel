@@ -284,7 +284,7 @@ export const AboveCustomization11: Story = {
       },
       styling: {
         toolbar: {
-            textColor: COLORS.primary1
+          textColor: COLORS.primary1,
         },
         elements: {
           fullscreenButton: {
@@ -348,4 +348,217 @@ export const AboveCustomization11: Story = {
     },
   },
   name: "Custom Icons with Same Background Color",
+};
+
+export const AboveCustomization12: Story = {
+  args: {
+    items: items.slice(0, items.length - 1),
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+      },
+      thumbnail: {
+        size: 100,
+      },
+      styling: {
+        elements: {
+          closeButton: {
+            fillColor: COLORS.primary1,
+          },
+          arrowLeft: {
+            fillColor: COLORS.primary1,
+          },
+          arrowRight: {
+            fillColor: COLORS.primary1,
+          },
+          dots: {
+            fillColor: COLORS.primary1,
+          },
+          nextButton: {
+            fillColor: COLORS.primary1,
+          },
+          pauseButton: {
+            fillColor: COLORS.primary1,
+          },
+          playButton: {
+            fillColor: COLORS.primary1,
+          },
+          previousButton: {
+            fillColor: COLORS.primary1,
+          },
+          seekBackButton: {
+            fillColor: COLORS.primary1,
+          },
+          seekForwardButton: {
+            fillColor: COLORS.primary1,
+          },
+          fullscreenButton: {
+            fillColor: COLORS.primary1,
+          },
+        },
+        fontFamily: {
+          itemViewer: "monospace",
+        },
+        container: {
+          backgroundColor: COLORS.primary4,
+          padding: {
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+          },
+        },
+        toolbar: {
+          progressBar: {
+            backgroundColor: COLORS.primary4,
+            textOrForegroundColor: COLORS.primary1,
+          },
+        },
+      },
+    },
+  },
+  name: "Custom Progressbar Color",
+};
+
+export const AboveCustomization13: Story = {
+  args: {
+    items: items.slice(0, items.length - 1),
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+      },
+      thumbnail: {
+        size: 100,
+      },
+      styling: {
+        elements: {
+          all: {
+            fillColor: COLORS.primary1,
+          },
+          arrowLeft: {
+            fillColor: COLORS.primary2,
+          },
+          arrowRight: {
+            fillColor: COLORS.primary2,
+          },
+          dots: {
+            fillColor: COLORS.primary2,
+          },
+        },
+        fontFamily: {
+          itemViewer: "monospace",
+        },
+        container: {
+          backgroundColor: COLORS.primary4,
+          padding: {
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+          },
+        },
+        toolbar: {
+          progressBar: {
+            backgroundColor: COLORS.primary4,
+            textOrForegroundColor: COLORS.primary2,
+          },
+        },
+      },
+    },
+  },
+  name: "Custom Colors using All Option and Item Specific Overrides",
+};
+
+export const AboveCustomization14: Story = {
+  args: {
+    items: items.slice(0, items.length - 1),
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+      },
+      thumbnail: {
+        size: 100,
+      },
+      styling: {
+        elements: {
+          all: {
+            fillColor: COLORS.primary1,
+          },
+          arrowLeft: {
+            fillColor: COLORS.primary2,
+          },
+          arrowRight: {
+            fillColor: COLORS.primary2,
+          },
+          dots: {
+            fillColor: COLORS.primary2,
+          },
+        },
+        itemViewer: {
+          loadingSpinner: {
+            type: "circle",
+            options: {
+              textColor: COLORS.primary1,
+              spinnerColor: COLORS.primary2,
+              radius: 100,
+              width: 15,
+            },
+          },
+        },
+        fontFamily: {
+          itemViewer: "monospace",
+        },
+        container: {
+          backgroundColor: COLORS.primary4,
+          padding: {
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+          },
+        },
+        toolbar: {
+          progressBar: {
+            backgroundColor: COLORS.primary4,
+            textOrForegroundColor: COLORS.primary2,
+          },
+          textColor: COLORS.primary2,
+        },
+        modal: {
+          fontSize: 16,
+          padding: {
+            top: 30,
+            bottom: 30,
+            left: 60,
+            right: 60,
+          },
+          closeButton: {
+            fill: COLORS.primary1,
+          },
+          backgroundColor: `linear-gradient(270deg, #fff, #ccc)`,
+          textColor: COLORS.primary1,
+          widthInPercent: 90,
+        },
+      },
+    },
+  },
+  name: "Custom Modal Style and Loading Spinner",
+};
+
+export const AboveCustomization15: Story = {
+  args: {
+    items: items.slice(0, items.length - 1),
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+      },
+      thumbnail: {
+        size: 100,
+      },
+      navigation: {
+        autoChangePage: false,
+      },
+    },
+  },
+  name: "No Tracking Current Item",
 };

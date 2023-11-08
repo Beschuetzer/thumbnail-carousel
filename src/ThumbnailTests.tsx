@@ -2963,32 +2963,6 @@ enum SectionNames {
 }
 const SECTIONS: Sections = [
   [
-    SectionNames.aboveCustomization,
-    [
-      {
-        label: "Display Above Custom Icons with Same Background Color",
-        jsx: layoutAboveCompletelyFlushAndSameBackgroundColorWithCustomIcons,
-      },
-      {
-        label:
-          "Display Above Custom Icons with Default Icons using Custom Colors",
-        jsx: layoutAboveCompletelyFlushAndSameBackgroundColorWithCustomColors,
-      },
-      {
-        label: "Display Above buttons.all with Specific Item Fill Colors",
-        jsx: layoutAboveButtonsAllWithSpecificFillColors,
-      },
-      {
-        label: "Display Above Custom Modal Style and Loading Spinner",
-        jsx: layoutAboveCustomModalAndSpinner,
-      },
-      {
-        label: "Display Above No Tracking Current Item",
-        jsx: layoutAboveNoTrackingItemViewerChanges,
-      },
-    ],
-  ],
-  [
     SectionNames.belowCustomization,
     [
       {
