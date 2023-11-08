@@ -11,7 +11,7 @@ export const marginTop = [
 
 export const maringAllAround = [
   (Story: any) => (
-    <div style={{ margin: `10px ${window.innerWidth / 4}px 100px ${window.innerWidth / 4}px` }}>
+    <div style={{ margin: `10px 25% 100px 25%` }}>
       {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
       <Story />
     </div>
