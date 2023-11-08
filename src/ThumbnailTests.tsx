@@ -14,6 +14,7 @@ import {
   ValidKey,
 } from "../../../components/carousel2/types";
 import { CarouselItemProps } from "../../../components/carousel2/components/CarouselItem";
+import { COLORS } from "./stories/assets/colors";
 
 //#region Carousel Items
 const customButtons = {
@@ -22,7 +23,7 @@ const customButtons = {
   },
   fullScreenButton: {
     svgHref: "./sprite.svg#icon-fullscreen",
-    fillColor: getComputedStyleCustom("--color-primary-1"),
+    fillColor: COLORS.primary1,
     style: {
       transform: `translate(25%, 25%) scale(1.25)`,
     },
@@ -56,18 +57,18 @@ const customButtons = {
       transform: "scale(1.75)",
     },
     svgHref: "./sprite.svg#icon-dot-single",
-    fillColor: getComputedStyleCustom("--color-primary-1"),
+    fillColor: COLORS.primary1,
   },
   arrowLeft: {
     svgHref: "./sprite.svg#icon-angle-right",
-    fillColor: getComputedStyleCustom("--color-primary-1"),
+    fillColor: COLORS.primary1,
     style: {
       transform: "rotate(180deg) translateY(-5%)",
     },
   },
   arrowRight: {
     svgHref: "./sprite.svg#icon-angle-right",
-    fillColor: getComputedStyleCustom("--color-primary-1"),
+    fillColor: COLORS.primary1,
   },
 };
 
@@ -95,10 +96,10 @@ const allCustomSettings = (
         descriptionOverlay: {
           background: {
             solid: {
-              color: getComputedStyleCustom("--color-primary-2"),
+              color: COLORS.primary2,
             },
           },
-          textColor: getComputedStyleCustom("--color-primary-4"),
+          textColor: COLORS.primary4,
           fontSize: 14,
           hideDescriptionOverlayUnlessHovered: false,
         },
@@ -113,10 +114,10 @@ const noItemDisplayedMultiplePagesCustomItemViewerColors = (
     options={{
       styling: {
         modal: {
-          backgroundColor: getComputedStyleCustom("--color-primary-4"),
-          textColor: getComputedStyleCustom("--color-primary-1"),
+          backgroundColor: COLORS.primary4,
+          textColor: COLORS.primary1,
           closeButton: {
-            fill: getComputedStyleCustom("--color-primary-1"),
+            fill: COLORS.primary1,
             size: [
               [18, 550, "max-width"],
               [20, 655, "max-width"],
@@ -125,18 +126,18 @@ const noItemDisplayedMultiplePagesCustomItemViewerColors = (
           },
         },
         itemViewer: {
-          backgroundColor: getComputedStyleCustom("--color-primary-4"),
+          backgroundColor: COLORS.primary4,
         },
         toolbar: {
           progressBar: {
-            backgroundColor: getComputedStyleCustom("--color-primary-4"),
-            textOrForegroundColor: getComputedStyleCustom("--color-primary-1"),
+            backgroundColor: COLORS.primary4,
+            textOrForegroundColor: COLORS.primary1,
           },
-          textColor: getComputedStyleCustom("--color-primary-2"),
+          textColor: COLORS.primary2,
         },
         elements: {
           all: {
-            fillColor: getComputedStyleCustom("--color-primary-2"),
+            fillColor: COLORS.primary2,
           },
         },
       },
@@ -486,7 +487,7 @@ const dynamicMaxLineCount = (
         descriptionOverlay: {
           hideDescriptionOverlayUnlessHovered: false,
           maxLineCount: [[2], [1, 800]],
-          textColor: getComputedStyleCustom("--color-primary-4"),
+          textColor: COLORS.primary4,
         },
       },
     }}
@@ -545,8 +546,8 @@ const dynamicThumbnailModal = (
           background: {
             solid: {
               color: [
-                [getComputedStyleCustom("--color-primary-3")],
-                [getComputedStyleCustom("--color-primary-1"), 800],
+                [COLORS.primary3],
+                [COLORS.primary1, 800],
               ],
               opacity: [[1], [0.5, 800]],
             },
@@ -568,15 +569,15 @@ const dynamicThumbnailModalGradient = (
               angle: [[180], [90, 800]],
               start: {
                 color: [
-                  [getComputedStyleCustom("--color-primary-4")],
-                  [getComputedStyleCustom("--color-primary-2"), 800],
+                  [COLORS.primary4],
+                  [COLORS.primary2, 800],
                 ],
                 opacity: [[0.3], [0.25, 800]],
               },
               end: {
                 color: [
-                  [getComputedStyleCustom("--color-primary-1")],
-                  [getComputedStyleCustom("--color-primary-4"), 800],
+                  [COLORS.primary1],
+                  [COLORS.primary4, 800],
                 ],
                 opacity: [[0.75], [0.9, 800]],
               },
@@ -920,14 +921,14 @@ const customThumbnailSolid = (
         descriptionOverlay: {
           background: {
             solid: {
-              color: getComputedStyleCustom("--color-primary-1"),
+              color: COLORS.primary1,
               opacity: 0.8,
             },
           },
           fontSize: 8,
           hideDescriptionOverlayUnlessHovered: false,
           maxLineCount: 1,
-          textColor: getComputedStyleCustom("--color-primary-4"),
+          textColor: COLORS.primary4,
         },
         size: 100,
       },
@@ -944,11 +945,11 @@ const customThumbnailGradient = (
             gradient: {
               angle: 270,
               start: {
-                color: getComputedStyleCustom("--color-primary-4"),
+                color: COLORS.primary4,
                 opacity: 0.25,
               },
               end: {
-                color: getComputedStyleCustom("--color-primary-1"),
+                color: COLORS.primary1,
                 opacity: 0.75,
               },
             },
@@ -956,7 +957,7 @@ const customThumbnailGradient = (
           fontSize: 8,
           hideDescriptionOverlayUnlessHovered: false,
           maxLineCount: 1,
-          textColor: getComputedStyleCustom("--color-primary-4"),
+          textColor: COLORS.primary4,
         },
         size: 100,
       },
@@ -973,23 +974,23 @@ const customThumbnailGradientAndFallback = (
             gradient: {
               angle: 270,
               start: {
-                color: getComputedStyleCustom("--color-primary-4"),
+                color: COLORS.primary4,
                 opacity: 0.25,
               },
               end: {
-                color: getComputedStyleCustom("--color-primary-1"),
+                color: COLORS.primary1,
                 opacity: 0.75,
               },
             },
             solid: {
-              color: getComputedStyleCustom("--color-primary-1"),
+              color: COLORS.primary1,
               opacity: 0.25,
             },
           },
           fontSize: 8,
           hideDescriptionOverlayUnlessHovered: false,
           maxLineCount: 1,
-          textColor: getComputedStyleCustom("--color-primary-4"),
+          textColor: COLORS.primary4,
         },
         size: 100,
       },
@@ -1284,7 +1285,7 @@ const customButtonSizes = (
               [20, 655, "max-width"],
               [30, 900, "min-width"],
             ],
-            color: getComputedStyleCustom("--color-primary-3"),
+            color: COLORS.primary3,
           },
         },
         toolbar: {
@@ -1294,7 +1295,7 @@ const customButtonSizes = (
               [20, 655, "max-width"],
               [30, 900, "min-width"],
             ],
-            color: getComputedStyleCustom("--color-primary-4"),
+            color: COLORS.primary4,
           },
         },
         elements: {
@@ -1328,7 +1329,7 @@ const customButtonSizesWithCustomIcons = (
               [20, 655, "max-width"],
               [30, 900, "min-width"],
             ],
-            color: getComputedStyleCustom("--color-primary-3"),
+            color: COLORS.primary3,
           },
         },
         toolbar: {
@@ -1338,7 +1339,7 @@ const customButtonSizesWithCustomIcons = (
               [20, 655, "max-width"],
               [30, 900, "min-width"],
             ],
-            color: getComputedStyleCustom("--color-primary-4"),
+            color: COLORS.primary4,
           },
         },
         elements: {
@@ -1598,7 +1599,7 @@ const layoutAboveCompletelyFlushAndSameBackgroundColor = (
           itemViewer: "monospace",
         },
         container: {
-          backgroundColor: getComputedStyleCustom("--color-primary-4"),
+          backgroundColor: COLORS.primary4,
           padding: {
             left: 0,
             right: 0,
@@ -1607,28 +1608,28 @@ const layoutAboveCompletelyFlushAndSameBackgroundColor = (
           },
         },
         navigation: {
-          backgroundColor: getComputedStyleCustom("--color-primary-4"),
+          backgroundColor: COLORS.primary4,
           elements: {
-            color: getComputedStyleCustom("--color-primary-1"),
+            color: COLORS.primary1,
           },
         },
         itemViewer: {
-          backgroundColor: getComputedStyleCustom("--color-primary-4"),
+          backgroundColor: COLORS.primary4,
         },
         toolbar: {
           progressBar: {
-            backgroundColor: getComputedStyleCustom("--color-primary-1"),
-            textOrForegroundColor: getComputedStyleCustom("--color-primary-2"),
+            backgroundColor: COLORS.primary1,
+            textOrForegroundColor: COLORS.primary2,
           },
-          backgroundColor: getComputedStyleCustom("--color-primary-1"),
+          backgroundColor: COLORS.primary1,
           padding: {
             left: 20,
             right: 20,
           },
           elements: {
-            color: getComputedStyleCustom("--color-primary-4"),
+            color: COLORS.primary4,
           },
-          textColor: getComputedStyleCustom("--color-primary-4"),
+          textColor: COLORS.primary4,
         },
       },
     }}
@@ -1649,7 +1650,7 @@ const layoutAboveCompletelyFlushAndSameBackgroundColorProgressSpanWhole = (
           itemViewer: "monospace",
         },
         container: {
-          backgroundColor: getComputedStyleCustom("--color-primary-4"),
+          backgroundColor: COLORS.primary4,
           padding: {
             left: 0,
             right: 0,
@@ -1658,18 +1659,18 @@ const layoutAboveCompletelyFlushAndSameBackgroundColorProgressSpanWhole = (
           },
         },
         navigation: {
-          backgroundColor: getComputedStyleCustom("--color-primary-4"),
+          backgroundColor: COLORS.primary4,
         },
         itemViewer: {
-          backgroundColor: getComputedStyleCustom("--color-primary-4"),
+          backgroundColor: COLORS.primary4,
         },
         toolbar: {
           progressBar: {
             shouldSpanContainerWidth: true,
-            backgroundColor: getComputedStyleCustom("--color-primary-1"),
-            textOrForegroundColor: getComputedStyleCustom("--color-primary-2"),
+            backgroundColor: COLORS.primary1,
+            textOrForegroundColor: COLORS.primary2,
           },
-          backgroundColor: getComputedStyleCustom("--color-primary-1"),
+          backgroundColor: COLORS.primary1,
           padding: {
             left: 20,
             right: 20,
@@ -1677,13 +1678,13 @@ const layoutAboveCompletelyFlushAndSameBackgroundColorProgressSpanWhole = (
         },
         elements: {
           dots: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
           },
           arrowLeft: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
           },
           arrowRight: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
           },
         },
       },
@@ -1722,7 +1723,7 @@ const layoutAboveCompletelyFlushAndSameBackgroundColorAll = (
           itemViewer: "monospace",
         },
         container: {
-          backgroundColor: getComputedStyleCustom("--color-primary-4"),
+          backgroundColor: COLORS.primary4,
           padding: {
             left: 0,
             right: 0,
@@ -1732,7 +1733,7 @@ const layoutAboveCompletelyFlushAndSameBackgroundColorAll = (
         },
         elements: {
           all: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
           },
         },
       },
@@ -1752,47 +1753,47 @@ const layoutAboveCompletelyFlushAndSameBackgroundColorWithCustomIcons = (
       styling: {
         elements: {
           fullscreenButton: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
             svgHref: customButtons.fullScreenButton.svgHref,
           },
           closeButton: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
             svgHref: customButtons.closeButton.svgHref,
           },
           arrowLeft: {
             ...customButtons.arrowLeft,
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
           },
           arrowRight: {
             ...customButtons.arrowRight,
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
           },
           dots: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
             svgHref: customButtons.dots.svgHref,
           },
           nextButton: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
             svgHref: customButtons.nextButton.svgHref,
           },
           pauseButton: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
             svgHref: customButtons.pauseButton.svgHref,
           },
           playButton: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
             svgHref: customButtons.playButton.svgHref,
           },
           previousButton: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
             svgHref: customButtons.previousButton.svgHref,
           },
           seekBackButton: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
             svgHref: customButtons.seekBackButton.svgHref,
           },
           seekForwardButton: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
             svgHref: customButtons.seekForwardButton.svgHref,
           },
         },
@@ -1800,7 +1801,7 @@ const layoutAboveCompletelyFlushAndSameBackgroundColorWithCustomIcons = (
           itemViewer: "monospace",
         },
         container: {
-          backgroundColor: getComputedStyleCustom("--color-primary-4"),
+          backgroundColor: COLORS.primary4,
           padding: {
             left: 0,
             right: 0,
@@ -1825,44 +1826,44 @@ const layoutAboveCompletelyFlushAndSameBackgroundColorWithCustomColors = (
       styling: {
         elements: {
           closeButton: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
           },
           arrowLeft: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
           },
           arrowRight: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
           },
           dots: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
           },
           nextButton: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
           },
           pauseButton: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
           },
           playButton: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
           },
           previousButton: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
           },
           seekBackButton: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
           },
           seekForwardButton: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
           },
           fullscreenButton: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
           },
         },
         fontFamily: {
           itemViewer: "monospace",
         },
         container: {
-          backgroundColor: getComputedStyleCustom("--color-primary-4"),
+          backgroundColor: COLORS.primary4,
           padding: {
             left: 0,
             right: 0,
@@ -1872,8 +1873,8 @@ const layoutAboveCompletelyFlushAndSameBackgroundColorWithCustomColors = (
         },
         toolbar: {
           progressBar: {
-            backgroundColor: getComputedStyleCustom("--color-primary-4"),
-            textOrForegroundColor: getComputedStyleCustom("--color-primary-1"),
+            backgroundColor: COLORS.primary4,
+            textOrForegroundColor: COLORS.primary1,
           },
         },
       },
@@ -1893,23 +1894,23 @@ const layoutAboveButtonsAllWithSpecificFillColors = (
       styling: {
         elements: {
           all: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
           },
           arrowLeft: {
-            fillColor: getComputedStyleCustom("--color-primary-2"),
+            fillColor: COLORS.primary2,
           },
           arrowRight: {
-            fillColor: getComputedStyleCustom("--color-primary-2"),
+            fillColor: COLORS.primary2,
           },
           dots: {
-            fillColor: getComputedStyleCustom("--color-primary-2"),
+            fillColor: COLORS.primary2,
           },
         },
         fontFamily: {
           itemViewer: "monospace",
         },
         container: {
-          backgroundColor: getComputedStyleCustom("--color-primary-4"),
+          backgroundColor: COLORS.primary4,
           padding: {
             left: 0,
             right: 0,
@@ -1919,8 +1920,8 @@ const layoutAboveButtonsAllWithSpecificFillColors = (
         },
         toolbar: {
           progressBar: {
-            backgroundColor: getComputedStyleCustom("--color-primary-4"),
-            textOrForegroundColor: getComputedStyleCustom("--color-primary-2"),
+            backgroundColor: COLORS.primary4,
+            textOrForegroundColor: COLORS.primary2,
           },
         },
       },
@@ -1940,24 +1941,24 @@ const layoutAboveCustomModalAndSpinner = (
       styling: {
         elements: {
           all: {
-            fillColor: getComputedStyleCustom("--color-primary-1"),
+            fillColor: COLORS.primary1,
           },
           arrowLeft: {
-            fillColor: getComputedStyleCustom("--color-primary-2"),
+            fillColor: COLORS.primary2,
           },
           arrowRight: {
-            fillColor: getComputedStyleCustom("--color-primary-2"),
+            fillColor: COLORS.primary2,
           },
           dots: {
-            fillColor: getComputedStyleCustom("--color-primary-2"),
+            fillColor: COLORS.primary2,
           },
         },
         itemViewer: {
           loadingSpinner: {
             type: "circle",
             options: {
-              textColor: getComputedStyleCustom("--color-primary-1"),
-              spinnerColor: getComputedStyleCustom("--color-primary-2"),
+              textColor: COLORS.primary1,
+              spinnerColor: COLORS.primary2,
               radius: 100,
               width: 15,
             },
@@ -1967,7 +1968,7 @@ const layoutAboveCustomModalAndSpinner = (
           itemViewer: "monospace",
         },
         container: {
-          backgroundColor: getComputedStyleCustom("--color-primary-4"),
+          backgroundColor: COLORS.primary4,
           padding: {
             left: 0,
             right: 0,
@@ -1977,10 +1978,10 @@ const layoutAboveCustomModalAndSpinner = (
         },
         toolbar: {
           progressBar: {
-            backgroundColor: getComputedStyleCustom("--color-primary-4"),
-            textOrForegroundColor: getComputedStyleCustom("--color-primary-2"),
+            backgroundColor: COLORS.primary4,
+            textOrForegroundColor: COLORS.primary2,
           },
-          textColor: getComputedStyleCustom("--color-primary-2"),
+          textColor: COLORS.primary2,
         },
         modal: {
           fontSize: 16,
@@ -1991,10 +1992,10 @@ const layoutAboveCustomModalAndSpinner = (
             right: 60,
           },
           closeButton: {
-            fill: getComputedStyleCustom("--color-primary-1"),
+            fill: COLORS.primary1,
           },
           backgroundColor: `linear-gradient(270deg, #fff, #ccc)`,
-          textColor: getComputedStyleCustom("--color-primary-1"),
+          textColor: COLORS.primary1,
           widthInPercent: 90,
         },
       },
@@ -2389,11 +2390,11 @@ const themeAllValuesChangedDisplayNone = (
     options={{
       styling: {
         colorTheme: {
-          colorOne: getComputedStyleCustom("--color-primary-1"),
-          colorTwo: getComputedStyleCustom("--color-primary-2"),
-          colorThree: getComputedStyleCustom("--color-primary-2"),
-          colorFour: getComputedStyleCustom("--color-primary-3"),
-          colorFive: getComputedStyleCustom("--color-primary-4"),
+          colorOne: COLORS.primary1,
+          colorTwo: COLORS.primary2,
+          colorThree: COLORS.primary2,
+          colorFour: COLORS.primary3,
+          colorFive: COLORS.primary4,
         },
       },
     }}
@@ -2408,11 +2409,11 @@ const themeAllValuesChangedDisplayAbove = (
       },
       styling: {
         colorTheme: {
-          colorOne: getComputedStyleCustom("--color-primary-4"),
-          colorTwo: getComputedStyleCustom("--color-primary-2"),
-          colorThree: getComputedStyleCustom("--color-primary-2"),
-          colorFour: getComputedStyleCustom("--color-primary-3"),
-          colorFive: getComputedStyleCustom("--color-primary-1"),
+          colorOne: COLORS.primary4,
+          colorTwo: COLORS.primary2,
+          colorThree: COLORS.primary2,
+          colorFour: COLORS.primary3,
+          colorFive: COLORS.primary1,
         },
       },
     }}
@@ -2427,11 +2428,11 @@ const themeAllValuesChangedDisplayBelow = (
       },
       styling: {
         colorTheme: {
-          colorOne: getComputedStyleCustom("--color-primary-4"),
-          colorTwo: getComputedStyleCustom("--color-primary-2"),
-          colorThree: getComputedStyleCustom("--color-primary-2"),
-          colorFour: getComputedStyleCustom("--color-primary-3"),
-          colorFive: getComputedStyleCustom("--color-primary-1"),
+          colorOne: COLORS.primary4,
+          colorTwo: COLORS.primary2,
+          colorThree: COLORS.primary2,
+          colorFour: COLORS.primary3,
+          colorFive: COLORS.primary1,
         },
       },
     }}
@@ -2447,19 +2448,19 @@ const themeAllValuesChangedDisplayAboveDefaultForFullscreen = (
       styling: {
         colorTheme: {
           colorOne: {
-            nonFullscreen: getComputedStyleCustom("--color-primary-4"),
+            nonFullscreen: COLORS.primary4,
           },
           colorTwo: {
-            nonFullscreen: getComputedStyleCustom("--color-primary-2"),
+            nonFullscreen: COLORS.primary2,
           },
           colorThree: {
-            nonFullscreen: getComputedStyleCustom("--color-primary-2"),
+            nonFullscreen: COLORS.primary2,
           },
           colorFour: {
-            nonFullscreen: getComputedStyleCustom("--color-primary-3"),
+            nonFullscreen: COLORS.primary3,
           },
           colorFive: {
-            nonFullscreen: getComputedStyleCustom("--color-primary-1"),
+            nonFullscreen: COLORS.primary1,
           },
         },
       },
@@ -2497,12 +2498,12 @@ const viewingModeVideoCurrentStateIndicator = (
         videoCurrentStateIndicator: {
           backgroundColor: {
             fullscreen: [
-              [getComputedStyleCustom("--color-primary-1")],
-              [getComputedStyleCustom("--color-primary-2"), 800],
+              [COLORS.primary1],
+              [COLORS.primary2, 800],
             ],
             nonFullscreen: [
-              [getComputedStyleCustom("--color-primary-3")],
-              [getComputedStyleCustom("--color-primary-4"), 800],
+              [COLORS.primary3],
+              [COLORS.primary4, 800],
             ],
           },
           textOrForegroundColor: {
@@ -2917,44 +2918,6 @@ enum SectionNames {
   thumbnailOptions = "Thumbnail Options",
 }
 const SECTIONS: Sections = [
-  [
-    SectionNames.thumbnailOptions,
-    [
-      {
-        label: "Fixed Item Spacing and Custom Item Size",
-        jsx: allCustomSettings,
-      },
-      {
-        label:
-          "Fixed Item Spacing and Custom Item Size with Non-default Item Display Location",
-        jsx: customSizeAndSpacingNonDefaultItemDisplayCase,
-      },
-      {
-        label: "Given Thumbnail Size with Custom Solid Modal",
-        jsx: customThumbnailSolid,
-      },
-      {
-        label: "Given Thumbnail Size with Custom Gradient Modal",
-        jsx: customThumbnailGradient,
-      },
-      {
-        label: "Given Thumbnail Size with Custom Gradient Modal and Fallback",
-        jsx: customThumbnailGradientAndFallback,
-      },
-      {
-        label: "Custom Current Item Border - Input Format One",
-        jsx: customThumbnailCurrentItemBorderOne,
-      },
-      {
-        label: "Custom Current Item Border - Input Format Two",
-        jsx: customThumbnailCurrentItemBorderTwo,
-      },
-      {
-        label: "Custom Current Item Border - Input Format Three",
-        jsx: customThumbnailCurrentItemBorderThree,
-      },
-    ],
-  ],
   [
     SectionNames.dynamicLayout,
     [

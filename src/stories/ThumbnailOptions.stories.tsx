@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Carousel } from "../components/Carousel";
 import { items } from "./assets/items";
-import { marginTop } from "./decorators";
+import { marginTop, maringAllAround } from "./decorators";
 import { customButtons } from "./custom-buttons";
 import { COLORS } from "./assets/colors";
 import { carouselShortcuts } from "./carousel-shortcuts";
@@ -73,7 +73,6 @@ export const ThumbnailOptions4: Story = {
   name: "0 Item Spacing",
 };
 
-
 export const ThumbnailOptions5: Story = {
   args: {
     items: items.slice(0, items.length - 1),
@@ -107,4 +106,162 @@ export const ThumbnailOptions5: Story = {
     },
   },
   name: "Fixed Item Spacing and Custom Item Size",
+};
+
+export const ThumbnailOptions6: Story = {
+  args: {
+    items: items.slice(0, items.length - 1),
+    options: {
+      thumbnail: {
+        size: 200,
+        spacing: 5,
+      },
+      layout: {
+        itemDisplayLocation: "above",
+      },
+    },
+  },
+  name: "Fixed Item Spacing and Custom Item Size with Non-default Item Display Location",
+  decorators: maringAllAround,
+};
+
+export const ThumbnailOptions7: Story = {
+  args: {
+    items: items.slice(0, items.length - 1),
+    options: {
+      thumbnail: {
+        descriptionOverlay: {
+          background: {
+            solid: {
+              color: COLORS.primary1,
+              opacity: 0.8,
+            },
+          },
+          fontSize: 8,
+          hideDescriptionOverlayUnlessHovered: false,
+          maxLineCount: 1,
+          textColor: COLORS.primary4,
+        },
+        size: 100,
+      },
+    },
+  },
+  name: "Given Thumbnail Size with Custom Solid Modal",
+  decorators: maringAllAround,
+};
+
+export const ThumbnailOptions8: Story = {
+  args: {
+    items: items.slice(0, items.length - 1),
+    options: {
+      thumbnail: {
+        descriptionOverlay: {
+          background: {
+            gradient: {
+              angle: 270,
+              start: {
+                color: COLORS.primary4,
+                opacity: 0.25,
+              },
+              end: {
+                color: COLORS.primary1,
+                opacity: 0.75,
+              },
+            },
+          },
+          fontSize: 8,
+          hideDescriptionOverlayUnlessHovered: false,
+          maxLineCount: 1,
+          textColor: COLORS.primary4,
+        },
+        size: 100,
+      },
+    },
+  },
+  name: "Given Thumbnail Size with Custom Gradient Modal",
+  decorators: maringAllAround,
+};
+
+export const ThumbnailOptions9: Story = {
+  args: {
+    items: items.slice(0, items.length - 1),
+    options: {
+      thumbnail: {
+        descriptionOverlay: {
+          background: {
+            gradient: {
+              angle: 270,
+              start: {
+                color: COLORS.primary4,
+                opacity: 0.25,
+              },
+              end: {
+                color: COLORS.primary1,
+                opacity: 0.75,
+              },
+            },
+            solid: {
+              color: COLORS.primary1,
+              opacity: 0.25,
+            },
+          },
+          fontSize: 8,
+          hideDescriptionOverlayUnlessHovered: false,
+          maxLineCount: 1,
+          textColor: COLORS.primary4,
+        },
+        size: 100,
+      },
+    },
+  },
+  name: "Given Thumbnail Size with Custom Gradient Modal and Fallback",
+  decorators: maringAllAround,
+};
+
+export const ThumbnailOptions10: Story = {
+  args: {
+    items: items.slice(0, items.length - 1),
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+      },
+      thumbnail: {
+        currentItemBorder: `2px dotted ${COLORS.primary3}`,
+      },
+    },
+  },
+  name: "Custom Current Item Border - Input Format One",
+  decorators: maringAllAround,
+};
+
+export const ThumbnailOptions11: Story = {
+  args: {
+    items: items.slice(0, items.length - 1),
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+      },
+      thumbnail: {
+        currentItemBorder: `  1mm  ridge  rgba(255,  255,  255,   .75) `,
+      },
+    },
+  },
+  name: "Custom Current Item Border - Input Format Two",
+  decorators: maringAllAround,
+};
+
+export const ThumbnailOptions12: Story = {
+  args: {
+    items: items.slice(0, items.length - 1),
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+      },
+      thumbnail: {
+        currentItemBorder: "thick double #9b9b9b",
+      },
+    },
+  },
+  name: "Custom Current Item Border - Input Format Three",
+  decorators: maringAllAround,
 };
