@@ -1,5 +1,4 @@
 Before Publishing
-  -fix bug where preview video doesn't match up with the actual video
   -write jest tests for utils and other functions?
   -create a CI/CD 
 

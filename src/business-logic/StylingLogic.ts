@@ -805,8 +805,6 @@ export class StylingLogic {
       right: 0,
       bottom: 0,
       width: "100%",
-      paddingLeft: this.carouselVideoContainerStyle.paddingLeft,
-      paddingRight: this.carouselVideoContainerStyle.paddingRight,
       ...this.getCarouselVideoCommonStyles(itemContainerHeight),
     } as CSSProperties;
   }
