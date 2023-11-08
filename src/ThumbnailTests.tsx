@@ -2966,10 +2966,6 @@ const SECTIONS: Sections = [
     SectionNames.aboveCustomization,
     [
       {
-        label: "Display Above Flush with Progress Bar Whole Width",
-        jsx: layoutAboveCompletelyFlushAndSameBackgroundColorProgressSpanWhole,
-      },
-      {
         label: "Defaults with Progress Bar showing previous location on change",
         jsx: layoutAboveProgressShowGrabLocation,
       },
