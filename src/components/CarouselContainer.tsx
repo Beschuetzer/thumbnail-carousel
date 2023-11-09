@@ -21,7 +21,8 @@ export const CarouselContainer = (props: CarouselTitleContainerProps) => {
         <Tag
           style={{
             padding: `${CAROUSEL_ITEM_SPACING_DEFAULT}${CAROUSEL_SPACING_UNIT} 0`,
-            textStyle,
+            margin: 0,
+            ...textStyle,
           }}
         >
           {text}
