@@ -358,8 +358,6 @@ export class StylingLogic {
     const verticalAlignment =
       this.optionsLogic.itemViewerPreviewTextContainerVerticalAlignment;
     const hitSlopTop = this.getCarouselVideoProgressHitSlop().paddingTop;
-    const top = 0;
-    const right = this.toolbarInnerContainerStyle.paddingRight;
     const isVideo = getIsVideo(this.currentItem);
     const translateYSpacing = `-${CAROUSEL_PROGRESS_BAR_CONTAINER_HEIGHT_DEFAULT}${CAROUSEL_SPACING_UNIT}`;
     const translateYAmount =
@@ -370,8 +368,9 @@ export class StylingLogic {
     return {
       width: !shouldShowImageJSX ? width / 2 : width,
       height,
-      top,
-      right,
+      top: 0,
+      right: 0,
+      // right: this.toolbarInnerContainerStyle.paddingRight,
       backgroundColor: convertHexToRgba(
         background,
         parseFloat(opacity as string)
