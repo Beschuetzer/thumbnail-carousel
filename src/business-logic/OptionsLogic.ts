@@ -563,7 +563,7 @@ export class OptionsLogic {
   get modalBackgroundColor() {
     return getCurrentValue(
       this.options?.styling?.modal?.backgroundColor,
-      this.theme.colorOne,
+      this.theme.colorFour,
       this.isFullscreenMode
     );
   }
@@ -662,7 +662,7 @@ export class OptionsLogic {
   get modalTextColor() {
     return getCurrentValue(
       this.options?.styling?.modal?.textColor,
-      this.theme.colorFive,
+      this.theme.colorOne,
       this.isFullscreenMode
     );
   }

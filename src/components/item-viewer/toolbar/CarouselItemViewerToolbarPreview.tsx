@@ -71,7 +71,7 @@ export const CarouselItemViewerToolbarPreview = (
             containerMargin: "0px",
           }}
           description={""}
-          show={true}
+          show={!isLoaded}
         />
         <img
           style={stylingLogic.carouselItemViewerPreviewImageStyle}

@@ -560,12 +560,6 @@ export class StylingLogic {
     } = this.optionsLogic.modalPadding;
     const widthToUse = this.optionsLogic.getModalWidth(isMinimized);
     const customFontSize = this.optionsLogic.modalFontSize;
-    const toolbarInnerContainerPaddingLeft = Number(
-      this.toolbarInnerContainerStyle?.paddingLeft || 0,
-    );
-    const toolbarInnerContainerPaddingRight = Number(
-      this.toolbarInnerContainerStyle?.paddingRight || 0,
-    );
     const carouselPaddingTop = this.optionsLogic.getPaddingAmount(
       SpacingDirection.top,
       CarouselSection.container,
@@ -674,7 +668,7 @@ export class StylingLogic {
     const widthStyle = {
       width: widthToUse,
       maxWidth: `calc(${widthToUse} - ${
-        toolbarInnerContainerPaddingLeft + toolbarInnerContainerPaddingRight
+        paddingLeft + paddingRight
       }${CAROUSEL_SPACING_UNIT})`,
       boxShadow: `0 10px 15px -3px rgba(0,0,0,.25)`,
     } as CSSProperties;
@@ -695,7 +689,8 @@ export class StylingLogic {
     const positionStyle = {
       top: "auto",
       bottom: Math.abs(this.carouselShortcutIndicatorTextTop) + 24,
-      left: `${toolbarInnerContainerPaddingLeft + 1}${CAROUSEL_SPACING_UNIT}`,
+      // left: `${toolbarInnerContainerPaddingLeft + 1}${CAROUSEL_SPACING_UNIT}`,
+      left: 0,
       right: "auto",
     } as CSSProperties;
     const textStyle = {
