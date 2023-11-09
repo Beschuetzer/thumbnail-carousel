@@ -6,7 +6,6 @@ Before Publishing
   -write jest tests for utils and other functions?
   -create a CI/CD 
 
-
 Enhancements
   -add logic to only render the items on the current page + next page?
   -add volume button for videos?

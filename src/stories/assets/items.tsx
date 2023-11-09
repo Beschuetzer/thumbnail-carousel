@@ -159,7 +159,7 @@ export const items = [
         <section>
           <h4
             style={{
-              color: "white",
+              marginTop: 8,
               fontSize: 18,
               padding: "0 30px 10px 0",
             }}
@@ -333,7 +333,7 @@ export const items = [
           <section>
             <h4
               style={{
-                color: "white",
+                marginTop: 8,
                 fontSize: 18,
                 padding: "0 30px 10px 0",
               }}
