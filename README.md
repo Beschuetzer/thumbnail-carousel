@@ -9,6 +9,7 @@ If you want to display multiple images/videos inside of a single carousel, this 
 ### Getting starting
 
 
+
 ### Examples
 
 The [story book](https://beschuetzer.github.io/thumbnail-carousel/?path=/docs/thumbnail-carousel-layout--docs) is the best way to learn about customization options.
