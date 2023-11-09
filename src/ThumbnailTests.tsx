@@ -2919,44 +2919,6 @@ enum SectionNames {
 }
 const SECTIONS: Sections = [
   [
-    SectionNames.itemViewer,
-    [
-      {
-        label: "Custom Item Viewer Font",
-        jsx: itemViewerCustomItemViewerFont,
-      },
-      {
-        label: "Custom Navigation Font",
-        jsx: itemViewerCustomNavigationFont,
-      },
-      {
-        label: "Custom Navigation and Item Viewer Fonts",
-        jsx: itemViewerCustomFontBoth,
-      },
-      {
-        label: "Full-screen Swiping Disabled",
-        jsx: itemViewerSwipingDisabled,
-      },
-      {
-        label: "Full-screen Max Click Threshold 0",
-        jsx: itemViewerMaxClickThresholdZero,
-      },
-      {
-        label: "Modal Minimized Opacity is .15",
-        jsx: itemViewerModalMinimizedOpacity,
-      },
-      {
-        label: "Modal only Minimized via Close Button",
-        jsx: itemViewerModalMinimizeOnlyViaCloseButton,
-      },
-      {
-        label:
-          "Modal Remains Closed When Switching Items in Nonfullscreen but Not Fullscreen",
-        jsx: itemViewerModalMaintainsMinimizedState,
-      },
-    ],
-  ],
-  [
     SectionNames.itemViewerAspectRatio,
     [
       {

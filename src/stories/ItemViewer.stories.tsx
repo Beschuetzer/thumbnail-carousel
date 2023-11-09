@@ -80,12 +80,117 @@ export const Story5: Story = {
   name: "Seek amount 2 sec (Click item to view)",
 };
 
-export const Story6: Story = {
+export const Story7: Story = {
   args: {
     items: items,
     options: {
-      shortcuts: carouselShortcuts,
+      styling: {
+        fontFamily: {
+          itemViewer: "monospace",
+        },
+      },
     },
   },
-  name: "All custom keyboard shortcuts",
+  name: "Custom Item Viewer Font",
+};
+
+export const Story8: Story = {
+  args: {
+    items: items,
+    options: {
+      styling: {
+        fontFamily: {
+          navigation: "monospace",
+        },
+      },
+    },
+  },
+  name: "Custom Navigation Font",
+};
+
+export const Story9: Story = {
+  args: {
+    items: items,
+    options: {
+      styling: {
+        fontFamily: {
+          all: "monospace",
+        },
+      },
+    },
+  },
+  name: "Custom Navigation and Item Viewer Fonts",
+};
+
+export const Story10: Story = {
+  args: {
+    items: items,
+    options: {
+      itemViewer: {
+        disableSwiping: true,
+      },
+    },
+  },
+  name: "Full-screen Swiping Disabled",
+};
+
+export const Story11: Story = {
+  args: {
+    items: items,
+    options: {
+      itemViewer: {
+        maxClickThreshold: 0,
+      },
+    },
+  },
+  name: "Full-screen Max Click Threshold 0",
+};
+
+export const Story12: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+      },
+      styling: {
+        modal: {
+          opacityWhenMinimized: 0.15,
+        },
+      },
+    },
+  },
+  name: "Modal Minimized Opacity is .15",
+};
+
+export const Story13: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        itemDisplayLocation: "below",
+      },
+      modal: {
+        minimizeOnClick: false,
+      },
+    },
+  },
+  name: "Modal only Minimized via Close Button",
+};
+
+export const Story14: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        itemDisplayLocation: "below",
+      },
+      modal: {
+        maintainMinimizedStateAcrossItems: {
+          nonFullscreen: true,
+        },
+      },
+    },
+  },
+  name: "Modal Remains Closed When Switching Items (only in Fullscreen Mode)",
 };
