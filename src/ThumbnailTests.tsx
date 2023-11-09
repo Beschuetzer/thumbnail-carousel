@@ -2919,28 +2919,6 @@ enum SectionNames {
 }
 const SECTIONS: Sections = [
   [
-    SectionNames.theme,
-    [
-      {
-        label: "Change All theme Values - Default Display Location",
-        jsx: themeAllValuesChangedDisplayNone,
-      },
-      {
-        label: "Change All theme Values - Above Display Location",
-        jsx: themeAllValuesChangedDisplayAbove,
-      },
-      {
-        label: "Change All theme Values - Below Display Location",
-        jsx: themeAllValuesChangedDisplayBelow,
-      },
-      {
-        label:
-          "Change All theme Values but Default when Fullscreen - Above Display Location",
-        jsx: themeAllValuesChangedDisplayAboveDefaultForFullscreen,
-      },
-    ],
-  ],
-  [
     SectionNames.custom,
     [
       {
