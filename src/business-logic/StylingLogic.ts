@@ -194,11 +194,11 @@ export class StylingLogic {
     const common = {
       paddingTop: this.optionsLogic.getPaddingAmount(
         SpacingDirection.top,
-        CarouselSection.itemViewer,
+        CarouselSection.itemViewer
       ),
       paddingBottom: this.optionsLogic.getPaddingAmount(
         SpacingDirection.bottom,
-        CarouselSection.itemViewer,
+        CarouselSection.itemViewer
       ),
       marginTop:
         parseInt((marginTop as string) || "0", 10) -
@@ -246,8 +246,12 @@ export class StylingLogic {
         } as CSSProperties)
       : {};
     const widthStyle = {
-      width: this.isCurrentItem ? this.optionsLogic.thumbnailSizeCurrentItem : this.optionsLogic.thumbnailSize,
-      height: this.isCurrentItem ? this.optionsLogic.thumbnailSizeCurrentItem : this.optionsLogic.thumbnailSize,
+      width: this.isCurrentItem
+        ? this.optionsLogic.thumbnailSizeCurrentItem
+        : this.optionsLogic.thumbnailSize,
+      height: this.isCurrentItem
+        ? this.optionsLogic.thumbnailSizeCurrentItem
+        : this.optionsLogic.thumbnailSize,
     } as CSSProperties;
     const selectionStyle = this.isCurrentItemSelected
       ? ({
@@ -292,7 +296,7 @@ export class StylingLogic {
         : convertColorNameToHex(lastBorderElement);
     const borderToUse = `1px solid ${convertHexToRgba(
       color || this.optionsLogic.theme.colorFive,
-      CAROUSEL_ITEM_VIEWER_PREVIEW_BORDER_CENTER_LINE_OPACITY_DEFAULT,
+      CAROUSEL_ITEM_VIEWER_PREVIEW_BORDER_CENTER_LINE_OPACITY_DEFAULT
     )}`;
 
     return {
@@ -370,7 +374,7 @@ export class StylingLogic {
       right,
       backgroundColor: convertHexToRgba(
         background,
-        parseFloat(opacity as string),
+        parseFloat(opacity as string)
       ),
       border: border,
       borderRadius: borderRadius,
@@ -387,11 +391,11 @@ export class StylingLogic {
     const common = {
       marginLeft: `${this.optionsLogic.getPaddingAmount(
         SpacingDirection.left,
-        CarouselSection.navigation,
+        CarouselSection.navigation
       )}${CAROUSEL_SPACING_UNIT}`,
       marginRight: `${this.optionsLogic.getPaddingAmount(
         SpacingDirection.right,
-        CarouselSection.navigation,
+        CarouselSection.navigation
       )}${CAROUSEL_SPACING_UNIT}`,
       overflow: "hidden",
     } as CSSProperties;
@@ -462,11 +466,11 @@ export class StylingLogic {
         ? ({
             width: Math.min(
               radius || Number.MAX_SAFE_INTEGER,
-              containerLength || Number.MAX_SAFE_INTEGER,
+              containerLength || Number.MAX_SAFE_INTEGER
             ),
             height: Math.min(
               radius || Number.MAX_SAFE_INTEGER,
-              containerLength || Number.MAX_SAFE_INTEGER,
+              containerLength || Number.MAX_SAFE_INTEGER
             ),
           } as React.CSSProperties)
         : {};
@@ -547,7 +551,7 @@ export class StylingLogic {
   getCarouselModalStyle(
     shouldHide: boolean,
     modalHeight: number,
-    isMinimized = false,
+    isMinimized = false
   ) {
     this.modalHeight = Math.max(this.modalHeight, modalHeight);
     const minimizeOnClick = this.optionsLogic.modalMinimizeOnClick;
@@ -562,13 +566,13 @@ export class StylingLogic {
     const customFontSize = this.optionsLogic.modalFontSize;
     const carouselPaddingTop = this.optionsLogic.getPaddingAmount(
       SpacingDirection.top,
-      CarouselSection.container,
+      CarouselSection.container
     );
     const progressBarPaddingTop =
       this.getCarouselVideoProgressHitSlop().paddingTop;
     const toolbarPaddingBottom = this.optionsLogic.getPaddingAmount(
       SpacingDirection.bottom,
-      CarouselSection.toolbar,
+      CarouselSection.toolbar
     );
     const spaceBetweenModalTopAndItemTop = CAROUSEL_ITEM_SPACING_DEFAULT * 2;
     let maxHeight = 0;
@@ -578,23 +582,23 @@ export class StylingLogic {
       if (this.isFullscreenMode) {
         const itemViewer = this.itemViewerRef?.current;
         const progressBar = itemViewer?.querySelector(
-          `.${CLASSNAME__TOOLBAR_PROGRESS}`,
+          `.${CLASSNAME__TOOLBAR_PROGRESS}`
         );
         const progressBarRect = progressBar?.getBoundingClientRect();
 
         if (this.isCurrentItemVideo) {
           heightBetweenItemTopAndToolbarBarTop = Math.abs(
-            progressBarRect?.top || window.innerHeight * 0.9,
+            progressBarRect?.top || window.innerHeight * 0.9
           );
         } else {
           const toolbar = itemViewer?.querySelector(
-            `.${CLASSNAME__ITEM_VIEWER_TOOLBAR}`,
+            `.${CLASSNAME__ITEM_VIEWER_TOOLBAR}`
           );
           const toolbarFirstDiv = toolbar?.querySelector("div");
           const toolbarFirstDivRect = toolbarFirstDiv?.getBoundingClientRect();
           heightBetweenItemTopAndToolbarBarTop = Math.abs(
             (toolbarFirstDivRect?.top || window.innerHeight * 0.925) +
-              toolbarPaddingBottom,
+              toolbarPaddingBottom
           );
         }
 
@@ -606,14 +610,14 @@ export class StylingLogic {
           this.carouselContainerRef?.current?.getBoundingClientRect();
         const toolbarProgress =
           this.carouselContainerRef?.current?.querySelector(
-            `.${CLASSNAME__TOOLBAR_PROGRESS}`,
+            `.${CLASSNAME__TOOLBAR_PROGRESS}`
           );
         const itemViewerToolbar =
           this.carouselContainerRef?.current?.querySelector(
-            `.${CLASSNAME__ITEM_VIEWER_TOOLBAR}`,
+            `.${CLASSNAME__ITEM_VIEWER_TOOLBAR}`
           );
         const itemContainer = this.carouselContainerRef?.current?.querySelector(
-          `.${CLASSNAME__ITEM_CONTAINER}`,
+          `.${CLASSNAME__ITEM_CONTAINER}`
         );
         const elementToUse =
           this.isCurrentItemVideo && isToolbarEmbedded
@@ -636,24 +640,24 @@ export class StylingLogic {
             ? elementToUseRect.y + progressBarPaddingTop
             : elementFirstDivRect.y + toolbarPaddingBottom;
           heightBetweenItemTopAndToolbarBarTop = Math.abs(
-            carouselContainerRect.y + carouselPaddingTop - toolbarTop,
+            carouselContainerRect.y + carouselPaddingTop - toolbarTop
           );
 
           if (this.optionsLogic.isItemDisplayLocationBelow) {
             const itemContainerRect = itemContainer?.getBoundingClientRect();
             if (itemContainerRect) {
               heightBetweenItemTopAndToolbarBarTop = Math.abs(
-                itemContainerRect?.top - toolbarTop,
+                itemContainerRect?.top - toolbarTop
               );
               maxHeight = Math.floor(
                 heightBetweenItemTopAndToolbarBarTop -
-                  spaceBetweenModalTopAndItemTop * 2,
+                  spaceBetweenModalTopAndItemTop * 2
               );
             }
           } else {
             maxHeight = Math.floor(
               heightBetweenItemTopAndToolbarBarTop -
-                spaceBetweenModalTopAndItemTop * 2,
+                spaceBetweenModalTopAndItemTop * 2
             );
           }
 
@@ -787,7 +791,7 @@ export class StylingLogic {
 
   getCarouselVideoCurrentTimeViewerStyle(
     shouldShow: boolean,
-    itemContainerHeight: CSSProperties["height"],
+    itemContainerHeight: CSSProperties["height"]
   ) {
     if (!shouldShow)
       return {
@@ -806,7 +810,7 @@ export class StylingLogic {
 
   getCarouselVideoStyle(
     shouldHide: boolean,
-    itemContainerHeight: CarouselContextOutputProps["itemContainerHeight"],
+    itemContainerHeight: CarouselContextOutputProps["itemContainerHeight"]
   ) {
     return !this.optionsLogic.isDefaultItemDisplayLocation
       ? ({
@@ -832,11 +836,11 @@ export class StylingLogic {
       ? `calc(100% + ${
           this.optionsLogic.getPaddingAmount(
             SpacingDirection.left,
-            CarouselSection.toolbar,
+            CarouselSection.toolbar
           ) +
           this.optionsLogic.getPaddingAmount(
             SpacingDirection.right,
-            CarouselSection.toolbar,
+            CarouselSection.toolbar
           )
         }${CAROUSEL_SPACING_UNIT})`
       : `100%`;
@@ -868,7 +872,7 @@ export class StylingLogic {
     left: number,
     index: number,
     sectionsLength: number,
-    isBackgroundDiv = false,
+    isBackgroundDiv = false
   ) {
     const isFirst = index === 0;
     const isLast = index === sectionsLength - 1;
@@ -910,7 +914,7 @@ export class StylingLogic {
     left: number,
     index: number,
     sectionsLength: number,
-    currentSectionIndex: number,
+    currentSectionIndex: number
   ) {
     const isCurrentSection = index === currentSectionIndex;
     const scaleAmount = this.optionsLogic.videoProgressBarScaleAmount;
@@ -927,7 +931,7 @@ export class StylingLogic {
         left,
         index,
         sectionsLength,
-        true,
+        true
       ),
     } as CSSProperties;
 
@@ -967,7 +971,7 @@ export class StylingLogic {
     left: number,
     index: number,
     sectionsLength: number,
-    currentSectionIndex: number,
+    currentSectionIndex: number
   ) {
     const isCurrent = index === currentSectionIndex;
 
@@ -981,7 +985,7 @@ export class StylingLogic {
         percent,
         left,
         index,
-        sectionsLength,
+        sectionsLength
       ),
       zIndex: 2,
       touchAction: "none",
@@ -991,7 +995,7 @@ export class StylingLogic {
   getCarouselVideoProgressSeekDotStyle(
     percentWidthDecimal: number,
     isVisible: boolean,
-    isInCurrentSection: boolean,
+    isInCurrentSection: boolean
   ) {
     const scaleAmount = this.optionsLogic.videoProgressBarScaleAmount;
     const { diameter, isAlwaysVisible, transitionDuration } =
@@ -1023,7 +1027,7 @@ export class StylingLogic {
     left: number,
     index: number,
     sectionsLength: number,
-    currentSectionIndex: number,
+    currentSectionIndex: number
   ) {
     const isCurrent = index === currentSectionIndex;
     return {
@@ -1038,7 +1042,7 @@ export class StylingLogic {
         percent,
         left,
         index,
-        sectionsLength,
+        sectionsLength
       ),
     } as CSSProperties;
   }
@@ -1062,7 +1066,7 @@ export class StylingLogic {
     toolbarElement: Element,
     screenShotTextElement: Element | undefined | null,
     screenShotCanvasElement: Element | undefined,
-    textTranslateOffsetRef: React.MutableRefObject<TextTranslateOffset>,
+    textTranslateOffsetRef: React.MutableRefObject<TextTranslateOffset>
   ) {
     const { width } = this.optionsLogic.videoProgressBarScreenshotViewer;
     const {
@@ -1080,7 +1084,7 @@ export class StylingLogic {
     const screenShotCanvasRect =
       screenShotCanvasElement?.getBoundingClientRect();
     const progressBarElement = toolbarElement?.querySelector(
-      `.${CLASSNAME__TOOLBAR_PROGRESS}`,
+      `.${CLASSNAME__TOOLBAR_PROGRESS}`
     );
     const progressBarRect = progressBarElement?.getBoundingClientRect();
     const { paddingBottom: hitSlopBottom } =
@@ -1102,26 +1106,31 @@ export class StylingLogic {
     let left = `${
       paddingBetweenContainerAndVideoLeft +
       ((videoRect?.width || 200) -
-        (this.isFullscreenMode
-          ? paddingBetweenContainerAndVideoLeft +
-            paddingBetweenContainerAndVideoRight
-          : 0)) *
+        (paddingBetweenContainerAndVideoLeft +
+          paddingBetweenContainerAndVideoRight)) *
         percent
     }${CAROUSEL_SPACING_UNIT}`;
     let right = "auto";
 
-    if (
-      videoRect &&
-      screenShotCanvasRect &&
-      screenShotTextContainerRect &&
-      progressBarRect
-    ) {
+    // console.log({
+    //   videoRectWidth: videoRect?.width,
+    //   paddingBetweenContainerAndVideoLeft,
+    //   paddingBetweenContainerAndVideoRight,
+    //   isFullscreenMode: this.isFullscreenMode,
+    // });
+
+    if (videoRect && screenShotCanvasRect) {
       const cursorLeftPosition = videoRect.left + videoRect.width * percent;
       const minCursorLeftValue =
         videoRect.left + screenShotCanvasRect.width / 2;
       const maxCursorLeftValue =
         videoRect.right - screenShotCanvasRect.width / 2;
 
+      // console.log({
+      //   cursorLeftPosition,
+      //   minCursorLeftValue,
+      //   maxCursorLeftValue,
+      // });
       //handling right-bound case
       if (cursorLeftPosition >= maxCursorLeftValue) {
         left = "auto";
@@ -1129,7 +1138,6 @@ export class StylingLogic {
         translateX = `${-paddingBetweenContainerAndVideoRight}${CAROUSEL_SPACING_UNIT}`;
       }
 
-      // console.log({ leftBound, viewerLeft, cursorLeftPosition, minCursorLeftValue });
       //handling left-bound case
       if (cursorLeftPosition <= minCursorLeftValue) {
         left = `0${CAROUSEL_SPACING_UNIT}`;
@@ -1180,7 +1188,7 @@ export class StylingLogic {
     screenShotTextElement: Element | undefined | null,
     screenShotCanvasElement: Element | undefined,
     textTranslateOffsetRef: React.MutableRefObject<TextTranslateOffset>,
-    textTranslationAmountRef: React.MutableRefObject<number>,
+    textTranslationAmountRef: React.MutableRefObject<number>
   ) {
     const screenShotCanvasRect =
       screenShotCanvasElement?.getBoundingClientRect();
@@ -1205,14 +1213,14 @@ export class StylingLogic {
           let leftOffset = 0;
           if (screenShotCanvasRect.left > screenShotTextContainerRect.left) {
             leftOffset = Math.abs(
-              screenShotCanvasRect.left - screenShotTextContainerRect.left,
+              screenShotCanvasRect.left - screenShotTextContainerRect.left
             );
           }
 
           let rightOffset = 0;
           if (screenShotCanvasRect.right < screenShotTextContainerRect.right) {
             rightOffset = Math.abs(
-              screenShotCanvasRect.right - screenShotTextContainerRect.right,
+              screenShotCanvasRect.right - screenShotTextContainerRect.right
             );
           }
 
@@ -1223,12 +1231,12 @@ export class StylingLogic {
 
           textTranslateOffsetRef.current = {
             left: Math.abs(
-              screenShotCanvasRect.left - screenShotTextContainerRect.left,
+              screenShotCanvasRect.left - screenShotTextContainerRect.left
             ),
             maxCursorLeftValue,
             minCursorLeftValue,
             right: Math.abs(
-              screenShotCanvasRect.right - screenShotTextContainerRect.right,
+              screenShotCanvasRect.right - screenShotTextContainerRect.right
             ),
           };
         }
@@ -1333,11 +1341,11 @@ export class StylingLogic {
     const padding =
       this.optionsLogic.getPaddingAmount(
         SpacingDirection.left,
-        CarouselSection.itemViewer,
+        CarouselSection.itemViewer
       ) +
       this.optionsLogic.getPaddingAmount(
         SpacingDirection.right,
-        CarouselSection.itemViewer,
+        CarouselSection.itemViewer
       );
     return padding;
   }
@@ -1355,7 +1363,7 @@ export class StylingLogic {
   }
 
   getItemViewerHorizontalSpacing(
-    fullscreenValue = CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
+    fullscreenValue = CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT
   ) {
     return {
       left: this.isFullscreenMode
@@ -1363,14 +1371,14 @@ export class StylingLogic {
         : this.optionsLogic.getPaddingAmount(
             SpacingDirection.left,
             CarouselSection.itemViewer,
-            CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
+            CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT
           ),
       right: this.isFullscreenMode
         ? fullscreenValue
         : this.optionsLogic.getPaddingAmount(
             SpacingDirection.right,
             CarouselSection.itemViewer,
-            CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
+            CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT
           ),
     };
   }
@@ -1389,11 +1397,11 @@ export class StylingLogic {
     const navigationPadding =
       this.optionsLogic.getPaddingAmount(
         SpacingDirection.left,
-        CarouselSection.navigation,
+        CarouselSection.navigation
       ) +
       this.optionsLogic.getPaddingAmount(
         SpacingDirection.right,
-        CarouselSection.navigation,
+        CarouselSection.navigation
       );
     return navigationPadding;
   }
@@ -1402,11 +1410,11 @@ export class StylingLogic {
     const common = {
       paddingLeft: `${this.optionsLogic.getPaddingAmount(
         SpacingDirection.left,
-        CarouselSection.navigation,
+        CarouselSection.navigation
       )}${CAROUSEL_SPACING_UNIT}`,
       paddingRight: `${this.optionsLogic.getPaddingAmount(
         SpacingDirection.right,
-        CarouselSection.navigation,
+        CarouselSection.navigation
       )}${CAROUSEL_SPACING_UNIT}`,
     } as CSSProperties;
 
@@ -1449,7 +1457,7 @@ export class StylingLogic {
       ? ({
           background: `linear-gradient(${angle}deg, ${convertHexToRgba(
             startColor,
-            startOpacity,
+            startOpacity
           )} 0%, ${convertHexToRgba(endColor, endOpacity)} 100%)`,
         } as CSSProperties)
       : {};
@@ -1492,12 +1500,12 @@ export class StylingLogic {
     const left = this.optionsLogic.getPaddingAmount(
       SpacingDirection.left,
       CarouselSection.toolbar,
-      CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
+      CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT
     );
     const right = this.optionsLogic.getPaddingAmount(
       SpacingDirection.right,
       CarouselSection.toolbar,
-      CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
+      CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT
     );
     return {
       left,
@@ -1578,7 +1586,7 @@ export class StylingLogic {
       ? Math.max(
           CAROUSEL_PROGRESS_BAR_CONTAINER_HEIGHT_DEFAULT -
             progressBarHitSlop.bottom,
-          0,
+          0
         )
       : 0;
   }
@@ -1629,7 +1637,7 @@ export class StylingLogic {
   }: GetToolbarButtonSizeStlye) {
     const buttonSizeStyle = this.getCarouselElementSizeStlye(
       buttonName,
-      parseInt(style?.width as string, 10) || 0,
+      parseInt(style?.width as string, 10) || 0
     );
 
     //If no subElementName is used, then it's a custom icon and we just want the buttonSizeStyle
@@ -1796,14 +1804,14 @@ export class StylingLogic {
     interItemSpacing: number,
     translationAmount: number,
     isLastPage: boolean,
-    translationAmountChangeRef: React.MutableRefObject<TranslationAmountChange>,
+    translationAmountChangeRef: React.MutableRefObject<TranslationAmountChange>
   ) {
     const { numberOfWholeItemsThatCanFit, containerWidth, itemSize } =
       getNumberOfItemsThatCanFit(
         this.items.length,
         this.carouselContainerRef?.current,
         this,
-        this.optionsLogic,
+        this.optionsLogic
       );
 
     let translationAmountToUse = translationAmount;
@@ -1819,19 +1827,19 @@ export class StylingLogic {
       }
       translationAmountToUse = Math.max(
         this.lastPageCarouselTranslationAmount,
-        translationAmount,
+        translationAmount
       );
     }
 
     const itemPositioning = this.optionsLogic.thumbnailPositioning;
     const numberOfItemsToUse = Math.min(
       numberOfWholeItemsThatCanFit,
-      this.items?.length || Number.MAX_SAFE_INTEGER,
+      this.items?.length || Number.MAX_SAFE_INTEGER
     );
     const numberOfSpaces = numberOfItemsToUse - 1;
     const itemSpacing =
       this.optionsLogic.getThumbnailSpacingBasedOnThumbnailPositioning(
-        interItemSpacing,
+        interItemSpacing
       );
     const widthOfInterItemSpacing = numberOfSpaces * itemSpacing;
     const widthOfItems = numberOfItemsToUse * itemSize;
@@ -1849,14 +1857,14 @@ export class StylingLogic {
         ? ({
             marginLeft: Math.max(
               (containerWidth - (widthOfItems + widthOfInterItemSpacing)) / 2,
-              0,
+              0
             ),
           } as CSSProperties)
         : itemPositioning === "right"
         ? {
             marginLeft: Math.max(
               containerWidth - (widthOfItems + widthOfInterItemSpacing),
-              0,
+              0
             ),
           }
         : ({} as CSSProperties);
@@ -1865,7 +1873,7 @@ export class StylingLogic {
     } as CSSProperties;
     const translationStyle = {
       transform: `translateX(${translationAmountToUse < 0 ? "" : "-"}${Math.abs(
-        translationAmountToUse,
+        translationAmountToUse
       )}${CAROUSEL_SPACING_UNIT})`,
     } as CSSProperties;
 
@@ -1902,7 +1910,7 @@ export class StylingLogic {
   }
 
   getCarouselShortcutIndicatorTextStlye(
-    position: CarouselItemViewerShortcutIndicatorPosition,
+    position: CarouselItemViewerShortcutIndicatorPosition
   ) {
     const { backgroundColor, textColor } =
       this.optionsLogic.toolbarShortcutIndicator;
@@ -1957,7 +1965,7 @@ export class StylingLogic {
   }
 
   getVideoCurrentStateIndicatorForegroundColor(
-    buttonName: CarouselVideoCurrentStateIndicatorButtonName,
+    buttonName: CarouselVideoCurrentStateIndicatorButtonName
   ) {
     const foregroundColor =
       this.optionsLogic.videoCurrentStateIndicatorForegroundColor;
@@ -1975,7 +1983,7 @@ export class StylingLogic {
   static getColorStyle(
     fillColor: string,
     propertyName: keyof CSSProperties,
-    style = {} as CSSProperties,
+    style = {} as CSSProperties
   ) {
     return {
       ...style,
@@ -1992,7 +2000,7 @@ export class StylingLogic {
    */
   private getBorderStringToUse(
     borderStr: CSSProperties["border"],
-    defaultValue = `${BORDER_STRING_DEFAULT_SIZE}${CAROUSEL_SPACING_UNIT} solid ${this.optionsLogic.theme.colorFour}`,
+    defaultValue = `${BORDER_STRING_DEFAULT_SIZE}${CAROUSEL_SPACING_UNIT} solid ${this.optionsLogic.theme.colorFour}`
   ) {
     const borderStrToUse = borderStr?.toString();
     const isValid =
