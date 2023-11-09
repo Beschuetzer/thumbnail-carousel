@@ -2919,57 +2919,6 @@ enum SectionNames {
 }
 const SECTIONS: Sections = [
   [
-    SectionNames.customWidth,
-    [
-      {
-        label: "Half width - All Defaults",
-        jsx: (
-          <div style={{ display: "flex" }}>
-            <div style={{ width: "50%" }}>
-              {noItemDisplayedMultiplePagesAllDefaults}
-            </div>
-          </div>
-        ),
-      },
-      {
-        label: "Side by Side - All Defaults",
-        jsx: (
-          <div style={{ display: "flex" }}>
-            <div style={{ width: "50%", marginRight: "4px" }}>
-              {noItemDisplayedMultiplePagesAllDefaults}
-            </div>
-            <div style={{ width: "50%", marginLeft: "4px" }}>
-              {noItemDisplayedMultiplePagesAllDefaults}
-            </div>
-          </div>
-        ),
-      },
-      {
-        label: "Half width - All Custom Settings",
-        jsx: (
-          <div style={{ display: "flex" }}>
-            <div style={{ width: "50%", marginRight: "4px" }}>
-              {allCustomSettings}
-            </div>
-          </div>
-        ),
-      },
-      {
-        label: "Side by Side - All Custom Settings",
-        jsx: (
-          <div style={{ display: "flex" }}>
-            <div style={{ width: "50%", marginRight: "4px" }}>
-              {allCustomSettings}
-            </div>
-            <div style={{ width: "50%", marginLeft: "4px" }}>
-              {allCustomSettings}
-            </div>
-          </div>
-        ),
-      },
-    ],
-  ],
-  [
     SectionNames.theme,
     [
       {

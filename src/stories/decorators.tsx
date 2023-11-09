@@ -17,3 +17,26 @@ export const maringAllAround = [
     </div>
   ),
 ];
+
+export const halfWidthOneCarousel = [
+  (Story: any) => (
+    <div style={{ display: "flex" }}>
+      <div style={{ width: "50%" }}>
+        <Story />
+      </div>
+    </div>
+  ),
+];
+
+export const halfWidthTwoCarousels = [
+  (Story: any) => (
+    <div style={{ display: "flex" }}>
+      <div style={{ width: "50%", marginRight: "4px" }}>
+        <Story />
+      </div>
+      <div style={{ width: "50%", marginLeft: "4px" }}>
+        <Story />
+      </div>
+    </div>
+  ),
+];
