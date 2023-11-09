@@ -14,7 +14,7 @@ permissions:
 
 # List of jobs
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     # Job steps
     steps:
