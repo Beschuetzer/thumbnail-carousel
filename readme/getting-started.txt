@@ -10,8 +10,7 @@ import clipThumbnail from "./clips/thumbnail/1.png";
 import { Carousel } from 'react-thumbnail-carousel'
 
 //setup items
-<Carousel
-  items={[
+const items = [
     {
       description: 'My Short Clip',
       srcMain: {
@@ -33,5 +32,7 @@ import { Carousel } from 'react-thumbnail-carousel'
       description: 'My Image with no Thumbnail',
       srcMain: img2,
     }
-  ]}
-/>
+  ] as CarouselItem[]
+
+//instantiate Carousel with default options
+<Carousel items={items} />
