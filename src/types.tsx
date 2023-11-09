@@ -460,6 +460,7 @@ export type CarouselProgressBarDot = {
   diameter?: CarouselElementValue<number>;
   /**
    * Whether the dot is always visible for the progress bar.
+   * The dot will always be hidden if {@link CarouselLayoutOptions.isToolbarPositionedInVideo isToolbarPositionedInVideo} is `true`.
    * Default is {@link OptionsLogic.videoProgressBarDotSettings here}.
    **/
   isAlwaysVisible?: CarouselElementValue<boolean>;
