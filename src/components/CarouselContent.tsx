@@ -1,6 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { ArrowButtonDirection, CarouselNavigationOptions } from "../types";
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { CarouselProps } from "./Carousel";
 import {
   CAROUSEL_ITEM_SPACING_DEFAULT,

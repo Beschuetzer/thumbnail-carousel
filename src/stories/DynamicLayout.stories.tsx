@@ -285,4 +285,3 @@ export const ThumbnailOptions9: Story = {
   },
   name: "Item Viewer Above - Dynamic Thumbnail Size and Spacing with Positioning Right",
 };
-

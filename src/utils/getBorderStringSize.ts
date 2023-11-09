@@ -9,8 +9,11 @@ import {
 /**
  *Use this to figure out how many pixels the border will take up on any given side (width/height is 2x the returned value)
  **/
-export function getBorderStringSize(thumbnailBorderString: string | undefined): string {
-  if (!thumbnailBorderString) return `${BORDER_STRING_DEFAULT_SIZE}${CAROUSEL_SPACING_UNIT}`;
+export function getBorderStringSize(
+  thumbnailBorderString: string | undefined,
+): string {
+  if (!thumbnailBorderString)
+    return `${BORDER_STRING_DEFAULT_SIZE}${CAROUSEL_SPACING_UNIT}`;
   const split = thumbnailBorderString?.trim()?.split(" ");
 
   for (const item of split) {

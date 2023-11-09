@@ -35,7 +35,7 @@ export const CarouselArrowButton = (props: CarouselArrowButtonProps) => {
     direction === ArrowButtonDirection.previous
       ? CarouselElement.arrowLeft
       : CarouselElement.arrowRight,
-    defaultColor
+    defaultColor,
   );
 
   if (

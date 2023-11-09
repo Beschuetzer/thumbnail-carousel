@@ -25,7 +25,7 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 
-export const AboveCustomization1: Story = {
+export const Story1: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -37,7 +37,7 @@ export const AboveCustomization1: Story = {
   name: "Default",
 };
 
-export const AboveCustomization2: Story = {
+export const Story2: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -57,7 +57,7 @@ export const AboveCustomization2: Story = {
   name: "Thumbnail 100px and Monospace Font Family for ItemViewer",
 };
 
-export const AboveCustomization3: Story = {
+export const Story3: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -79,7 +79,7 @@ export const AboveCustomization3: Story = {
   name: "Custom Container Padding All Directions",
 };
 
-export const AboveCustomization4: Story = {
+export const Story4: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -99,7 +99,7 @@ export const AboveCustomization4: Story = {
   name: "Custom ItemViewer Padding",
 };
 
-export const AboveCustomization5: Story = {
+export const Story5: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -119,7 +119,7 @@ export const AboveCustomization5: Story = {
   name: "Custom Navigation Padding",
 };
 
-export const AboveCustomization6: Story = {
+export const Story6: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -144,7 +144,7 @@ export const AboveCustomization6: Story = {
   name: "Progressbar Spans Width",
 };
 
-export const AboveCustomization7: Story = {
+export const Story7: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -166,7 +166,7 @@ export const AboveCustomization7: Story = {
   name: "Disparate Container Padding",
 };
 
-export const AboveCustomization8: Story = {
+export const Story8: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -219,7 +219,7 @@ export const AboveCustomization8: Story = {
   name: "Display Above Flush and Custom Colors",
 };
 
-export const AboveCustomization9: Story = {
+export const Story9: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -238,7 +238,7 @@ export const AboveCustomization9: Story = {
   name: "Progress Bar Shows Previous Location on Change",
 };
 
-export const AboveCustomization10: Story = {
+export const Story10: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -272,7 +272,7 @@ export const AboveCustomization10: Story = {
   name: "Changing All Element Colors",
 };
 
-export const AboveCustomization11: Story = {
+export const Story11: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -350,7 +350,7 @@ export const AboveCustomization11: Story = {
   name: "Custom Icons with Same Background Color",
 };
 
-export const AboveCustomization12: Story = {
+export const Story12: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -420,7 +420,7 @@ export const AboveCustomization12: Story = {
   name: "Custom Progressbar Color",
 };
 
-export const AboveCustomization13: Story = {
+export const Story13: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -469,7 +469,7 @@ export const AboveCustomization13: Story = {
   name: "Custom Colors using All Option and Item Specific Overrides",
 };
 
-export const AboveCustomization14: Story = {
+export const Story14: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -545,7 +545,7 @@ export const AboveCustomization14: Story = {
   name: "Custom Modal Style and Loading Spinner",
 };
 
-export const AboveCustomization15: Story = {
+export const Story15: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {

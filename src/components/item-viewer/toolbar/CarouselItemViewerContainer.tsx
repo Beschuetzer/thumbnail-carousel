@@ -48,7 +48,7 @@ export const CarouselItemViewerContainer = forwardRef<
   const intervalRef = useRef<any>(-1);
   const resizeTimeOutRef = useRef<any>();
   const hasCurrentItemIndexChangedRef = useRef(
-    HAS_CURRENT_ITEM_INDEX_CHANGED_INITIAL
+    HAS_CURRENT_ITEM_INDEX_CHANGED_INITIAL,
   );
   const currentInvervalRef = useRef(CURRENT_INTERVAL_INITIAL);
   const itemContainerRef = useRef<HTMLDivElement>(null);
@@ -76,9 +76,9 @@ export const CarouselItemViewerContainer = forwardRef<
         getBoundValue(
           getMostFrequentItem(heightsRef.current),
           ITEM_CONTAINER_MIN_DEFAULT,
-          optionsLogic.maxHeight
-        )
-      )
+          optionsLogic.maxHeight,
+        ),
+      ),
     );
     clearInterval(intervalRef.current);
   }, [optionsLogic.maxHeight, setItemContainerHeight]);
@@ -95,7 +95,7 @@ export const CarouselItemViewerContainer = forwardRef<
       const paddingLeft = parseInt(subContainer?.style.paddingLeft || "20", 10);
       const paddingRight = parseInt(
         subContainer?.style.paddingRight || "20",
-        10
+        10,
       );
       const availableWidth = itemContainerWidth - paddingLeft - paddingRight;
       if (availableWidth <= 0) return false;
@@ -103,7 +103,7 @@ export const CarouselItemViewerContainer = forwardRef<
       setItemContainerHeight(Math.ceil(availableWidth * aspectRatio));
       return true;
     },
-    [setItemContainerHeight]
+    [setItemContainerHeight],
   );
 
   const startAutoHeightInterval = useCallback(() => {
@@ -193,7 +193,7 @@ export const CarouselItemViewerContainer = forwardRef<
           setHeightBasedOnAspectRatio(
             optionsLogic.itemViewerUseRecommendedAspectRatio
               ? recommendedAspectRatio
-              : (optionsLogic.itemViewerAspectRatio as number)
+              : (optionsLogic.itemViewerAspectRatio as number),
           );
         }
         setLastViewportWidth();

@@ -250,7 +250,6 @@ export const ThumbnailOptions11: Story = {
   decorators: maringAllAround,
 };
 
-
 export const ThumbnailOptions12: Story = {
   args: {
     items: items.slice(0, items.length - 1),

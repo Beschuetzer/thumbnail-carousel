@@ -142,7 +142,6 @@ export const CURRENT_VIDEO_CURRENT_TIME_DEFAULT = 0;
 export const MOBILE_PIXEL_WIDTH = 655;
 //#endregion
 
-
 //#region Settings
 export const AUTO_CHANGE_PAGE_DEFAULT = true;
 export const AUTO_HIDE_DISABLED_VALUE = 0;

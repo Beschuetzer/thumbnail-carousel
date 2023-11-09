@@ -2,7 +2,11 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Carousel } from "../components/Carousel";
 import { items } from "./assets/items";
-import { halfWidthOneCarousel, halfWidthTwoCarousels, marginTop } from "./decorators";
+import {
+  halfWidthOneCarousel,
+  halfWidthTwoCarousels,
+  marginTop,
+} from "./decorators";
 import { COLORS } from "./assets/colors";
 import { customButtons } from "./custom-buttons";
 import { carouselShortcuts } from "./carousel-shortcuts";

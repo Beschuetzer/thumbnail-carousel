@@ -1,5 +1,5 @@
 import {
-    BORDER_STRING_DEFAULT_SIZE,
+  BORDER_STRING_DEFAULT_SIZE,
   BORDER_STRING_MEDIUM_SIZE,
   BORDER_STRING_THICK_SIZE,
   BORDER_STRING_THIN_SIZE,
@@ -72,11 +72,11 @@ describe("getBorderStringSize", () => {
     const expected = nonPixelCase2Value;
     expect(actual).toBe(expected);
   });
-   it("non pixel case 3", () => {
-     const actual = getBorderStringSize(nonPixelCase3);
-     const expected = nonPixelCase3Value;
-     expect(actual).toBe(expected);
-   });
+  it("non pixel case 3", () => {
+    const actual = getBorderStringSize(nonPixelCase3);
+    const expected = nonPixelCase3Value;
+    expect(actual).toBe(expected);
+  });
   it("pixel case", () => {
     const actual = getBorderStringSize(pixelCase);
     const expected = pixelCaseValue;

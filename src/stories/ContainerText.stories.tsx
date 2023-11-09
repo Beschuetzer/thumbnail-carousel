@@ -33,8 +33,8 @@ export const Story1: Story = {
         itemDisplayLocation: "above",
       },
       container: {
-        text: 'Some title'
-      }
+        text: "Some title",
+      },
     },
   },
   name: "Text Only",
@@ -49,7 +49,7 @@ export const Story2: Story = {
       },
       container: {
         text: "Some title as h1",
-        tag: 'h1',
+        tag: "h1",
       },
     },
   },
@@ -67,8 +67,8 @@ export const Story3: Story = {
         text: "Some title as h6 with Custom Red Color",
         tag: "h6",
         style: {
-            color: 'red'
-        }
+          color: "red",
+        },
       },
     },
   },
@@ -86,12 +86,12 @@ export const Story4: Story = {
         text: "Some title as h4 with Custom Red Color",
         tag: "h4",
         style: {
-            margin: 0,
-            padding: 0
+          margin: 0,
+          padding: 0,
         },
         textStyle: {
-            color: "red",
-        }
+          color: "red",
+        },
       },
     },
   },

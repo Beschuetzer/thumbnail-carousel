@@ -284,7 +284,6 @@ export const Story13: Story = {
   name: "Toolbar Elements' Color Changes at 800px",
 };
 
-
 export const Story15: Story = {
   args: {
     items: items,
@@ -360,7 +359,6 @@ export const Story18: Story = {
   name: "The amount of horiztonal movement needed to register swipe event increases < 800px",
 };
 
-
 export const Story19: Story = {
   args: {
     items: items,
@@ -376,7 +374,6 @@ export const Story19: Story = {
   name: "Swiping Disabled < 800px",
 };
 
-
 export const Story20: Story = {
   args: {
     items: items,
@@ -391,7 +388,6 @@ export const Story20: Story = {
   },
   name: "Thumbnail Positioning Right < 800px Otherwise Center",
 };
-
 
 export const Story21: Story = {
   args: {
@@ -489,7 +485,6 @@ export const Story27: Story = {
   args: {
     items: items,
     options: {
-
       thumbnail: {
         descriptionOverlay: {
           hideDescriptionOverlayUnlessHovered: false,
