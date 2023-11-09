@@ -1,7 +1,7 @@
 Before Publishing
+  -finish readme 
+  -make gifs for some common examples in readme
   -add .mdx files for each story file (google), with details on how to test (e.g. dynamic layout)
-  -finish readme
-  -move all type to types file?
   -write jest tests for utils and other functions?
   -create a CI/CD 
 

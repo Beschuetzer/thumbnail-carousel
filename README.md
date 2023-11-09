@@ -23,16 +23,20 @@ import { Carousel, CarouselItemProps } from 'react-thumbnail-carousel'
 //setup items
 const items = [
     {
+      //this displays in the thumbnail and in full screen
       description: 'My Short Clip',
       srcMain: {
+        //this clip is used in fullscreen mode
         hiRes: clipHighRes,
+        //this clip is used anywhere else
         loRes: clipLowRes
       },
+      //this is required for videos and provides a thumbnail of the item
       srcThumbnail: clipThumbnail,
       video: {
         autoPlay: false,
         muted: true
-      }
+      },
     },
     {
       description: 'My Image with a Thumbnail',
@@ -42,7 +46,7 @@ const items = [
     {
       description: 'My Image with no Thumbnail',
       srcMain: img2,
-    }
+    },
   ] as CarouselItemProps[]
 
 //instantiate Carousel with default options
