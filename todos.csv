@@ -1,4 +1,5 @@
 Before Publishing
+  -issue with current time preview not tracking right
   -dot.isAlwaysVisible not applying when toolbar is not embedded
   -when wrapping is disabled for navigation, the cursor still changes to pointer for the hidden cursor
   -move all type to types file?
