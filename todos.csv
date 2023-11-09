@@ -1,5 +1,4 @@
 Before Publishing
-  -when wrapping is disabled for navigation, the cursor still changes to pointer for the hidden cursor
   -move all type to types file?
   -add .mdx files for each story file (google), with details on how to test (e.g. dynamic layout)
   -fix width issue of description popup for items
