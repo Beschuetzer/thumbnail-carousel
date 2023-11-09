@@ -1,9 +1,9 @@
-import { CarouselItemProps } from "../components/CarouselItem";
+import { CarouselItemProps } from "../types";
 import { IMAGE_EXTENSIONS, VIDEO_EXTENSIONS } from "../constants";
 
 export function getIsItemOfType(
   item: CarouselItemProps | undefined,
-  type: "video" | "image" = "image",
+  type: "video" | "image" = "image"
 ) {
   const currentItemSrc = item?.srcMain || "";
   const extensions = type === "image" ? IMAGE_EXTENSIONS : VIDEO_EXTENSIONS;

@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { getIsVideo, getFormattedTimeString } from "../utils/utils";
-import { CarouselItemProps } from "../components/CarouselItem";
-import { VideoTimeStrings } from "../types";
+import { VideoTimeStrings, CarouselItemProps } from "../types";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { CarouselVideoOptions } from "../components/CarouselVideo";
 
@@ -40,7 +39,7 @@ export const useUpdateTimeString = (input: UseUpdateTimeStringInput) => {
         setTimeStrings({
           durationStr: getFormattedTimeString(videoRef?.current?.duration || 0),
           currentTimeStr: getFormattedTimeString(
-            videoRef?.current?.currentTime || 0,
+            videoRef?.current?.currentTime || 0
           ),
         });
       }

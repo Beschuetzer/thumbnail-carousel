@@ -1,4 +1,4 @@
-import { CarouselItemSourceMain } from "../components/CarouselItem";
+import { CarouselItemSourceMain } from "../types";
 
 export const GET_CAROUSEL_VIDEO_DEFAULT = "";
 const PREFER_HIGH_RES_DEFAULT = false;
@@ -8,7 +8,7 @@ const PREFER_HIGH_RES_DEFAULT = false;
 **/
 export function resolveSrcMain(
   srcMain: CarouselItemSourceMain,
-  preferHighRes = PREFER_HIGH_RES_DEFAULT,
+  preferHighRes = PREFER_HIGH_RES_DEFAULT
 ) {
   if (typeof srcMain === "string") {
     return srcMain;

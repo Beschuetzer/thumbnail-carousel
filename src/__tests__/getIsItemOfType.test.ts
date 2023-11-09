@@ -1,4 +1,4 @@
-import { CarouselItemProps } from "../components/CarouselItem";
+import { CarouselItemProps } from "../types";
 import { getIsItemOfType } from "../utils/getIsItemOfType";
 
 const defaults: CarouselItemProps = {

@@ -6,7 +6,7 @@ import {
 } from "../../../utils/utils";
 import { LoadingSpinner } from "../../LoadingSpinner";
 import { CLASSNAME__HIDDEN } from "../../../constants";
-import { CarouselItemProps } from "../../CarouselItem";
+import { CarouselItemProps } from "../../../types";
 import { CarouselItemViewerButtonProps, KeyInput } from "../../../types";
 import { useBusinessLogic } from "../../../hooks/useBusinessLogic";
 
@@ -24,7 +24,7 @@ type CarouselItemViewerToolbarPreviewProps = {
 } & Partial<Pick<CarouselItemViewerButtonProps, "actionName">>;
 
 export const CarouselItemViewerToolbarPreview = (
-  props: CarouselItemViewerToolbarPreviewProps,
+  props: CarouselItemViewerToolbarPreviewProps
 ) => {
   //#region Init
   const {
@@ -39,22 +39,22 @@ export const CarouselItemViewerToolbarPreview = (
   const { description, srcMain, srcThumbnail } = itemToShow || {};
   const shouldShowImageJSX = useMemo(
     () => !!(!getIsVideo(itemToShow) || srcThumbnail),
-    [itemToShow, srcThumbnail],
+    [itemToShow, srcThumbnail]
   );
   //#endregion
 
   //#region JSX
   const className = useMemo(
     () => getClassname({ elementName: "item-viewer-toolbar-preview" }),
-    [],
+    []
   );
   const isVisible = useMemo(
     () => optionsLogic.itemViewerPreviewIsVisible,
-    [optionsLogic.itemViewerPreviewIsVisible],
+    [optionsLogic.itemViewerPreviewIsVisible]
   );
   const shortcutString = useMemo(
     () => getShortcutsString(shortcuts),
-    [shortcuts],
+    [shortcuts]
   );
   const imageJSX = useMemo(
     () => (
@@ -94,7 +94,7 @@ export const CarouselItemViewerToolbarPreview = (
       srcThumbnail,
       stylingLogic.carouselItemViewerPreviewImageContainerStyle,
       stylingLogic.carouselItemViewerPreviewImageStyle,
-    ],
+    ]
   );
 
   const textJSX = useMemo(
@@ -130,7 +130,7 @@ export const CarouselItemViewerToolbarPreview = (
       stylingLogic.carouselItemViewerPreviewImageDescriptionBodyStyle,
       stylingLogic.carouselItemViewerPreviewImageDescriptionContainerStyle,
       stylingLogic.carouselItemViewerPreviewImageDescriptionHeaderStyle,
-    ],
+    ]
   );
 
   return (

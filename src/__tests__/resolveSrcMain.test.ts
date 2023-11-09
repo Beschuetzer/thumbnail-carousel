@@ -1,4 +1,4 @@
-import { CarouselItemProps } from "../components/CarouselItem";
+import { CarouselItemProps } from "../types";
 import {
   GET_CAROUSEL_VIDEO_DEFAULT,
   resolveSrcMain,

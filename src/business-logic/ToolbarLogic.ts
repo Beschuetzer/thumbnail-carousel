@@ -1,4 +1,4 @@
-import { CarouselItemProps } from "../components/CarouselItem";
+import { CarouselItemProps } from "../types";
 
 export type ToolbarLogicConstructor = {
   items: CarouselItemProps[];
