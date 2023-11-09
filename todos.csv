@@ -1,4 +1,5 @@
 Before Publishing
+  -fix positioning of item preview when not in fullscreen (see Item Viewer Preview Changes)
   -move all type to types file?
   -add .mdx files for each story file (google), with details on how to test (e.g. dynamic layout)
   -fix width issue of description popup for items

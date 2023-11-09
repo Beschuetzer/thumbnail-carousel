@@ -2922,34 +2922,6 @@ const SECTIONS: Sections = [
     SectionNames.itemViewer,
     [
       {
-        label: "Default Modal Displayed on Load",
-        jsx: itemViewerDefaultModalOnLoad,
-      },
-      {
-        label: "Default Modal Displayed on Load with Custom Toolbar Buttons",
-        jsx: itemViewerCustomButtons,
-      },
-      {
-        label: "Custom Modal Displayed on Load",
-        jsx: itemViewerCustomModalOnLoad,
-      },
-      {
-        label: "Toolbar doesn't hide on inactivity (Click item to view)",
-        jsx: itemViewerNoToolbarHide,
-      },
-      {
-        label: "Toolbar hides after 500ms of inactivity (Click item to view)",
-        jsx: itemViewerHideAfter500ms,
-      },
-      {
-        label: "Seek amount 2 sec (Click item to view)",
-        jsx: itemViewerSeekAmount2Sec,
-      },
-      {
-        label: "All custom keyboard shortcuts",
-        jsx: itemViewerCustomShortcuts,
-      },
-      {
         label: "Custom Item Viewer Font",
         jsx: itemViewerCustomItemViewerFont,
       },
