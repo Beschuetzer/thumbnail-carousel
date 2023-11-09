@@ -1518,22 +1518,8 @@ export class StylingLogic {
       this.getItemViewerHorizontalSpacing();
 
     const paddingHorizontalStyle = {
-      paddingLeft:
-        this.optionsLogic.isToolbarInVideo && !this.isFullscreenMode
-          ? 0
-          : leftSpacing,
-      paddingRight:
-        this.optionsLogic.isToolbarInVideo && !this.isFullscreenMode
-          ? 0
-          : rightSpacing,
-      marginLeft:
-        !this.optionsLogic.isToolbarInVideo || this.isFullscreenMode
-          ? 0
-          : leftSpacing,
-      marginRight:
-        (!this.optionsLogic.isToolbarInVideo || this.isFullscreenMode
-          ? 0
-          : rightSpacing) - TOOLBAR_MARGIN_RIGHT_OFFSET,
+      paddingLeft: leftSpacing,
+      paddingRight: rightSpacing,
     } as CSSProperties;
     const nonDefaultItemDisplayStyle = {
       ...this.getToolbarBackgroundColorStyle(),
