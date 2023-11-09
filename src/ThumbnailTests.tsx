@@ -2919,35 +2919,6 @@ enum SectionNames {
 }
 const SECTIONS: Sections = [
   [
-    SectionNames.isLastPageFlush,
-    [
-      {
-        label: "Last Page is Flush - Display Location None",
-        jsx: isLastPageFlushTrueDisplayNone,
-      },
-      {
-        label: "Last Page is Flush - Display Location Above",
-        jsx: isLastPageFlushTrueDisplayAbove,
-      },
-      {
-        label: "Last Page is Flush - Display Location Below",
-        jsx: isLastPageFlushTrueDisplayBelow,
-      },
-      {
-        label: "Last Page is not Flush - Display Location None",
-        jsx: isLastPageFlushFalseDisplayNone,
-      },
-      {
-        label: "Last Page is not Flush - Display Location Above",
-        jsx: isLastPageFlushFalseDisplayAbove,
-      },
-      {
-        label: "Last Page is not Flush - Display Location Below",
-        jsx: isLastPageFlushFalseDisplayBelow,
-      },
-    ],
-  ],
-  [
     SectionNames.customWidth,
     [
       {
