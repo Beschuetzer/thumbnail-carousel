@@ -2921,34 +2921,6 @@ const SECTIONS: Sections = [
   [
     SectionNames.otherDynamicSettings,
     [
-      {
-        label: "Video Modal Styling Changes < 800px",
-        jsx: dynamicmodal,
-      },
-      {
-        label: "Toolbar Items and Progress Bar Width Change < 800px",
-        jsx: dynamicToolbar,
-      },
-      {
-        label: "Thumbnail Max Line Count Changes at 800px",
-        jsx: dynamicMaxLineCount,
-      },
-      {
-        label: "Thumbnail Text Color Changes Based on Viewport",
-        jsx: dynamicThumbnailDescriptionTextColor,
-      },
-      {
-        label: "Current Item's Border Changes Based on Viewport",
-        jsx: dynamicThumbnailBorder,
-      },
-      {
-        label: "Item Spacing Strategy Changes at 800px",
-        jsx: dynamicItemSpacingStrategy,
-      },
-      {
-        label: "Toolbar Embedded in Video > 800px",
-        jsx: dynamicToolbarPositioningInVideo,
-      },
     ],
   ],
   [

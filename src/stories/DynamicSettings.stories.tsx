@@ -424,7 +424,29 @@ export const ThumbnailOptions22: Story = {
   name: "Item Display Location None < 800px Otherwise Above",
 };
 
-export const ThumbnailOptions23: Story = {
+export const ThumbnailOptions24: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+      },
+      styling: {
+        modal: {
+          widthInPercent: [[50], [undefined, 800]],
+          textColor: [["red"], ["blue", 800]],
+          fontSize: [[14], [10, 800]],
+          closeButton: {
+            fill: [["red"], [undefined, 800]],
+          },
+        },
+      },
+    },
+  },
+  name: "Video Modal Styling Changes < 800px",
+};
+
+export const ThumbnailOptions25: Story = {
   args: {
     items: items,
     options: {
@@ -433,14 +455,109 @@ export const ThumbnailOptions23: Story = {
       },
       styling: {
         toolbar: {
+          textColor: [["grey"], ["orange", 800]],
           progressBar: {
-            textOrForegroundColor: [["red"], ["black", 800]],
-            backgroundColor: [["black"], ["white", 800]],
-            height: [[10], [3, 800]],
+            shouldSpanContainerWidth: [[false], [true, 800]],
+          },
+          elements: {
+            color: [["white"], ["red", 800]],
           },
         },
       },
     },
   },
-  name: "Progressbar Color and Height Change at 800px",
+  name: "Toolbar Items and Progress Bar Width Change < 800px",
+};
+
+export const ThumbnailOptions26: Story = {
+  args: {
+    items: items,
+    options: {
+      thumbnail: {
+        descriptionOverlay: {
+          hideDescriptionOverlayUnlessHovered: false,
+          maxLineCount: [[2], [1, 800]],
+          textColor: COLORS.primary4,
+        },
+      },
+    },
+  },
+  name: "Thumbnail Max Line Count Changes at 800px",
+};
+
+export const ThumbnailOptions27: Story = {
+  args: {
+    items: items,
+    options: {
+
+      thumbnail: {
+        descriptionOverlay: {
+          hideDescriptionOverlayUnlessHovered: false,
+          textColor: [
+            ["red"],
+            ["green"],
+            ["yellow", 1100],
+            ["blue", 1500, "min-width"],
+            ["orange", 800, "max-width"],
+            ["teal", 600, "max-width"],
+            ["grey", 400, "max-width"],
+            ["purple", 1200, "min-width"],
+          ],
+        },
+      },
+    },
+  },
+  name: "Thumbnail Text Color Changes Based on Viewport",
+};
+
+export const ThumbnailOptions28: Story = {
+  args: {
+    items: items,
+    options: {
+      thumbnail: {
+        currentItemBorder: [
+          ["3px solid red"],
+          ["3px dashed green"],
+          ["1px dotted  yellow", 1100],
+          ["5px solid blue", 1500, "min-width"],
+          ["2px dotted orange", 800, "max-width"],
+          ["1px ridge teal", 600, "max-width"],
+          ["3px solid grey", 400, "max-width"],
+          ["thick double purple", 1200, "min-width"],
+        ],
+      },
+      layout: {
+        itemDisplayLocation: "above",
+      },
+    },
+  },
+  name: "Current Item's Border Changes Based on Viewport",
+};
+
+export const ThumbnailOptions29: Story = {
+  args: {
+    items: items,
+    options: {
+      thumbnail: {
+        spacingStrategy: [["min"], ["max", 800]],
+      },
+      layout: {
+        itemDisplayLocation: "above",
+      },
+    },
+  },
+  name: "Item Spacing Strategy Changes at 800px",
+};
+
+export const ThumbnailOptions30: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        itemDisplayLocation: [["above"], ["below", 1200]],
+        isToolbarPositionedInVideo: [[true], [false, 800]],
+      },
+    },
+  },
+  name: "Toolbar Embedded in Video > 800px",
 };
