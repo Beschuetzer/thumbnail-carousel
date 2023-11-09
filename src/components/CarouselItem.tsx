@@ -6,10 +6,9 @@ import {
   CLASSNAME__CAROUSEL_ITEM_THUMBNAIL,
 } from "../constants";
 import { useBusinessLogic } from "../hooks/useBusinessLogic";
-import { CarouselModalProps } from "./modal/CarouselModal";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { OptionsLogic } from "../business-logic/OptionsLogic";
-import { CarouselElementValue } from "../types";
+import { CarouselElementValue, CarouselModalProps } from "../types";
 import { resolveSrcMain } from "../utils/getCarouselVideo";
 
 export type CarouselItemSourceMain = string | CarouselVideo;

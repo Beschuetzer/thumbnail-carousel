@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { CSSProperties, ElementType } from "react";
+import { CSSProperties, ElementType, ReactNode } from "react";
 import { CarouselItemViewerShortcutIndicatorProps } from "./components/item-viewer/toolbar/CarouselItemViewerShortcutIndicator";
 import { LoadingSpinnerProps } from "./components/LoadingSpinner";
 import {
@@ -913,6 +913,37 @@ export type VideoTimeStrings = {
 //#endregion
 
 //#region Modal
+export type CarouselModalProps = Exclusive<
+  {
+    /**
+     *Use this when you want to use a custom modal layout.
+     **/
+    children?: ReactNode | ReactNode[];
+  },
+  {
+    /**
+     *Use this when you want to use the default modal layout.
+     *@example
+     *sections: [
+     *    {
+     *        title: "Section 1 Title",
+     *        text: "Section 1 description."
+     *    },
+     *    {
+     *        title: "Section 2 Title",
+     *        text: "Section 2 description."
+     *    }
+     *],
+     **/
+    sections?: CarouselModalSectionProps[];
+  }
+> & {
+  /**
+   *The amount of pixels that the close button is from the top.  Default is {@link CAROUSEL_MODAL_PADDING_DEFAULT.top here}.
+   **/
+  closeButtonTop?: number;
+};
+
 export type CarouselModalSectionProps = Exclusive<
   {
     /**
