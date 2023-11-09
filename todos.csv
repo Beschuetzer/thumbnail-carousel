@@ -3,7 +3,6 @@ Before Publishing
   -finish readme
   -Can github host storybook files (research)?
   -move all type to types file?
-  -fix width issue of description popup for items
   -write jest tests for utils and other functions?
   -create a CI/CD 
 
