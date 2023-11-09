@@ -1,4 +1,6 @@
 Before Publishing
+  -item viewer loading spinner should be hidded when image loaded (see Item Viewer Preview Changes)
+  -dot.isAlwaysVisible not applying when toolbar is not embedded
   -when wrapping is disabled for navigation, the cursor still changes to pointer for the hidden cursor
   -move all type to types file?
   -add .mdx files for each story file (google), with details on how to test (e.g. dynamic layout)

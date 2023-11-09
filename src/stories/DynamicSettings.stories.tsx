@@ -26,7 +26,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const ThumbnailOptions1: Story = {
+export const Story1: Story = {
   args: {
     items: items,
     options: {
@@ -41,7 +41,7 @@ export const ThumbnailOptions1: Story = {
   name: "Thumbnail Modal Disabled <= 800px",
 };
 
-export const ThumbnailOptions2: Story = {
+export const Story2: Story = {
   args: {
     items: items,
     options: {
@@ -61,7 +61,7 @@ export const ThumbnailOptions2: Story = {
   name: "Thumbnail Modal Font Size Changes at 800px",
 };
 
-export const ThumbnailOptions3: Story = {
+export const Story3: Story = {
   args: {
     items: items,
     options: {
@@ -75,7 +75,7 @@ export const ThumbnailOptions3: Story = {
   name: "Thumbnail Modal Always Shown > 800px",
 };
 
-export const ThumbnailOptions4: Story = {
+export const Story4: Story = {
   args: {
     items: items,
     options: {
@@ -95,7 +95,7 @@ export const ThumbnailOptions4: Story = {
   name: "Thumbnail Modal Opacity and Color Change at 800px",
 };
 
-export const ThumbnailOptions5: Story = {
+export const Story5: Story = {
   args: {
     items: items,
     options: {
@@ -122,7 +122,7 @@ export const ThumbnailOptions5: Story = {
   name: "Thumbnail Modal Gradient Change at 800px",
 };
 
-export const ThumbnailOptions6: Story = {
+export const Story6: Story = {
   args: {
     items: items,
     options: {
@@ -150,7 +150,7 @@ export const ThumbnailOptions6: Story = {
   name: "Dots and Left Arrow Change Svgs and Color at 800px",
 };
 
-export const ThumbnailOptions7: Story = {
+export const Story7: Story = {
   args: {
     items: items,
     options: {
@@ -172,7 +172,7 @@ export const ThumbnailOptions7: Story = {
   name: "Video Modal Padding Changes at 800px",
 };
 
-export const ThumbnailOptions8: Story = {
+export const Story8: Story = {
   args: {
     items: items,
     options: {
@@ -195,7 +195,7 @@ export const ThumbnailOptions8: Story = {
   name: "Font Changes Everywhere at 800px",
 };
 
-export const ThumbnailOptions9: Story = {
+export const Story9: Story = {
   args: {
     items: items,
     options: {
@@ -218,7 +218,7 @@ export const ThumbnailOptions9: Story = {
   name: "Font Changes in ItemViewer at 800px",
 };
 
-export const ThumbnailOptions10: Story = {
+export const Story10: Story = {
   args: {
     items: items,
     options: {
@@ -241,7 +241,7 @@ export const ThumbnailOptions10: Story = {
   name: "Font Changes in Thumbnails at 800px",
 };
 
-export const ThumbnailOptions11: Story = {
+export const Story11: Story = {
   args: {
     items: items,
     options: {
@@ -253,7 +253,7 @@ export const ThumbnailOptions11: Story = {
   name: "Seek Amount in ItemViewer Changes at 800px",
 };
 
-export const ThumbnailOptions12: Story = {
+export const Story12: Story = {
   args: {
     items: items,
     options: {
@@ -265,7 +265,7 @@ export const ThumbnailOptions12: Story = {
   name: "Item Viewer Auto Hide Duration Changes at 800px",
 };
 
-export const ThumbnailOptions13: Story = {
+export const Story13: Story = {
   args: {
     items: items,
     options: {
@@ -285,7 +285,7 @@ export const ThumbnailOptions13: Story = {
 };
 
 
-export const ThumbnailOptions15: Story = {
+export const Story15: Story = {
   args: {
     items: items,
     options: {
@@ -315,7 +315,7 @@ export const ThumbnailOptions15: Story = {
   name: "All Background Colors Changes at 800px",
 };
 
-export const ThumbnailOptions16: Story = {
+export const Story16: Story = {
   args: {
     items: items,
     options: {
@@ -327,7 +327,7 @@ export const ThumbnailOptions16: Story = {
   name: "Wrapping Disabled < 800px",
 };
 
-export const ThumbnailOptions17: Story = {
+export const Story17: Story = {
   args: {
     items: items,
     options: {
@@ -345,7 +345,7 @@ export const ThumbnailOptions17: Story = {
   name: "Auto Change Page Disabled < 800px",
 };
 
-export const ThumbnailOptions18: Story = {
+export const Story18: Story = {
   args: {
     items: items,
     options: {
@@ -361,7 +361,7 @@ export const ThumbnailOptions18: Story = {
 };
 
 
-export const ThumbnailOptions19: Story = {
+export const Story19: Story = {
   args: {
     items: items,
     options: {
@@ -377,7 +377,7 @@ export const ThumbnailOptions19: Story = {
 };
 
 
-export const ThumbnailOptions20: Story = {
+export const Story20: Story = {
   args: {
     items: items,
     options: {
@@ -393,7 +393,7 @@ export const ThumbnailOptions20: Story = {
 };
 
 
-export const ThumbnailOptions21: Story = {
+export const Story21: Story = {
   args: {
     items: items,
     options: {
@@ -409,7 +409,7 @@ export const ThumbnailOptions21: Story = {
   name: "Display Above Thumbnail Positioning Right < 800px Otherwise Center",
 };
 
-export const ThumbnailOptions22: Story = {
+export const Story22: Story = {
   args: {
     items: items,
     options: {
@@ -424,7 +424,7 @@ export const ThumbnailOptions22: Story = {
   name: "Item Display Location None < 800px Otherwise Above",
 };
 
-export const ThumbnailOptions24: Story = {
+export const Story24: Story = {
   args: {
     items: items,
     options: {
@@ -446,7 +446,7 @@ export const ThumbnailOptions24: Story = {
   name: "Video Modal Styling Changes < 800px",
 };
 
-export const ThumbnailOptions25: Story = {
+export const Story25: Story = {
   args: {
     items: items,
     options: {
@@ -469,7 +469,7 @@ export const ThumbnailOptions25: Story = {
   name: "Toolbar Items and Progress Bar Width Change < 800px",
 };
 
-export const ThumbnailOptions26: Story = {
+export const Story26: Story = {
   args: {
     items: items,
     options: {
@@ -485,7 +485,7 @@ export const ThumbnailOptions26: Story = {
   name: "Thumbnail Max Line Count Changes at 800px",
 };
 
-export const ThumbnailOptions27: Story = {
+export const Story27: Story = {
   args: {
     items: items,
     options: {
@@ -510,7 +510,7 @@ export const ThumbnailOptions27: Story = {
   name: "Thumbnail Text Color Changes Based on Viewport",
 };
 
-export const ThumbnailOptions28: Story = {
+export const Story28: Story = {
   args: {
     items: items,
     options: {
@@ -534,22 +534,22 @@ export const ThumbnailOptions28: Story = {
   name: "Current Item's Border Changes Based on Viewport",
 };
 
-export const ThumbnailOptions29: Story = {
+export const Story29: Story = {
   args: {
     items: items,
     options: {
       thumbnail: {
-        spacingStrategy: [["min"], ["max", 800]],
+        spacingStrategy: [["max"], ["min", 1200]],
       },
       layout: {
         itemDisplayLocation: "above",
       },
     },
   },
-  name: "Item Spacing Strategy Changes at 800px",
+  name: "Item Spacing Strategy Changes at 1200px",
 };
 
-export const ThumbnailOptions30: Story = {
+export const Story30: Story = {
   args: {
     items: items,
     options: {
