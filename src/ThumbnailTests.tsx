@@ -2919,35 +2919,6 @@ enum SectionNames {
 }
 const SECTIONS: Sections = [
   [
-    SectionNames.itemViewerAspectRatio,
-    [
-      {
-        label: "Using Recommended Aspect Ratio (default)",
-        jsx: itemViewerAspectRatioDefault,
-      },
-      {
-        label: "Setting useRecommendedAspectRatio to False is Same as Auto",
-        jsx: itemViewerAspectRatioUseRecommendedAspectRatioSameAsAuto,
-      },
-      {
-        label: "Setting Aspect Ratio to Auto",
-        jsx: itemViewerAspectRatioAuto,
-      },
-      {
-        label: "Setting Aspect Ratio to 16:9",
-        jsx: itemViewerAspectRatioWidescreen,
-      },
-      {
-        label: "Setting Aspect Ratio to 4:3",
-        jsx: itemViewerAspectRatioFullscreen,
-      },
-      {
-        label: "Setting Aspect Ratio to 3:1",
-        jsx: itemViewerAspectRatioCustomNumber,
-      },
-    ],
-  ],
-  [
     SectionNames.isLastPageFlush,
     [
       {

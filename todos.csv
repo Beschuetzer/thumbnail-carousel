@@ -1,4 +1,6 @@
 Before Publishing
+  -fix issue with toolbar margin
+  -add story file for specifying container text options.container.{}
   -move all type to types file?
   -add .mdx files for each story file (google), with details on how to test (e.g. dynamic layout)
   -fix width issue of description popup for items
