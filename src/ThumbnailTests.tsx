@@ -2919,41 +2919,6 @@ enum SectionNames {
 }
 const SECTIONS: Sections = [
   [
-    SectionNames.navigationOptions,
-    [
-      {
-        label: "No Wrapping",
-        jsx: navigationHideArrowsAtFinalPage,
-      },
-      {
-        label:
-          "Current Page follows last viewed item in item viewer (full-screen)",
-        jsx: navigationTracking,
-      },
-      {
-        label:
-          "Current Page does not follow last viewed item in item viewer (full-screen)",
-        jsx: navigationNoTracking,
-      },
-      {
-        label: "0 Max Click Threshold",
-        jsx: navigationZeroMaxClickThreshold,
-      },
-      {
-        label: "0 Max Click Threshold No Wrapping",
-        jsx: navigationZeroMaxClickHideArrows,
-      },
-      {
-        label: "Swiping a Thumbnail Disabled",
-        jsx: navigationNoSwiping,
-      },
-      {
-        label: "Last Page is not Flush",
-        jsx: navigationLastPageNotFlush,
-      },
-    ],
-  ],
-  [
     SectionNames.itemViewer,
     [
       {
