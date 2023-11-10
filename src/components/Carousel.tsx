@@ -1,8 +1,11 @@
 import React, { useRef, useState } from "react";
 import { CarouselProvider } from "../context";
 import { getClassname } from "../utils/utils";
-import { CarouselItemProps } from "./CarouselItem";
-import { CarouselOptions, CarouselTitleOptions } from "../types";
+import {
+  CarouselItemProps,
+  CarouselOptions,
+  CarouselTitleOptions,
+} from "../types";
 import { CarouselContent } from "./CarouselContent";
 import { useBusinessLogic } from "../hooks/useBusinessLogic";
 import { useOnResize } from "../hooks/useOnResize";
@@ -43,9 +46,7 @@ export const Carousel = (props: CarouselProps) => {
         <div
           ref={carouselContainerRef as any}
           className={getClassname({ elementName: "" })}
-          style={{
-            ...stylingLogic.carouselStyle,
-          }}
+          style={stylingLogic.carouselStyle}
         >
           <CarouselContent
             {...props}

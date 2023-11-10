@@ -1,12 +1,6 @@
 # Workflow name
 name: Run Tests
-
-on:
-  # Event for the workflow to run on
-  push:
-    branches:
-      - 'main' # Replace with the branch you want to deploy from
-
+on: push
 permissions:
   contents: read
   pages: write

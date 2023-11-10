@@ -26,14 +26,14 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 
-export const ThumbnailOptions1: Story = {
+export const Story1: Story = {
   args: {
     items: items,
   },
   name: "Default",
 };
 
-export const ThumbnailOptions2: Story = {
+export const Story2: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -47,7 +47,7 @@ export const ThumbnailOptions2: Story = {
   name: "Description Modal Always Shown",
 };
 
-export const ThumbnailOptions3: Story = {
+export const Story3: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -61,7 +61,7 @@ export const ThumbnailOptions3: Story = {
   name: "Description Modal Disabled",
 };
 
-export const ThumbnailOptions4: Story = {
+export const Story4: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -73,7 +73,7 @@ export const ThumbnailOptions4: Story = {
   name: "0 Item Spacing",
 };
 
-export const ThumbnailOptions5: Story = {
+export const Story5: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -108,7 +108,7 @@ export const ThumbnailOptions5: Story = {
   name: "Fixed Item Spacing and Custom Item Size",
 };
 
-export const ThumbnailOptions6: Story = {
+export const Story6: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -125,7 +125,7 @@ export const ThumbnailOptions6: Story = {
   decorators: maringAllAround,
 };
 
-export const ThumbnailOptions7: Story = {
+export const Story7: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -150,7 +150,7 @@ export const ThumbnailOptions7: Story = {
   decorators: maringAllAround,
 };
 
-export const ThumbnailOptions8: Story = {
+export const Story8: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -182,7 +182,7 @@ export const ThumbnailOptions8: Story = {
   decorators: maringAllAround,
 };
 
-export const ThumbnailOptions9: Story = {
+export const Story9: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -218,7 +218,7 @@ export const ThumbnailOptions9: Story = {
   decorators: maringAllAround,
 };
 
-export const ThumbnailOptions10: Story = {
+export const Story10: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -234,7 +234,7 @@ export const ThumbnailOptions10: Story = {
   decorators: maringAllAround,
 };
 
-export const ThumbnailOptions11: Story = {
+export const Story11: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -250,7 +250,7 @@ export const ThumbnailOptions11: Story = {
   decorators: maringAllAround,
 };
 
-export const ThumbnailOptions12: Story = {
+export const Story12: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -266,7 +266,7 @@ export const ThumbnailOptions12: Story = {
   decorators: maringAllAround,
 };
 
-export const ThumbnailOptions13: Story = {
+export const Story13: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -282,7 +282,7 @@ export const ThumbnailOptions13: Story = {
   decorators: maringAllAround,
 };
 
-export const ThumbnailOptions14: Story = {
+export const Story14: Story = {
   args: {
     items: items.slice(0, items.length - 1),
     options: {
@@ -296,4 +296,19 @@ export const ThumbnailOptions14: Story = {
   },
   name: "Custom Current Item Border - rem is last item",
   decorators: maringAllAround,
+};
+
+export const Story15: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+      },
+      thumbnail: {
+        spacingStrategy: "max",
+      },
+    },
+  },
+  name: "Spacing Strategy set to Max",
 };

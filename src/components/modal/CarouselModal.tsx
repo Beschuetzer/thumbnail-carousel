@@ -1,5 +1,4 @@
 import React, {
-  ReactNode,
   useCallback,
   useEffect,
   useMemo,
@@ -9,7 +8,6 @@ import React, {
 import { CloseButton } from "../buttons/CloseButton";
 import { useCarouselContext } from "../../context";
 import { CarouselItemViewerCustomButton } from "../item-viewer/toolbar/CarouselItemViewerCustomButton";
-import { CarouselModalSectionProps, Exclusive } from "../../types";
 import {
   CLASSNAME__ITEM_VIEWER_BUTTON,
   CLASSNAME__MODAL,
@@ -25,37 +23,7 @@ import { useBusinessLogic } from "../../hooks/useBusinessLogic";
 import { CarouselItemViewerToolbarProps } from "../item-viewer/toolbar/CarouselItemViewerToolbar";
 import { useSetCustomCssProperties } from "../../hooks/useSetCustomCssProperties";
 import { CarouselModalSection } from "./CarouselModalSection";
-
-export type CarouselModalProps = Exclusive<
-  {
-    /**
-     *Use this when you want to use a custom modal layout.
-     **/
-    children?: ReactNode | ReactNode[];
-  },
-  {
-    /**
-     *Use this when you want to use the default modal layout.
-     *@example
-     *sections: [
-     *    {
-     *        title: "Section 1 Title",
-     *        text: "Section 1 description."
-     *    },
-     *    {
-     *        title: "Section 2 Title",
-     *        text: "Section 2 description."
-     *    }
-     *],
-     **/
-    sections?: CarouselModalSectionProps[];
-  }
-> & {
-  /**
-   *The amount of pixels that the close button is from the top.  Default is {@link CAROUSEL_MODAL_PADDING_DEFAULT.top here}.
-   **/
-  closeButtonTop?: number;
-};
+import { CarouselModalProps } from "../../types";
 
 export type CarouselModalInternalProps = {
   isProgressBarBeingHoveredRef?: React.MutableRefObject<boolean>;
@@ -105,7 +73,7 @@ export const CarouselModal = (props: CarouselModalInternalProps) => {
   });
   const closeButtonColor = useMemo(
     () => optionsLogic.modalCloseButtonColor,
-    [optionsLogic.modalCloseButtonColor],
+    [optionsLogic.modalCloseButtonColor]
   );
   const [, setShouldRerender] = useState(false);
   useSetCustomCssProperties({
@@ -137,7 +105,7 @@ export const CarouselModal = (props: CarouselModalInternalProps) => {
       }
       setIsModalMinimized(false);
     },
-    [optionsLogic.modalMinimizeOnClick, setIsModalMinimized],
+    [optionsLogic.modalMinimizeOnClick, setIsModalMinimized]
   );
 
   const onCloseClick = useCallback(
@@ -145,7 +113,7 @@ export const CarouselModal = (props: CarouselModalInternalProps) => {
       onClick(e);
       setIsModalMinimized(true);
     },
-    [onClick, setIsModalMinimized],
+    [onClick, setIsModalMinimized]
   );
   //#endregion
 
@@ -181,7 +149,7 @@ export const CarouselModal = (props: CarouselModalInternalProps) => {
       `${CLASSNAME__MODAL} ${isCustom ? CLASSNAME__MODAL_CUSTOM : ""} ${
         isModalMinimized ? CLASSNAME__MODAL_MINIMIZED : ""
       }`,
-    [isCustom, isModalMinimized],
+    [isCustom, isModalMinimized]
   );
   const buttonJSX = useMemo(
     () =>
@@ -215,7 +183,7 @@ export const CarouselModal = (props: CarouselModalInternalProps) => {
       onCloseClick,
       stylingLogic.carouselModalCloseButtonStyle,
       svgHref,
-    ],
+    ]
   );
 
   const renderChildren = useCallback(() => {
@@ -264,7 +232,7 @@ export const CarouselModal = (props: CarouselModalInternalProps) => {
           !!isProgressBarMouseDownRef?.current ||
           !!isProgressBarBeingHoveredRef?.current,
         modalHeightRef.current,
-        isModalMinimized,
+        isModalMinimized
       )}
     >
       {renderChildren()}

@@ -31,7 +31,7 @@ import maui05Thumbnail from "./imgs/about/thumbnails/maui-05-thumbnail.jpg";
 import maui06Thumbnail from "./imgs/about/thumbnails/maui-06-thumbnail.jpg";
 import maui07Thumbnail from "./imgs/about/thumbnails/maui-07-thumbnail.jpg";
 import React from "react";
-import { CarouselItemProps } from "../../components/CarouselItem";
+import { CarouselItemProps } from "../../types";
 
 export const items = [
   {

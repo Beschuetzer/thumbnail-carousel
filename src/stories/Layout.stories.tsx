@@ -21,29 +21,110 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Layout1: Story = {
-  args: {
-    items: items.slice(0, 1),
-  },
-  name: "One Item",
-};
-
-export const Layout2: Story = {
-  args: {
-    items: items.slice(0, 2),
-  },
-  name: "Two Items",
-};
-
-export const Layout3: Story = {
+/**
+*This is the default layout
+**/
+export const Story1: Story = {
   args: {
     items: items.slice(0, 3),
   },
-  name: "Three Items",
+  name: "One Page of Items",
 };
 
-export const Layout4: Story = {
+/**
+*When there are too many items for the given thumbnail size:
+**/
+export const Story3: Story = {
+  args: {
+    items: items,
+  },
+  name: "Multiple Pages - All Defaults",
+};
+
+/**
+*It is possible to add an item viewer above the carousel.
+**/
+export const Story4: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+      },
+      thumbnail: {
+        size: 125,
+      }
+    },
+  },
+  name: "Current Item Displayed Above Carousel",
+};
+
+/**
+*It is possible to add an item viewer below the carousel.
+**/
+export const Story5: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        itemDisplayLocation: "below",
+      },
+      thumbnail: {
+        size: 125,
+      },
+    },
+  },
+  name: "Current Item Displayed Below Carousel",
+};
+
+
+/**
+*It is possible to move the toolbar below the video.
+**/
+export const Story6: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+        isToolbarPositionedInVideo: false,
+      },
+      thumbnail: {
+        size: 100,
+        descriptionOverlay: {
+          isDisabled: false,
+        },
+      },
+    },
+  },
+  name: "Video Toolbar not Embedded Inside Video",
+};
+
+export const Story7: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        itemDisplayLocation: "below",
+      },
+      styling: {
+        itemViewerPreview: {
+          isVisibleInNonFullscreenMode: true,
+        },
+        toolbar: {
+          progressBar: {
+            screenshotViewer: {
+              thumbnailWidth: 200,
+            },
+          },
+        },
+      },
+    },
+  },
+  name: "Smaller Screenshot Viewer",
+};
+
+export const Story8: Story = {
   args: {
     items: items.slice(0, 3),
     options: {
@@ -52,17 +133,10 @@ export const Layout4: Story = {
       },
     },
   },
-  name: "Three Items - Spacing Strategy Max",
+  name: "One Page - Spacing Strategy Max",
 };
 
-export const Layout5: Story = {
-  args: {
-    items: items,
-  },
-  name: "Multiple Pages - All Defaults",
-};
-
-export const Layout6: Story = {
+export const Story9: Story = {
   args: {
     items: items,
     options: {
@@ -83,7 +157,7 @@ export const Layout6: Story = {
   name: "Multiple Pages - Custom Padding and Margin",
 };
 
-export const Layout7: Story = {
+export const Story10: Story = {
   args: {
     items: items,
     options: {
@@ -119,104 +193,4 @@ export const Layout7: Story = {
     },
   },
   name: "Multiple Pages - Custom Item Viewer Colors",
-};
-
-export const Layout8: Story = {
-  args: {
-    items: items,
-    options: {
-      layout: {
-        itemDisplayLocation: "above",
-      },
-      styling: {
-        fontFamily: {
-          itemViewer: "monospace",
-        },
-      },
-    },
-  },
-  name: "Display Current Item Above with Custom itemHeight and Font Family",
-};
-
-export const Layout9: Story = {
-  args: {
-    items: items,
-    options: {
-      layout: {
-        itemDisplayLocation: "above",
-      },
-      thumbnail: {
-        spacingStrategy: "max",
-      },
-    },
-  },
-  name: "Display Current Item Above with Max Spacing Strategy",
-};
-
-export const Layout10: Story = {
-  args: {
-    items: items,
-    options: {
-      layout: {
-        itemDisplayLocation: "below",
-      },
-      thumbnail: {
-        size: 100,
-        descriptionOverlay: {
-          isDisabled: false,
-        },
-      },
-      styling: {
-        container: {
-          padding: {
-            bottom: 0,
-          },
-        },
-      },
-    },
-  },
-  name: "Display Current Item Below with Custom Thumbnail Size, Height, and Font-size",
-};
-
-export const Layout11: Story = {
-  args: {
-    items: items,
-    options: {
-      layout: {
-        itemDisplayLocation: "above",
-        isToolbarPositionedInVideo: false,
-      },
-      thumbnail: {
-        size: 100,
-        descriptionOverlay: {
-          isDisabled: false,
-        },
-      },
-    },
-  },
-  name: "Video Toolbar not Embedded Inside Video",
-};
-
-export const Layout12: Story = {
-  args: {
-    items: items,
-    options: {
-      layout: {
-        itemDisplayLocation: "below",
-      },
-      styling: {
-        itemViewerPreview: {
-          isVisibleInNonFullscreenMode: true,
-        },
-        toolbar: {
-          progressBar: {
-            screenshotViewer: {
-              thumbnailWidth: 200,
-            },
-          },
-        },
-      },
-    },
-  },
-  name: "Smaller Screenshot Viewer",
 };
