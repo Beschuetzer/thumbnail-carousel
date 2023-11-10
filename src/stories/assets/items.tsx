@@ -358,23 +358,6 @@ export const items = [
     },
   },
   {
-    description: "Video - No Thumbnail Given",
-    srcMain: minuteLongVideo,
-    modal: {
-      sections: [
-        {
-          title: "No Thumbnail Given",
-          text: "This video illustrates how a video with no thumbnail is displayed.",
-        },
-      ],
-    },
-    video: {
-      autoPlay: false,
-      muted: true,
-      sections: [["Section 1"], ["Section 2", "1:00:01"]],
-    },
-  },
-  {
     description: "Image - Defaults and Thumbnail",
     srcMain: maui05,
     srcThumbnail: maui05Thumbnail,
@@ -422,6 +405,23 @@ export const items = [
         objectFit: "contain",
         objectPosition: "bottom",
       },
+    },
+  },
+  {
+    description: "Video - No Thumbnail Given",
+    srcMain: minuteLongVideo,
+    modal: {
+      sections: [
+        {
+          title: "No Thumbnail Given",
+          text: "This video illustrates how a video with no thumbnail is displayed.",
+        },
+      ],
+    },
+    video: {
+      autoPlay: false,
+      muted: true,
+      sections: [["Section 1"], ["Section 2", "1:00:01"]],
     },
   },
   {

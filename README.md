@@ -63,7 +63,7 @@ const items = [
 
 ### All Defaults
 
-clip
+![Default](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/ff1e4bb8-114e-451c-a1f3-694851683585)
 
 ### All Defaults with Item Viewer Above
 
