@@ -13,6 +13,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
  -->
 
+
+## [1.0.4] - 2023-11-9
+
+### Fixed
+
+- Reverted screenshot viewer left change
+
+### Added
+
+- Gifs to readme
+
+## [1.0.3 - 1.0.1] - 2023-11-9
+
+### Changed
+
+- Work on readme
+
 ## [1.0.0] - 2023-11-9
 
 ### Fixed
