@@ -1,6 +1,6 @@
 {
   "name": "react-thumbnail-carousel",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A fully-customizable React carousel with various viewing modes and video support",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -72,9 +72,5 @@
     "sass": "^1.69.5",
     "storybook": "^7.5.3",
     "typescript": "^5.2.2"
-  },
-  "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
   }
 }

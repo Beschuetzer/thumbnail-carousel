@@ -11,6 +11,8 @@ const packageJson = require("./package.json");
 export default [
   //handles the js files (components)
   {
+    //ignore these packages when building since they will be installed on the using app
+    external: ["react", "react-dom"],
     input: "src/index.ts",
     output: [
       //output input file as  common js

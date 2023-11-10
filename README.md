@@ -1,6 +1,6 @@
 # thumbnail-carousel
 
-React component library that provides a carousel with a wide range of options.
+React component library that provides a carousel with a wide range of [options](https://beschuetzer.github.io/thumbnail-carousel/?path=/docs/thumbnail-carousel-layout--docs).
 
 ### Use Case
 

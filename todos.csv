@@ -1,4 +1,5 @@
 Before Publishing
+  -make gifs for readme
   -make 0 be default padding top for carousel
   -figure out issue with translate amount for navigation items
   -finish readme 
