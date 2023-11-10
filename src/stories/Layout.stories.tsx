@@ -67,7 +67,7 @@ export const Story5: Story = {
     items: items,
     options: {
       layout: {
-        itemDisplayLocation: "above",
+        itemDisplayLocation: "below",
       },
       thumbnail: {
         size: 125,

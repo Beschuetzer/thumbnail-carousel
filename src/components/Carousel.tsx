@@ -46,9 +46,7 @@ export const Carousel = (props: CarouselProps) => {
         <div
           ref={carouselContainerRef as any}
           className={getClassname({ elementName: "" })}
-          style={{
-            ...stylingLogic.carouselStyle,
-          }}
+          style={stylingLogic.carouselStyle}
         >
           <CarouselContent
             {...props}
