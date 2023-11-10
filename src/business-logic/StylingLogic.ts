@@ -1102,13 +1102,24 @@ export class StylingLogic {
         : 90; //fallback
 
     let translateX = "-50%";
+    // let left = `${
+    //   paddingBetweenContainerAndVideoLeft +
+    //   ((videoRect?.width || 200) -
+    //     (paddingBetweenContainerAndVideoLeft +
+    //       paddingBetweenContainerAndVideoRight)) *
+    //     percent
+    // }${CAROUSEL_SPACING_UNIT}`;
+  
     let left = `${
       paddingBetweenContainerAndVideoLeft +
       ((videoRect?.width || 200) -
-        (paddingBetweenContainerAndVideoLeft +
-          paddingBetweenContainerAndVideoRight)) *
+        (this.isFullscreenMode
+          ? paddingBetweenContainerAndVideoLeft +
+            paddingBetweenContainerAndVideoRight
+          : 0)) *
         percent
     }${CAROUSEL_SPACING_UNIT}`;
+
     let right = "auto";
 
     // console.log({

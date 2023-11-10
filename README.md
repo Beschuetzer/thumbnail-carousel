@@ -63,15 +63,19 @@ const items = [
 
 ### All Defaults
 
-clip
+![default](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/dfb166a6-9768-465d-b782-d01aac48fe28)
 
 ### All Defaults with Item Viewer Above
 
-clip
+![above](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/c1e1a7ec-37c0-4227-a503-27498727e7fc)
 
 ### All Defaults with Item Viewer Below
 
-clip
+![below](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/2a6ff3d7-1db5-466b-8121-1527640c5a44)
+
+### Fullscreen Mode
+
+![fullscreen](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/232c74ec-832c-44c1-b797-d30644b0520b)
 
 ### Customization
 
