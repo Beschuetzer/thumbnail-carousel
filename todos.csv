@@ -1,5 +1,5 @@
 Before Publishing
-  -make gifs for readme
+  -round the spacing for items and the translate amount to ensure no cuttof (then can add half the diff as padding-left)
   -make 0 be default padding top for carousel
   -figure out issue with translate amount for navigation items
   -finish readme 

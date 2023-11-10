@@ -67,11 +67,11 @@ const items = [
 
 ### All Defaults with Item Viewer Above
 
-clip
+![above](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/c1e1a7ec-37c0-4227-a503-27498727e7fc)
 
 ### All Defaults with Item Viewer Below
 
-clip
+![below](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/2a6ff3d7-1db5-466b-8121-1527640c5a44)
 
 ### Customization
 
