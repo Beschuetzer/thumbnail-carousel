@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added basic examples to readme
 
-### Added 
+### Added
 
 -The rest of the test cases into Storybook
 

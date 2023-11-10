@@ -62,15 +62,15 @@ export const CarouselProvider = (props: CarouselContextInputProps) => {
   } = props;
   const [currentItem, setCurrentItem] = useState(itemsInput[0]);
   const [currentItemIndex, setCurrentItemIndex] = useState(
-    CURRENT_ITEM_INDEX_INITIAL
+    CURRENT_ITEM_INDEX_INITIAL,
   );
   const [currentPage, setCurrentPage] = useState(CURRENT_PAGE_INITIAL);
   const [currentVideoCurrentTime, setCurrentVideoCurrentTime] = useState(
-    CURRENT_VIDEO_CURRENT_TIME_DEFAULT
+    CURRENT_VIDEO_CURRENT_TIME_DEFAULT,
   );
   const [isFullscreenMode, setIsFullscreenMode] = useState(false);
   const [isModalMinimized, setIsModalMinimized] = useState(
-    MODAL_IS_MINIMIZED_INITIAL
+    MODAL_IS_MINIMIZED_INITIAL,
   );
   const [items, setItems] = useState(itemsInput);
   const [itemContainerHeight, setItemContainerHeight] = useState<
@@ -81,7 +81,7 @@ export const CarouselProvider = (props: CarouselContextInputProps) => {
   const itemViewerRef = useRef<HTMLElement>(null);
   const currentItemToUse = useMemo(
     () => (Object.keys(currentItem || {}).length > 0 ? currentItem : items[0]),
-    [currentItem, items]
+    [currentItem, items],
   );
 
   useEffect(() => {
@@ -131,7 +131,7 @@ export const CarouselProvider = (props: CarouselContextInputProps) => {
 };
 
 const CarouselContext = React.createContext<CarouselContextOutputProps>(
-  {} as any
+  {} as any,
 );
 
 export function useCarouselContext() {

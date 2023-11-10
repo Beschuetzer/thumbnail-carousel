@@ -102,7 +102,7 @@ export type CarouselVideoProps = {
 export const CarouselVideo = (
   props: CarouselVideoProps &
     CarouselItemProps &
-    Pick<CarouselItemViewerToolbarProps, "itemContainerRef">
+    Pick<CarouselItemViewerToolbarProps, "itemContainerRef">,
 ) => {
   //#region Init
   const {
@@ -126,10 +126,10 @@ export const CarouselVideo = (
   const [isLoaded, setIsLoaded] = useState(false);
   const [percent, setPercent] = useState(PROGRESS_BAR_PERCENT_INITIAL_VALUE);
   const [seekPercent, setSeekPercent] = useState(
-    PROGRESS_BAR_PERCENT_INITIAL_VALUE
+    PROGRESS_BAR_PERCENT_INITIAL_VALUE,
   );
   const [currentVideoSection, setCurrentVideoSection] = useState(
-    CAROUSEL_VIDEO_CURRENT_SECTION_INITIAL
+    CAROUSEL_VIDEO_CURRENT_SECTION_INITIAL,
   );
   const videoRef = useRef<HTMLVideoElement>();
   const itemViewerToolbarRef = useRef<HTMLElement>();
@@ -137,7 +137,7 @@ export const CarouselVideo = (
   const srcMainToUse = resolveSrcMain(srcMain, true);
   const type = useMemo(
     () => srcMainToUse?.slice(srcMainToUse?.lastIndexOf(".") + 1),
-    [srcMainToUse]
+    [srcMainToUse],
   );
   const { stylingLogic, optionsLogic } = useBusinessLogic({
     itemViewerToolbarRef,
@@ -146,7 +146,7 @@ export const CarouselVideo = (
   useResetCarouselVideoCurrentSection({
     element: itemContainerRef?.current,
     progressBarElement: itemContainerRef?.current?.querySelector(
-      `.${CLASSNAME__TOOLBAR_PROGRESS}`
+      `.${CLASSNAME__TOOLBAR_PROGRESS}`,
     ),
     currentSection: currentVideoSection,
     setCurrentSection: setCurrentVideoSection,
@@ -164,7 +164,7 @@ export const CarouselVideo = (
         setIsVideoPlaying((current) => current);
       }
     },
-    [isVideoStateChangeInitiatedInternallyRef, setIsVideoPlaying]
+    [isVideoStateChangeInitiatedInternallyRef, setIsVideoPlaying],
   );
 
   const playVideo = useCallback(() => {
@@ -231,7 +231,7 @@ export const CarouselVideo = (
   useEffect(() => {
     function handleFullscreenChange(e: Event) {
       setCurrentVideoCurrentTime(
-        videoRef.current?.currentTime || CURRENT_VIDEO_CURRENT_TIME_DEFAULT
+        videoRef.current?.currentTime || CURRENT_VIDEO_CURRENT_TIME_DEFAULT,
       );
       if (!isFullscreenMode) return;
       playVideo();
@@ -246,15 +246,15 @@ export const CarouselVideo = (
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
       document.removeEventListener(
         "mozfullscreenchange",
-        handleFullscreenChange
+        handleFullscreenChange,
       );
       document.removeEventListener(
         "MSFullscreenChange",
-        handleFullscreenChange
+        handleFullscreenChange,
       );
       document.removeEventListener(
         "webkitfullscreenchange",
-        handleFullscreenChange
+        handleFullscreenChange,
       );
     };
   }, [
@@ -297,7 +297,7 @@ export const CarouselVideo = (
           }`}
           style={stylingLogic.getCarouselVideoStyle(
             !!isProgressBarMouseDownRef.current,
-            itemContainerHeight
+            itemContainerHeight,
           )}
           ref={videoRef as any}
           autoPlay={autoPlay}

@@ -8,7 +8,7 @@ const PREFER_HIGH_RES_DEFAULT = false;
 **/
 export function resolveSrcMain(
   srcMain: CarouselItemSourceMain,
-  preferHighRes = PREFER_HIGH_RES_DEFAULT
+  preferHighRes = PREFER_HIGH_RES_DEFAULT,
 ) {
   if (typeof srcMain === "string") {
     return srcMain;

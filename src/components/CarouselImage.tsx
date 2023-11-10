@@ -13,7 +13,7 @@ import { useRerenderOnExitFullscreenMode } from "../hooks/useRerenderOnExitFulls
 const RE_RENDER_DURATION = 1;
 export const CarouselImage = (
   props: CarouselItemProps &
-    Pick<CarouselItemViewerToolbarProps, "itemContainerRef">
+    Pick<CarouselItemViewerToolbarProps, "itemContainerRef">,
 ) => {
   const {
     options,
@@ -36,7 +36,7 @@ export const CarouselImage = (
         setIsFullscreenMode((current) => !current);
       }
     },
-    [setIsFullscreenMode]
+    [setIsFullscreenMode],
   );
 
   useLayoutEffect(() => {

@@ -73,7 +73,7 @@ export const CarouselModal = (props: CarouselModalInternalProps) => {
   });
   const closeButtonColor = useMemo(
     () => optionsLogic.modalCloseButtonColor,
-    [optionsLogic.modalCloseButtonColor]
+    [optionsLogic.modalCloseButtonColor],
   );
   const [, setShouldRerender] = useState(false);
   useSetCustomCssProperties({
@@ -105,7 +105,7 @@ export const CarouselModal = (props: CarouselModalInternalProps) => {
       }
       setIsModalMinimized(false);
     },
-    [optionsLogic.modalMinimizeOnClick, setIsModalMinimized]
+    [optionsLogic.modalMinimizeOnClick, setIsModalMinimized],
   );
 
   const onCloseClick = useCallback(
@@ -113,7 +113,7 @@ export const CarouselModal = (props: CarouselModalInternalProps) => {
       onClick(e);
       setIsModalMinimized(true);
     },
-    [onClick, setIsModalMinimized]
+    [onClick, setIsModalMinimized],
   );
   //#endregion
 
@@ -149,7 +149,7 @@ export const CarouselModal = (props: CarouselModalInternalProps) => {
       `${CLASSNAME__MODAL} ${isCustom ? CLASSNAME__MODAL_CUSTOM : ""} ${
         isModalMinimized ? CLASSNAME__MODAL_MINIMIZED : ""
       }`,
-    [isCustom, isModalMinimized]
+    [isCustom, isModalMinimized],
   );
   const buttonJSX = useMemo(
     () =>
@@ -183,7 +183,7 @@ export const CarouselModal = (props: CarouselModalInternalProps) => {
       onCloseClick,
       stylingLogic.carouselModalCloseButtonStyle,
       svgHref,
-    ]
+    ],
   );
 
   const renderChildren = useCallback(() => {
@@ -232,7 +232,7 @@ export const CarouselModal = (props: CarouselModalInternalProps) => {
           !!isProgressBarMouseDownRef?.current ||
           !!isProgressBarBeingHoveredRef?.current,
         modalHeightRef.current,
-        isModalMinimized
+        isModalMinimized,
       )}
     >
       {renderChildren()}

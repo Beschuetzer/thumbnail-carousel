@@ -29,7 +29,7 @@ export type TextTranslateOffset = {
 
 export const TEXT_TRANSLATION_AMOUNT_REF_INITIAL = 0;
 const CarouselVideoProgressBarScreenshotViewer = (
-  props: CarouselItemViewerProgressBarScreenshotPreviewProps
+  props: CarouselItemViewerProgressBarScreenshotPreviewProps,
 ) => {
   //#region Init
   const {
@@ -46,10 +46,10 @@ const CarouselVideoProgressBarScreenshotViewer = (
   const { stylingLogic } = useBusinessLogic();
   const screenShotTextContainerRef = useRef<HTMLDivElement>();
   const textTranslateOffsetRef = useRef<TextTranslateOffset>(
-    {} as TextTranslateOffset
+    {} as TextTranslateOffset,
   );
   const textTranslationAmountRef = useRef<number>(
-    TEXT_TRANSLATION_AMOUNT_REF_INITIAL
+    TEXT_TRANSLATION_AMOUNT_REF_INITIAL,
   );
   const videoThumbnailRef = useRef<HTMLVideoElement>();
   useSetVideoCurrentTime({ percent, video: videoThumbnailRef?.current });
@@ -80,7 +80,7 @@ const CarouselVideoProgressBarScreenshotViewer = (
         toolbarRef.current,
         screenShotTextContainerRef.current?.querySelector("div"),
         videoThumbnailRef.current,
-        textTranslateOffsetRef
+        textTranslateOffsetRef,
       )}
     >
       <video
@@ -106,7 +106,7 @@ const CarouselVideoProgressBarScreenshotViewer = (
             screenShotTextContainerRef.current?.querySelector("div"),
             videoThumbnailRef.current,
             textTranslateOffsetRef,
-            textTranslationAmountRef
+            textTranslationAmountRef,
           )}
         >
           {currentVideoSection !== undefined
@@ -125,5 +125,5 @@ const CarouselVideoProgressBarScreenshotViewer = (
 };
 
 export const CarouselVideoProgressBarScreenshotViewerMemoized = React.memo(
-  CarouselVideoProgressBarScreenshotViewer
+  CarouselVideoProgressBarScreenshotViewer,
 );

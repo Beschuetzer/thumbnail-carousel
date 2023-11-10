@@ -21,7 +21,7 @@ import {
   CarouselModalGetCodeSectionsInput,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   CarouselModalSectionProps,
-  CarouselItemProps
+  CarouselItemProps,
 } from "../types";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { CarouselModal } from "../components/modal/CarouselModal";
@@ -194,7 +194,7 @@ export function convertColorNameToHex(color: string) {
 
 export function convertHexToRgba(
   hex: string,
-  opacity = CAROUSEL_ITEM_THUMBNAIL_BACKGROUND_OPACITY_DEFAULT
+  opacity = CAROUSEL_ITEM_THUMBNAIL_BACKGROUND_OPACITY_DEFAULT,
 ) {
   let color: any;
   const hexToUse = hex?.trim();
@@ -206,7 +206,7 @@ export function convertHexToRgba(
     }
     color = "0x" + color.join("");
     return `rgba(${[(color >> 16) & 255, (color >> 8) & 255, color & 255].join(
-      ","
+      ",",
     )},${opacity > 1 ? 1 : opacity < 0 ? 0 : opacity})`;
   }
 
@@ -245,15 +245,15 @@ export function convertTimeStringToMilliseconds(timestamp: string) {
 
   if (milliseconds >= 1000 || milliseconds < 0) {
     alert(
-      `The number of milliseconds must be between 0 and 999.  ${timestamp} has ${milliseconds}`
+      `The number of milliseconds must be between 0 and 999.  ${timestamp} has ${milliseconds}`,
     );
   } else if (seconds >= 60 || seconds < 0) {
     alert(
-      `The number of seconds must be between 0 and 59.  ${timestamp} has ${seconds}`
+      `The number of seconds must be between 0 and 59.  ${timestamp} has ${seconds}`,
     );
   } else if (minutes >= 60 || minutes < 0) {
     alert(
-      `The number of minutes must be between 0 and 59.  ${timestamp} has ${minutes}`
+      `The number of minutes must be between 0 and 59.  ${timestamp} has ${minutes}`,
     );
   }
 
@@ -270,7 +270,7 @@ export function convertTimeStringToMilliseconds(timestamp: string) {
 export function getAncestorContainsClassname(
   elementToCheck: HTMLElement | null,
   classname: string,
-  stoppingElementType = "body"
+  stoppingElementType = "body",
 ): boolean {
   try {
     const regex = new RegExp(classname, "i");
@@ -291,7 +291,7 @@ export function getAncestorContainsClassname(
 export function getBoundValue(
   value: NonNullable<number>,
   min: NonNullable<number>,
-  max: NonNullable<number>
+  max: NonNullable<number>,
 ) {
   if (value === undefined || min === undefined || max === undefined)
     return value;
@@ -330,7 +330,7 @@ export function getCodeSections(input: CarouselModalGetCodeSectionsInput) {
         marginTop,
         tabCount: numberOfInitialSpaces + startTabCount,
         tabSpacing,
-      })
+      }),
     );
   }
 
@@ -361,7 +361,7 @@ export function getCodeSection(input: CarouselModalGetCodeSectionInput) {
 
 export function getContainerWidth(
   htmlElement: HTMLElement | undefined,
-  stylingLogic: StylingLogic
+  stylingLogic: StylingLogic,
 ) {
   return (
     (htmlElement?.getBoundingClientRect()?.width || 0) -
@@ -371,7 +371,7 @@ export function getContainerWidth(
 
 export function getCoordinateDifference(
   mostRecentCoordinate: Coordinate,
-  previousCoordinate: Coordinate
+  previousCoordinate: Coordinate,
 ) {
   if (
     !mostRecentCoordinate ||
@@ -418,7 +418,7 @@ export function getFormattedTimeString(seconds: number) {
 
 export function getIsPointInsideElement(
   point: Point,
-  element: Element | null | undefined
+  element: Element | null | undefined,
 ) {
   if (!point || !point.x || !point.y || !element) return false;
   const { top, bottom, left, right } = element.getBoundingClientRect();
@@ -439,7 +439,7 @@ export function getIsVideoPlaying(video: HTMLVideoElement | undefined) {
 
 export function getMostFrequentItem(
   numbers: number[],
-  defaultToUse = CAROUSEL_MAX_HEIGHT_DEFAULT
+  defaultToUse = CAROUSEL_MAX_HEIGHT_DEFAULT,
 ) {
   if (!numbers || numbers.length === 0) return defaultToUse;
   const counts: { [key: string]: number } = {};
@@ -471,7 +471,7 @@ export function getNumberOfItemsThatCanFit(
   itemsLength: number,
   htmlElement: HTMLElement | undefined,
   stylingLogic: StylingLogic,
-  optionsLogic: OptionsLogic
+  optionsLogic: OptionsLogic,
 ) {
   const containerWidth = getContainerWidth(htmlElement, stylingLogic);
   const itemSize = optionsLogic.thumbnailSize;
@@ -479,7 +479,7 @@ export function getNumberOfItemsThatCanFit(
     optionsLogic.getThumbnailSpacingBasedOnThumbnailPositioning();
   const numberOfItemsThatCanFitWithZeroSpacing = containerWidth / itemSize;
   let calculatedNumberOfWholeItemsThatCanFitWithZeroSpacing = Math.floor(
-    numberOfItemsThatCanFitWithZeroSpacing
+    numberOfItemsThatCanFitWithZeroSpacing,
   );
   const itemSpacingStrategy = optionsLogic.thumbnailSpacingStrategy;
 
@@ -513,7 +513,7 @@ export function getNumberOfPages(
   carouselContainerElement: HTMLElement,
   itemsLength: number,
   stylingLogic: StylingLogic,
-  optionsLogic: OptionsLogic
+  optionsLogic: OptionsLogic,
 ) {
   if (!carouselContainerElement) return NUMBER_OF_PAGES_INITIAL;
   const { numberOfWholeItemsThatCanFit: numberOfItemsThatCanFit } =
@@ -521,7 +521,7 @@ export function getNumberOfPages(
       itemsLength,
       carouselContainerElement,
       stylingLogic,
-      optionsLogic
+      optionsLogic,
     );
   const numberOfPages = Math.ceil(itemsLength / numberOfItemsThatCanFit);
   return numberOfPages;
@@ -568,7 +568,7 @@ export function getShortcutsString(shortcuts: KeyInput[]) {
 
     if (Array.isArray(shortcut)) {
       const replaced = shortcut.map((sc) =>
-        replaceCharacters(sc, replacements)
+        replaceCharacters(sc, replacements),
       );
       result += replaced.join("+");
     } else {
@@ -603,7 +603,7 @@ export function onArrowButtonClick(
   direction: ArrowButtonDirection,
   currentPage: number,
   numberOfPages: number,
-  setCurrentPage: React.Dispatch<React.SetStateAction<number>>
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>,
 ) {
   if (direction === ArrowButtonDirection.previous) {
     setCurrentPage(currentPage <= 0 ? numberOfPages - 1 : currentPage - 1);
@@ -614,7 +614,7 @@ export function onArrowButtonClick(
 
 export const replaceCharacters = (
   str: string,
-  characterMappings: [string, string][] = []
+  characterMappings: [string, string][] = [],
 ) => {
   const replacements = [
     ["-", " "],
@@ -647,7 +647,7 @@ export function stopPropagation(e?: Event) {
 export async function tryPlayingVideo(
   videoRef: HTMLVideoElement | undefined,
   onSuccess?: () => void,
-  onFailure?: () => void
+  onFailure?: () => void,
 ) {
   const playPromise = videoRef?.play();
   if (playPromise !== undefined) {

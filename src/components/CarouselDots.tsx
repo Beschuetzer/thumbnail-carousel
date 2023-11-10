@@ -39,7 +39,7 @@ export const CarouselDots = (props: CarouselDotsProps) => {
     : optionsLogic.theme.colorFive;
   const fillColor = optionsLogic.getButtonColor(
     CarouselElement.dots,
-    defaultColor
+    defaultColor,
   );
   //#endregion
 
@@ -49,21 +49,21 @@ export const CarouselDots = (props: CarouselDotsProps) => {
       if (index === currentPage) return;
       setCurrentPage(index);
     },
-    [setCurrentPage, currentPage]
+    [setCurrentPage, currentPage],
   );
   //#endregion
 
   //#region JSX
   const useStyles = useMemo(
     () => StylingLogic.getColorStyle(fillColor, "fill"),
-    [fillColor]
+    [fillColor],
   );
   const divStyles = useMemo(
     () =>
       StylingLogic.getColorStyle(fillColor, "backgroundColor", {
         opacity: CAROUSEL_DOT_OPACITY_DEFAULT,
       }),
-    [fillColor]
+    [fillColor],
   );
   const containerHeight = useMemo(
     () =>
@@ -71,7 +71,7 @@ export const CarouselDots = (props: CarouselDotsProps) => {
         ?.width || CAROUSEL_DOT_HEIGHT_DEFAULT) as number) *
         2) /
       3,
-    [stylingLogic]
+    [stylingLogic],
   );
   const containerWidth = useMemo(
     () =>
@@ -79,7 +79,7 @@ export const CarouselDots = (props: CarouselDotsProps) => {
         ?.width || CAROUSEL_DOT_HEIGHT_DEFAULT) as number) *
         2) /
       3,
-    [stylingLogic]
+    [stylingLogic],
   );
   const dotContainerSizeStyle = useMemo(
     () => ({
@@ -89,14 +89,14 @@ export const CarouselDots = (props: CarouselDotsProps) => {
           CAROUSEL_DOT_WIDTH_DEFAULT,
       height: containerHeight,
     }),
-    [containerHeight, containerWidth]
+    [containerHeight, containerWidth],
   );
   const dotSizeStyle = useMemo(
     () => ({
       width: containerHeight / 4,
       height: containerHeight / 4,
     }),
-    [containerHeight]
+    [containerHeight],
   );
 
   const renderDots = useCallback(() => {
@@ -145,7 +145,7 @@ export const CarouselDots = (props: CarouselDotsProps) => {
               style={{ ...divStyles, ...currentDotStyle, ...dotSizeStyle }}
             />
           </div>
-        )
+        ),
       );
     }
     return dots;

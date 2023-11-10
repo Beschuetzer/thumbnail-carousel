@@ -22,8 +22,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 /**
-*This is the default layout
-**/
+ *This is the default layout
+ **/
 export const Story1: Story = {
   args: {
     items: items.slice(0, 3),
@@ -32,8 +32,8 @@ export const Story1: Story = {
 };
 
 /**
-*When there are too many items for the given thumbnail size:
-**/
+ *When there are too many items for the given thumbnail size:
+ **/
 export const Story3: Story = {
   args: {
     items: items,
@@ -42,8 +42,8 @@ export const Story3: Story = {
 };
 
 /**
-*It is possible to add an item viewer above the carousel.
-**/
+ *It is possible to add an item viewer above the carousel.
+ **/
 export const Story4: Story = {
   args: {
     items: items,
@@ -53,15 +53,15 @@ export const Story4: Story = {
       },
       thumbnail: {
         size: 125,
-      }
+      },
     },
   },
   name: "Current Item Displayed Above Carousel",
 };
 
 /**
-*It is possible to add an item viewer below the carousel.
-**/
+ *It is possible to add an item viewer below the carousel.
+ **/
 export const Story5: Story = {
   args: {
     items: items,
@@ -77,10 +77,9 @@ export const Story5: Story = {
   name: "Current Item Displayed Below Carousel",
 };
 
-
 /**
-*It is possible to move the toolbar below the video.
-**/
+ *It is possible to move the toolbar below the video.
+ **/
 export const Story6: Story = {
   args: {
     items: items,

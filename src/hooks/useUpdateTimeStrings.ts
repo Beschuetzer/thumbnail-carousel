@@ -39,7 +39,7 @@ export const useUpdateTimeString = (input: UseUpdateTimeStringInput) => {
         setTimeStrings({
           durationStr: getFormattedTimeString(videoRef?.current?.duration || 0),
           currentTimeStr: getFormattedTimeString(
-            videoRef?.current?.currentTime || 0
+            videoRef?.current?.currentTime || 0,
           ),
         });
       }

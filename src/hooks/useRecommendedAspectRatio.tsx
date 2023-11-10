@@ -20,7 +20,7 @@ const CHECK_INTERVAL = 10;
 //todo: modify useRecommendedAspectRatio to check for an image and only count it in the total if it is either an image (srcMain) or has a thumbnail.  Prefer srcMain for images and srcThumbnail for everything else
 export const useRecommendedAspectRatio = (items: CarouselItemProps[]) => {
   const [recommendedAspectRatio, setRecommendedAspectRatio] = useState(
-    USE_RECOMMENDEDED_ASPECT_RATIO_INITIAL
+    USE_RECOMMENDEDED_ASPECT_RATIO_INITIAL,
   );
   const lowestRatioRef = useRef(5);
   const hasStartedRef = useRef(false);
@@ -49,19 +49,19 @@ export const useRecommendedAspectRatio = (items: CarouselItemProps[]) => {
     if (optionsLogic.maxHeight !== CAROUSEL_MAX_HEIGHT_DEFAULT) {
       const navigationContainer =
         optionsLogic.carouselContainerRef?.current?.querySelector(
-          `.${CLASSNAME__NAVIGATION}`
+          `.${CLASSNAME__NAVIGATION}`,
         );
       const navigationHeight =
         navigationContainer?.getBoundingClientRect().height || 0;
       const itemsContainer =
         optionsLogic.carouselContainerRef?.current?.querySelector(
-          `.${CLASSNAME__CAROUSEL_ITEMS_CONTAINER}`
+          `.${CLASSNAME__CAROUSEL_ITEMS_CONTAINER}`,
         ) as HTMLElement;
       const itemsContainerHeight =
         itemsContainer.getBoundingClientRect().height || 0;
       const carouselItem =
         optionsLogic.carouselContainerRef?.current?.querySelector(
-          `.${CLASSNAME__CAROUSEL_ITEM}`
+          `.${CLASSNAME__CAROUSEL_ITEM}`,
         ) as HTMLElement;
       const carouselItemMarginTop =
         parseInt(getComputedStyle(carouselItem)?.marginTop, 10) || 0;
@@ -72,22 +72,22 @@ export const useRecommendedAspectRatio = (items: CarouselItemProps[]) => {
 
       const paddingTop = optionsLogic.getPaddingAmount(
         SpacingDirection.top,
-        CarouselSection.container
+        CarouselSection.container,
       );
       const paddingBottom = optionsLogic.getPaddingAmount(
         SpacingDirection.bottom,
-        CarouselSection.container
+        CarouselSection.container,
       );
       const containerWidth =
         optionsLogic.carouselContainerRef?.current?.getBoundingClientRect()
           .width || 0;
       const paddingLeft = optionsLogic.getPaddingAmount(
         SpacingDirection.left,
-        CarouselSection.container
+        CarouselSection.container,
       );
       const paddingRight = optionsLogic.getPaddingAmount(
         SpacingDirection.right,
-        CarouselSection.container
+        CarouselSection.container,
       );
       const maxItemHeight =
         optionsLogic.maxHeight -
@@ -99,7 +99,7 @@ export const useRecommendedAspectRatio = (items: CarouselItemProps[]) => {
 
       hasStartedRef.current = true;
       setRecommendedAspectRatio(
-        maxItemHeight / (containerWidth - paddingLeft - paddingRight)
+        maxItemHeight / (containerWidth - paddingLeft - paddingRight),
       );
       return;
     }
