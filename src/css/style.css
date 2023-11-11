@@ -753,6 +753,12 @@
   width: 100%;
   overflow: hidden;
 }
+.thumbnail-carousel__container {
+  box-sizing: border-box;
+}
+.thumbnail-carousel__container * {
+  box-sizing: border-box;
+}
 .thumbnail-carousel__dots {
   display: flex;
   flex-direction: row;

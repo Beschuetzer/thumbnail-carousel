@@ -6,6 +6,14 @@
   overflow: hidden;
   // margin-top: $carouselItemHoverTranslateUpAmount;
 
+  &__container {
+    box-sizing: border-box;
+
+    & * {
+      box-sizing: border-box;
+    }
+  }
+
   &__dots {
     @include displayFlexCenter();
 

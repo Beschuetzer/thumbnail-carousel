@@ -29,6 +29,7 @@ import {
   TOOLBAR_MARGIN_RIGHT_OFFSET,
   CAROUSEL_VIDEO_SCREENSHOT_VIEWER_WIDTH_DEFAULT,
   BORDER_STRING_DEFAULT_SIZE,
+  CAROUSEL_BORDER_RADIUS_DEFAULT,
 } from "../constants";
 import { CarouselModalInternalProps } from "../components/modal/CarouselModal";
 import {
@@ -184,7 +185,7 @@ export class StylingLogic {
     };
   }
 
-  get carouselStyle() {
+  getCarouselStyle(options?: CarouselOptions) {
     const {
       top: marginTop,
       bottom: marginBottom,
@@ -214,7 +215,10 @@ export class StylingLogic {
           background:
             this.optionsLogic.navigationBackground ||
             this.optionsLogic.containerBackgroundColor,
-          borderRadius: 4,
+          borderRadius:
+            options?.container?.style?.borderRadius !== undefined
+              ? options.container.style.borderRadius
+              : CAROUSEL_BORDER_RADIUS_DEFAULT,
           paddingRight: 0,
           paddingLeft: 0,
           ...common,
@@ -246,14 +250,8 @@ export class StylingLogic {
         } as CSSProperties)
       : {};
     const widthStyle = {
-      width:
-        !this.optionsLogic.isDefaultItemDisplayLocation && this.isCurrentItem
-          ? this.optionsLogic.thumbnailSizeCurrentItem
-          : this.optionsLogic.thumbnailSize,
-      height:
-        !this.optionsLogic.isDefaultItemDisplayLocation && this.isCurrentItem
-          ? this.optionsLogic.thumbnailSizeCurrentItem
-          : this.optionsLogic.thumbnailSize,
+      width: this.optionsLogic.thumbnailSize,
+      height: this.optionsLogic.thumbnailSize,
     } as CSSProperties;
     const selectionStyle = this.isCurrentItemSelected
       ? ({
@@ -672,8 +670,8 @@ export class StylingLogic {
 
     const widthStyle = {
       width: widthToUse,
-      maxWidth: `calc(${widthToUse} - ${
-        paddingLeft + paddingRight
+      maxWidth: `calc(100% - ${
+        CAROUSEL_ITEM_SPACING_DEFAULT * 2
       }${CAROUSEL_SPACING_UNIT})`,
       boxShadow: `0 10px 15px -3px rgba(0,0,0,.25)`,
     } as CSSProperties;
@@ -694,8 +692,7 @@ export class StylingLogic {
     const positionStyle = {
       top: "auto",
       bottom: Math.abs(this.carouselShortcutIndicatorTextTop) + 24,
-      // left: `${toolbarInnerContainerPaddingLeft + 1}${CAROUSEL_SPACING_UNIT}`,
-      left: 0,
+      left: CAROUSEL_ITEM_SPACING_DEFAULT,
       right: "auto",
     } as CSSProperties;
     const textStyle = {
@@ -1104,14 +1101,6 @@ export class StylingLogic {
         : 90; //fallback
 
     let translateX = "-50%";
-    // let left = `${
-    //   paddingBetweenContainerAndVideoLeft +
-    //   ((videoRect?.width || 200) -
-    //     (paddingBetweenContainerAndVideoLeft +
-    //       paddingBetweenContainerAndVideoRight)) *
-    //     percent
-    // }${CAROUSEL_SPACING_UNIT}`;
-
     let left = `${
       paddingBetweenContainerAndVideoLeft +
       ((videoRect?.width || 200) -
@@ -1123,13 +1112,6 @@ export class StylingLogic {
     }${CAROUSEL_SPACING_UNIT}`;
 
     let right = "auto";
-
-    // console.log({
-    //   videoRectWidth: videoRect?.width,
-    //   paddingBetweenContainerAndVideoLeft,
-    //   paddingBetweenContainerAndVideoRight,
-    //   isFullscreenMode: this.isFullscreenMode,
-    // });
 
     if (videoRect && screenShotCanvasRect) {
       const cursorLeftPosition = videoRect.left + videoRect.width * percent;

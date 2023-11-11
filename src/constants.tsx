@@ -11,7 +11,9 @@ export const CLASSNAME__ROOT = "thumbnail-carousel"; //this has to match $carous
 export const CLASSNAME__DOTS = getClassname({ elementName: "dots" });
 export const CLASSNAME__BUTTON = `${CLASSNAME__ROOT}-button`;
 export const CLASSNAME__BUTTON_SCALE_ON_HOVER = `${CLASSNAME__BUTTON}--scale-on-hover`;
-export const CLASSNAME__CAROUSEL_CONTAINER = `${CLASSNAME__ROOT}-container`; //this has to match $carouselClassname in _variables.scss
+export const CLASSNAME__CAROUSEL_CONTAINER = getClassname({
+  elementName: "container",
+});
 export const CLASSNAME__CAROUSEL_ITEM = getClassname({ elementName: "item" });
 export const CLASSNAME__CAROUSEL_ITEMS = getClassname({ elementName: "items" });
 export const CLASSNAME__CAROUSEL_ITEMS_CONTAINER = `${CLASSNAME__CAROUSEL_ITEMS}-container`;
@@ -150,6 +152,10 @@ export const BORDER_STRING_DEFAULT_SIZE = 1;
 export const BORDER_STRING_MEDIUM_SIZE = 3;
 export const BORDER_STRING_THICK_SIZE = 5;
 export const BORDER_STRING_THIN_SIZE = 2;
+export const CAROUSEL_BORDER_RADIUS_DEFAULT = 4;
+export const CAROUSEL_VIDEO_AUTO_PLAY_DEFAULT = false;
+export const CAROUSEL_VIDEO_LOOP_DEFAULT = false;
+export const CAROUSEL_VIDEO_MUTED_DEFAULT = true;
 export const CURRENT_ITEM_INDEX_INITIAL = 0;
 export const CURRENT_PAGE_INITIAL = 0;
 export const DISABLE_WRAPPING_DEFAULT = false;

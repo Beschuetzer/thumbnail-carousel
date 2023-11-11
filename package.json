@@ -1,6 +1,6 @@
 {
   "name": "react-thumbnail-carousel",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A fully-customizable React carousel with various viewing modes and video support",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

@@ -70,6 +70,7 @@ import {
   CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
   CAROUSEL_ITEM_HOVER_TRANSLATE_UP_AMOUNT,
   CAROUSEL_SPACING_UNIT,
+  CAROUSEL_VIDEO_AUTO_PLAY_DEFAULT,
 } from "../constants";
 import {
   CarouselElement,
@@ -82,7 +83,6 @@ import {
 import { convertHexToRgba, getBoundValue, getIsMobile } from "../utils/utils";
 import { getCurrentValue } from "../utils/getCurrentValue";
 import { CarouselContextInputProps } from "../context";
-import { getBorderStringSize } from "../utils/getBorderStringSize";
 
 export type OptionsConstructor = {
   options: CarouselOptions;
@@ -229,6 +229,14 @@ export class OptionsLogic {
     return this.isMobile
       ? CAROUSEL_TOOLBAR_BUTTON_SIZE_MOBILE_DEFAULT
       : CAROUSEL_TOOLBAR_BUTTON_SIZE_DEFAULT;
+  }
+
+  getIsAutoPlayEnabled(autoPlayGiven: boolean | undefined) {
+    return getCurrentValue(
+      autoPlayGiven,
+      CAROUSEL_VIDEO_AUTO_PLAY_DEFAULT,
+      this.isFullscreenMode,
+    );
   }
 
   get isDefaultItemDisplayLocation() {
@@ -905,20 +913,6 @@ export class OptionsLogic {
       this.isFullscreenMode,
     );
     return thumbnailSizeGiven;
-  }
-
-  get thumbnailSizeCurrentItem() {
-    const borderStringOffset = getBorderStringSize(
-      this.thumbnailBorderString !== undefined
-        ? String(this.thumbnailBorderString)
-        : undefined,
-    );
-    // console.log({
-    //   input: this.thumbnailBorderString !== undefined ? String(this.thumbnailBorderString) : undefined,
-    //   output: borderStringOffset,
-    //   returning: `calc(${this.thumbnailSize}${CAROUSEL_SPACING_UNIT} - calc(${borderStringOffset} * 2))`,
-    // });
-    return `calc(${this.thumbnailSize}${CAROUSEL_SPACING_UNIT} - calc(${borderStringOffset} * 2))`;
   }
 
   get thumbnailSpacingStrategy() {
