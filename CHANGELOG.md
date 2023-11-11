@@ -13,6 +13,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
  -->
 
+## [1.0.7] - 2023-11-11
+
+### Changed
+
+- removed minify from rollup config
+
+### Fixed
+
+- screenshot viewer text not being changed when `options.styling.toolbar.progressBar.screenshotViewer.textOrForegroundColor` is changed.
+
 ## [1.0.6] - 2023-11-11
 
 ### Fixed

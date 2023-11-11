@@ -1083,7 +1083,7 @@ export class OptionsLogic {
       this.isFullscreenMode,
     );
     const textColor = getCurrentValue(
-      this.options?.styling?.toolbar?.progressBar?.textOrForegroundColor,
+      this.options?.styling?.toolbar?.progressBar?.screenshotViewer?.textOrForegroundColor,
       this.theme.colorFive,
       this.isFullscreenMode,
     );

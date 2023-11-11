@@ -2,7 +2,6 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import postcss from "rollup-plugin-postcss";
-import terser from "@rollup/plugin-terser";
 import dts from "rollup-plugin-dts";
 
 const packageJson = require("./package.json");
@@ -34,7 +33,6 @@ export default [
       //have to explicity specify tsconfig.json file create by `npx tsc --init`
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss(),
-      terser(),
     ],
   },
   //handles exporting the types

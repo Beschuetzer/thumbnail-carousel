@@ -114,3 +114,52 @@ export const Story4: Story = {
   },
   name: "Change All theme Values but Default when Fullscreen - Above Display Location",
 };
+
+export const Story5: Story = {
+  args: {
+    items: items.slice(0, items.length - 1),
+    options: {
+      layout: {
+        itemDisplayLocation: "above",
+      },
+      container: {
+        style: {
+          borderRadius: 0,
+        },
+      },
+      thumbnail: {
+        size: 200,
+        descriptionOverlay: {
+          hideDescriptionOverlayUnlessHovered: false,
+          textColor: COLORS.primary4,
+        },
+      },
+      styling: {
+        colorTheme: {
+          colorOne: COLORS.primary1,
+          colorTwo: COLORS.primary2,
+          colorThree: COLORS.primary3,
+          colorFour: COLORS.primary3,
+          colorFive: COLORS.primary4,
+        },
+        container: {
+          backgroundColor: COLORS.primary1,
+        },
+        modal: {
+          backgroundColor: COLORS.primary1,
+          textColor: COLORS.primary3,
+        },
+        toolbar: {
+          progressBar: {
+            backgroundColor: COLORS.primary2,
+            textOrForegroundColor:COLORS.primary3,
+            screenshotViewer: {
+              textOrForegroundColor: COLORS.primary4,
+            },
+          },
+        },
+      },
+    },
+  },
+  name: "Can Handle Overrides",
+};
