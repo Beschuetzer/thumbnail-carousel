@@ -29,6 +29,7 @@ import {
   TOOLBAR_MARGIN_RIGHT_OFFSET,
   CAROUSEL_VIDEO_SCREENSHOT_VIEWER_WIDTH_DEFAULT,
   BORDER_STRING_DEFAULT_SIZE,
+  CAROUSEL_BORDER_RADIUS_DEFAULT,
 } from "../constants";
 import { CarouselModalInternalProps } from "../components/modal/CarouselModal";
 import {
@@ -184,7 +185,7 @@ export class StylingLogic {
     };
   }
 
-  get carouselStyle() {
+  getCarouselStyle(options?: CarouselOptions) {
     const {
       top: marginTop,
       bottom: marginBottom,
@@ -214,7 +215,10 @@ export class StylingLogic {
           background:
             this.optionsLogic.navigationBackground ||
             this.optionsLogic.containerBackgroundColor,
-          borderRadius: 4,
+          borderRadius:
+            options?.container?.style?.borderRadius !== undefined
+              ? options.container.style.borderRadius
+              : CAROUSEL_BORDER_RADIUS_DEFAULT,
           paddingRight: 0,
           paddingLeft: 0,
           ...common,

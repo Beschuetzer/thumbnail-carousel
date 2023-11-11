@@ -3,12 +3,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Carousel } from "../components/Carousel";
 import { items } from "./assets/items";
 import { marginTop } from "./decorators";
-import { COLORS } from "./assets/colors";
-import { customButtons } from "./custom-buttons";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: "Thumbnail-Carousel/Container Text",
+  title: "Thumbnail-Carousel/Container",
   component: Carousel,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
@@ -96,4 +94,23 @@ export const Story4: Story = {
     },
   },
   name: "Use Custom tag with Custom Container and Text Style",
+};
+
+export const Story5: Story = {
+  args: {
+    items: items.slice(0, items.length - 1),
+    options: {
+      layout: {
+        itemDisplayLocation: "below",
+      },
+      container: {
+        text: "The border-radius of this instance should be 0",
+        tag: "h4",
+        style: {
+          borderRadius: 0,
+        },
+      },
+    },
+  },
+  name: "Can Pass Custom Border Radius",
 };

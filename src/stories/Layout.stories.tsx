@@ -140,7 +140,7 @@ export const Story9: Story = {
     items: items,
     options: {
       layout: {
-        itemDisplayLocation: [['none'], ['above', 1000, 'min-width']]
+        itemDisplayLocation: [["none"], ["above", 1000, "min-width"]],
       },
       container: {
         style: {

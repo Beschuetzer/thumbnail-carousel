@@ -15,12 +15,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.6] - 2023-11-11
 
+### Fixed
+
+- issue where setting border-radius style in `options.container.style` didn't apply correctly
+
 ### Changed
 
 - apply `box-sizing: border-box` to all items
 - left and maxWidth styles for CarouselModal to work with `box-sizing: border-box` change.
 - when autoplay is `false` for a video item, seeking via progress bar no longer plays the video.
 - the progress bar now tracks whether the video was playing before a seek occurs and plays the video onMouseUp accordingly
+
 
 ### Removed
 

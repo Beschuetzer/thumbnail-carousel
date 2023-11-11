@@ -1,5 +1,4 @@
 Before Publishing
-  -text color for screenshot viewer does not seem fixed to a theme color
   -remove styling.container.margin and padding since that should be set via options.container.style?
   -make 0 be default padding top for carousel?
   -add .mdx files for each story file (google), with details on how to test (e.g. dynamic layout)
