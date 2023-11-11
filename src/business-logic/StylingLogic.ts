@@ -1097,14 +1097,6 @@ export class StylingLogic {
         : 90; //fallback
 
     let translateX = "-50%";
-    // let left = `${
-    //   paddingBetweenContainerAndVideoLeft +
-    //   ((videoRect?.width || 200) -
-    //     (paddingBetweenContainerAndVideoLeft +
-    //       paddingBetweenContainerAndVideoRight)) *
-    //     percent
-    // }${CAROUSEL_SPACING_UNIT}`;
-
     let left = `${
       paddingBetweenContainerAndVideoLeft +
       ((videoRect?.width || 200) -
@@ -1116,13 +1108,6 @@ export class StylingLogic {
     }${CAROUSEL_SPACING_UNIT}`;
 
     let right = "auto";
-
-    // console.log({
-    //   videoRectWidth: videoRect?.width,
-    //   paddingBetweenContainerAndVideoLeft,
-    //   paddingBetweenContainerAndVideoRight,
-    //   isFullscreenMode: this.isFullscreenMode,
-    // });
 
     if (videoRect && screenShotCanvasRect) {
       const cursorLeftPosition = videoRect.left + videoRect.width * percent;
