@@ -82,7 +82,6 @@ import {
 import { convertHexToRgba, getBoundValue, getIsMobile } from "../utils/utils";
 import { getCurrentValue } from "../utils/getCurrentValue";
 import { CarouselContextInputProps } from "../context";
-import { getBorderStringSize } from "../utils/getBorderStringSize";
 
 export type OptionsConstructor = {
   options: CarouselOptions;
@@ -905,20 +904,6 @@ export class OptionsLogic {
       this.isFullscreenMode,
     );
     return thumbnailSizeGiven;
-  }
-
-  get thumbnailSizeCurrentItem() {
-    const borderStringOffset = getBorderStringSize(
-      this.thumbnailBorderString !== undefined
-        ? String(this.thumbnailBorderString)
-        : undefined,
-    );
-    // console.log({
-    //   input: this.thumbnailBorderString !== undefined ? String(this.thumbnailBorderString) : undefined,
-    //   output: borderStringOffset,
-    //   returning: `calc(${this.thumbnailSize}${CAROUSEL_SPACING_UNIT} - calc(${borderStringOffset} * 2))`,
-    // });
-    return `calc(${this.thumbnailSize}${CAROUSEL_SPACING_UNIT} - calc(${borderStringOffset} * 2))`;
   }
 
   get thumbnailSpacingStrategy() {

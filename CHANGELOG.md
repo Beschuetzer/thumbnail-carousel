@@ -13,6 +13,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
  -->
 
+## [1.0.6] - 2023-11-11
+
+### Changed
+
+- apply `box-sizing: border-box` to all items
+- left and maxWidth styles for CarouselModal to work with `box-sizing: border-box` change.
+
+### Removed
+
+- `getBorderStringSize` and everything related to it, since only needed if `box-sizing` is not `border-box`.
+
 ## [1.0.5] - 2023-11-10
 
 ### Fixed

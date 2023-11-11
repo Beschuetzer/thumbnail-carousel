@@ -246,14 +246,8 @@ export class StylingLogic {
         } as CSSProperties)
       : {};
     const widthStyle = {
-      width:
-        !this.optionsLogic.isDefaultItemDisplayLocation && this.isCurrentItem
-          ? this.optionsLogic.thumbnailSizeCurrentItem
-          : this.optionsLogic.thumbnailSize,
-      height:
-        !this.optionsLogic.isDefaultItemDisplayLocation && this.isCurrentItem
-          ? this.optionsLogic.thumbnailSizeCurrentItem
-          : this.optionsLogic.thumbnailSize,
+      width: this.optionsLogic.thumbnailSize,
+      height: this.optionsLogic.thumbnailSize,
     } as CSSProperties;
     const selectionStyle = this.isCurrentItemSelected
       ? ({
@@ -672,9 +666,7 @@ export class StylingLogic {
 
     const widthStyle = {
       width: widthToUse,
-      maxWidth: `calc(${widthToUse} - ${
-        paddingLeft + paddingRight
-      }${CAROUSEL_SPACING_UNIT})`,
+      maxWidth: `calc(100% - ${CAROUSEL_ITEM_SPACING_DEFAULT * 2}${CAROUSEL_SPACING_UNIT})`,
       boxShadow: `0 10px 15px -3px rgba(0,0,0,.25)`,
     } as CSSProperties;
     const paddingStyle = isMinimized
@@ -694,8 +686,7 @@ export class StylingLogic {
     const positionStyle = {
       top: "auto",
       bottom: Math.abs(this.carouselShortcutIndicatorTextTop) + 24,
-      // left: `${toolbarInnerContainerPaddingLeft + 1}${CAROUSEL_SPACING_UNIT}`,
-      left: 0,
+      left: CAROUSEL_ITEM_SPACING_DEFAULT,
       right: "auto",
     } as CSSProperties;
     const textStyle = {
