@@ -139,24 +139,37 @@ export const Story9: Story = {
   args: {
     items: items,
     options: {
-      styling: {
-        container: {
-          padding: {
-            left: 40,
-            right: 40,
-          },
-          margin: {
-            bottom: 40,
-            top: 40,
-          },
+      layout: {
+        itemDisplayLocation: [['none'], ['above', 1000, 'min-width']]
+      },
+      container: {
+        style: {
+          margin: `40px 1.4rem`,
         },
       },
     },
   },
-  name: "Multiple Pages - Custom Padding and Margin",
+  name: "Multiple Pages - Custom Margin",
 };
 
 export const Story10: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        itemDisplayLocation: [["none"], ["above", 1000, "min-width"]],
+      },
+      container: {
+        style: {
+          padding: `40px 1.4rem`,
+        },
+      },
+    },
+  },
+  name: "Multiple Pages - Custom Padding",
+};
+
+export const Story11: Story = {
   args: {
     items: items,
     options: {
