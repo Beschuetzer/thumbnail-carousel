@@ -122,6 +122,11 @@ export const Story5: Story = {
       layout: {
         itemDisplayLocation: "above",
       },
+      container: {
+        style: {
+          borderRadius: 0,
+        },
+      },
       thumbnail: {
         size: 200,
         descriptionOverlay: {
@@ -143,6 +148,15 @@ export const Story5: Story = {
         modal: {
           backgroundColor: COLORS.primary1,
           textColor: COLORS.primary3,
+        },
+        toolbar: {
+          progressBar: {
+            backgroundColor: COLORS.primary2,
+            textOrForegroundColor:COLORS.primary3,
+            screenshotViewer: {
+              textOrForegroundColor: COLORS.primary4,
+            },
+          },
         },
       },
     },

@@ -1158,9 +1158,9 @@ export class StylingLogic {
   }
 
   get carouselVideoProgressScreenshotViewerTextContainerStyle() {
-    const { width } = this.optionsLogic.videoProgressBarScreenshotViewer;
+    const { width, textColor } = this.optionsLogic.videoProgressBarScreenshotViewer;
     return {
-      color: this.optionsLogic.videoProgressBarScreenshotViewer.textColor,
+      color: textColor,
       position: "absolute",
       width: "10000px", //this is a hack to align this centered since translateX(-50%) doesn't work
       transform: `translateX(calc(-${
