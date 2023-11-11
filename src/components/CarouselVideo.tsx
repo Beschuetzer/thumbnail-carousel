@@ -13,7 +13,10 @@ import {
 } from "./item-viewer/toolbar/CarouselItemViewerToolbar";
 import { LoadingSpinner } from "./LoadingSpinner";
 import {
+  CAROUSEL_VIDEO_AUTO_PLAY_DEFAULT,
   CAROUSEL_VIDEO_CURRENT_SECTION_INITIAL,
+  CAROUSEL_VIDEO_LOOP_DEFAULT,
+  CAROUSEL_VIDEO_MUTED_DEFAULT,
   CLASSNAME__HIDDEN,
   CLASSNAME__TOOLBAR_PROGRESS,
   CURRENT_VIDEO_CURRENT_TIME_DEFAULT,
@@ -64,9 +67,16 @@ export type CarouselVideoOptions = {
   /**
    * If `true` and `muted` is `undefined` or `true`, the video will start playing when it first comes into focus.
    * e.g. when user scrolls down to it or when the user clicks the thumbnail to load it.
+   * The default is {@link CAROUSEL_VIDEO_AUTO_PLAY_DEFAULT here}.
    **/
   autoPlay?: boolean;
+  /**
+   * The default is {@link CAROUSEL_VIDEO_LOOP_DEFAULT here}.
+   **/
   loop?: boolean;
+  /**
+   * The default is {@link CAROUSEL_VIDEO_MUTED_DEFAULT here}.
+   **/
   muted?: boolean;
 
   /**
@@ -122,7 +132,11 @@ export const CarouselVideo = (
     setCurrentVideoCurrentTime,
     itemContainerHeight,
   } = useCarouselContext();
-  const { autoPlay = false, loop = false, muted = true } = videoProps || {};
+  const {
+    autoPlay = CAROUSEL_VIDEO_AUTO_PLAY_DEFAULT,
+    loop = CAROUSEL_VIDEO_LOOP_DEFAULT,
+    muted = CAROUSEL_VIDEO_MUTED_DEFAULT,
+  } = videoProps || {};
   const [isLoaded, setIsLoaded] = useState(false);
   const [percent, setPercent] = useState(PROGRESS_BAR_PERCENT_INITIAL_VALUE);
   const [seekPercent, setSeekPercent] = useState(

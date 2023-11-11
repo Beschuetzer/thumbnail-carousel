@@ -70,6 +70,7 @@ import {
   CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
   CAROUSEL_ITEM_HOVER_TRANSLATE_UP_AMOUNT,
   CAROUSEL_SPACING_UNIT,
+  CAROUSEL_VIDEO_AUTO_PLAY_DEFAULT,
 } from "../constants";
 import {
   CarouselElement,
@@ -228,6 +229,14 @@ export class OptionsLogic {
     return this.isMobile
       ? CAROUSEL_TOOLBAR_BUTTON_SIZE_MOBILE_DEFAULT
       : CAROUSEL_TOOLBAR_BUTTON_SIZE_DEFAULT;
+  }
+
+  getIsAutoPlayEnabled(autoPlayGiven: boolean | undefined) {
+    return getCurrentValue(
+      autoPlayGiven,
+      CAROUSEL_VIDEO_AUTO_PLAY_DEFAULT,
+      this.isFullscreenMode,
+    );
   }
 
   get isDefaultItemDisplayLocation() {

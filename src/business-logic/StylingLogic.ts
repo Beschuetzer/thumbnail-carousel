@@ -666,7 +666,9 @@ export class StylingLogic {
 
     const widthStyle = {
       width: widthToUse,
-      maxWidth: `calc(100% - ${CAROUSEL_ITEM_SPACING_DEFAULT * 2}${CAROUSEL_SPACING_UNIT})`,
+      maxWidth: `calc(100% - ${
+        CAROUSEL_ITEM_SPACING_DEFAULT * 2
+      }${CAROUSEL_SPACING_UNIT})`,
       boxShadow: `0 10px 15px -3px rgba(0,0,0,.25)`,
     } as CSSProperties;
     const paddingStyle = isMinimized

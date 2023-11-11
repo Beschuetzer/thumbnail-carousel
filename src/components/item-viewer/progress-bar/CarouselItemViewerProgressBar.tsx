@@ -16,6 +16,7 @@ import {
   convertTimeStringToMilliseconds,
   getFormattedTimeString,
   getIsPointInsideElement,
+  getIsVideoPlaying,
   getPoint,
 } from "../../../utils/utils";
 import { VideoTimeStrings } from "../../../types";
@@ -69,6 +70,7 @@ export const CarouselItemViewerProgressBar = (
   const progressBarRef = useRef<HTMLDivElement>();
   //this is used to prevent the the seekPercent from being reset then immediately set to a value when moving the triggering onMouseMove
   const wasMouseUpJustTriggeredRef = useRef(false);
+  const isVideoPlayingOnMouseDownRef = useRef(false);
   const [showDot, setShowDot] = useState(false);
   const { stylingLogic, optionsLogic } = useBusinessLogic();
   const sectionToValueMappingRef = useSectionToValueMapping({
@@ -163,11 +165,15 @@ export const CarouselItemViewerProgressBar = (
       }
 
       setSeekPercent(PROGRESS_BAR_PERCENT_INITIAL_VALUE);
-      toggleIsVideoPlaying && toggleIsVideoPlaying(true);
 
+      const shouldPlay =
+        isVideoPlayingOnMouseDownRef.current ||
+        optionsLogic.getIsAutoPlayEnabled(currentItem.video?.autoPlay);
+
+      shouldPlay && toggleIsVideoPlaying && toggleIsVideoPlaying(true);
       if (videoRef?.current && isFinite(videoRef.current.duration)) {
         videoRef.current.currentTime = percent * videoRef.current.duration;
-        videoRef?.current?.play();
+        shouldPlay && videoRef?.current?.play();
       }
     },
     [
@@ -184,6 +190,9 @@ export const CarouselItemViewerProgressBar = (
     (e: MouseEvent | TouchEvent) => {
       e.stopPropagation();
       document.body.classList.remove(CLASSNAME__GRABBING);
+      isVideoPlayingOnMouseDownRef.current = getIsVideoPlaying(
+        videoRef?.current,
+      );
       wasMouseUpJustTriggeredRef.current = false;
       if (isMouseDownRef) {
         isMouseDownRef.current = true;
@@ -203,8 +212,11 @@ export const CarouselItemViewerProgressBar = (
       }
     },
     [
+      getIsVideoPlaying,
       getPercent,
       isMouseDownRef,
+      isVideoPlayingOnMouseDownRef,
+      wasMouseUpJustTriggeredRef,
       toggleIsVideoPlaying,
       setPercent,
       setSeekPercent,

@@ -1,5 +1,4 @@
 Before Publishing
-  -when autoplay is false, seeking via progress bar should not play the video.
   -padding/margin is unable to take string like `1.4rem` (change the values in the portfolio to use rem when this is done)
   -make 0 be default padding top for carousel?
   -add .mdx files for each story file (google), with details on how to test (e.g. dynamic layout)
