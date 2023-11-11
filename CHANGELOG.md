@@ -12,6 +12,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Removed
  -->
+ 
+## [1.0.8] - 2023-11-11
+
+### Fixed
+
+- issue where box-sizing wasn't applying to the item-viewer when in fullscreen mode
+- change `left` and `max-width` stylings for CarouselModal when in fullscreen mode
 
 ## [1.0.7] - 2023-11-11
 
