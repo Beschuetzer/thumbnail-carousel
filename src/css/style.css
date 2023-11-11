@@ -740,11 +740,11 @@
   width: 100%;
   overflow: hidden;
 }
-.thumbnail-carousel__container {
-  box-sizing: border-box;
+.thumbnail-carousel__container, .thumbnail-carousel__item-viewer {
+  box-sizing: border-box !important;
 }
-.thumbnail-carousel__container * {
-  box-sizing: border-box;
+.thumbnail-carousel__container *, .thumbnail-carousel__item-viewer * {
+  box-sizing: border-box !important;
 }
 .thumbnail-carousel__dots {
   display: flex;

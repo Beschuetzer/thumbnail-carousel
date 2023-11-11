@@ -6,11 +6,11 @@
   overflow: hidden;
   // margin-top: $carouselItemHoverTranslateUpAmount;
 
-  &__container {
-    box-sizing: border-box;
+  &__container, &__item-viewer {
+    box-sizing: border-box !important;
 
     & * {
-      box-sizing: border-box;
+      box-sizing: border-box !important;
     }
   }
 
