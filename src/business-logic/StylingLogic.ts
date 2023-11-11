@@ -246,12 +246,14 @@ export class StylingLogic {
         } as CSSProperties)
       : {};
     const widthStyle = {
-      width: this.isCurrentItem
-        ? this.optionsLogic.thumbnailSizeCurrentItem
-        : this.optionsLogic.thumbnailSize,
-      height: this.isCurrentItem
-        ? this.optionsLogic.thumbnailSizeCurrentItem
-        : this.optionsLogic.thumbnailSize,
+      width:
+        !this.optionsLogic.isDefaultItemDisplayLocation && this.isCurrentItem
+          ? this.optionsLogic.thumbnailSizeCurrentItem
+          : this.optionsLogic.thumbnailSize,
+      height:
+        !this.optionsLogic.isDefaultItemDisplayLocation && this.isCurrentItem
+          ? this.optionsLogic.thumbnailSizeCurrentItem
+          : this.optionsLogic.thumbnailSize,
     } as CSSProperties;
     const selectionStyle = this.isCurrentItemSelected
       ? ({
@@ -1109,7 +1111,7 @@ export class StylingLogic {
     //       paddingBetweenContainerAndVideoRight)) *
     //     percent
     // }${CAROUSEL_SPACING_UNIT}`;
-  
+
     let left = `${
       paddingBetweenContainerAndVideoLeft +
       ((videoRect?.width || 200) -
