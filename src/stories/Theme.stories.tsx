@@ -149,6 +149,13 @@ export const Story5: Story = {
           backgroundColor: COLORS.primary1,
           textColor: COLORS.primary3,
         },
+        itemViewer: {
+          loadingSpinner: {
+            options: {
+              color: 'white',
+            }
+          }
+        },
         toolbar: {
           progressBar: {
             backgroundColor: COLORS.primary2,
