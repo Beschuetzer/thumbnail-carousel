@@ -13,6 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
  -->
  
+## [1.0.9] - 2023-11-12
+
+### Fixed
+
+- issue where loading spinner color was not being affected by changed to `options.styling.theme`.  It now fallsback to `options.styling.theme.colorFive`.
+
 ## [1.0.8] - 2023-11-11
 
 ### Fixed

@@ -444,7 +444,7 @@ export class StylingLogic {
   get carouselLoadingSpinnerColor() {
     const { color, spinnerColor } = this
       .loadingSpinnerOptions as LoadingSpinnerOptions;
-    return spinnerColor || color;
+    return spinnerColor || color || this.optionsLogic.theme.colorFive;
   }
 
   get carouselLoadingSpinnerBackgroundColorStyle() {
@@ -510,7 +510,7 @@ export class StylingLogic {
   get carouselLoadingSpinnerTextStyle() {
     const { color, textColor } = this
       .loadingSpinnerOptions as LoadingSpinnerOptions;
-    const customColor = textColor || color;
+    const customColor = textColor || color || this.optionsLogic.theme.colorFive;
     return {
       color: customColor,
     } as CSSProperties;
