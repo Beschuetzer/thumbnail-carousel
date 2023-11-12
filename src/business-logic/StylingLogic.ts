@@ -448,6 +448,8 @@ export class StylingLogic {
   }
 
   get carouselLoadingSpinnerBackgroundColorStyle() {
+    console.log({loadingspinn});
+    
     return {
       backgroundColor: this.carouselLoadingSpinnerColor,
     } as CSSProperties;
