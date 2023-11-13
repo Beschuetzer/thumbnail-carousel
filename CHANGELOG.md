@@ -12,12 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Removed
  -->
- 
+
 ## [1.0.9] - 2023-11-12
 
 ### Fixed
 
-- issue where loading spinner color was not being affected by changed to `options.styling.theme`.  It now fallsback to `options.styling.theme.colorFive`.
+- issue where loading spinner color was not being affected by changed to `options.styling.theme`. It now fallsback to `options.styling.theme.colorFive`.
 
 ## [1.0.8] - 2023-11-11
 
@@ -48,7 +48,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - left and maxWidth styles for CarouselModal to work with `box-sizing: border-box` change.
 - when autoplay is `false` for a video item, seeking via progress bar no longer plays the video.
 - the progress bar now tracks whether the video was playing before a seek occurs and plays the video onMouseUp accordingly
-
 
 ### Removed
 

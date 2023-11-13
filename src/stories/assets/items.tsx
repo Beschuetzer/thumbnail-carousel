@@ -7,6 +7,9 @@ import maui05 from "./imgs/about/maui-05.jpg";
 import maui06 from "./imgs/about/maui-06.jpg";
 import maui07 from "./imgs/about/maui-07.jpg";
 import minuteLongVideo from "./clips/minute-long-video.mp4";
+import demoVideo from "./clips/demo.mp4";
+import demoVideo_480p from "./clips/demo-480p.mp4";
+import demoVideoThumbnail from "./imgs/about/thumbnails/demo-thumbnail.png";
 import clipFilters from "./clips/replay-viewer/filters.mp4";
 import clipFiltersThumbnail from "./clips/replay-viewer/thumbnails/filters-thumbnail.png";
 import clipNavigation from "./clips/replay-viewer/navigation.mp4";
@@ -355,6 +358,35 @@ export const items = [
     video: {
       autoPlay: false,
       muted: true,
+    },
+  },
+  {
+    srcMain: {
+      hiRes: demoVideo,
+      loRes: demoVideo_480p,
+    },
+    srcThumbnail: demoVideoThumbnail,
+    description: "Screenshot Viewer Test",
+    modal: {
+      sections: [
+        {
+          title: "Screenshot Viewer Test",
+          text: "The screenshot viewer should align the text for each section nicely when hovering the progress bar and the text excedes the bounds of the item viewer.",
+        },
+      ],
+    },
+    video: {
+      sections: [
+        ["Ensuring Options are Correct", ""],
+        ["Selecting the Regular Expression to Use for the Site", "5:00"],
+        ["Selecting the Save Location", "10:00"],
+        [
+          "Downloading the All Files Recursively since Last Download Date",
+          "13:00",
+        ],
+        ["Verifying the Downloaded Files", "43:00"],
+      ],
+      autoPlay: false,
     },
   },
   {

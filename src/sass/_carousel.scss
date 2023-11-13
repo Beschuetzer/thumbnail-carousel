@@ -6,7 +6,8 @@
   overflow: hidden;
   // margin-top: $carouselItemHoverTranslateUpAmount;
 
-  &__container, &__item-viewer {
+  &__container,
+  &__item-viewer {
     box-sizing: border-box !important;
 
     & * {
