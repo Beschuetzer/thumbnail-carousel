@@ -7,12 +7,13 @@ A React carousel with a wide range of [options](https://beschuetzer.github.io/th
 If you want to display multiple images/videos inside of a single carousel, this package will do that for you. It's not recommended to use this package if the videos are large in size, since this package uses the `<video>` tag to display items.
 
 ## Getting starting
+
 Any image [supported](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#supported_image_formats) by the `<img>` tag will work,
 and any video type [supported](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video) by the `<video>` tag will work.
 
 ```
 //import files to use from project (`/public` or `/src`)
-import img1 from "./imgs/img1.jpg"; 
+import img1 from "./imgs/img1.jpg";
 import img1Thumbnail from "./imgs/thumbnails/img1.jpg";
 import clipHighRes from "./clips/1-high.mp4";
 import clipLowRes from "./clips/1-low.mp4";
@@ -23,7 +24,7 @@ import { Carousel, CarouselItemProps } from 'react-thumbnail-carousel'
 
 //items are of type `CarouselItemProps`
 const items = [
-    {      
+    {
       description: 'Simple Video Example', //displays in the thumbnail overlay (when applicable) and in item description
       srcMain: clipWithNoOptimizations
       srcThumbnail: clipThumbnail, //necessary for videos, otherwise no image is shown in the thumbnail
@@ -60,7 +61,7 @@ const items = [
 //instantiate Carousel with default options
 <Carousel items={items} />
 
-//instantiate Carousel with current item displayed above 
+//instantiate Carousel with current item displayed above
 <Carousel items={items} options={{
   layout: {
     itemDisplayLocation: 'above' //'below' is an option too
@@ -89,9 +90,10 @@ const items = [
 
 ### Dynamic Carousel Options
 
-Option fields that take the `CarouselElementValue<T>` type can be specified in a few different ways: 
+Option fields that take the `CarouselElementValue<T>` type can be specified in a few different ways:
 
-#### A simple value:  
+#### A simple value:
+
 ```
 options: {
   layout: {
@@ -161,10 +163,10 @@ options: {
 ### Videos
 
 #### Screenshot Viewer
-The screenshot 
+
+The screenshot
 
 ### All Items
-
 
 ## Default Behavior
 
@@ -173,8 +175,6 @@ The screenshot
 - spaces the thumbnails with a [left-alignment](https://beschuetzer.github.io/thumbnail-carousel/?path=/story/thumbnail-carousel-layout--layout-3) (can be changed by setting `options.thumbnail.spacingStrategy` to `max` ([example](https://beschuetzer.github.io/thumbnail-carousel/?path=/story/thumbnail-carousel-layout--layout-4))).
 - for videos, when the toolbar is embedded in the video, the overlay hides after 2s of no mouse activity or when the cursor leaves the video (similar to how Youtube videos work).
 - by default the largest aspect aspect ratio is used for the item viewer (calculated on load based on the aspect ratios of the items in the carousel). See [aspect ratio options](https://beschuetzer.github.io/thumbnail-carousel/?path=/docs/thumbnail-carousel-aspect-ratio-options--docs) for more details.
-
-  
 
 ## Storybook
 

@@ -151,9 +151,18 @@ export const items = [
       muted: true,
       sections: [
         ["Section with a very long description that would overflow", ""],
-        ["Another section with a very long description that would overflow", "10:00"],
-        ["Yet Another section with a very long description that would overflow", "20:00"],
-        ["Even Yet Another section with a very long description that would overflow", "43:00"],
+        [
+          "Another section with a very long description that would overflow",
+          "10:00",
+        ],
+        [
+          "Yet Another section with a very long description that would overflow",
+          "20:00",
+        ],
+        [
+          "Even Yet Another section with a very long description that would overflow",
+          "43:00",
+        ],
       ],
     },
   },

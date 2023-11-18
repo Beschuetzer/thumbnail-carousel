@@ -4,7 +4,6 @@ import { Carousel } from "../components/Carousel";
 import { items } from "./assets/items";
 import { marginTop } from "./decorators";
 import { customButtons } from "./custom-buttons";
-import { carouselShortcuts } from "./carousel-shortcuts";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {

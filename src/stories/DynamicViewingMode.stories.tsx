@@ -2,11 +2,9 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Carousel } from "../components/Carousel";
 import { items } from "./assets/items";
-import { marginTop, maringAllAround } from "./decorators";
+import { marginTop } from "./decorators";
 import { customButtons } from "./custom-buttons";
 import { COLORS } from "./assets/colors";
-import { carouselShortcuts } from "./carousel-shortcuts";
-import { CarouselOptions } from "../types";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {

@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { useBusinessLogic } from "../../../hooks/useBusinessLogic";
 import { getFormattedTimeString } from "../../../utils/utils";
 import { useCarouselContext } from "../../../context";
@@ -21,10 +21,9 @@ export type CarouselItemViewerProgressBarScreenshotPreviewProps = {
   Pick<CarouselItemProps, "srcMain">;
 
 export type TextTranslateOffset = {
-  left: number;
-  maxCursorLeftValue: number;
-  minCursorLeftValue: number;
-  right: number;
+  maxCursorValue: number;
+  minCursorValue: number;
+  textOverflow: number;
 };
 
 export const TEXT_TRANSLATION_AMOUNT_REF_INITIAL = 0;
@@ -48,9 +47,6 @@ const CarouselVideoProgressBarScreenshotViewer = (
   const textTranslateOffsetRef = useRef<TextTranslateOffset>(
     {} as TextTranslateOffset,
   );
-  const textTranslationAmountRef = useRef<number>(
-    TEXT_TRANSLATION_AMOUNT_REF_INITIAL,
-  );
   const videoThumbnailRef = useRef<HTMLVideoElement>();
   useSetVideoCurrentTime({ percent, video: videoThumbnailRef?.current });
   //#endregion
@@ -59,14 +55,33 @@ const CarouselVideoProgressBarScreenshotViewer = (
   //#endregion
 
   //#region Side FX
-  useLayoutEffect(() => {
-    if (
-      textTranslateOffsetRef?.current !== undefined &&
-      textTranslateOffsetRef?.current !== undefined
-    ) {
-      textTranslateOffsetRef.current = {} as TextTranslateOffset;
-      textTranslationAmountRef.current = TEXT_TRANSLATION_AMOUNT_REF_INITIAL;
+  useEffect(() => {
+    if (!sections || (sections && sections?.length <= 1)) {
+      return;
     }
+
+    const screenShotTextContainerRect = screenShotTextContainerRef.current
+      ?.querySelector("div")
+      ?.getBoundingClientRect();
+    const screenShotCanvasRect =
+      videoThumbnailRef.current?.getBoundingClientRect();
+    const videoRect = videoRef?.current?.getBoundingClientRect();
+
+    if (!screenShotCanvasRect || !screenShotTextContainerRect || !videoRect) {
+      return;
+    }
+
+    const textOverflow = Math.max(
+      (screenShotTextContainerRect.width - screenShotCanvasRect.width) / 2,
+      0,
+    );
+
+    textTranslateOffsetRef.current = {
+      minCursorValue: screenShotCanvasRect.width / 2 + textOverflow,
+      maxCursorValue:
+        videoRect.right - (screenShotCanvasRect.width / 2 + textOverflow),
+      textOverflow,
+    };
   }, [currentVideoSection, currentItem]);
   //#endregion
 
@@ -103,10 +118,7 @@ const CarouselVideoProgressBarScreenshotViewer = (
           style={stylingLogic.getCarouselVideoProgressScreenshotViewerTextStyle(
             percent,
             videoRef,
-            screenShotTextContainerRef.current?.querySelector("div"),
-            videoThumbnailRef.current,
             textTranslateOffsetRef,
-            textTranslationAmountRef,
           )}
         >
           {currentVideoSection !== undefined
