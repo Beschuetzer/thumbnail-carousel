@@ -13,6 +13,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
  -->
 
+
+## [1.0.10] - 2023-11-18
+
+### Fixed
+
+- issue where `CarouselItemViewerContainer` would re-calculate optimal height for current item when changing viewing modes.
+
+### Added
+
+- More gifs to the readme
+
 ## [1.0.9] - 2023-11-12
 
 ### Fixed
