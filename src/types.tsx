@@ -194,7 +194,7 @@ export type CarouselItemProps = {
    **/
   description: string | undefined;
   /**
-   *This is generated automatically if omitted.
+   *This is generated automatically if omitted based on the order the items are received.
    *If given, it will determine the next/previous item to go to when clicking the next/previous button
    **/
   index?: number;

@@ -1,3 +1,27 @@
+Readme:
+  -create a section called Features
+    --basic carousel gif
+    --Displaying current item
+      ---above
+      ---below
+    --per item customization
+      ---videos
+        ---screenshot viewer gif
+        ---sections
+          ---using numbers
+          ---using strings
+        ---optimizations
+          ---creating a low-res (480p) version of the video
+      ---all items
+        ---optional modal
+          ---using JSX
+          ---using built-in section builder (use an example with codeSection)
+    --next/previous item preview (off by default in non-full screen mode)
+    --carousel customization
+      ---explain CarouselElementValue and how it is possible to input dynamic values based on viewing mode and viewport width (multiple gifs; one for each type and one for both)
+      ---aspect ratio stuff?
+
+
 Before Publishing
   -remove styling.container.margin and padding since that should be set via options.container.style?
   -make 0 be default padding top for carousel?
