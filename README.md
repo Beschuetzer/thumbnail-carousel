@@ -44,18 +44,14 @@ const items = [
     {
       description: 'My Image with no Thumbnail (full image is used as thumbnail)',
       srcMain: img2,
-      itemStyles: {
-        objectFit: "cover", //image covers the available space (default is contain)
-        objectPosition: "top", //image is positioned 
-      },
     },
      {
-      description: 'My Image with Custom Fit and Position',
+      description: "Using itemStyles to Pass Style to Item's Underlying Tag (works with videos too)",
       srcMain: img3,
       srcThumbnail: img3Thumbnail,
       itemStyles: {
         objectFit: "cover", //image covers the available space (default is contain)
-        objectPosition: "top", //image is positioned 
+        objectPosition: "top", //image is positioned top (default is center)
       },
     },
     ...
@@ -75,28 +71,102 @@ const items = [
 
 ## Features
 
-  ### Basic Carousel
+### Basic Carousel
 
-  ![default](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/dfb166a6-9768-465d-b782-d01aac48fe28)
+![default](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/dfb166a6-9768-465d-b782-d01aac48fe28)
 
-  ### Current Item Displayed Above
+### Current Item Displayed Above
 
-  ![above](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/c1e1a7ec-37c0-4227-a503-27498727e7fc)
+![above](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/c1e1a7ec-37c0-4227-a503-27498727e7fc)
 
-  ### Current Item Displayed Below
+### Current Item Displayed Below
 
-  ![below](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/2a6ff3d7-1db5-466b-8121-1527640c5a44)
+![below](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/2a6ff3d7-1db5-466b-8121-1527640c5a44)
 
-  ### Fullscreen Mode
+### Fullscreen Mode
 
-  ![fullscreen](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/232c74ec-832c-44c1-b797-d30644b0520b)
+![fullscreen](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/232c74ec-832c-44c1-b797-d30644b0520b)
 
-  ### Dynamic Customization
-  Option fields that take the `CarouselElementValue<T>` type can be specified in a few different ways: 
-    - A simple value: ``
-    - Based on viewport width:
-    - Based on viewing mode (fullscreen or nonFullscreen):
-    - Based on a combination of the above:
+### Dynamic Carousel Options
+
+Option fields that take the `CarouselElementValue<T>` type can be specified in a few different ways: 
+
+#### A simple value:  
+```
+options: {
+  layout: {
+    itemDisplayLocation: "above",
+  },
+}
+// => current item is always displayed above the carousel
+```
+
+#### Based on viewport width (`CarouselElementValueTuple<T>`):
+
+```
+options: {
+  layout: {
+    itemDisplayLocation: [["above"], ["none", 900], ["below", 902, "min-width"]],
+  },
+}
+// => "none" when viewport <= 900
+// => "below" when viewport >= 902
+// => "above" otherwise (901 in this case)
+```
+
+![dynamicViewportWidth](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/a40f1358-cd0a-4098-9b10-c8e99e7a00bb)
+
+#### Based on Viewing Mode (fullscreen or nonFullscreen):
+
+```
+options: {
+  styling: {
+    colorTheme: {
+      colorOne: {
+        fullscreen: 'red',
+        nonFullscreen: 'blue',
+      }
+    },
+  }
+},
+// => "red" when fullscreen
+// => "blue" when not fullscreen
+```
+
+![dynamicViewingMode](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/a03f81c2-f907-4c45-a7d6-c32706fa4d94)
+
+#### Based on Viewing Mode and Viewport Width:
+
+```
+options: {
+  styling: {
+    colorTheme: {
+      colorOne: {
+        fullscreen: [['red'], ['green', 800]],
+        nonFullscreen: [['blue'], ['purple', 800]],
+      }
+    },
+  }
+},
+// => "green" when fullscreen and viewport <= 800
+// => "red" when fullscreen otherwise
+// => "purplse" when not fullscreen and viewport <= 800
+// => "blue" when not fullscreen otherwise
+```
+
+![dynamicViewingModeAndViewPortWidth](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/a818741b-29f5-4f38-b1b4-61edd564c0df)
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Default Behavior
 

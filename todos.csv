@@ -1,6 +1,5 @@
 Readme:
   -create a section called Features
-    ---explain CarouselElementValue and how it is possible to input dynamic values based on viewing mode and viewport width (multiple gifs; one for each type and one for both)
     ---aspect ratio stuff?
     --per item customization
       ---videos
