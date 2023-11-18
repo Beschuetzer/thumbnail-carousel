@@ -17,7 +17,6 @@ Readme:
 
 
 Before Publishing
-  -when aspect ratio is 'auto' or 'useRecommendedAspectRatio' is `false`, the height is set to auto briefly after exiting fullscreen
   -use @default in types instead of `Default is here`.
   -remove styling.container.margin and padding since that should be set via options.container.style?
   -make 0 be default padding top for carousel?

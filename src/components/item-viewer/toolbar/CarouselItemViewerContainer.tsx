@@ -230,10 +230,12 @@ export const CarouselItemViewerContainer = forwardRef<
     startAutoHeightInterval,
   ]);
 
-  useOnResize(() => {
-    if (isFullscreenMode) return;
-    resetAutoHeight();
-  });
+  //this causes re-calculation of height when aspectioRatio is 'auto'
+  //todo: uncomment and add option to recalculate height when aspectRatio is 'auto'?
+  // useOnResize(() => {
+  //   if (isFullscreenMode) return;
+  //   resetAutoHeight();
+  // });
 
   useEffect(() => {
     if (optionsLogic.itemViewerUseRecommendedAspectRatio) {
