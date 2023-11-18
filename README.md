@@ -156,16 +156,14 @@ options: {
 
 ![dynamicViewingModeAndViewPortWidth](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/a818741b-29f5-4f38-b1b4-61edd564c0df)
 
+## Item Customization
 
+### Videos
 
+#### Screenshot Viewer
+The screenshot 
 
-
-
-
-
-
-
-
+### All Items
 
 
 ## Default Behavior

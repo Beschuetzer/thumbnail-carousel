@@ -1,6 +1,6 @@
+-figure out issue with
 Readme:
   -create a section called Features
-    ---aspect ratio stuff?
     --per item customization
       ---videos
         ---screenshot viewer gif
@@ -13,7 +13,6 @@ Readme:
         ---optional modal
           ---using JSX
           ---using built-in section builder (use an example with codeSection)
-    --next/previous item preview (off by default in non-full screen mode)
 
 
 Before Publishing
