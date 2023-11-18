@@ -91,6 +91,13 @@ const items = [
 
   ![fullscreen](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/232c74ec-832c-44c1-b797-d30644b0520b)
 
+  ### Dynamic Customization
+  Option fields that take the `CarouselElementValue<T>` type can be specified in a few different ways: 
+    - A simple value: ``
+    - Based on viewport width:
+    - Based on viewing mode (fullscreen or nonFullscreen):
+    - Based on a combination of the above:
+
 ## Default Behavior
 
 - takes up the width of the container in which it resides
