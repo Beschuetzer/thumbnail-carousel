@@ -1,8 +1,10 @@
+figure out why last item is not rendering
+add items that test section validation for both types
+
 Readme:
   -create a section called Features
     --per item customization
       ---videos
-        ---screenshot viewer gif
         ---sections
           ---using numbers
           ---using strings
