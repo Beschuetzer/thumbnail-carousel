@@ -173,27 +173,39 @@ Videos will have an embedded progress bar by default (change `options.layout.isT
 There are two ways to add sections to a video:
 
 1. Using Strings (i.e. specifying the start time of each section)
-
 ```
-sections: [
-  ["Section with a very long description that would overflow", ""], //the first item will start at 0 seconds regardless of the string entered here
-  [
-    "Another section with a very long description that would overflow",
-    "10:00",  //starts at 10 seconds
+video: {
+  sections: [
+    ["Section with a very long description that would overflow"], //always start at 0 seconds so can omit or use empty string to keep ts happy
+      "Another section with a very long description that would overflow",
+      "10:00",  //starts at 10 seconds
+    ],
+    [
+      "Yet Another section with a very long description that would overflow",
+      "20:240", //starts at 20 seconds and 240 milliseconds
+    ],
+    [
+      "Even Yet Another section with a very long description that would overflow",
+      "1:03:100", //starts at 1 minute 3 seconds and 100 milliseconds
+    ],
   ],
-  [
-    "Yet Another section with a very long description that would overflow",
-    "20:240", //starts at 20 seconds and 240 milliseconds
-  ],
-  [
-    "Even Yet Another section with a very long description that would overflow",
-    "1:03:100", //starts at 1 minute 3 seconds and 100 milliseconds
-  ],
-],
+}
 ```
 
 2. Using Numbers (i.e. specifying the start time of each section)
-
+```
+video: {
+  sections: [
+    ["Ensuring Options are Correct", 1000], //1000 milliseconds long
+    ["Selecting the Regular Expression to Use for the Site", 1000], //1000 milliseconds long
+    ["Selecting the Save Location", 2000], //2000 milliseconds long
+    [
+      "Downloading the All Files Recursively since Last Download Date",
+      3000, //3000 milliseconds long
+    ],
+    ["Verifying the Downloaded Files"], //can omit last value (or enter any number to keep ts happy) since it will take up remaining space
+  ],
+},
 ```
 
 ### All Items

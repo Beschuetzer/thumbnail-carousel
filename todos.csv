@@ -2,9 +2,6 @@ Readme:
   -create a section called Features
     --per item customization
       ---videos
-        ---sections
-          ---using numbers
-          ---using strings
         ---optimizations
           ---creating a low-res (480p) version of the video
       ---all items

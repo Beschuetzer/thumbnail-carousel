@@ -214,6 +214,53 @@ export const Story3_2: Story = {
   name: "String - Invalid Start Time",
 };
 
+export const Story4_2: Story = {
+  args: {
+    items: [
+      {
+        srcMain: {
+          hiRes: clipHighRes,
+          loRes: clipLowRes,
+        },
+        srcThumbnail: clipNavigationThumbnail,
+        description: "Incorrect Sections Declaration",
+        modal: {
+          sections: [
+            {
+              title: "What happens when a section value is missing",
+              text: "An alert will pop when this video is loaded since the 3rd section is missing a time value",
+            },
+          ],
+        },
+        video: {
+          sections: [
+            ["Ensuring Options are Correct", 1000],
+            ["Selecting the Regular Expression to Use for the Site", 1000],
+            ["Selecting the Save Location", 1000],
+            [
+              "Downloading the All Files Recursively since Last Download Date",
+              -1,
+            ],
+            ["Verifying the Downloaded Files", 1000],
+          ],
+        },
+      },
+    ],
+    options: {
+      styling: {
+        toolbar: {
+          progressBar: {},
+        },
+      },
+      layout: {
+        itemDisplayLocation: "above",
+        isToolbarPositionedInVideo: [[false], [true, 751]],
+      },
+    },
+  },
+  name: "Number - Throws with Negative Value",
+};
+
 export const Story4: Story = {
   args: {
     items: [
@@ -241,7 +288,7 @@ export const Story4: Story = {
               "Downloading the All Files Recursively since Last Download Date",
               1000,
             ],
-            ["Verifying the Downloaded Files", 1432323244],
+            ["Verifying the Downloaded Files", -1000],
           ],
         },
       },

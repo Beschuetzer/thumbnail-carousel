@@ -127,7 +127,6 @@ export const useSectionToValueMapping = (
           alert(
             `Developer Warning: Expecting a start time for each section.  Either different types of values are being used or an expected start value was omitted for a section.  ${EXAMPLE_SENTENCE}`
           );
-          throw new Error();
         }
 
         if (isString) {
@@ -149,7 +148,6 @@ export const useSectionToValueMapping = (
               alert(
                 `Developer Warning: Check your section values for this video.  One section starts before the next one ends.  ${EXAMPLE_SENTENCE}`,
               );
-              throw new Error();
             } else if (
               Math.abs(currentSectionStart - nextSectionStart) <
               CAROUSEL_VIDEO_SECTION_MIN_LENGTH
@@ -157,9 +155,14 @@ export const useSectionToValueMapping = (
               alert(
                 `Developer Warning: The length of the section titled '${currentSection?.[0]}' does not exceed the minimum length of ${CAROUSEL_VIDEO_SECTION_MIN_LENGTH} milliseconds.  ${EXAMPLE_SENTENCE}`,
               );
-              throw new Error();
             }
           } 
+        } else  {
+          if (currentSection?.[1] as number <= 0) {
+             alert(
+               `Developer Warning: The video section length value at index ${index} is less than or equal to 0.  Remove the section or change it to a positive value.`
+             );
+          }
         }
       }
     }
