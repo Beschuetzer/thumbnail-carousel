@@ -1,6 +1,3 @@
-figure out how to allow no types for sections when string case and first item 
-figure out how to allow no types for sections when number case and last item 
-
 Readme:
   -create a section called Features
     --per item customization
@@ -18,6 +15,8 @@ Readme:
 
 Before Publishing
   -use @default in types instead of `Default is here`.
+  -figure out how to allow no types for sections when string case and first item (use Leading/Middle Rest Elements with embedded tuple?)
+  -figure out how to allow no types for sections when number case and last item (use Leading/Middle Rest Elements with embedded tuple?)
   -remove styling.container.margin and padding since that should be set via options.container.style?
   -make 0 be default padding top for carousel?
   -add .mdx files for each story file (google), with details on how to test (e.g. dynamic layout)
