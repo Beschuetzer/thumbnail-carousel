@@ -22,7 +22,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- More gifs to the readme
+- more sections and gifs to the readme
+- items to test video section validation
 
 ## [1.0.9] - 2023-11-12
 
