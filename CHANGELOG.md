@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - issue where `CarouselItemViewerContainer` would re-calculate optimal height for current item when changing viewing modes.
 - bug causing the text for long section names to not be rendered in the correct position in some cases
+- bug where some invalid video section specifications weren't throwing errors
 
 ### Added
 

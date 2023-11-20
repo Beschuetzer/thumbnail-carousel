@@ -1,5 +1,5 @@
-figure out why last item is not rendering
-add items that test section validation for both types
+figure out how to allow no types for sections when string case and first item 
+figure out how to allow no types for sections when number case and last item 
 
 Readme:
   -create a section called Features

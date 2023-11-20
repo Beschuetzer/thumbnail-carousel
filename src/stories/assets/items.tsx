@@ -499,32 +499,4 @@ export const items = [
     srcThumbnail: maui04Thumbnail,
     description: "Image - Filler 4",
   },
-  // {
-  //   srcMain: {
-  //     hiRes: clipHighRes,
-  //     loRes: clipLowRes,
-  //   },
-  //   srcThumbnail: clipNavigationThumbnail,
-  //   description: "Incorrect Sections Declaration",
-  //   modal: {
-  //     sections: [
-  //       {
-  //         title: "What happens when a section value is missing",
-  //         text: "An alert will pop when this video is loaded since the 3rd section is missing a time value",
-  //       },
-  //     ],
-  //   },
-  //   video: {
-  //     sections: [
-  //       ["Ensuring Options are Correct", ""],
-  //       ["Selecting the Regular Expression to Use for the Site", "5:00"],
-  //       ["Selecting the Save Location", ""],
-  //       [
-  //         "Downloading the All Files Recursively since Last Download Date",
-  //         "13:00",
-  //       ],
-  //       ["Verifying the Downloaded Files", "43:00"],
-  //     ],
-  //   },
-  // },
 ] as CarouselItemProps[];

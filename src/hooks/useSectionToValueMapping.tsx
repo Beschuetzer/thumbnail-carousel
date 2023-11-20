@@ -168,8 +168,8 @@ export const useSectionToValueMapping = (
       sum =
         (sections
           ?.map((section) => section[1])
-          .reduce((a, b) => {
-            if (b === undefined) return a as number;
+          .reduce((a, b, index) => {
+            if (b === undefined || index === sections.length - 1) return a as number;
             return (a as number) + (b as number);
           }, 0) as number) / NUMBER_OF_MS_IN_A_SECOND;
 
