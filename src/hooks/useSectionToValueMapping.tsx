@@ -118,20 +118,23 @@ export const useSectionToValueMapping = (
         const currentSectionType = typeof currentSection?.[1];
         const isTimeValueGiven = !!currentSection?.[1];
         const expectedFirstValueIndex = isString ? 1 : 0;
-        const expectedLastValueIndex =
-          sections.length - (isString ? 1 : 2);
-        
+        const expectedLastValueIndex = sections.length - (isString ? 1 : 2);
+
         // console.log({ isTimeValueGiven, expectedFirstValueIndex, expectedLastValueIndex, index });
-          
-        if (!isTimeValueGiven && index >= expectedFirstValueIndex && index <= expectedLastValueIndex) {
+
+        if (
+          !isTimeValueGiven &&
+          index >= expectedFirstValueIndex &&
+          index <= expectedLastValueIndex
+        ) {
           alert(
-            `Developer Warning: Expecting a start time for each section.  Either different types of values are being used or an expected start value was omitted for a section.  ${EXAMPLE_SENTENCE}`
+            `Developer Warning: Expecting a start time for each section.  Either different types of values are being used or an expected start value was omitted for a section.  ${EXAMPLE_SENTENCE}`,
           );
         }
 
         if (isString) {
           //can skip first item in string case
-          if (index === 0 && currentSectionType === 'string') {
+          if (index === 0 && currentSectionType === "string") {
             continue;
           }
 
@@ -156,12 +159,12 @@ export const useSectionToValueMapping = (
                 `Developer Warning: The length of the section titled '${currentSection?.[0]}' does not exceed the minimum length of ${CAROUSEL_VIDEO_SECTION_MIN_LENGTH} milliseconds.  ${EXAMPLE_SENTENCE}`,
               );
             }
-          } 
-        } else  {
-          if (currentSection?.[1] as number <= 0) {
-             alert(
-               `Developer Warning: The video section length value at index ${index} is less than or equal to 0.  Remove the section or change it to a positive value.`
-             );
+          }
+        } else {
+          if ((currentSection?.[1] as number) <= 0) {
+            alert(
+              `Developer Warning: The video section length value at index ${index} is less than or equal to 0.  Remove the section or change it to a positive value.`,
+            );
           }
         }
       }
@@ -172,7 +175,8 @@ export const useSectionToValueMapping = (
         (sections
           ?.map((section) => section[1])
           .reduce((a, b, index) => {
-            if (b === undefined || index === sections.length - 1) return a as number;
+            if (b === undefined || index === sections.length - 1)
+              return a as number;
             return (a as number) + (b as number);
           }, 0) as number) / NUMBER_OF_MS_IN_A_SECOND;
 

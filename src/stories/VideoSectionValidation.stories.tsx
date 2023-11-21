@@ -378,9 +378,7 @@ export const Story6: Story = {
             ["Ensuring Options are Correct", 1000],
             ["Selecting the Regular Expression to Use for the Site", 1000],
             ["Selecting the Save Location", 1000],
-            [
-              "Downloading the All Files Recursively since Last Download Date",
-            ],
+            ["Downloading the All Files Recursively since Last Download Date"],
             ["Verifying the Downloaded Files"],
           ],
         },
@@ -424,7 +422,10 @@ export const Story7: Story = {
             ["Ensuring Options are Correct", ""],
             ["Selecting the Regular Expression to Use for the Site", 1000],
             ["Selecting the Save Location", 1000],
-            ["Downloading the All Files Recursively since Last Download Date", 1000],
+            [
+              "Downloading the All Files Recursively since Last Download Date",
+              1000,
+            ],
             ["Verifying the Downloaded Files", 1000],
           ],
         },

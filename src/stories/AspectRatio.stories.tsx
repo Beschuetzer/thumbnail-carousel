@@ -117,7 +117,7 @@ export const Story6: Story = {
     items: items,
     options: {
       container: {
-        text: 'Aspect Ratio is 3:1'
+        text: "Aspect Ratio is 3:1",
       },
       layout: {
         itemDisplayLocation: "below",

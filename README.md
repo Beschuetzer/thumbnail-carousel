@@ -170,48 +170,49 @@ Videos will have an embedded progress bar by default (change `options.layout.isT
 
 #### Sections
 
-  There are two ways to add sections to a video:
+There are two ways to add sections to a video:
 
 1. Using Strings (i.e. specifying the start time of each section)
-    ```
-    video: {
-      sections: [
-        ["Section with a very long description that would overflow"], //always start at 0 seconds so can omit or use empty string to keep ts happy
-          "Another section with a very long description that would overflow",
-          "10:00",  //starts at 10 seconds
-        ],
-        [
-          "Yet Another section with a very long description that would overflow",
-          "20:240", //starts at 20 seconds and 240 milliseconds
-        ],
-        [
-          "Even Yet Another section with a very long description that would overflow",
-          "1:03:100", //starts at 1 minute 3 seconds and 100 milliseconds
-        ],
-      ],
-    }
-    ```
+
+   ```
+   video: {
+     sections: [
+       ["Section with a very long description that would overflow"], //always start at 0 seconds so can omit or use empty string to keep ts happy
+         "Another section with a very long description that would overflow",
+         "10:00",  //starts at 10 seconds
+       ],
+       [
+         "Yet Another section with a very long description that would overflow",
+         "20:240", //starts at 20 seconds and 240 milliseconds
+       ],
+       [
+         "Even Yet Another section with a very long description that would overflow",
+         "1:03:100", //starts at 1 minute 3 seconds and 100 milliseconds
+       ],
+     ],
+   }
+   ```
 
 2. Using Numbers (i.e. specifying the start time of each section)
-    ```
-    video: {
-      sections: [
-        ["Ensuring Options are Correct", 1000], //1000 milliseconds long
-        ["Selecting the Regular Expression to Use for the Site", 1000], //1000 milliseconds long
-        ["Selecting the Save Location", 2000], //2000 milliseconds long
-        [
-          "Downloading the All Files Recursively since Last Download Date",
-          3000, //3000 milliseconds long
-        ],
-        ["Verifying the Downloaded Files"], //can omit last value (or enter any number to keep ts happy) since it will take up remaining space
-      ],
-    },
-    ```
+   ```
+   video: {
+     sections: [
+       ["Ensuring Options are Correct", 1000], //1000 milliseconds long
+       ["Selecting the Regular Expression to Use for the Site", 1000], //1000 milliseconds long
+       ["Selecting the Save Location", 2000], //2000 milliseconds long
+       [
+         "Downloading the All Files Recursively since Last Download Date",
+         3000, //3000 milliseconds long
+       ],
+       ["Verifying the Downloaded Files"], //can omit last value (or enter any number to keep ts happy) since it will take up remaining space
+     ],
+   },
+   ```
 
 #### Aspect Ratio
 
-By default the aspect ratio of the item viewer is determined by the item with the largest aspect ratio.  The item viewer is only displayed if `itemDisplayLocation` is not `none`, which is the default.  If the aspect ratio is set to `auto` then the first item's aspect ratio is used.
-To change the aspect ratio: 
+By default the aspect ratio of the item viewer is determined by the item with the largest aspect ratio. The item viewer is only displayed if `itemDisplayLocation` is not `none`, which is the default. If the aspect ratio is set to `auto` then the first item's aspect ratio is used.
+To change the aspect ratio:
 
 ```
 options: {
@@ -228,20 +229,20 @@ options: {
 
 #### Optimzations
 
-1. Using a low-res version of the video (480p or lower resolution) will result in better performance for videos.  The low-res version is used when not in fullscreen mode and `itemDisplayLocation` is not `none`.  Sites like this [one](https://www.freeconvert.com/video-compressor) can convert your videos for free.
+1. Using a low-res version of the video (480p or lower resolution) will result in better performance for videos. The low-res version is used when not in fullscreen mode and `itemDisplayLocation` is not `none`. Sites like this [one](https://www.freeconvert.com/video-compressor) can convert your videos for free.
 
-    ```
-    const items = [
-        {
-          srcMain: {
-            hiRes: clipHighRes, //this clip is used in fullscreen mode (1080p or higher res is generally best here)
-            loRes: clipLowRes //this clip is used everywhere else (480p is generally the best here)
-          },
-          ...
-        },
-        ...
-      ] as CarouselItemProps[]
-    ```
+   ```
+   const items = [
+       {
+         srcMain: {
+           hiRes: clipHighRes, //this clip is used in fullscreen mode (1080p or higher res is generally best here)
+           loRes: clipLowRes //this clip is used everywhere else (480p is generally the best here)
+         },
+         ...
+       },
+       ...
+     ] as CarouselItemProps[]
+   ```
 
 ### All Items
 
@@ -249,88 +250,89 @@ options: {
 
 1. Using Built-in Modal Builder
 
-    Each object is a section.  If the section is section is code, use `codeSection`:
-    ```
-    ...
-    items={[
-      {
-        ...
-        modal: {
-          sections: [
-            {
-              title: "Specifying Custom Styles for an Item Based on Viewing Mode",
-              text: "This item illustrates how to specify custom styles for an item based on whether the current viewing mode is fullscreen or not.  Here is the object used:",
-            },
-            {
-              text: "Example: ",
-            },
-            {
-              codeSection: {
-                lines: [
-                  `itemStyles: {`,
-                  ` // these styles only apply when not in fullscreen mode`,
-                  ` nonFullscreen: {`,
-                  `  objectFit: 'cover',`,
-                  `  objectPosition: 'top',`,
-                  ` },`,
-                  ` // these styles only apply when in fullscreen mode`,
-                  ` fullscreen: {`,
-                  `  objectFit: 'scale-down',`,
-                  `  objectPosition: 'left',`,
-                  ` }`,
-                  `}`,
-                ],
-                startTabCount: 1,
-                tabSpacing: 15,
-              },
-            },
-          ],
-        },
-      },
-      ...
-    ]}
-    ```
+   Each object is a section. If the section is section is code, use `codeSection`:
 
-    ![descriptionModalBuilder](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/d17c6e2d-1898-41ba-a09d-f8b160ce98f5)
+   ```
+   ...
+   items={[
+     {
+       ...
+       modal: {
+         sections: [
+           {
+             title: "Specifying Custom Styles for an Item Based on Viewing Mode",
+             text: "This item illustrates how to specify custom styles for an item based on whether the current viewing mode is fullscreen or not.  Here is the object used:",
+           },
+           {
+             text: "Example: ",
+           },
+           {
+             codeSection: {
+               lines: [
+                 `itemStyles: {`,
+                 ` // these styles only apply when not in fullscreen mode`,
+                 ` nonFullscreen: {`,
+                 `  objectFit: 'cover',`,
+                 `  objectPosition: 'top',`,
+                 ` },`,
+                 ` // these styles only apply when in fullscreen mode`,
+                 ` fullscreen: {`,
+                 `  objectFit: 'scale-down',`,
+                 `  objectPosition: 'left',`,
+                 ` }`,
+                 `}`,
+               ],
+               startTabCount: 1,
+               tabSpacing: 15,
+             },
+           },
+         ],
+       },
+     },
+     ...
+   ]}
+   ```
 
+   ![descriptionModalBuilder](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/d17c6e2d-1898-41ba-a09d-f8b160ce98f5)
 
 2. Using JSX
-    ```
-    ...
-    items={[
-      {
-        ...
-        modal: {
-          closeButtonTop: 25,
-          children: (
-            <section>
-              <h4
-                style={{
-                  marginTop: 8,
-                  fontSize: 18,
-                  padding: "0 30px 10px 0",
-                }}
-              >
-                Using JSX to Create a Modal (Avoiding Conflicts with Button by
-                Adding 30px Padding to the Right of Title Div)
-              </h4>
-              <div
-                style={{
-                  fontFamily: "Open Sans, sans-serif",
-                }}
-              >
-                You can use the <strong>modal.children</strong> field to pass in
-                your own JSX for the modal.
-              </div>
-            </section>
-          ),
-        },
-      },
-      ...
-    ]}
-    ```
 
-    ![descriptionModal](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/62d8c9d5-3b78-4c79-8aa9-dc405dd047f7)
+   ```
+   ...
+   items={[
+     {
+       ...
+       modal: {
+         closeButtonTop: 25,
+         children: (
+           <section>
+             <h4
+               style={{
+                 marginTop: 8,
+                 fontSize: 18,
+                 padding: "0 30px 10px 0",
+               }}
+             >
+               Using JSX to Create a Modal (Avoiding Conflicts with Button by
+               Adding 30px Padding to the Right of Title Div)
+             </h4>
+             <div
+               style={{
+                 fontFamily: "Open Sans, sans-serif",
+               }}
+             >
+               You can use the <strong>modal.children</strong> field to pass in
+               your own JSX for the modal.
+             </div>
+           </section>
+         ),
+       },
+     },
+     ...
+   ]}
+   ```
+
+   ![descriptionModal](https://github.com/Beschuetzer/thumbnail-carousel/assets/62818816/62d8c9d5-3b78-4c79-8aa9-dc405dd047f7)
 
 ## Default Behavior
 
@@ -338,7 +340,7 @@ options: {
 - fits as many thumbnails into a page as it can based on the thumbnail size
 - spaces the thumbnails with a [left-alignment](https://beschuetzer.github.io/thumbnail-carousel/?path=/story/thumbnail-carousel-layout--layout-3) (can be changed by setting `options.thumbnail.spacingStrategy` to `max` ([example](https://beschuetzer.github.io/thumbnail-carousel/?path=/story/thumbnail-carousel-layout--layout-4))).
 - for videos, when the toolbar is embedded in the video, the overlay hides after 2 seconds of no mouse activity or when the cursor leaves the video (similar to how Youtube videos work).
-- by default the aspect ratio of the item viewer is determined by the item with the largest aspect ratio.  This is only relevant if `itemDisplayLocation` is not `none`. See aspect ratio [examples](https://beschuetzer.github.io/thumbnail-carousel/?path=/docs/thumbnail-carousel-aspect-ratio-options--docs) for more details.
+- by default the aspect ratio of the item viewer is determined by the item with the largest aspect ratio. This is only relevant if `itemDisplayLocation` is not `none`. See aspect ratio [examples](https://beschuetzer.github.io/thumbnail-carousel/?path=/docs/thumbnail-carousel-aspect-ratio-options--docs) for more details.
 
 ## Storybook
 
