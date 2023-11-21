@@ -1,7 +1,4 @@
--add default styles for the overflow scroll bars (may work in portfolio case; try testing)
-
 Before Publishing
-
   -use @default in types instead of `Default is here`.
   -figure out how to allow no types for sections when string case and first item (use Leading/Middle Rest Elements with embedded tuple?)
   -figure out how to allow no types for sections when number case and last item (use Leading/Middle Rest Elements with embedded tuple?)
