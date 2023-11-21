@@ -29,8 +29,11 @@ export const Story1: Story = {
   args: {
     items: items,
     options: {
+      container: {
+        text: "Aspect Ratio is default",
+      },
       layout: {
-        itemDisplayLocation: "above",
+        itemDisplayLocation: "below",
       },
     },
   },
@@ -41,6 +44,9 @@ export const Story2: Story = {
   args: {
     items: items,
     options: {
+      container: {
+        text: "Aspect Ratio is same as auto",
+      },
       layout: {
         itemDisplayLocation: "above",
       },
@@ -56,6 +62,9 @@ export const Story3: Story = {
   args: {
     items: items,
     options: {
+      container: {
+        text: "Aspect Ratio is auto",
+      },
       layout: {
         itemDisplayLocation: "below",
       },
@@ -71,6 +80,9 @@ export const Story4: Story = {
   args: {
     items: items,
     options: {
+      container: {
+        text: "Aspect Ratio is 16:9 (widescreen)",
+      },
       layout: {
         itemDisplayLocation: "below",
       },
@@ -86,6 +98,9 @@ export const Story5: Story = {
   args: {
     items: items,
     options: {
+      container: {
+        text: "Aspect Ratio is 4:3 (fullscreen)",
+      },
       layout: {
         itemDisplayLocation: "below",
       },
@@ -101,6 +116,9 @@ export const Story6: Story = {
   args: {
     items: items,
     options: {
+      container: {
+        text: "Aspect Ratio is 3:1",
+      },
       layout: {
         itemDisplayLocation: "below",
       },

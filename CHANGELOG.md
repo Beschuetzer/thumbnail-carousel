@@ -13,6 +13,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
  -->
 
+## [1.0.10] - 2023-11-18
+
+### Fixed
+
+- issue where `CarouselItemViewerContainer` would re-calculate optimal height for current item when changing viewing modes.
+- bug causing the text for long section names to not be rendered in the correct position in some cases
+- bug where some invalid video section specifications weren't throwing errors
+- issue where default styles for the overflow scroll bars were not applying
+
+### Added
+
+- more sections and gifs to the readme
+- items to test video section validation
+
 ## [1.0.9] - 2023-11-12
 
 ### Fixed

@@ -135,21 +135,35 @@ export const items = [
     },
   },
   {
-    description: "Minute Long Video",
+    description: "Very long section names",
     srcMain: minuteLongVideo,
     srcThumbnail: minuteLongVideoThumbnail,
     modal: {
       sections: [
         {
           title: "Longer Clip",
-          text: "This video is used to test sections with a video greater than 1 minute.",
+          text: "This video is used to test very long section names and sections with a video greater than 1 minute.",
         },
       ],
     },
     video: {
       autoPlay: false,
       muted: true,
-      sections: [["Section 1"], ["Section 2", "1:00:01"]],
+      sections: [
+        ["Section with a very long description that would overflow", ""],
+        [
+          "Another section with a very long description that would overflow",
+          "10:00",
+        ],
+        [
+          "Yet Another section with a very long description that would overflow",
+          "20:00",
+        ],
+        [
+          "Even Yet Another section with a very long description that would overflow",
+          "43:00",
+        ],
+      ],
     },
   },
   {
@@ -469,7 +483,7 @@ export const items = [
   {
     srcMain: maui07,
     srcThumbnail: maui07Thumbnail,
-    description: "Image - Filler 2",
+    description: "Image - Filler 3",
   },
   {
     description: "Video Filler",
@@ -483,6 +497,6 @@ export const items = [
   {
     srcMain: maui04,
     srcThumbnail: maui04Thumbnail,
-    description: "Image - Filler 2",
+    description: "Image - Filler 4",
   },
 ] as CarouselItemProps[];

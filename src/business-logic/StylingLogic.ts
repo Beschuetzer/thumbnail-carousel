@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import { CSSProperties, MutableRefObject } from "react";
 import {
   CarouselElement,
   CarouselSection,
@@ -1179,99 +1179,25 @@ export class StylingLogic {
   getCarouselVideoProgressScreenshotViewerTextStyle(
     percent: number,
     videoRef:
-      | React.MutableRefObject<HTMLVideoElement | undefined>
-      | undefined
-      | null,
-    screenShotTextElement: Element | undefined | null,
-    screenShotCanvasElement: Element | undefined,
+      | MutableRefObject<HTMLVideoElement | null | undefined>
+      | null
+      | undefined,
     textTranslateOffsetRef: React.MutableRefObject<TextTranslateOffset>,
-    textTranslationAmountRef: React.MutableRefObject<number>,
   ) {
-    const screenShotCanvasRect =
-      screenShotCanvasElement?.getBoundingClientRect();
-    const screenShotTextContainerRect =
-      screenShotTextElement?.getBoundingClientRect();
+    const videoRect = videoRef?.current?.getBoundingClientRect();
 
-    if (screenShotCanvasRect && screenShotTextContainerRect) {
-      const isTextOusdieCanvasBound =
-        screenShotCanvasRect.right < screenShotTextContainerRect.right ||
-        screenShotCanvasRect.left > screenShotTextContainerRect.left;
-      if (isTextOusdieCanvasBound) {
-        const isTextTranslateOffsetRefDone =
-          Object.keys(textTranslateOffsetRef?.current || {}).length > 0;
-        const videoRect = videoRef?.current?.getBoundingClientRect();
+    if (!videoRect) return {};
 
-        //setting textTranslateOffsetRef
-        if (
-          !isTextTranslateOffsetRefDone &&
-          videoRect &&
-          textTranslateOffsetRef.current
-        ) {
-          let leftOffset = 0;
-          if (screenShotCanvasRect.left > screenShotTextContainerRect.left) {
-            leftOffset = Math.abs(
-              screenShotCanvasRect.left - screenShotTextContainerRect.left,
-            );
-          }
-
-          let rightOffset = 0;
-          if (screenShotCanvasRect.right < screenShotTextContainerRect.right) {
-            rightOffset = Math.abs(
-              screenShotCanvasRect.right - screenShotTextContainerRect.right,
-            );
-          }
-
-          const minCursorLeftValue =
-            videoRect?.left + screenShotCanvasRect.width / 2 + leftOffset;
-          const maxCursorLeftValue =
-            videoRect.right - screenShotCanvasRect.width / 2 - rightOffset;
-
-          textTranslateOffsetRef.current = {
-            left: Math.abs(
-              screenShotCanvasRect.left - screenShotTextContainerRect.left,
-            ),
-            maxCursorLeftValue,
-            minCursorLeftValue,
-            right: Math.abs(
-              screenShotCanvasRect.right - screenShotTextContainerRect.right,
-            ),
-          };
-        }
-
-        //tracking cursor against textTranslateOffsetRef and setting textTranslationAmountRef
-        if (isTextTranslateOffsetRefDone && videoRect) {
-          const cursorLeftPosition = videoRect.left + videoRect.width * percent;
-
-          if (
-            cursorLeftPosition >=
-            textTranslateOffsetRef.current.maxCursorLeftValue
-          ) {
-            textTranslationAmountRef.current =
-              -textTranslateOffsetRef.current.right;
-          } else if (
-            cursorLeftPosition <=
-            textTranslateOffsetRef.current.minCursorLeftValue
-          ) {
-            textTranslationAmountRef.current =
-              textTranslateOffsetRef.current.left;
-          } else if (
-            cursorLeftPosition >
-              textTranslateOffsetRef.current.minCursorLeftValue &&
-            cursorLeftPosition <
-              textTranslateOffsetRef.current.maxCursorLeftValue
-          ) {
-            textTranslationAmountRef.current =
-              TEXT_TRANSLATION_AMOUNT_REF_INITIAL;
-          }
-          // console.log({ cursorLeftPosition, minCursorLeftValue: textTranslateOffsetRef.current.minCursorLeftValue, maxCursorLeftValue: textTranslateOffsetRef.current.maxCursorLeftValue });
-        }
-      }
-    }
+    const cursorPosition = videoRect.left + percent * videoRect.width;
+    const translationAmout =
+      cursorPosition <= textTranslateOffsetRef.current.minCursorValue
+        ? textTranslateOffsetRef.current.textOverflow
+        : cursorPosition >= textTranslateOffsetRef.current.maxCursorValue
+        ? -textTranslateOffsetRef.current.textOverflow
+        : 0;
 
     return {
-      transform: !!textTranslationAmountRef.current
-        ? `translateX(${textTranslationAmountRef.current}${CAROUSEL_SPACING_UNIT})`
-        : "none",
+      transform: `translateX(${translationAmout}${CAROUSEL_SPACING_UNIT})`,
     } as CSSProperties;
   }
 

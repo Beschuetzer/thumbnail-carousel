@@ -111,40 +111,60 @@ export const useSectionToValueMapping = (
     const videoDuration = videoRef?.current?.duration || 0;
     let sum = 0;
 
-    if (isString && sections) {
+    if (sections) {
       for (let index = 0; index < sections.length; index++) {
         const currentSection = sections[index];
         const nextSection = sections[index + 1];
+        const currentSectionType = typeof currentSection?.[1];
+        const isTimeValueGiven = !!currentSection?.[1];
+        const expectedFirstValueIndex = isString ? 1 : 0;
+        const expectedLastValueIndex = sections.length - (isString ? 1 : 2);
 
-        if (index > 0 && typeof currentSection?.[1] !== "string") {
+        // console.log({ isTimeValueGiven, expectedFirstValueIndex, expectedLastValueIndex, index });
+
+        if (
+          !isTimeValueGiven &&
+          index >= expectedFirstValueIndex &&
+          index <= expectedLastValueIndex
+        ) {
           alert(
             `Developer Warning: Expecting a start time for each section.  Either different types of values are being used or an expected start value was omitted for a section.  ${EXAMPLE_SENTENCE}`,
           );
-          throw new Error();
         }
 
-        if (nextSection !== undefined) {
-          const currentSectionStart = convertTimeStringToMilliseconds(
-            currentSection[1] as string,
-          );
-          const nextSectionStart = convertTimeStringToMilliseconds(
-            nextSection[1] as string,
-          );
+        if (isString) {
+          //can skip first item in string case
+          if (index === 0 && currentSectionType === "string") {
+            continue;
+          }
 
-          if (!currentSectionStart || !nextSectionStart) continue;
-          if (currentSectionStart >= nextSectionStart) {
-            alert(
-              `Developer Warning: Check your section values for this video.  One section starts before the next one ends.  ${EXAMPLE_SENTENCE}`,
+          if (nextSection !== undefined) {
+            const currentSectionStart = convertTimeStringToMilliseconds(
+              currentSection[1] as string,
             );
-            throw new Error();
-          } else if (
-            Math.abs(currentSectionStart - nextSectionStart) <
-            CAROUSEL_VIDEO_SECTION_MIN_LENGTH
-          ) {
-            alert(
-              `Developer Warning: The length of the section titled '${currentSection?.[0]}' does not exceed the minimum length of ${CAROUSEL_VIDEO_SECTION_MIN_LENGTH} milliseconds.  ${EXAMPLE_SENTENCE}`,
+            const nextSectionStart = convertTimeStringToMilliseconds(
+              nextSection[1] as string,
             );
-            throw new Error();
+
+            if (!currentSectionStart || !nextSectionStart) continue;
+            if (currentSectionStart >= nextSectionStart) {
+              alert(
+                `Developer Warning: Check your section values for this video.  One section starts before the next one ends.  ${EXAMPLE_SENTENCE}`,
+              );
+            } else if (
+              Math.abs(currentSectionStart - nextSectionStart) <
+              CAROUSEL_VIDEO_SECTION_MIN_LENGTH
+            ) {
+              alert(
+                `Developer Warning: The length of the section titled '${currentSection?.[0]}' does not exceed the minimum length of ${CAROUSEL_VIDEO_SECTION_MIN_LENGTH} milliseconds.  ${EXAMPLE_SENTENCE}`,
+              );
+            }
+          }
+        } else {
+          if ((currentSection?.[1] as number) <= 0) {
+            alert(
+              `Developer Warning: The video section length value at index ${index} is less than or equal to 0.  Remove the section or change it to a positive value.`,
+            );
           }
         }
       }
@@ -154,8 +174,9 @@ export const useSectionToValueMapping = (
       sum =
         (sections
           ?.map((section) => section[1])
-          .reduce((a, b) => {
-            if (b === undefined) return a as number;
+          .reduce((a, b, index) => {
+            if (b === undefined || index === sections.length - 1)
+              return a as number;
             return (a as number) + (b as number);
           }, 0) as number) / NUMBER_OF_MS_IN_A_SECOND;
 

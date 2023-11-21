@@ -313,6 +313,7 @@
     }
 
     &::-webkit-scrollbar {
+      background-color: var(--#{$modalScrollbarBackgroundColor});
       &-track {
         background-color: var(--#{$modalScrollbarBackgroundColor});
       }
