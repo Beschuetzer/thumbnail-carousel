@@ -1,3 +1,5 @@
+-Make images load lazily via the attributable available on img tag
+
 Before Publishing
   -use @default in types instead of `Default is here`.
   -figure out how to allow no types for sections when string case and first item (use Leading/Middle Rest Elements with embedded tuple?)
