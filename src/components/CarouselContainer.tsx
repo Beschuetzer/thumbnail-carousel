@@ -16,7 +16,10 @@ export const CarouselContainer = (props: CarouselTitleContainerProps) => {
   const { tag: Tag = "h4", text, style, textStyle } = container || {};
 
   return (
-    <div style={style} className={CLASSNAME__CAROUSEL_CONTAINER}>
+    <div
+      style={{ ...{ width: "100%" }, ...style }}
+      className={CLASSNAME__CAROUSEL_CONTAINER}
+    >
       {!!text ? (
         <Tag
           style={{

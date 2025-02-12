@@ -13,6 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
  -->
 
+ ## [1.0.11] - 2025-02-12
+
+### Fixed
+
+- styling issue where the container wouldn't adhere to the parent's width by adding a default style of `width: '100%'` to the container
+
 ## [1.0.10] - 2023-11-18
 
 ### Fixed
