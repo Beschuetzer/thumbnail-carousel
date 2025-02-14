@@ -51,6 +51,7 @@
     margin: $carouselItemHoverTranslateUpAmount 0 0 0;
     position: relative;
     border-radius: 8px;
+    opacity: .9;
     overflow: hidden;
     transition:
       border-radius $carouselAnimationDuration ease,
@@ -97,6 +98,7 @@
       object-position: top;
       height: 100%;
       width: 100%;
+      transition: transform $carouselAnimationDuration ease;
     }
 
     & > div {
@@ -108,17 +110,16 @@
     }
 
     &:hover {
-      transform: translate3d(0, -$carouselItemHoverTranslateUpAmount, 0);
-      box-shadow: 0 $carouselItemHoverTranslateUpAmount 0.4rem 0rem
-        rgba(black, 0.5);
+      opacity: 1;
+      cursor: pointer;
 
       & > div {
         bottom: 0 !important;
       }
-    }
 
-    & img:hover {
-      cursor: pointer;
+      & img {
+        transform: scale(1.25);
+      }
     }
   }
 

@@ -705,7 +705,7 @@
 }
 
 .thumbnail-carousel-button--scale-on-hover:hover {
-  transition: transform 0.5s ease;
+  transition: transform 0.25s ease;
   transform: scale(1.15);
 }
 
@@ -785,8 +785,9 @@
   margin: 4px 0 0 0;
   position: relative;
   border-radius: 8px;
+  opacity: 0.9;
   overflow: hidden;
-  transition: border-radius 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
+  transition: border-radius 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 .thumbnail-carousel__item-container {
   user-select: none;
@@ -815,6 +816,7 @@
   object-position: top;
   height: 100%;
   width: 100%;
+  transition: transform 0.25s ease;
 }
 .thumbnail-carousel__item > div {
   position: absolute;
@@ -822,25 +824,25 @@
   left: 0;
   right: 0;
   top: auto;
-  transition: bottom 0.5s ease;
+  transition: bottom 0.25s ease;
   text-align: center;
   font-weight: 700;
   cursor: pointer;
 }
 .thumbnail-carousel__item:hover {
-  transform: translate3d(0, -4px, 0);
-  box-shadow: 0 4px 0.4rem 0rem rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  cursor: pointer;
 }
 .thumbnail-carousel__item:hover > div {
   bottom: 0 !important;
 }
-.thumbnail-carousel__item img:hover {
-  cursor: pointer;
+.thumbnail-carousel__item:hover img {
+  transform: scale(1.25);
 }
 .thumbnail-carousel__items {
   display: flex;
   width: 10000000vw;
-  transition: transform 0.5s ease;
+  transition: transform 0.25s ease;
   backface-visibility: hidden;
 }
 .thumbnail-carousel__items.grabbing {
@@ -852,7 +854,7 @@
 .thumbnail-carousel__item-viewer {
   display: none;
   background-color: #1d0e0b;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.25s ease;
 }
 .thumbnail-carousel__item-viewer-button {
   overflow: hidden;
@@ -902,7 +904,7 @@
 }
 .thumbnail-carousel__item-viewer-toolbar {
   z-index: 1000000;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - `translateX(...)` and `translateY(...)` to `translate3d(...)`
+- hover stylings for thumbnails
+- halve animation time
 
 ## [1.0.13] - 2025-02-14
 
