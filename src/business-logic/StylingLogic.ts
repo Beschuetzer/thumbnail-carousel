@@ -382,7 +382,7 @@ export class StylingLogic {
       paddingLeft: padding.left,
       paddingRight: padding.right,
       alignItems: verticalAlignment,
-      transform: `translateY(${translateYAmount})`,
+      transform: `translate3d(0, ${translateYAmount}, 0)`,
     } as CSSProperties;
   }
 
@@ -1155,7 +1155,7 @@ export class StylingLogic {
       right,
       background: "transparent",
       zIndex: 100000000,
-      transform: `translateX(${translateX})`,
+      transform: `translate3d(${translateX}, 0, 0)`,
     } as CSSProperties;
   }
 
@@ -1166,9 +1166,9 @@ export class StylingLogic {
       color: textColor,
       position: "absolute",
       width: "10000px", //this is a hack to align this centered since translateX(-50%) doesn't work
-      transform: `translateX(calc(-${
+      transform: `translate3d(calc(-${
         4988 - width / 2
-      }${CAROUSEL_SPACING_UNIT})`, //this is a hack to align this centered since translateX(-50%) doesn't work
+      }${CAROUSEL_SPACING_UNIT}, 0, 0)`, //this is a hack to align this centered since translateX(-50%) doesn't work
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
@@ -1197,7 +1197,7 @@ export class StylingLogic {
         : 0;
 
     return {
-      transform: `translateX(${translationAmout}${CAROUSEL_SPACING_UNIT})`,
+      transform: `translate3d(${translationAmout}${CAROUSEL_SPACING_UNIT}, 0, 0)`,
     } as CSSProperties;
   }
 
@@ -1781,9 +1781,9 @@ export class StylingLogic {
       columnGap: itemSpacing,
     } as CSSProperties;
     const translationStyle = {
-      transform: `translateX(${translationAmountToUse < 0 ? "" : "-"}${Math.abs(
+      transform: `translate3d(${translationAmountToUse < 0 ? "" : "-"}${Math.abs(
         translationAmountToUse,
-      )}${CAROUSEL_SPACING_UNIT})`,
+      )}${CAROUSEL_SPACING_UNIT}, 0, 0)`,
     } as CSSProperties;
 
     return {

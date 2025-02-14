@@ -418,7 +418,7 @@
   transform: translate3d(-50%, -50%, 0) rotate(0);
 }
 .thumbnail-carousel-button--inverse {
-  transform: translateX(4.8px);
+  transform: translate3d(4.8px, 0, 0);
   margin-top: 0;
 }
 .thumbnail-carousel-button--fullscreen {
@@ -828,7 +828,7 @@
   cursor: pointer;
 }
 .thumbnail-carousel__item:hover {
-  transform: translateY(-4px);
+  transform: translate3d(0, -4px, 0);
   box-shadow: 0 4px 0.4rem 0rem rgba(0, 0, 0, 0.5);
 }
 .thumbnail-carousel__item:hover > div {

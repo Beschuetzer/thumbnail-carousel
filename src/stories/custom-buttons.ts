@@ -45,7 +45,7 @@ export const customButtons = {
     svgHref: "static/media/src/stories/assets/sprite.svg#icon-angle-right",
     fillColor: COLORS.primary1,
     style: {
-      transform: "rotate(180deg) translateY(-5%)",
+      transform: "rotate(180deg) translate3d(0, -5%, 0)",
     },
   },
   arrowRight: {
