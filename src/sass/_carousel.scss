@@ -51,12 +51,8 @@
     margin: $carouselItemHoverTranslateUpAmount 0 0 0;
     position: relative;
     border-radius: 8px;
-    opacity: .9;
+    opacity: 0.9;
     overflow: hidden;
-    transition:
-      border-radius $carouselAnimationDuration ease,
-      box-shadow $carouselAnimationDuration ease,
-      transform $carouselAnimationDuration ease;
 
     &-container {
       user-select: none;
@@ -98,7 +94,7 @@
       object-position: top;
       height: 100%;
       width: 100%;
-      transition: transform $carouselAnimationDuration ease;
+      transition: transform calc($carouselAnimationDuration) linear;
     }
 
     & > div {

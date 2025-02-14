@@ -787,7 +787,6 @@
   border-radius: 8px;
   opacity: 0.9;
   overflow: hidden;
-  transition: border-radius 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 .thumbnail-carousel__item-container {
   user-select: none;
@@ -816,7 +815,7 @@
   object-position: top;
   height: 100%;
   width: 100%;
-  transition: transform 0.25s ease;
+  transition: transform 0.25s linear;
 }
 .thumbnail-carousel__item > div {
   position: absolute;

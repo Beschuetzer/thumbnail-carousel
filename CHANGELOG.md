@@ -13,13 +13,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
  -->
 
-## [1.0.14] - 2025-02-14
+## [1.1.0] - 2025-02-14
 
 ### Changed
 
 - `translateX(...)` and `translateY(...)` to `translate3d(...)`
 - hover stylings for thumbnails
 - halve animation time
+- remove the -4px margin-top for the container, which initially mean to allow room for item hovering. This is considering a breaking change.
 
 ## [1.0.13] - 2025-02-14
 
