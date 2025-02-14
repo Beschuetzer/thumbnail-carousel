@@ -351,7 +351,7 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate3d(-50%, -50%, 0) rotate(45deg);
 }
 .thumbnail-carousel-button--arrow-previous-two {
   position: absolute;
@@ -359,7 +359,7 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate3d(-50%, -50%, 0) rotate(-45deg);
 }
 .thumbnail-carousel-button--arrow-next-one {
   position: absolute;
@@ -367,7 +367,7 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate3d(-50%, -50%, 0) rotate(45deg);
 }
 .thumbnail-carousel-button--arrow-next-two {
   position: absolute;
@@ -375,7 +375,7 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate3d(-50%, -50%, 0) rotate(-45deg);
 }
 .thumbnail-carousel-button--close-left, .thumbnail-carousel-button--close-right {
   position: absolute;
@@ -383,7 +383,7 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(-50%, -50%) rotate(var(--rotation));
+  transform: translate3d(-50%, -50%, 0) rotate(var(--rotation));
 }
 .thumbnail-carousel-button--close-left-inverse, .thumbnail-carousel-button--close-right-inverse {
   background-color: #1d0e0b;
@@ -407,7 +407,7 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(-66%, -50%) rotate(0);
+  transform: translate3d(-66%, -50%, 0) rotate(0);
 }
 .thumbnail-carousel-button--next-right {
   position: absolute;
@@ -415,7 +415,7 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(-50%, -50%) rotate(0);
+  transform: translate3d(-50%, -50%, 0) rotate(0);
 }
 .thumbnail-carousel-button--inverse {
   transform: translateX(4.8px);
@@ -435,7 +435,7 @@
   left: var(--edgeOffset);
   right: auto;
   bottom: auto;
-  transform: translate(0, 0) rotate(0);
+  transform: translate3d(0, 0, 0) rotate(0);
 }
 .thumbnail-carousel-button--fullscreen-top-right-horizontal {
   position: absolute;
@@ -443,7 +443,7 @@
   left: auto;
   right: var(--edgeOffset);
   bottom: auto;
-  transform: translate(0, 0) rotate(0);
+  transform: translate3d(0, 0, 0) rotate(0);
 }
 .thumbnail-carousel-button--fullscreen-top-left-vertical {
   position: absolute;
@@ -451,9 +451,9 @@
   left: var(--edgeOffset);
   right: auto;
   bottom: auto;
-  transform: translate(0, 0) rotate(0);
+  transform: translate3d(0, 0, 0) rotate(0);
   transform-origin: top left;
-  transform: rotate(90deg) translate(0%, -100%);
+  transform: rotate(90deg) translate3d(0%, -100%, 0);
 }
 .thumbnail-carousel-button--fullscreen-top-right-vertical {
   position: absolute;
@@ -461,9 +461,9 @@
   left: auto;
   right: var(--edgeOffset);
   bottom: auto;
-  transform: translate(0, 0) rotate(0);
+  transform: translate3d(0, 0, 0) rotate(0);
   transform-origin: top right;
-  transform: rotate(90deg) translate(100%, 0%);
+  transform: rotate(90deg) translate3d(100%, 0%, 0);
 }
 .thumbnail-carousel-button--fullscreen-bottom {
   width: var(--length);
@@ -474,7 +474,7 @@
   left: var(--edgeOffset);
   right: auto;
   bottom: var(--edgeOffset);
-  transform: translate(0, 0) rotate(0);
+  transform: translate3d(0, 0, 0) rotate(0);
 }
 .thumbnail-carousel-button--fullscreen-bottom-right-horizontal {
   position: absolute;
@@ -482,7 +482,7 @@
   left: "auto";
   right: var(--edgeOffset);
   bottom: var(--edgeOffset);
-  transform: translate(0, 0) rotate(0);
+  transform: translate3d(0, 0, 0) rotate(0);
 }
 .thumbnail-carousel-button--fullscreen-bottom-left-vertical {
   position: absolute;
@@ -490,9 +490,9 @@
   left: var(--edgeOffset);
   right: auto;
   bottom: var(--edgeOffset);
-  transform: translate(0, 0) rotate(0);
+  transform: translate3d(0, 0, 0) rotate(0);
   transform-origin: bottom left;
-  transform: rotate(-90deg) translate(0%, 100%);
+  transform: rotate(-90deg) translate3d(0%, 100%, 0);
 }
 .thumbnail-carousel-button--fullscreen-bottom-right-vertical {
   position: absolute;
@@ -500,9 +500,9 @@
   left: "auto";
   right: var(--edgeOffset);
   bottom: var(--edgeOffset);
-  transform: translate(0, 0) rotate(0);
+  transform: translate3d(0, 0, 0) rotate(0);
   transform-origin: bottom right;
-  transform: rotate(-90deg) translate(100%, 0%);
+  transform: rotate(-90deg) translate3d(100%, 0%, 0);
 }
 .thumbnail-carousel-button--fullscreen:hover {
   -webkit-animation: fullscreen 0.5s 1 ease normal none;
@@ -521,7 +521,7 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(-50%, -50%) rotate(0);
+  transform: translate3d(-50%, -50%, 0) rotate(0);
 }
 .thumbnail-carousel-button--pause-left {
   position: absolute;
@@ -529,7 +529,7 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(calc(-50% - 6px), -50%) rotate(0);
+  transform: translate3d(calc(-50% - 6px), -50%, 0) rotate(0);
 }
 .thumbnail-carousel-button--play-triangle {
   position: absolute;
@@ -537,7 +537,7 @@
   left: 0;
   right: auto;
   bottom: auto;
-  transform: translate(33.3%, -50%) rotate(0);
+  transform: translate3d(33.3%, -50%, 0) rotate(0);
   background-color: transparent;
   width: 0;
   height: 0;
@@ -548,7 +548,7 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(-50%, -50%) rotate(0);
+  transform: translate3d(-50%, -50%, 0) rotate(0);
 }
 .thumbnail-carousel-button--previous-right {
   border-right: calc(24px / 2.5) solid #fff9f5;
@@ -562,7 +562,7 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(-25%, -50%) rotate(0);
+  transform: translate3d(-25%, -50%, 0) rotate(0);
 }
 .thumbnail-carousel-button--restart-arrow {
   position: absolute;
@@ -570,10 +570,10 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(-50%, -50%) rotate(0);
+  transform: translate3d(-50%, -50%, 0) rotate(0);
   right: 0;
   top: 0;
-  transform: translate(0%, 15%);
+  transform: translate3d(0%, 15%, 0);
   background-color: transparent;
   width: 0;
   height: 0;
@@ -588,7 +588,7 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(-50%, -50%) rotate(0);
+  transform: translate3d(-50%, -50%, 0) rotate(0);
 }
 .thumbnail-carousel-button--restart-circle-inner {
   height: calc(24px * 0.85 - 12px);
@@ -605,10 +605,10 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(-50%, -50%) rotate(0);
+  transform: translate3d(-50%, -50%, 0) rotate(0);
   bottom: 0;
   right: 0;
-  transform: translate(0, -50%);
+  transform: translate3d(0, -50%, 0);
   background-color: transparent;
   width: 0;
   height: 0;
@@ -630,7 +630,7 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(-100%, -50%) rotate(180deg);
+  transform: translate3d(-100%, -50%, 0) rotate(180deg);
 }
 .thumbnail-carousel-button--seek-back-right {
   position: absolute;
@@ -638,7 +638,7 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(0%, -50%) rotate(180deg);
+  transform: translate3d(0%, -50%, 0) rotate(180deg);
 }
 .thumbnail-carousel-button--seek-forward-left, .thumbnail-carousel-button--seek-forward-right {
   border-left: calc(24px / 2.5) solid #fff9f5;
@@ -654,7 +654,7 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(-87.5%, -50%) rotate(0);
+  transform: translate3d(-87.5%, -50%, 0) rotate(0);
 }
 .thumbnail-carousel-button--seek-forward-right {
   position: absolute;
@@ -662,7 +662,7 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(12.5%, -50%) rotate(0);
+  transform: translate3d(12.5%, -50%, 0) rotate(0);
 }
 .thumbnail-carousel-button--stop {
   position: absolute;
@@ -670,7 +670,7 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(-50%, -50%) rotate(0);
+  transform: translate3d(-50%, -50%, 0) rotate(0);
   height: calc(24px * 0.85);
   width: calc(calc(24px * 0.85) * 0.95);
 }
@@ -684,7 +684,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate3d(-50%, -50%, 0);
   height: 66px;
   width: 66px;
   border-radius: 50%;
@@ -712,11 +712,11 @@
 @keyframes video-state-indicator {
   0% {
     opacity: 0.5;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate3d(-50%, -50%, 0) scale(1);
   }
   100% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(2);
+    transform: translate3d(-50%, -50%, 0) scale(2);
   }
 }
 @keyframes fullscreen {
@@ -1027,7 +1027,7 @@
   left: 50%;
   right: auto;
   bottom: auto;
-  transform: translate(-50%, -50%) rotate(var(--rotation));
+  transform: translate3d(-50%, -50%, 0) rotate(var(--rotation));
 }
 .thumbnail-carousel__modal-custom .thumbnail-carousel__item-viewer-button--close-left-inverse, .thumbnail-carousel__modal-custom .thumbnail-carousel__item-viewer-button--close-right-inverse {
   background-color: #1d0e0b;

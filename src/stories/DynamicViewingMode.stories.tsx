@@ -200,7 +200,7 @@ export const Story3: Story = {
               ],
             },
             style: {
-              transform: "translate(-10%, 0)",
+              transform: "translate3d(-10%, 0, 0)",
             },
           },
         },

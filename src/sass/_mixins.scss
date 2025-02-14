@@ -91,7 +91,7 @@
   left: $left;
   right: $right;
   bottom: $bottom;
-  transform: translate($xTranslate, $yTranslate) rotate($rotation);
+  transform: translate3d($xTranslate, $yTranslate, 0) rotate($rotation);
 }
 
 @mixin positionAbsolute($bottom: 0, $left: 0, $right: 0, $top: 0) {
@@ -106,7 +106,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate3d(-50%, -50%, 0);
 }
 
 @mixin scaleOnHover($scaleAmount: 1.15) {

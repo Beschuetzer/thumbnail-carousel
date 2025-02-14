@@ -1009,7 +1009,7 @@ export class StylingLogic {
       background: this.optionsLogic.videoProgressBarForegroundColor,
       height: diameter,
       width: diameter,
-      transform: `translate(0, -50%) scale(${
+      transform: `translate3d(0, -50%, 0) scale(${
         isVisible || isAlwaysVisible
           ? isInCurrentSection
             ? scaleAmount / 2
@@ -1213,7 +1213,7 @@ export class StylingLogic {
 
     return {
       position: "absolute",
-      transform: isToolbarInVideo ? "translate(0, -50%)" : undefined,
+      transform: isToolbarInVideo ? "translate3d(0, -50%, 0)" : undefined,
       left: 0,
     } as CSSProperties;
   }
@@ -1656,10 +1656,10 @@ export class StylingLogic {
               height: parsedWidth * maxHeightFactor,
               transform:
                 isNextButton || isPreviousButton
-                  ? `translate(calc(-50% ${isNextButton ? "+" : "-"} ${
+                  ? `translate3d(calc(-50% ${isNextButton ? "+" : "-"} ${
                       ((parsedWidth * maxHeightFactor) / 3) *
                       (isPreviousButton ? 0.85 : 1)
-                    }${CAROUSEL_SPACING_UNIT}), -50%) rotate(0)`
+                    }${CAROUSEL_SPACING_UNIT}), -50%, 0) rotate(0)`
                   : undefined,
             };
           default:
@@ -1673,12 +1673,12 @@ export class StylingLogic {
           width: pauseBarWidth,
           height: pauseBarHeight,
           transform: isLeftSide
-            ? `translate(calc(-50% - ${
+            ? `translate3d(calc(-50% - ${
                 pauseBarWidth * maxHeightFactor * maxHeightFactor
-              }${CAROUSEL_SPACING_UNIT}), -50%) rotate(0)`
-            : `translate(calc(-50% + ${
+              }${CAROUSEL_SPACING_UNIT}), -50%, 0) rotate(0)`
+            : `translate3d(calc(-50% + ${
                 pauseBarWidth * maxHeightFactor * (1 / maxHeightFactor)
-              }${CAROUSEL_SPACING_UNIT}), -50%) rotate(0)`,
+              }${CAROUSEL_SPACING_UNIT}), -50%, 0) rotate(0)`,
         };
       default:
         return buttonSizeStyle;
@@ -1836,18 +1836,18 @@ export class StylingLogic {
             ...commonStyle,
             left: 0,
             right: "auto",
-            transform: "translate(0%, -100%)",
+            transform: "translate3d(0%, -100%, 0)",
           } as React.CSSProperties)
         : position === "right"
         ? ({
             ...commonStyle,
             right: 0,
             left: "auto",
-            transform: "translate(0%, -100%)",
+            transform: "translate3d(0%, -100%, 0)",
           } as React.CSSProperties)
         : {
             ...commonStyle,
-            transform: "translate(-50%, -100%)",
+            transform: "translate3d(-50%, -100%, 0)",
           };
     const colorStyle = {
       color: textColor,

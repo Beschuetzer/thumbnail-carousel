@@ -13,7 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
  -->
 
- ## [1.0.11] - 2025-02-12
+## [1.0.12] - 2025-02-14
+
+### Changed
+
+- `translate(...)` to `translate3d(...)`
+
+## [1.0.11] - 2025-02-12
 
 ### Fixed
 

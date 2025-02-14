@@ -89,7 +89,7 @@ $pauseButtonVerticalHeight: calc(#{$buttonWidth} * 0.85);
           $yTranslate: 0
         );
         transform-origin: top left;
-        transform: rotate(90deg) translate(0%, -100%);
+        transform: rotate(90deg) translate3d(0%, -100%, 0);
       }
 
       &-right-vertical {
@@ -101,7 +101,7 @@ $pauseButtonVerticalHeight: calc(#{$buttonWidth} * 0.85);
           $yTranslate: 0
         );
         transform-origin: top right;
-        transform: rotate(90deg) translate(100%, 0%);
+        transform: rotate(90deg) translate3d(100%, 0%, 0);
       }
     }
 
@@ -138,7 +138,7 @@ $pauseButtonVerticalHeight: calc(#{$buttonWidth} * 0.85);
           $yTranslate: 0
         );
         transform-origin: bottom left;
-        transform: rotate(-90deg) translate(0%, 100%);
+        transform: rotate(-90deg) translate3d(0%, 100%, 0);
       }
 
       &-right-vertical {
@@ -151,7 +151,7 @@ $pauseButtonVerticalHeight: calc(#{$buttonWidth} * 0.85);
           $yTranslate: 0
         );
         transform-origin: bottom right;
-        transform: rotate(-90deg) translate(100%, 0%);
+        transform: rotate(-90deg) translate3d(100%, 0%, 0);
       }
     }
 
@@ -212,7 +212,7 @@ $pauseButtonVerticalHeight: calc(#{$buttonWidth} * 0.85);
       @include positionButton();
       right: 0;
       top: 0;
-      transform: translate(0%, 15%);
+      transform: translate3d(0%, 15%, 0);
       background-color: transparent;
       width: 0;
       height: 0;
@@ -244,7 +244,7 @@ $pauseButtonVerticalHeight: calc(#{$buttonWidth} * 0.85);
       @include positionButton();
       bottom: 0;
       right: 0;
-      transform: translate(0, -50%);
+      transform: translate3d(0, -50%, 0);
       background-color: transparent;
       width: 0;
       height: 0;
@@ -335,12 +335,12 @@ $pauseButtonVerticalHeight: calc(#{$buttonWidth} * 0.85);
 @keyframes video-state-indicator {
   0% {
     opacity: 0.5;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate3d(-50%, -50%, 0) scale(1);
   }
 
   100% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(2);
+    transform: translate3d(-50%, -50%, 0) scale(2);
   }
 }
 

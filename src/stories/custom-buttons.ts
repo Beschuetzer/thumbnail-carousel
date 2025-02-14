@@ -7,7 +7,7 @@ export const customButtons = {
     svgHref: "static/media/src/stories/assets/sprite.svg#icon-fullscreen",
     fillColor: COLORS.primary1,
     style: {
-      transform: `translate(25%, 25%) scale(1.25)`,
+      transform: `translate3d(25%, 25%, 0) scale(1.25)`,
     },
   },
   nextButton: {
