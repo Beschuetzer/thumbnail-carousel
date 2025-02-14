@@ -99,10 +99,12 @@
 
     & > div {
       @include positionAbsolute($top: auto);
-      transition: bottom $carouselAnimationDuration ease;
+      transform: translate3d(0, 100%, 0);
+      transition: transform $carouselAnimationDuration ease;
       text-align: center;
       font-weight: 700;
       cursor: pointer;
+      z-index: 10000;
     }
 
     &:hover {
@@ -110,7 +112,7 @@
       cursor: pointer;
 
       & > div {
-        bottom: 0 !important;
+        transform: translate3d(0, 0, 0);
       }
 
       & img {

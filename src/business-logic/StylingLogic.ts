@@ -1385,19 +1385,12 @@ export class StylingLogic {
         } as CSSProperties)
       : {};
 
-    const bottomStyle = isOverlayHidden
-      ? ({
-          bottom: "-100%",
-        } as CSSProperties)
-      : {};
-
     const paddingStyle = {
       padding: `${paddingVertical}${CAROUSEL_SPACING_UNIT} ${paddingHorizontal}${CAROUSEL_SPACING_UNIT}`,
     } as CSSProperties;
 
     const thumbnailBackgroundStyle = {
       ...paddingStyle,
-      ...bottomStyle,
       ...backgroundSolidStyle,
       ...backgroundGradientStyle,
       ...this.carouselItemCursorStyle,

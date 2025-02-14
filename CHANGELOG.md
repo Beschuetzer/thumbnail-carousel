@@ -13,6 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
  -->
 
+## [1.1.1] - 2025-02-14
+
+### Changed
+
+- default opacity for `CAROUSEL_ITEM_THUMBNAIL_BACKGROUND_OPACITY_DEFAULT`
+- fix issue with thumbnail backgrounds not working and use `translate3d` instead of `bottom` as the means of animation
+
 ## [1.1.0] - 2025-02-14
 
 ### Changed
