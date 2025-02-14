@@ -1168,7 +1168,7 @@ export class StylingLogic {
       width: "10000px", //this is a hack to align this centered since translateX(-50%) doesn't work
       transform: `translate3d(calc(-${
         4988 - width / 2
-      }${CAROUSEL_SPACING_UNIT}, 0, 0)`, //this is a hack to align this centered since translateX(-50%) doesn't work
+      }${CAROUSEL_SPACING_UNIT}), 0, 0)`, //this is a hack to align this centered since translateX(-50%) doesn't work
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
