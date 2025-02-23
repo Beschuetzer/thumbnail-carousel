@@ -1,8 +1,8 @@
 import React from "react";
 
-export const marginTop = [
+export const container = [
   (Story: any) => (
-    <div style={{ marginTop: 4, maxWidth: 750 }}>
+    <div style={{ maxWidth: 750 }}>
       {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
       <Story />
     </div>

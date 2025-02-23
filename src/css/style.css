@@ -995,7 +995,7 @@
 .thumbnail-carousel__navigation {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 .thumbnail-carousel__video {
   width: 100vw;

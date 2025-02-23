@@ -5,7 +5,7 @@ import { items } from "./assets/items";
 import {
   halfWidthOneCarousel,
   halfWidthTwoCarousels,
-  marginTop,
+  container,
 } from "./decorators";
 import { COLORS } from "./assets/colors";
 import { customButtons } from "./custom-buttons";
@@ -21,7 +21,7 @@ const meta = {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
-  decorators: marginTop,
+  decorators: container,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } satisfies Meta<typeof Carousel>;
 

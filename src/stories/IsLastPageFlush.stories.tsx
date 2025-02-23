@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Carousel } from "../components/Carousel";
 import { items } from "./assets/items";
-import { marginTop } from "./decorators";
+import { container } from "./decorators";
 import { COLORS } from "./assets/colors";
 import { customButtons } from "./custom-buttons";
 
@@ -16,7 +16,7 @@ const meta = {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
-  decorators: marginTop,
+  decorators: container,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } satisfies Meta<typeof Carousel>;
 
