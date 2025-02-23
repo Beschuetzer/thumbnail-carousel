@@ -782,7 +782,7 @@
   opacity: 0.8 !important;
 }
 .thumbnail-carousel__item {
-  margin: 4px 0 0 0;
+  margin: 0;
   position: relative;
   border-radius: 8px;
   opacity: 0.9;

@@ -140,7 +140,7 @@ export class StylingLogic {
   //#region Public Getters
   get carouselImageContainerStlye() {
     const { left: leftSpacing, right: rightSpacing } =
-      this.getItemViewerHorizontalSpacing(0);
+      this.getItemViewerHorizontalSpacing(0, 0);
 
     return {
       display: "flex",
@@ -743,7 +743,7 @@ export class StylingLogic {
 
   get carouselVideoContainerStyle() {
     const { left: leftSpacing, right: rightSpacing } =
-      this.getItemViewerHorizontalSpacing(0);
+      this.getItemViewerHorizontalSpacing(0, 0);
 
     const common = {
       position: "relative",
@@ -1287,6 +1287,7 @@ export class StylingLogic {
 
   getItemViewerHorizontalSpacing(
     fullscreenValue = CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
+    nonFullScreenDefaultValue = CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
   ) {
     return {
       left: this.isFullscreenMode
@@ -1294,14 +1295,14 @@ export class StylingLogic {
         : this.optionsLogic.getPaddingAmount(
             SpacingDirection.left,
             CarouselSection.itemViewer,
-            CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
+            nonFullScreenDefaultValue,
           ),
       right: this.isFullscreenMode
         ? fullscreenValue
         : this.optionsLogic.getPaddingAmount(
             SpacingDirection.right,
             CarouselSection.itemViewer,
-            CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
+            nonFullScreenDefaultValue,
           ),
     };
   }
@@ -1344,9 +1345,7 @@ export class StylingLogic {
     return !this.optionsLogic.isDefaultItemDisplayLocation
       ? ({
           paddingTop: CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
-          paddingBottom: this.optionsLogic.isItemDisplayLocationBelow
-            ? CAROUSEL_ITEM_SPACING_DEFAULT * 2
-            : 0,
+          paddingBottom: CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
           ...common,
         } as CSSProperties)
       : {
