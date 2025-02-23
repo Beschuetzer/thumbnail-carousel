@@ -27,7 +27,6 @@ import {
   TOOLBAR_TIME_STRING_SECTION_DIVIDER,
   FONT_WEIGHT_DEFAULT,
   TOOLBAR_MARGIN_RIGHT_OFFSET,
-  CAROUSEL_VIDEO_SCREENSHOT_VIEWER_WIDTH_DEFAULT,
   BORDER_STRING_DEFAULT_SIZE,
   CAROUSEL_BORDER_RADIUS_DEFAULT,
 } from "../constants";
@@ -1340,18 +1339,11 @@ export class StylingLogic {
         SpacingDirection.right,
         CarouselSection.navigation,
       )}${CAROUSEL_SPACING_UNIT}`,
+      paddingTop: CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
+      paddingBottom: CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
     } as CSSProperties;
 
-    return !this.optionsLogic.isDefaultItemDisplayLocation
-      ? ({
-          paddingTop: CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
-          paddingBottom: CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
-          ...common,
-        } as CSSProperties)
-      : {
-          ...common,
-          paddingTop: CAROUSEL_ITEM_SPACING_DEFAULT,
-        };
+    return common;
   }
 
   get thumbnailOverlayBackgroundStyle() {
@@ -1467,14 +1459,6 @@ export class StylingLogic {
   get toolbarInnerContainerStyle() {
     const isEmbedded = this.optionsLogic.isToolbarInVideo;
     return {
-      paddingLeft:
-        isEmbedded && !this.isFullscreenMode
-          ? CAROUSEL_ITEM_SPACING_DEFAULT
-          : undefined,
-      paddingRight:
-        isEmbedded && !this.isFullscreenMode
-          ? CAROUSEL_ITEM_SPACING_DEFAULT
-          : undefined,
       marginTop: this.toolbarInnerContainerMarginTop,
     } as CSSProperties;
   }
