@@ -48,7 +48,7 @@
   }
 
   &__item {
-    margin: $carouselItemHoverTranslateUpAmount 0 0 0;
+    margin: 0;
     position: relative;
     border-radius: 8px;
     opacity: 0.9;
@@ -273,7 +273,7 @@
   &__navigation {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   &__video {

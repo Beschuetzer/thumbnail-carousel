@@ -5,7 +5,7 @@ import clipNavigationThumbnail from "./assets/clips/replay-viewer/thumbnails/nav
 import { Carousel } from "../components/Carousel";
 import { items } from "./assets/items";
 import { COLORS } from "./assets/colors";
-import { marginTop } from "./decorators";
+import { container } from "./decorators";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -17,7 +17,7 @@ const meta = {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
-  decorators: marginTop,
+  decorators: container,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } satisfies Meta<typeof Carousel>;
 
@@ -378,8 +378,8 @@ export const Story6: Story = {
             ["Ensuring Options are Correct", 1000],
             ["Selecting the Regular Expression to Use for the Site", 1000],
             ["Selecting the Save Location", 1000],
-            ["Downloading the All Files Recursively since Last Download Date"],
-            ["Verifying the Downloaded Files"],
+            ["Downloading the All Files Recursively since Last Download Date",],
+            ["Verifying the Downloaded Files", 0],
           ],
         },
       },
