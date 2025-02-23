@@ -68,7 +68,7 @@ export const CarouselModalSection = (
     >
       {title ? (
         <div className={CLASSNAME__MODAL_HEADER}>
-          <TitleTag dangerouslySetInnerHTML={{ __html: title || "" }} />
+          <TitleTag dangerouslySetInnerHTML={{ __html: title || "" }} style={{margin: 0}} />
           {index === 0 ? button : null}
         </div>
       ) : null}
