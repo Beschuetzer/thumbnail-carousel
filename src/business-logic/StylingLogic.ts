@@ -669,11 +669,6 @@ export class StylingLogic {
 
     const widthStyle = {
       width: widthToUse,
-      maxWidth: this.isFullscreenMode
-        ? undefined
-        : `calc(100% - ${
-            CAROUSEL_ITEM_SPACING_DEFAULT * 2
-          }${CAROUSEL_SPACING_UNIT})`,
       boxShadow: `0 10px 15px -3px rgba(0,0,0,.25)`,
     } as CSSProperties;
     const paddingStyle = isMinimized
@@ -693,7 +688,7 @@ export class StylingLogic {
     const positionStyle = {
       top: "auto",
       bottom: Math.abs(this.carouselShortcutIndicatorTextTop) + 24,
-      left: this.isFullscreenMode ? 0 : CAROUSEL_ITEM_SPACING_DEFAULT,
+      left: 0,
       right: "auto",
     } as CSSProperties;
     const textStyle = {
