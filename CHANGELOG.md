@@ -13,6 +13,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
  -->
 
+## [1.2.0] - 2025-02-23
+
+### Changed
+
+- change default margin and padding to 0 for container
+- adjust spacing to match new layout choice
+- change the navigation arrows to be positioned centered instead of space-between
+
 ## [1.1.1] - 2025-02-14
 
 ### Changed
