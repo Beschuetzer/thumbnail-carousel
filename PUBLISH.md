@@ -1,3 +1,9 @@
+### Using the workflow
+- update the [package.json](package.json) version number
+- update the [CHANGELOG](CHANGELOG.md) to document the changes
+- add a tag `git tag vX.X.X`
+- push the tag and check the workflow called `Publish Package`.  It will likely fail.  If so, check the [npm page](https://www.npmjs.com/package/react-thumbnail-carousel) to verify the version was published.
+
 ### Simple way to publish
 
 - run `npm run publish` (username is `beschuetzerman`)
