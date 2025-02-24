@@ -35,7 +35,7 @@ jobs:
 
       # Upload Storybook build as an artifact
       - name: Upload Storybook artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: storybook-static
           path: storybook-static
