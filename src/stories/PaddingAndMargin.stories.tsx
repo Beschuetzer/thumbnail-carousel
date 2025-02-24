@@ -58,6 +58,7 @@ export const Story2: Story = {
             top: 14,
             right: 14,
             left: 14,
+            bottom: 14,
           }
         }
       }
