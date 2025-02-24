@@ -12,7 +12,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Removed
  -->
+ 
+## [1.2.4] - 2025-02-24
 
+### Changed
+
+- how the thumbnail opacity effect is applied
+ 
 ## [1.2.3] - 2025-02-24
 
 ### Added

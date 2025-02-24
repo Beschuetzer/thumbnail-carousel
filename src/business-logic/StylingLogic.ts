@@ -237,6 +237,7 @@ export class StylingLogic {
     return this.isCurrentItemSelected
       ? ({
           cursor: "auto",
+          opacity: .66,
         } as CSSProperties)
       : ({} as CSSProperties);
   }
@@ -255,7 +256,6 @@ export class StylingLogic {
     const selectionStyle = this.isCurrentItemSelected
       ? ({
           border: this.getBorderStringToUse(customCurrenItemBorder),
-          opacity: .66,
           pointerEvents: "none",
           ...this.carouselItemCursorStyle,
         } as CSSProperties)
