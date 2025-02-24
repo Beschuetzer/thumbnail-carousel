@@ -1335,7 +1335,7 @@ export class StylingLogic {
         CarouselSection.navigation,
       )}${CAROUSEL_SPACING_UNIT}`,
       paddingTop: CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
-      paddingBottom: 0,
+      paddingBottom: this.optionsLogic.isItemDisplayLocationBelow ? CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT : 0,
     } as CSSProperties;
 
     return common;
