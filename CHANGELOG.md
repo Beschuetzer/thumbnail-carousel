@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Removed
  -->
+ 
+## [1.2.1] - 2025-02-23
+
+### Changed
+
+- change default padding-bottom for navigation bar to 0
 
 ## [1.2.0] - 2025-02-23
 
