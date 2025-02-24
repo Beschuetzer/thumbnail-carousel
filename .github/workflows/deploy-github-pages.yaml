@@ -16,9 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     # Job steps
     steps:
-      # Manual Checkout
-      - uses: actions/checkout@v3
-
       # Set up Node
       - uses: actions/setup-node@v3
         with:
