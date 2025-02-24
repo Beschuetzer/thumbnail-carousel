@@ -13,13 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
  -->
  
-## [1.2.2] - 2025-02-23
+## [1.2.2] - 2025-02-24
 
 ### Changed
 
 - change default padding-bottom for navigation bar to be `CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT` when the display location is `below` otherwise 0
  
-## [1.2.1] - 2025-02-23
+## [1.2.1] - 2025-02-24
 
 ### Changed
 
