@@ -193,19 +193,3 @@ export const Story14: Story = {
   },
   name: "Modal Remains Closed When Switching Items (only in Fullscreen Mode)",
 };
-
-export const Story15: Story = {
-  decorators: paddingTop,
-  args: {
-    items: items,
-    options: {
-      itemViewer: {
-        aspectRatio: .25
-      },
-      layout: {
-        itemDisplayLocation: "above",
-      },
-    },
-  },
-  name: "The itemViewer preview can overflow",
-};
