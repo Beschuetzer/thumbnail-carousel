@@ -1,3 +1,9 @@
+-remove overflow hidden from .thumbnail-carousel (issue is that the item preview viewer is not showing up properly)
+  --double check all cases work
+  --add a new case for small sizes to test overflow
+
+
+
 -Make images load lazily via the attributable available on img tag
 
 Before Publishing
