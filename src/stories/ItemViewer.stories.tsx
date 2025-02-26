@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Carousel } from "../components/Carousel";
 import { items } from "./assets/items";
-import { container } from "./decorators";
+import { container, paddingTop } from "./decorators";
 import { customButtons } from "./custom-buttons";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -192,4 +192,20 @@ export const Story14: Story = {
     },
   },
   name: "Modal Remains Closed When Switching Items (only in Fullscreen Mode)",
+};
+
+export const Story15: Story = {
+  decorators: paddingTop,
+  args: {
+    items: items,
+    options: {
+      itemViewer: {
+        aspectRatio: .25
+      },
+      layout: {
+        itemDisplayLocation: "above",
+      },
+    },
+  },
+  name: "The itemViewer preview can overflow",
 };

@@ -40,3 +40,12 @@ export const halfWidthTwoCarousels = [
     </div>
   ),
 ];
+
+export const paddingTop = [
+  (Story: any) => (
+    <div style={{ paddingTop: 300 }}>
+      <Story />
+    </div>
+  ),
+];
+
