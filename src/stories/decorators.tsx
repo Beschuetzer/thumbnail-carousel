@@ -43,7 +43,7 @@ export const halfWidthTwoCarousels = [
 
 export const paddingTop = [
   (Story: any) => (
-    <div style={{ paddingTop: 300 }}>
+    <div style={{ maxWidth: 750, paddingTop: 100, backgroundColor: "#eee" }}>
       <Story />
     </div>
   ),

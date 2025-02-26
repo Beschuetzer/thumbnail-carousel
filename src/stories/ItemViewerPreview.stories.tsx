@@ -46,7 +46,7 @@ export const Story2: Story = {
         aspectRatio: 0.25,
       },
       layout: {
-        itemDisplayLocation: "above",
+        itemDisplayLocation: "below",
       },
     },
   },
