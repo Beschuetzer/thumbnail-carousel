@@ -3,7 +3,7 @@
 .#{$carouselClassname} {
   @include unselectable();
   width: 100%;
-  overflow: hidden;
+  // overflow: hidden;
   // margin-top: $carouselItemHoverTranslateUpAmount;
 
   &__container,
