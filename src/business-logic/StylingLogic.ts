@@ -1159,6 +1159,7 @@ export class StylingLogic {
       this.optionsLogic.videoProgressBarScreenshotViewer;
     return {
       color: textColor,
+      fontWeight: 900,
       position: "absolute",
       width: "10000px", //this is a hack to align this centered since translateX(-50%) doesn't work
       transform: `translate3d(calc(-${

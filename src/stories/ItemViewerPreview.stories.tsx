@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Carousel } from "../components/Carousel";
 import { items } from "./assets/items";
 import { container, paddingTop } from "./decorators";
+import { CarouselOptions } from "../types";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -23,13 +24,29 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 
+const COMMON_OPTIONS: CarouselOptions = {
+  itemViewer: {
+    aspectRatio: 0.25,
+  },
+  styling: {
+    colorTheme: {
+      colorOne: "#336699",
+      colorTwo: "#B27C66",
+      colorThree: "#42253B",
+      colorFour: "#E4ECEF",
+      colorFive: "#E4ECEF",
+    },
+  },
+  layout: {
+    itemDisplayLocation: "above",
+  },
+};
+
 export const Story1: Story = {
   args: {
     items: items,
     options: {
-      itemViewer: {
-        aspectRatio: 0.25,
-      },
+      ...COMMON_OPTIONS,
       layout: {
         itemDisplayLocation: "above",
       },
@@ -42,9 +59,7 @@ export const Story2: Story = {
   args: {
     items: items,
     options: {
-      itemViewer: {
-        aspectRatio: 0.25,
-      },
+      ...COMMON_OPTIONS,
       layout: {
         itemDisplayLocation: "below",
       },
@@ -57,9 +72,7 @@ export const Story3: Story = {
   args: {
     items: items,
     options: {
-      itemViewer: {
-        aspectRatio: 0.25,
-      },
+      ...COMMON_OPTIONS,
       layout: {
         itemDisplayLocation: "none",
       },
