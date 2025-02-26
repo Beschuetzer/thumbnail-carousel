@@ -1673,7 +1673,6 @@ export class StylingLogic {
             : "auto",
           position: "relative",
           backgroundColor: this.optionsLogic.itemViewerBackgroundColor,
-          overflow: "hidden",
           ...containerContentJustification,
         } as CSSProperties)
       : {
