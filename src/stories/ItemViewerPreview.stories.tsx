@@ -80,3 +80,20 @@ export const Story3: Story = {
   },
   name: "The itemViewer preview is hidden when item display location is none",
 };
+
+
+export const Story4: Story = {
+  args: {
+    items: items,
+    options: {
+      ...COMMON_OPTIONS,
+      itemViewer: {
+        aspectRatio: 0.5,
+      },
+      layout: {
+        itemDisplayLocation: "above",
+      },
+    },
+  },
+  name: "The itemViewer preview can overflow when item display location is above (different aspect ratio)",
+};
