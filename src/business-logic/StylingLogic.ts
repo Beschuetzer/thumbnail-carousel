@@ -1052,6 +1052,19 @@ export class StylingLogic {
     } as CSSProperties;
   }
 
+  getCarouselVideoProgressScreenshotViewerBackdropStyle() {
+    return {
+      position: "absolute",
+      top: this.isFullscreenMode ? "80%" : this.itemViewerRef.current?.getBoundingClientRect().height,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: "linear-gradient(rgba(0,0,0, 0), rgba(0,0,0,.33), rgba(0,0,0,0))",
+      zIndex: 100000000,
+      pointerEvents: "none"
+    } as CSSProperties;
+  }
+
   getCarouselVideoProgressScreenshotViewerContainerStyle(
     percent: number,
     videoRef:

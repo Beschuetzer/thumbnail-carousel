@@ -38,6 +38,7 @@ import {
   CarouselItemProps,
 } from "../types";
 import { resolveSrcMain } from "../utils/getCarouselVideo";
+import CarouselVideoProgressBarScreenshotViewerBackdrop from "./item-viewer/progress-bar/CarouselVideoProgressBarScreenshotViewerBackdrop";
 
 /**
  *A video item can be composed of a low resolution and high resolution video.  This is isn't necessary, but can optimize load times for th
@@ -342,6 +343,9 @@ export const CarouselVideo = (
         toggleIsVideoPlaying={toggleIsVideoPlaying}
         setSeekPercent={setSeekPercent}
         videoRef={videoRef}
+      />
+      <CarouselVideoProgressBarScreenshotViewerBackdrop 
+         isVisible={seekPercent > 0}
       />
       <CarouselVideoProgressBarScreenshotViewerMemoized
         currentVideoSection={currentVideoSection}
