@@ -12,6 +12,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Removed
  -->
+
+ 
+## [1.2.5] - 2025-02-26
+
+### Fixed
+
+ - item viewer preview now overflowing 
+ - item viewer preview text contrast issue
  
 ## [1.2.4] - 2025-02-24
 

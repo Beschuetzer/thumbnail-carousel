@@ -1,10 +1,3 @@
--remove overflow hidden from .thumbnail-carousel and from the inline style of the class "thumbnail-carousel__item-container" (issue is that the item preview viewer is not showing up properly)
-  --double check all cases work
-  --add a new case for small sizes to test overflow
--adjust the text for the item viewer preview to be easier to read (bold)
-
-
-
 -Make images load lazily via the attributable available on img tag
 
 Before Publishing
