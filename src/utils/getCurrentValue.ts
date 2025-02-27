@@ -30,12 +30,12 @@ export function getCurrentValue<T>(
         ? (valueTuple as CarouselElementViewingMode<T>)?.fullscreen
         : (valueTuple as CarouselElementViewingMode<T>)?.nonFullscreen) ||
       (valueTuple as CarouselElementTuple<T>);
-    if ((valueTupleToUse as CarouselElementViewingMode<T>)?.fullscreen) {
+    if ((valueTupleToUse as CarouselElementViewingMode<T>)?.fullscreen != null) {
       valueTupleToUse = isFullscreenMode
         ? (valueTupleToUse as CarouselElementViewingMode<T>)?.fullscreen
         : undefined;
     } else if (
-      (valueTupleToUse as CarouselElementViewingMode<T>)?.nonFullscreen
+      (valueTupleToUse as CarouselElementViewingMode<T>)?.nonFullscreen != null
     ) {
       valueTupleToUse = !isFullscreenMode
         ? (valueTupleToUse as CarouselElementViewingMode<T>)?.nonFullscreen

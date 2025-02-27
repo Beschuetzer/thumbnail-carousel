@@ -429,7 +429,7 @@ export const Story24: Story = {
       },
       styling: {
         modal: {
-          widthInPercent: [[50], [undefined, 800]],
+          width: [[50], [undefined, 800]],
           textColor: [["red"], ["blue", 800]],
           fontSize: [[14], [10, 800]],
           closeButton: {

@@ -185,11 +185,47 @@ export const Story14: Story = {
         itemDisplayLocation: "below",
       },
       modal: {
+        maintainMinimizedStateAcrossItems: false,
+      },
+    },
+  },
+  name: "Modal Remains Open When Switching Items",
+};
+
+
+export const Story14_2: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        itemDisplayLocation: "below",
+      },
+      modal: {
         maintainMinimizedStateAcrossItems: {
-          nonFullscreen: true,
+          nonFullscreen: false,
         },
       },
     },
   },
-  name: "Modal Remains Closed When Switching Items (only in Fullscreen Mode)",
+  name: "Modal Remains Open When Switching Items (only non-fullscreen)",
+};
+
+export const Story15: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        itemDisplayLocation: "below",
+      },
+      styling: {
+        modal: {
+          width: {
+            fullscreen: "50%",
+            nonFullscreen: "100%",
+          }
+        },
+      },
+    },
+  },
+  name: "Modal can take custom width",
 };

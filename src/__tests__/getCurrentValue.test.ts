@@ -284,6 +284,62 @@ describe("getCurrentValue", () => {
     expect(actual).toBe(expected);
   });
 
+  it("NonFullscreen Specified - boolean false", () => {
+    windowSpy.mockImplementation(() => ({
+      innerWidth: 900,
+    }));
+
+    const actual = getCurrentValue(
+      { nonFullscreen: false },
+      true,
+      false,
+    );
+    const expected = false;
+    expect(actual).toBe(expected);
+  });
+  
+  it("Fullscreen Specified - boolean false", () => {
+    windowSpy.mockImplementation(() => ({
+      innerWidth: 900,
+    }));
+
+    const actual = getCurrentValue(
+      { fullscreen: false },
+      true,
+      true,
+    );
+    const expected = false;
+    expect(actual).toBe(expected);
+  });
+
+  it("NonFullscreen Specified - boolean true", () => {
+    windowSpy.mockImplementation(() => ({
+      innerWidth: 900,
+    }));
+
+    const actual = getCurrentValue(
+      { nonFullscreen: true },
+      false,
+      false,
+    );
+    const expected = true;
+    expect(actual).toBe(expected);
+  });
+  
+  it("Fullscreen Specified - boolean true", () => {
+    windowSpy.mockImplementation(() => ({
+      innerWidth: 900,
+    }));
+
+    const actual = getCurrentValue(
+      { fullscreen: true },
+      false,
+      true,
+    );
+    const expected = true;
+    expect(actual).toBe(expected);
+  });
+
   it("both specified - is fullscreen", () => {
     windowSpy.mockImplementation(() => ({
       innerWidth: 900,

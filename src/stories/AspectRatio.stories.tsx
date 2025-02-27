@@ -5,6 +5,8 @@ import { items } from "./assets/items";
 import { container } from "./decorators";
 import { customButtons } from "./custom-buttons";
 import { carouselShortcuts } from "./carousel-shortcuts";
+import extremeAspectRatio from "./assets/imgs/about/thumbnails/extreme-aspect-ratio.png";
+
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -128,4 +130,33 @@ export const Story6: Story = {
     },
   },
   name: "Setting Aspect Ratio to 3:1",
+};
+
+
+export const Story7: Story = {
+  args: {
+    items: [
+      {
+        srcMain: extremeAspectRatio,
+        description: "This image has an extreme aspect ratio",
+      },
+      {
+        srcMain: extremeAspectRatio,
+        description: "This image has an extreme aspect ratio",
+      },
+      {
+        srcMain: extremeAspectRatio,
+        description: "This image has an extreme aspect ratio",
+      },
+    ],
+    options: {
+      container: {
+        text: "Aspect Ratio is extreme",
+      },
+      layout: {
+        itemDisplayLocation: "above",
+      },
+    },
+  },
+  name: "Can handle extreme aspect ratios",
 };
