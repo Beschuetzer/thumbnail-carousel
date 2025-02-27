@@ -13,6 +13,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
  -->
 
+## [1.3.1] - 2025-02-26
+
+ ### Changed
+ - `CAROUSEL_MODAL_WIDTH_DEFAULT` to `min(70ch, 100%)` from `70ch`.
+
 ## [1.3.0] - 2025-02-26
 
 ### Fixed
