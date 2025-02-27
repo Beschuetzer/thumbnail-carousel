@@ -153,9 +153,6 @@ export const Story7: Story = {
       container: {
         text: "Aspect Ratio is extreme",
       },
-      itemViewer: {
-        aspectRatio: 9 / 16,
-      },
       layout: {
         itemDisplayLocation: "above",
       },

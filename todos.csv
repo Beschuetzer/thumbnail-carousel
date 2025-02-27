@@ -1,5 +1,4 @@
 -make the video modal have a max-width style which can be given in the options
--check case where the image has an extreme aspect ration (e.g. a snapshot from a phone); (may need to specificy a max height somewhere)
 
 -Make images load lazily via the attributable available on img tag
 
