@@ -71,6 +71,7 @@ export const CAROUSEL_DOT_OPACITY_DEFAULT = 0.5;
 export const CAROUSEL_DOT_HEIGHT_DEFAULT = 24;
 export const CAROUSEL_DOT_WIDTH_DEFAULT = 16;
 export const CAROUSEL_MAX_HEIGHT_DEFAULT = window.innerHeight / 0.75; //in px
+export const CAROUSEL_MODAL_WIDTH_DEFAULT = "70ch";
 export const CAROUSEL_ITEM_HOVER_TRANSLATE_UP_AMOUNT = 0; //in px
 export const CAROUSEL_ITEM_SIZE_DEFAULT = 150; //in px
 export const CAROUSEL_ITEM_SIZE_DISPLAY_NON_ITEM_VIEWER_DEFAULT = 50; //in px

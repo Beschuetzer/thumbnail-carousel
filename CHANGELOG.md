@@ -13,11 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
  -->
 
-## [1.2.6] - 2025-02-26
+## [1.3.0] - 2025-02-26
 
 ### Fixed
 
  - issue where having only high aspect ratio items causes the carousel to grow past the `window.innerHeight`.
+ - change `options.styling.modal.widthInPercent` to `options.styling.modal.width` and accept `CSSProperties["maxWidth"]` values instead of just `number`.
+ - adjust the default font size for modal paragraphs to be `14px`.
  
 ## [1.2.5] - 2025-02-26
 

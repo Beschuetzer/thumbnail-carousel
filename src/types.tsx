@@ -3,47 +3,48 @@ import React, { CSSProperties, ElementType, ReactNode } from "react";
 import { CarouselItemViewerShortcutIndicatorProps } from "./components/item-viewer/toolbar/CarouselItemViewerShortcutIndicator";
 import { LoadingSpinnerProps } from "./components/LoadingSpinner";
 import {
-  CAROUSEL_TOOLBAR_BUTTON_SIZE_DEFAULT,
-  MOBILE_PIXEL_WIDTH,
-  CAROUSEL_TOOLBAR_BUTTON_SIZE_MOBILE_DEFAULT,
-  CAROUSEL_ITEM_SIZE_DEFAULT,
-  CAROUSEL_PADDING_DEFAULT,
-  CAROUSEL_ITEM_SPACING_DEFAULT,
+  AUTO_CHANGE_PAGE_DEFAULT,
   AUTO_HIDE_DISABLED_VALUE,
   AUTO_HIDE_VIDEO_TOOLBAR_DURATION_DEFAULT,
-  SEEK_AMOUNT_DEFAULT,
+  CAROUSEL_COLOR_FIVE,
+  CAROUSEL_COLOR_FOUR,
+  CAROUSEL_COLOR_GREY_ONE,
+  CAROUSEL_COLOR_ONE,
+  CAROUSEL_COLOR_THREE,
+  CAROUSEL_COLOR_TWO,
+  CAROUSEL_ITEM_SIZE_DEFAULT,
+  CAROUSEL_ITEM_SPACING_DEFAULT,
+  CAROUSEL_ITEM_THUMBNAIL_DESCRIPTION_OVERLAY_MAX_LINE_COUNT_DEFAULT,
   CAROUSEL_ITEM_VIEWER_PREVIEW_BORDER_RADIUS_DEFAULT,
+  CAROUSEL_ITEM_VIEWER_PREVIEW_IS_VISIBLE_DEFAULT,
+  CAROUSEL_ITEM_VIEWER_PREVIEW_OPACITY_DEFAULT,
   CAROUSEL_ITEM_VIEWER_PREVIEW_WIDTH_DEFAULT,
+  CAROUSEL_MAX_HEIGHT_DEFAULT,
+  CAROUSEL_MODAL_WIDTH_DEFAULT,
+  CAROUSEL_OVERLAY_ITEM_PADDING_TOP,
+  CAROUSEL_PADDING_DEFAULT,
   CAROUSEL_PROGRESS_BAR_HEIGHT_DEFAULT_EMBEDDED,
   CAROUSEL_PROGRESS_BAR_HEIGHT_DEFAULT_NOT_EMBEDDED,
   CAROUSEL_PROGRESS_BAR_SHOULD_SPAN_ENTIRE_WIDTH_DEFAULT,
-  MAX_CLICK_THRESHOLD_DEFAULT,
-  CAROUSEL_ITEM_VIEWER_PREVIEW_IS_VISIBLE_DEFAULT,
-  CAROUSEL_ITEM_VIEWER_PREVIEW_OPACITY_DEFAULT,
-  AUTO_CHANGE_PAGE_DEFAULT,
+  CAROUSEL_TOOLBAR_BUTTON_SIZE_DEFAULT,
+  CAROUSEL_TOOLBAR_BUTTON_SIZE_MOBILE_DEFAULT,
   DISABLE_WRAPPING_DEFAULT,
   IS_LAST_PAGE_FLUSH_DEFAULT,
-  CAROUSEL_COLOR_ONE,
-  CAROUSEL_COLOR_TWO,
-  CAROUSEL_COLOR_THREE,
-  CAROUSEL_COLOR_FOUR,
-  CAROUSEL_COLOR_FIVE,
-  CAROUSEL_COLOR_GREY_ONE,
   ITEM_VIEWER_CLOSE_SHORTCUTS,
+  ITEM_VIEWER_NEXT_ITEM_SHORTCUTS,
   ITEM_VIEWER_PLAY_SHORTCUTS,
+  ITEM_VIEWER_PREVIOUS_ITEM_SHORTCUTS,
   ITEM_VIEWER_SEEK_BACKWARDS_SHORTCUTS,
   ITEM_VIEWER_SEEK_FORWARDS_SHORTCUTS,
-  CAROUSEL_ITEM_THUMBNAIL_DESCRIPTION_OVERLAY_MAX_LINE_COUNT_DEFAULT,
-  ITEM_VIEWER_NEXT_ITEM_SHORTCUTS,
-  ITEM_VIEWER_PREVIOUS_ITEM_SHORTCUTS,
-  THUMBNAIL_OVERLAY_IS_HIDDEN_DEFAULT,
-  PROGRESS_BAR_SHOW_CURRENT_POSITION_ON_CHANGE_DEFAULT,
-  CAROUSEL_OVERLAY_ITEM_PADDING_TOP,
+  MAX_CLICK_THRESHOLD_DEFAULT,
+  MOBILE_PIXEL_WIDTH,
+  MODAL_MAINTAIN_MINIMIZED_STATE_DEFAULT,
+  MODAL_MINIMIZE_ON_CLICK_DEFAULT,
   MODAL_TEXT_TAG_DEFAULT,
   MODAL_TITLE_TAG_DEFAULT,
-  CAROUSEL_MAX_HEIGHT_DEFAULT,
-  MODAL_MINIMIZE_ON_CLICK_DEFAULT,
-  MODAL_MAINTAIN_MINIMIZED_STATE_DEFAULT,
+  PROGRESS_BAR_SHOW_CURRENT_POSITION_ON_CHANGE_DEFAULT,
+  SEEK_AMOUNT_DEFAULT,
+  THUMBNAIL_OVERLAY_IS_HIDDEN_DEFAULT,
 } from "./constants";
 import { OptionsLogic } from "./business-logic/OptionsLogic";
 import { StylingLogic } from "./business-logic/StylingLogic";
@@ -237,7 +238,7 @@ export type CarouselItemViewerOptions = {
    *
    *Default is {@link OptionsLogic.itemViewerAspectRatio here}.
    *
-   *Notes: 
+   *Notes:
    * Using this option will disable {@link CarouselItemViewerOptions.useRecommendedAspectRatio} (not recommended).
    * There is a max allowed value that the carousel can take.
    * If the value given here would cause the carousel to exceed this value, it will be ignored in order to prevent the carousel from taking up more space than one screen height.
@@ -392,11 +393,11 @@ export type CarouselSectionsModal = {
   >;
   textColor?: CarouselElementValue<Color>;
   /**
-   *this is a percent of the item container width when the {@link CarouselLayoutOptions.itemDisplayLocation itemDisplayLocation} is not {@link CarouselItemDisplayLocation none}.
-   *It has no effect otherwise.
-   *Default is {@link OptionsLogic.modalWidth here}.
+   *this is the width value to use for the modal.
+   *It only has an effect when {@link CarouselLayoutOptions.itemDisplayLocation itemDisplayLocation} is not {@link CarouselItemDisplayLocation none}.
+   *Default is {@link CAROUSEL_MODAL_WIDTH_DEFAULT}.
    **/
-  widthInPercent?: CarouselElementValue<number>;
+  width?: CarouselElementValue<CSSProperties["maxWidth"]>;
 } & Partial<Pick<CarouselColorOptions, "backgroundColor">>;
 export type CarouselSectionsNavigation = {
   /**

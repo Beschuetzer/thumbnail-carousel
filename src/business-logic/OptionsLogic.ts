@@ -71,6 +71,7 @@ import {
   CAROUSEL_ITEM_HOVER_TRANSLATE_UP_AMOUNT,
   CAROUSEL_SPACING_UNIT,
   CAROUSEL_VIDEO_AUTO_PLAY_DEFAULT,
+  CAROUSEL_MODAL_WIDTH_DEFAULT,
 } from "../constants";
 import {
   CarouselElement,
@@ -604,9 +605,7 @@ export class OptionsLogic {
   get modalFontSize() {
     return getCurrentValue(
       this.options?.styling?.modal?.fontSize,
-      this.isFullscreenMode
-        ? CAROUSEL_OVERLAY_FONT_SIZE_DEFAULT
-        : CAROUSEL_OVERLAY_FONT_SIZE_NON_ITEM_VIEWER_DEFAULT,
+      CAROUSEL_OVERLAY_FONT_SIZE_DEFAULT,
       this.isFullscreenMode
     );
   }
@@ -678,10 +677,10 @@ export class OptionsLogic {
   getModalWidth(isMinimized: boolean) {
     if (isMinimized) return `auto`;
     return `${getCurrentValue(
-      this.options?.styling?.modal?.widthInPercent,
-      100,
+      this.options?.styling?.modal?.width,
+      CAROUSEL_MODAL_WIDTH_DEFAULT,
       this.isFullscreenMode
-    )}%`;
+    )}`;
   }
 
   get navigationFontFamily() {

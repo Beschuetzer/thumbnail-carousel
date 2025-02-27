@@ -537,7 +537,7 @@ export const BelowCustomization14: Story = {
           },
           backgroundColor: `linear-gradient(270deg, #fff, #ccc)`,
           textColor: COLORS.primary1,
-          widthInPercent: 90,
+          width: 90,
         },
       },
     },

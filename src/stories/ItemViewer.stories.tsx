@@ -193,3 +193,23 @@ export const Story14: Story = {
   },
   name: "Modal Remains Closed When Switching Items (only in Fullscreen Mode)",
 };
+
+export const Story15: Story = {
+  args: {
+    items: items,
+    options: {
+      layout: {
+        itemDisplayLocation: "below",
+      },
+      styling: {
+        modal: {
+          width: {
+            fullscreen: "50%",
+            nonFullscreen: "100%",
+          }
+        },
+      },
+    },
+  },
+  name: "Modal can take custom width",
+};
