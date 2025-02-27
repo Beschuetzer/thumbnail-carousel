@@ -13,6 +13,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
  -->
 
+## [1.2.6] - 2025-02-26
+
+### Fixed
+
+ - issue where having only high aspect ratio items causes the carousel to grow past the `window.innerHeight`.
  
 ## [1.2.5] - 2025-02-26
 
