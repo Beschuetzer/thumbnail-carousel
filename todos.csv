@@ -1,9 +1,5 @@
--remove overflow hidden from .thumbnail-carousel and from the inline style of the class "thumbnail-carousel__item-container" (issue is that the item preview viewer is not showing up properly)
-  --double check all cases work
-  --add a new case for small sizes to test overflow
--adjust the text for the item viewer preview to be easier to read (bold)
-
-
+-make the video modal have a max-width style which can be given in the options
+-check case where the image has an extreme aspect ration (e.g. a snapshot from a phone); (may need to specificy a max height somewhere)
 
 -Make images load lazily via the attributable available on img tag
 

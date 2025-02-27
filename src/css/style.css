@@ -738,7 +738,6 @@
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
   width: 100%;
-  overflow: hidden;
 }
 .thumbnail-carousel__container, .thumbnail-carousel__item-viewer {
   box-sizing: border-box !important;

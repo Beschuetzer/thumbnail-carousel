@@ -38,19 +38,6 @@ export const MaxHeight1: Story = {
   name: "Max Heigt causes Thumbnail Size to Decrease when ItemDisplayLocation is None",
 };
 
-export const MaxHeight2: Story = {
-  args: {
-    items: items,
-    options: {
-      layout: {
-        maxHeight: 340,
-        itemDisplayLocation: "above",
-      },
-    },
-  },
-  name: "Max Heigt causes Thumbnail Size to Decrease when ItemDisplayLocation is Above",
-};
-
 export const MaxHeight3: Story = {
   args: {
     items: items,
