@@ -237,7 +237,10 @@ export type CarouselItemViewerOptions = {
    *
    *Default is {@link OptionsLogic.itemViewerAspectRatio here}.
    *
-   *Note: Using this option will disabled {@link CarouselItemViewerOptions.useRecommendedAspectRatio} (not recommended).
+   *Notes: 
+   * Using this option will disable {@link CarouselItemViewerOptions.useRecommendedAspectRatio} (not recommended).
+   * There is a max allowed value that the carousel can take.
+   * If the value given here would cause the carousel to exceed this value, it will be ignored in order to prevent the carousel from taking up more space than one screen height.
    **/
   aspectRatio?: "auto" | number | CarouselItemViewerAspectRatioPreset;
   /**
