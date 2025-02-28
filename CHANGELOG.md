@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  ### Changed
  - default padding for toolbar to be 0 when not in fullscreen to better align with the rest of the carousel.
  - adjust all things related to the item viewer to align with the rest of the carsouel now that the toolbar padding is 0.
+ - change how the text works for CarouselVideoProgressBarScreenshotViewer (can be multiple lines now instead of always 1 line)
 
 ## [1.3.1] - 2025-02-27
 
