@@ -1048,7 +1048,7 @@ export class StylingLogic {
     return {
       pointerEvents: "none",
       border: "2px solid white",
-      borderRadius: 2,
+      borderRadius: 6,
       backgroundColor: "white",
       width: "100%",
     } as CSSProperties;
@@ -1161,7 +1161,6 @@ export class StylingLogic {
       display: percent < 0 ? "none" : "block",
       width: width + CAROUSEL_ITEM_SPACING_DEFAULT * 2,
       pointerEvents: "none",
-      borderRadius: 4,
       textAlign: "center",
       position: "absolute",
       bottom,
