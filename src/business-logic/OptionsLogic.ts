@@ -1043,7 +1043,7 @@ export class OptionsLogic {
 
   get videoProgressBarHitSlop() {
     return {
-      top: CAROUSEL_PROGRESS_BAR_CONTAINER_HEIGHT_DEFAULT * 1.5,
+      top: CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
       bottom: CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
     };
   }

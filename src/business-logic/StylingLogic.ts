@@ -358,13 +358,11 @@ export class StylingLogic {
     const padding = this.optionsLogic.itemViewerPreviewTextContainerPadding;
     const verticalAlignment =
       this.optionsLogic.itemViewerPreviewTextContainerVerticalAlignment;
-    const hitSlopTop = this.getCarouselVideoProgressHitSlop().paddingTop;
     const isVideo = getIsVideo(this.currentItem);
-    const translateYSpacing = `-${CAROUSEL_PROGRESS_BAR_CONTAINER_HEIGHT_DEFAULT}${CAROUSEL_SPACING_UNIT}`;
     const translateYAmount =
       this.optionsLogic.isToolbarInVideo && isVideo
-        ? `calc(-100% + ${hitSlopTop}${CAROUSEL_SPACING_UNIT} + ${translateYSpacing})`
-        : `calc(-100% + ${translateYSpacing})`;
+        ? `calc(-100% - 1${CAROUSEL_SPACING_UNIT})`
+        : `calc(-100% - 1${CAROUSEL_SPACING_UNIT} - ${2 * CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT}px)`
 
     return {
       width: !shouldShowImageJSX ? width / 2 : width,
@@ -689,7 +687,9 @@ export class StylingLogic {
         } as CSSProperties);
     const positionStyle = {
       top: "auto",
-      bottom: Math.abs(this.carouselShortcutIndicatorTextTop) + 24,
+      bottom:
+        Math.abs(this.carouselShortcutIndicatorTextTop) +
+        CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT * 1.7,
       left: 0,
       right: "auto",
     } as CSSProperties;
@@ -1113,10 +1113,10 @@ export class StylingLogic {
     const bottom =
       toolbarInnerContainerRect?.height && progressBarRect?.height
         ? toolbarInnerContainerRect.height -
-          progressBarRect.height + 
-          (this.isFullscreenMode ? this.toolbarPaddingBottom : 0)
-          + CAROUSEL_PROGRESS_BAR_CONTAINER_HEIGHT_DEFAULT 
-          + hitSlopBottom
+          progressBarRect.height +
+          (this.isFullscreenMode ? this.toolbarPaddingBottom : 0) +
+          CAROUSEL_PROGRESS_BAR_CONTAINER_HEIGHT_DEFAULT +
+          hitSlopBottom
         : isEmbedded
         ? 103
         : 90; //fallback
@@ -1774,9 +1774,7 @@ export class StylingLogic {
     const { paddingTop: hitSlopTop, paddingBottom: hitSlopBottom } =
       this.getCarouselVideoProgressHitSlop();
     return this.optionsLogic.isToolbarInVideo
-      ? -CAROUSEL_PROGRESS_BAR_CONTAINER_HEIGHT_DEFAULT * 1.5 -
-          hitSlopBottom +
-          (!isVideo ? CAROUSEL_PROGRESS_BAR_CONTAINER_HEIGHT_DEFAULT : 0)
+      ? -CAROUSEL_PROGRESS_BAR_CONTAINER_HEIGHT_DEFAULT * 1.5
       : -hitSlopBottom -
           (isVideo ? 2 : 0.5) * CAROUSEL_PROGRESS_BAR_CONTAINER_HEIGHT_DEFAULT;
   }
