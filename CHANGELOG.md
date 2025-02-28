@@ -13,12 +13,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
  -->
 
-## [1.3.2] - 2025-02-28
+## [1.4.0] - 2025-02-28
 
  ### Changed
  - default padding for toolbar to be 0 when not in fullscreen to better align with the rest of the carousel.
- - adjust the item viewer screen shot preview non fullscreen padding to align with the rest of the carsouel
-
+ - adjust all things related to the item viewer to align with the rest of the carsouel now that the toolbar padding is 0.
 
 ## [1.3.1] - 2025-02-27
 
