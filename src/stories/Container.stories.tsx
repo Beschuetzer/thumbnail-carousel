@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Carousel } from "../components/Carousel";
 import { items } from "./assets/items";
-import { container } from "./decorators";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -14,7 +13,6 @@ const meta = {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
-  decorators: container,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } satisfies Meta<typeof Carousel>;
 
@@ -84,8 +82,9 @@ export const Story4: Story = {
         text: "Some title as h4 with Custom Red Color",
         tag: "h4",
         style: {
-          margin: 0,
-          padding: 0,
+          padding: '0 14px 14px 14px',
+          backgroundColor: "rgb(29,14,11)",
+          width: 'auto',
         },
         textStyle: {
           color: "red",

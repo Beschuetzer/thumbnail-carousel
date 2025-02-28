@@ -1,5 +1,8 @@
+-add getting started section for stories and link that in the readme
 -fix overflow-x issue when hovering a video section 
 -fix issue with videos where the toolbar doesn't immediately hide when playing a video and mouse is not it carousel
+
+
 -Make images load lazily via the attributable available on img tag
 
 Before Publishing
