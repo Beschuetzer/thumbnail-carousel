@@ -1,6 +1,6 @@
 # thumbnail-carousel
 
-A React carousel with a wide range of [options](https://beschuetzer.github.io/thumbnail-carousel/?path=/docs/thumbnail-carousel-layout--docs).
+A React carousel with a wide range of options.  See [this](https://beschuetzer.github.io/thumbnail-carousel/?path=/docs/thumbnail-carousel-getting-started--docs) for quick start examples.
 
 ## Use Case
 
@@ -61,11 +61,19 @@ const items = [
 //instantiate Carousel with default options
 <Carousel items={items} />
 
-//instantiate Carousel with current item displayed above
+//instantiate Carousel with current item displayed above and some padding
 <Carousel items={items} options={{
   layout: {
     itemDisplayLocation: 'above' //'below' is an option too
-  }
+  },
+  container: {
+      text: "This is a title",
+      tag: "h4",
+      style: {
+        padding: '0 14px 14px 14px',
+        backgroundColor: "rgb(29,14,11)",
+      },
+    },
 }}/>
 ...
 ```
@@ -342,6 +350,9 @@ options: {
 - for videos, when the toolbar is embedded in the video, the overlay hides after 2 seconds of no mouse activity or when the cursor leaves the video (similar to how Youtube videos work).
 - by default the aspect ratio of the item viewer is determined by the item with the largest aspect ratio. This is only relevant if `itemDisplayLocation` is not `none`. See aspect ratio [examples](https://beschuetzer.github.io/thumbnail-carousel/?path=/docs/thumbnail-carousel-aspect-ratio-options--docs) for more details.
 
+## Troubleshooting
+- if the styling is not lining up properly, try wrapping the carousel in a div with a specified width value (e.g. `100%` or `700px`).  Alternatively, you can use the 
+
 ## Storybook
 
-The [story book](https://beschuetzer.github.io/thumbnail-carousel/?path=/docs/thumbnail-carousel-layout--docs) is the best way to learn about customization options.
+The [story book](https://beschuetzer.github.io/thumbnail-carousel/?path=/docs/thumbnail-carousel-getting-started--docs) is the best way to learn about customization options.

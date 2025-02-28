@@ -447,14 +447,6 @@ export type CarouselProgressBar = {
    **/
   dot?: CarouselProgressBarDot;
   /**
-   *The amount of space above the actual progress bar that counts as the a registered hover event.
-   *Defaults can be found {@link OptionsLogic.videoProgressBarHitSlop here}.
-   **/
-  hitSlop?: {
-    top?: number;
-    bottom?: number;
-  };
-  /**
    *This is the popup that shows a screenshot of the video at a given time (on hover/seek)
    **/
   screenshotViewer?: {

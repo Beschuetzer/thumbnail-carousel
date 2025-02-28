@@ -103,7 +103,7 @@ export const CarouselItemViewerContainer = forwardRef<
       setItemContainerHeight(
         Math.min(
           Math.ceil(availableWidth * aspectRatio),
-          window.innerHeight * 0.875
+          window.innerHeight * 0.75
         )
       );
       return true;

@@ -114,13 +114,7 @@ const CarouselVideoProgressBarScreenshotViewer = (
           stylingLogic.carouselVideoProgressScreenshotViewerTextContainerStyle
         }
       >
-        <div
-          style={stylingLogic.getCarouselVideoProgressScreenshotViewerTextStyle(
-            percent,
-            videoRef,
-            textTranslateOffsetRef,
-          )}
-        >
+        <div>
           {currentVideoSection !== undefined
             ? sections?.[currentVideoSection]?.[0]
             : ""}

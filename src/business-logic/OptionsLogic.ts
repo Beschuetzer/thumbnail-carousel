@@ -1042,20 +1042,9 @@ export class OptionsLogic {
   }
 
   get videoProgressBarHitSlop() {
-    const top = getCurrentValue(
-      this.options?.styling?.toolbar?.progressBar?.hitSlop?.top,
-      CAROUSEL_PROGRESS_BAR_CONTAINER_HEIGHT_DEFAULT * 1,
-      this.isFullscreenMode
-    );
-    const bottom = getCurrentValue(
-      this.options?.styling?.toolbar?.progressBar?.hitSlop?.bottom,
-      CAROUSEL_PROGRESS_BAR_CONTAINER_HEIGHT_DEFAULT / 2,
-      this.isFullscreenMode
-    );
-
     return {
-      top,
-      bottom,
+      top: CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
+      bottom: CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
     };
   }
 

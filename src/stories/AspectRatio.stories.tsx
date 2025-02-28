@@ -132,7 +132,6 @@ export const Story6: Story = {
   name: "Setting Aspect Ratio to 3:1",
 };
 
-
 export const Story7: Story = {
   args: {
     items: [
@@ -150,13 +149,35 @@ export const Story7: Story = {
       },
     ],
     options: {
-      container: {
-        text: "Aspect Ratio is extreme",
+      layout: {
+        itemDisplayLocation: "below",
       },
+    },
+  },
+  name: "Can handle extreme aspect ratios below",
+};
+
+export const Story8: Story = {
+  args: {
+    items: [
+      {
+        srcMain: extremeAspectRatio,
+        description: "This image has an extreme aspect ratio",
+      },
+      {
+        srcMain: extremeAspectRatio,
+        description: "This image has an extreme aspect ratio",
+      },
+      {
+        srcMain: extremeAspectRatio,
+        description: "This image has an extreme aspect ratio",
+      },
+    ],
+    options: {
       layout: {
         itemDisplayLocation: "above",
       },
     },
   },
-  name: "Can handle extreme aspect ratios",
+  name: "Can handle extreme aspect ratios above",
 };

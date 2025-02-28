@@ -1,8 +1,17 @@
 import React from "react";
 
+export const containerBasic = [
+  (Story: any) => (
+    <div style={{ maxWidth: '700px' }}>
+      {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
+      <Story />
+    </div>
+  ),
+];
+
 export const container = [
   (Story: any) => (
-    <div style={{ maxWidth: 750 }}>
+    <div style={{ padding: 10, maxWidth: 750, backgroundColor: "#888" }}>
       {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
       <Story />
     </div>
@@ -48,4 +57,3 @@ export const paddingTop = [
     </div>
   ),
 ];
-

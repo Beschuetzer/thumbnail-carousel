@@ -2,10 +2,11 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Carousel } from "../components/Carousel";
 import { items } from "./assets/items";
+import { containerBasic } from "./decorators";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: "Thumbnail-Carousel/Container",
+  title: "Thumbnail-Carousel/Getting Started",
   component: Carousel,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
@@ -24,16 +25,9 @@ type Story = StoryObj<typeof meta>;
 export const Story1: Story = {
   args: {
     items: items.slice(0, items.length - 1),
-    options: {
-      layout: {
-        itemDisplayLocation: "above",
-      },
-      container: {
-        text: "Some title",
-      },
-    },
   },
-  name: "Text Only",
+  decorators: containerBasic,
+  name: "When you want just the carousel",
 };
 
 export const Story2: Story = {
@@ -43,13 +37,13 @@ export const Story2: Story = {
       layout: {
         itemDisplayLocation: "above",
       },
-      container: {
-        text: "Some title as h1",
-        tag: "h1",
+      thumbnail: {
+        size: 100,
       },
     },
   },
-  name: "Use Custom Tag",
+  decorators: containerBasic,
+  name: "When you want the item viewer above",
 };
 
 export const Story3: Story = {
@@ -59,16 +53,13 @@ export const Story3: Story = {
       layout: {
         itemDisplayLocation: "below",
       },
-      container: {
-        text: "Some title as h6 with Custom Red Color",
-        tag: "h6",
-        style: {
-          color: "red",
-        },
+      thumbnail: {
+        size: 100,
       },
     },
   },
-  name: "Use Custom tag with Custom Container Style",
+  decorators: containerBasic,
+  name: "When you want the item viewer below",
 };
 
 export const Story4: Story = {
@@ -78,38 +69,22 @@ export const Story4: Story = {
       layout: {
         itemDisplayLocation: "below",
       },
+      thumbnail: {
+        size: 100,
+      },
       container: {
-        text: "Some title as h4 with Custom Red Color",
+        text: "Example of a titled carousel with container that has padding and max width value",
         tag: "h4",
         style: {
-          padding: '0 14px 14px 14px',
+          padding: "0 14px 14px 14px",
           backgroundColor: "rgb(29,14,11)",
-          width: 'auto',
+          maxWidth: "700px",
         },
         textStyle: {
-          color: "red",
+            color: "white",
         },
       },
     },
   },
-  name: "Use Custom tag with Custom Container and Text Style",
-};
-
-export const Story5: Story = {
-  args: {
-    items: items.slice(0, items.length - 1),
-    options: {
-      layout: {
-        itemDisplayLocation: "below",
-      },
-      container: {
-        text: "The border-radius of this instance should be 0",
-        tag: "h4",
-        style: {
-          borderRadius: 0,
-        },
-      },
-    },
-  },
-  name: "Can Pass Custom Border Radius",
+  name: "When you want some padding and a title",
 };
