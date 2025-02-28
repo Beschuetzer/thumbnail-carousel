@@ -2,7 +2,7 @@ import React from "react";
 
 export const container = [
   (Story: any) => (
-    <div style={{ maxWidth: 750 }}>
+    <div style={{ padding: 10, maxWidth: 750, backgroundColor: "#222", width: window.innerWidth }}>
       {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
       <Story />
     </div>

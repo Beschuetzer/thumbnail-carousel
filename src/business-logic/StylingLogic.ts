@@ -1086,6 +1086,8 @@ export class StylingLogic {
       left: paddingBetweenContainerAndVideoLeft,
       right: paddingBetweenContainerAndVideoRight,
     } = this.getItemViewerHorizontalSpacing();
+    const paddingLeftToUse = this.isFullscreenMode ? paddingBetweenContainerAndVideoLeft : 0;
+    const paddingRightToUse = this.isFullscreenMode ? paddingBetweenContainerAndVideoRight : 0;
 
     const isEmbedded = this.optionsLogic.isToolbarInVideo;
     const videoRect = videoRef?.current?.getBoundingClientRect();
@@ -1117,11 +1119,11 @@ export class StylingLogic {
 
     let translateX = "-50%";
     let left = `${
-      paddingBetweenContainerAndVideoLeft +
+      paddingLeftToUse +
       ((videoRect?.width || 200) -
         (this.isFullscreenMode
-          ? paddingBetweenContainerAndVideoLeft +
-            paddingBetweenContainerAndVideoRight
+          ? paddingLeftToUse +
+          paddingRightToUse
           : 0)) *
         percent
     }${CAROUSEL_SPACING_UNIT}`;
@@ -1144,13 +1146,13 @@ export class StylingLogic {
       if (cursorLeftPosition >= maxCursorLeftValue) {
         left = "auto";
         right = `0${CAROUSEL_SPACING_UNIT}`;
-        translateX = `${-paddingBetweenContainerAndVideoRight}${CAROUSEL_SPACING_UNIT}`;
+        translateX = `${-paddingRightToUse}${CAROUSEL_SPACING_UNIT}`;
       }
 
       //handling left-bound case
       if (cursorLeftPosition <= minCursorLeftValue) {
         left = `0${CAROUSEL_SPACING_UNIT}`;
-        translateX = `${paddingBetweenContainerAndVideoLeft}${CAROUSEL_SPACING_UNIT}`;
+        translateX = `${paddingLeftToUse}${CAROUSEL_SPACING_UNIT}`;
       }
     }
 
@@ -1442,8 +1444,8 @@ export class StylingLogic {
       this.getItemViewerHorizontalSpacing();
 
     const paddingHorizontalStyle = {
-      paddingLeft: leftSpacing,
-      paddingRight: rightSpacing,
+      paddingLeft: !this.isFullscreenMode ? 0 : leftSpacing,
+      paddingRight: !this.isFullscreenMode ? 0 : rightSpacing,
     } as CSSProperties;
     const nonDefaultItemDisplayStyle = {
       ...this.getToolbarBackgroundColorStyle(),
@@ -1453,10 +1455,10 @@ export class StylingLogic {
           ? "absolute"
           : "relative",
       width: this.optionsLogic.isToolbarInVideo ? undefined : "100%",
-      paddingTop: isItemVideo
+      paddingTop: !this.isFullscreenMode || isItemVideo
         ? 0
         : CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
-      paddingBottom: this.toolbarPaddingBottom,
+      paddingBottom: !this.isFullscreenMode ? 0 : this.toolbarPaddingBottom,
       top: this.optionsLogic.isToolbarInVideo
         ? this.isFullscreenMode
           ? "75%"
