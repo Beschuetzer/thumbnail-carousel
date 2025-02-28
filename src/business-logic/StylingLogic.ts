@@ -29,6 +29,7 @@ import {
   TOOLBAR_MARGIN_RIGHT_OFFSET,
   BORDER_STRING_DEFAULT_SIZE,
   CAROUSEL_BORDER_RADIUS_DEFAULT,
+  CAROUSEL_TOOLBAR_BUTTON_SIZE_DEFAULT,
 } from "../constants";
 import { CarouselModalInternalProps } from "../components/modal/CarouselModal";
 import {
@@ -732,6 +733,7 @@ export class StylingLogic {
 
   get carouselToolbarTextStyle() {
     return {
+      paddingLeft: CAROUSEL_TOOLBAR_BUTTON_SIZE_DEFAULT / 6,
       color: this.optionsLogic.toolbarTextColor,
     } as CSSProperties;
   }
@@ -1447,13 +1449,6 @@ export class StylingLogic {
       ...nonDefaultItemDisplayStyle,
       ...this.fontFamilyItemViewerStyle,
     };
-  }
-
-  get toolbarInnerContainerStyle() {
-    const isEmbedded = this.optionsLogic.isToolbarInVideo;
-    return {
-      marginTop: this.toolbarInnerContainerMarginTop,
-    } as CSSProperties;
   }
 
   get toolbarInnerContainerMarginTop() {

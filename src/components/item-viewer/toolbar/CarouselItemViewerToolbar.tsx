@@ -815,7 +815,6 @@ export const CarouselItemViewerToolbar = forwardRef<
             />
           ) : null}
           <div
-            style={stylingLogic.toolbarInnerContainerStyle}
             className={CLASSNAME__TOOLBAR_CONTAINER}
           >
             {videoRef ? (
