@@ -1,5 +1,4 @@
--add getting started section for stories and link that in the readme
--fix overflow-x issue when hovering a video section 
+-adjust the margin and padding around the toolbar video progress bar
 -fix issue with videos where the toolbar doesn't immediately hide when playing a video and mouse is not it carousel
 
 

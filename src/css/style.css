@@ -1001,13 +1001,6 @@
   object-fit: contain;
   max-height: 100vh;
 }
-.thumbnail-carousel__video-screenshot-viewer > div > div {
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 .thumbnail-carousel__modal-header {
   display: flex;
   align-items: center;

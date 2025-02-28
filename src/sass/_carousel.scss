@@ -281,11 +281,11 @@
     object-fit: contain;
     max-height: 100vh;
 
-    &-screenshot-viewer {
-      & > div > div {
-        @include maxTextLineCount(1);
-      }
-    }
+    // &-screenshot-viewer {
+    //   & > div > div {
+    //     @include maxTextLineCount(1);
+    //   }
+    // }
   }
 
   &__modal {

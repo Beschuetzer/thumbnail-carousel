@@ -1086,8 +1086,12 @@ export class StylingLogic {
       left: paddingBetweenContainerAndVideoLeft,
       right: paddingBetweenContainerAndVideoRight,
     } = this.getItemViewerHorizontalSpacing();
-    const paddingLeftToUse = this.isFullscreenMode ? paddingBetweenContainerAndVideoLeft : 0;
-    const paddingRightToUse = this.isFullscreenMode ? paddingBetweenContainerAndVideoRight : 0;
+    const paddingLeftToUse = this.isFullscreenMode
+      ? paddingBetweenContainerAndVideoLeft
+      : 0;
+    const paddingRightToUse = this.isFullscreenMode
+      ? paddingBetweenContainerAndVideoRight
+      : 0;
 
     const isEmbedded = this.optionsLogic.isToolbarInVideo;
     const videoRect = videoRef?.current?.getBoundingClientRect();
@@ -1104,15 +1108,13 @@ export class StylingLogic {
     const progressBarRect = progressBarElement?.getBoundingClientRect();
     const { paddingBottom: hitSlopBottom } =
       this.getCarouselVideoProgressHitSlop();
-
     const bottom =
       toolbarInnerContainerRect?.height && progressBarRect?.height
         ? toolbarInnerContainerRect.height -
-          progressBarRect.height +
-          (screenShotTextContainerRect?.height || 20) +
-          hitSlopBottom +
-          this.toolbarPaddingBottom +
-          CAROUSEL_PROGRESS_BAR_CONTAINER_HEIGHT_DEFAULT * 1.33
+          progressBarRect.height + 
+          (this.isFullscreenMode ? this.toolbarPaddingBottom : 0)
+          + CAROUSEL_PROGRESS_BAR_CONTAINER_HEIGHT_DEFAULT 
+          + hitSlopBottom
         : isEmbedded
         ? 103
         : 90; //fallback
@@ -1121,10 +1123,7 @@ export class StylingLogic {
     let left = `${
       paddingLeftToUse +
       ((videoRect?.width || 200) -
-        (this.isFullscreenMode
-          ? paddingLeftToUse +
-          paddingRightToUse
-          : 0)) *
+        (this.isFullscreenMode ? paddingLeftToUse + paddingRightToUse : 0)) *
         percent
     }${CAROUSEL_SPACING_UNIT}`;
 
@@ -1158,8 +1157,6 @@ export class StylingLogic {
 
     return {
       display: percent < 0 ? "none" : "block",
-      padding: CAROUSEL_ITEM_SPACING_DEFAULT,
-      paddingInline: 0,
       width: width + CAROUSEL_ITEM_SPACING_DEFAULT * 2,
       pointerEvents: "none",
       borderRadius: 4,
@@ -1179,40 +1176,17 @@ export class StylingLogic {
       this.optionsLogic.videoProgressBarScreenshotViewer;
     return {
       color: textColor,
-      position: "absolute",
-      width: "10000px", //this is a hack to align this centered since translateX(-50%) doesn't work
-      transform: `translate3d(calc(-${
-        4988 - width / 2
-      }${CAROUSEL_SPACING_UNIT}), 0, 0)`, //this is a hack to align this centered since translateX(-50%) doesn't work
+      // position: "absolute",
+      // left: "50%",
+      // transform: "translate3d(0, -50%, 0)",
+      // width: "10000px", //this is a hack to align this centered since translateX(-50%) doesn't work
+      // transform: `translate3d(calc(-${
+      //   4988 - width / 2
+      // }${CAROUSEL_SPACING_UNIT}), 0, 0)`, //this is a hack to align this centered since translateX(-50%) doesn't work
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-    } as CSSProperties;
-  }
-
-  getCarouselVideoProgressScreenshotViewerTextStyle(
-    percent: number,
-    videoRef:
-      | MutableRefObject<HTMLVideoElement | null | undefined>
-      | null
-      | undefined,
-    textTranslateOffsetRef: React.MutableRefObject<TextTranslateOffset>
-  ) {
-    const videoRect = videoRef?.current?.getBoundingClientRect();
-
-    if (!videoRect) return {};
-
-    const cursorPosition = videoRect.left + percent * videoRect.width;
-    const translationAmout =
-      cursorPosition <= textTranslateOffsetRef.current.minCursorValue
-        ? textTranslateOffsetRef.current.textOverflow
-        : cursorPosition >= textTranslateOffsetRef.current.maxCursorValue
-        ? -textTranslateOffsetRef.current.textOverflow
-        : 0;
-
-    return {
-      transform: `translate3d(${translationAmout}${CAROUSEL_SPACING_UNIT}, 0, 0)`,
     } as CSSProperties;
   }
 
@@ -1455,9 +1429,10 @@ export class StylingLogic {
           ? "absolute"
           : "relative",
       width: this.optionsLogic.isToolbarInVideo ? undefined : "100%",
-      paddingTop: !this.isFullscreenMode || isItemVideo
-        ? 0
-        : CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
+      paddingTop:
+        !this.isFullscreenMode || isItemVideo
+          ? 0
+          : CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
       paddingBottom: !this.isFullscreenMode ? 0 : this.toolbarPaddingBottom,
       top: this.optionsLogic.isToolbarInVideo
         ? this.isFullscreenMode
