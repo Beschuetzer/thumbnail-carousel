@@ -315,7 +315,7 @@ export const CarouselVideo = (
             itemContainerHeight,
           )}
           ref={videoRef as any}
-          autoPlay={autoPlay}
+          autoPlay={false}
           muted={muted}
           loop={loop}
           onLoadedData={handleOnLoadedData}
