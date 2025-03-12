@@ -35,7 +35,7 @@ export const Story1: Story = {
         text: "Aspect Ratio is default",
       },
       layout: {
-        itemDisplayLocation: "below",
+        itemDisplayLocation: "above",
       },
     },
   },
@@ -68,7 +68,7 @@ export const Story3: Story = {
         text: "Aspect Ratio is auto",
       },
       layout: {
-        itemDisplayLocation: "below",
+        itemDisplayLocation: "above",
       },
       itemViewer: {
         aspectRatio: "auto",
@@ -86,7 +86,7 @@ export const Story4: Story = {
         text: "Aspect Ratio is 16:9 (widescreen)",
       },
       layout: {
-        itemDisplayLocation: "below",
+        itemDisplayLocation: "above",
       },
       itemViewer: {
         aspectRatio: "widescreen",
@@ -104,7 +104,7 @@ export const Story5: Story = {
         text: "Aspect Ratio is 4:3 (fullscreen)",
       },
       layout: {
-        itemDisplayLocation: "below",
+        itemDisplayLocation: "above",
       },
       itemViewer: {
         aspectRatio: "fullscreen",
@@ -122,7 +122,7 @@ export const Story6: Story = {
         text: "Aspect Ratio is 3:1",
       },
       layout: {
-        itemDisplayLocation: "below",
+        itemDisplayLocation: "above",
       },
       itemViewer: {
         aspectRatio: 0.33,
@@ -150,11 +150,11 @@ export const Story7: Story = {
     ],
     options: {
       layout: {
-        itemDisplayLocation: "below",
+        itemDisplayLocation: "above",
       },
     },
   },
-  name: "Can handle extreme aspect ratios below",
+  name: "Can handle extreme aspect ratios above",
 };
 
 export const Story8: Story = {
@@ -175,9 +175,9 @@ export const Story8: Story = {
     ],
     options: {
       layout: {
-        itemDisplayLocation: "above",
+        itemDisplayLocation: "below",
       },
     },
   },
-  name: "Can handle extreme aspect ratios above",
+  name: "Can handle extreme aspect ratios below",
 };

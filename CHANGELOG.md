@@ -13,60 +13,74 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
  -->
 
+## [1.5.0] - 2025-03-11
+
+### Fix
+
+- issue where full items are being loaded when thumbnails are provided. These changes will affect the calculated aspect ratio for items whose thumbnail ratio doesn't match the main item.  Also, any videos without a thumbnail will effectively be ignored for the auto aspect ratio calculation (when `options?.itemViewer?.useRecommendedAspectRatio` is `true`).  The upside is that fewer full-size assets will be transferred.
+
+### Changed
+
+- default for `options?.itemViewer.aspectRatio` to `.5` which is (2:1).
+- default for `options?.itemViewer?.useRecommendedAspectRatio` to `false`.
+
 ## [1.4.1] - 2025-02-28
 
 ### Added
 
- - proper peer dependencies
+- proper peer dependencies
 
 ## [1.4.0] - 2025-02-28
 
- ### Changed
- - default padding for toolbar to be 0 when not in fullscreen to better align with the rest of the carousel.
- - adjust all things related to the item viewer to align with the rest of the carsouel now that the toolbar padding is 0.
- - change how the text works for CarouselVideoProgressBarScreenshotViewer (can be multiple lines now instead of always 1 line)
+### Changed
+
+- default padding for toolbar to be 0 when not in fullscreen to better align with the rest of the carousel.
+- adjust all things related to the item viewer to align with the rest of the carsouel now that the toolbar padding is 0.
+- change how the text works for CarouselVideoProgressBarScreenshotViewer (can be multiple lines now instead of always 1 line)
 
 ## [1.3.1] - 2025-02-27
 
- ### Changed
- - `CAROUSEL_MODAL_WIDTH_DEFAULT` to `min(70ch, 100%)` from `70ch`.
+### Changed
+
+- `CAROUSEL_MODAL_WIDTH_DEFAULT` to `min(70ch, 100%)` from `70ch`.
 
 ## [1.3.0] - 2025-02-27
 
 ### Fixed
 
- - issue where having only high aspect ratio items causes the carousel to grow past the `window.innerHeight`.
+- issue where having only high aspect ratio items causes the carousel to grow past the `window.innerHeight`.
 
- ### Changed
- - `options.styling.modal.widthInPercent` to `options.styling.modal.width` and to accept `CSSProperties["maxWidth"]` values instead of just `number`.
- - the default font size for modal paragraphs to be `14px`.
- - the default value for whether the modal maintains the previous state across items to `false`.
- 
+### Changed
+
+- `options.styling.modal.widthInPercent` to `options.styling.modal.width` and to accept `CSSProperties["maxWidth"]` values instead of just `number`.
+- the default font size for modal paragraphs to be `14px`.
+- the default value for whether the modal maintains the previous state across items to `false`.
+
 ## [1.2.5] - 2025-02-26
 
 ### Fixed
 
- - item viewer preview now overflowing 
- - item viewer preview text contrast issue
- 
+- item viewer preview now overflowing
+- item viewer preview text contrast issue
+
 ## [1.2.4] - 2025-02-24
 
 ### Changed
 
 - how the thumbnail opacity effect is applied
- 
+
 ## [1.2.3] - 2025-02-24
 
 ### Added
 
 - change of opacity for selected thumbnails
- 
+
 ## [1.2.2] - 2025-02-24
 
 ### Changed
 
 - change default padding-bottom for navigation bar to be `CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT` when the display location is `below` otherwise 0
- 
+
 ## [1.2.1] - 2025-02-24
 
 ### Changed

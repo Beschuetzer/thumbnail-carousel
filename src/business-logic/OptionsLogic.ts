@@ -65,13 +65,14 @@ import {
   MODAL_MAINTAIN_MINIMIZED_STATE_DEFAULT,
   CAROUSEL_MAX_HEIGHT_DEFAULT,
   ITEM_VIEWER_HEIGHT_DEFAULT,
-  ITEM_VIEWER_ASPECT_RATIOS_TO_DECIMAL_MAPPINGratioValues,
+  ITEM_VIEWER_ASPECT_RATIOS_TO_DECIMAL_MAPPING_RATIO_VALUES,
   CLASSNAME__NAVIGATION,
   CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT,
   CAROUSEL_ITEM_HOVER_TRANSLATE_UP_AMOUNT,
   CAROUSEL_SPACING_UNIT,
   CAROUSEL_VIDEO_AUTO_PLAY_DEFAULT,
   CAROUSEL_MODAL_WIDTH_DEFAULT,
+  ITEM_VIEWER_ASPECT_RATIO_DEFAULT,
 } from "../constants";
 import {
   CarouselElement,
@@ -349,11 +350,11 @@ export class OptionsLogic {
   get itemViewerAspectRatio() {
     const value = getCurrentValue(
       this.options?.itemViewer?.aspectRatio,
-      this.useDefaultVideoControls ? ITEM_VIEWER_HEIGHT_DEFAULT : "auto",
+      ITEM_VIEWER_ASPECT_RATIO_DEFAULT,
       this.isFullscreenMode
     );
     return typeof value === "string" && value !== "auto"
-      ? ITEM_VIEWER_ASPECT_RATIOS_TO_DECIMAL_MAPPINGratioValues[value]
+      ? ITEM_VIEWER_ASPECT_RATIOS_TO_DECIMAL_MAPPING_RATIO_VALUES[value]
       : value;
   }
 
@@ -556,7 +557,7 @@ export class OptionsLogic {
   get itemViewerUseRecommendedAspectRatio() {
     return getCurrentValue(
       this.options?.itemViewer?.useRecommendedAspectRatio,
-      !this.isItemVierAspectRatioGiven,
+      false,
       this.isFullscreenMode
     );
   }

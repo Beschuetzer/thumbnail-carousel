@@ -181,7 +181,8 @@ export const ITEM_CONTAINER_HEIGHT_INITIAL = "auto";
 export const ITEM_CONTAINER_MIN_DEFAULT = 125;
 export const ITEM_VIEWER_USE_RECOMMENDED_ASPECT_RATIO = true;
 export const ITEM_VIEWER_HEIGHT_DEFAULT = "widescreen";
-export const ITEM_VIEWER_ASPECT_RATIOS_TO_DECIMAL_MAPPINGratioValues: {
+export const ITEM_VIEWER_ASPECT_RATIO_DEFAULT = .5;
+export const ITEM_VIEWER_ASPECT_RATIOS_TO_DECIMAL_MAPPING_RATIO_VALUES: {
   [key in CarouselItemViewerAspectRatioPreset]: number;
 } = {
   widescreen: 0.5625, //16:9
