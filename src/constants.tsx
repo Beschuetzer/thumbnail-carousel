@@ -189,7 +189,7 @@ export const ITEM_VIEWER_ASPECT_RATIOS_TO_DECIMAL_MAPPING_RATIO_VALUES: {
   fullscreen: 0.75, //4:3
 };
 export const MAX_CLICK_THRESHOLD_DEFAULT = 15;
-export const MODAL_IS_MINIMIZED_INITIAL = false;
+export const MODAL_IS_MINIMIZED_INITIAL = true;
 export const MODAL_TEXT_TAG_DEFAULT = "p";
 export const MODAL_TITLE_TAG_DEFAULT = "h3";
 export const MODAL_MINIMIZE_ON_CLICK_DEFAULT = true;

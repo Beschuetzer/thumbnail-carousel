@@ -21,6 +21,7 @@ import {
   CarouselItemProps,
 } from "./types";
 import { enterFullScreen, exitFullScreen } from "./utils/utils";
+import { getCurrentValue } from "./utils/getCurrentValue";
 
 export type CarouselContextInputProps = {
   carouselContainerRef: React.MutableRefObject<HTMLDivElement> | undefined;
@@ -70,7 +71,7 @@ export const CarouselProvider = (props: CarouselContextInputProps) => {
   );
   const [isFullscreenMode, setIsFullscreenMode] = useState(false);
   const [isModalMinimized, setIsModalMinimized] = useState(
-    MODAL_IS_MINIMIZED_INITIAL,
+    getCurrentValue(optionsInput?.modal?.isModalMinimizedInitially, MODAL_IS_MINIMIZED_INITIAL, false),
   );
   const [items, setItems] = useState(itemsInput);
   const [itemContainerHeight, setItemContainerHeight] = useState<

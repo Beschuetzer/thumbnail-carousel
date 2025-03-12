@@ -40,6 +40,7 @@ import {
   MOBILE_PIXEL_WIDTH,
   MODAL_MAINTAIN_MINIMIZED_STATE_DEFAULT,
   MODAL_MINIMIZE_ON_CLICK_DEFAULT,
+  MODAL_IS_MINIMIZED_INITIAL,
   MODAL_TEXT_TAG_DEFAULT,
   MODAL_TITLE_TAG_DEFAULT,
   PROGRESS_BAR_SHOW_CURRENT_POSITION_ON_CHANGE_DEFAULT,
@@ -581,6 +582,11 @@ export type CarouselSwipingOptions = {
 };
 
 export type CarouselModalOptions = {
+  /**
+  *Determines whether the modal starts minimized or not for all items.
+  *Default is {@link MODAL_IS_MINIMIZED_INITIAL here}.
+  **/
+  isModalMinimizedInitially?: CarouselElementValue<boolean>;
   /**
    *Allows you to specify whether clicking anywhere in modal will minimize it.
    *The default is {@link MODAL_MINIMIZE_ON_CLICK_DEFAULT here}.

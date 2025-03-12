@@ -13,6 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
  -->
 
+## [1.5.1] - 2025-03-12
+
+### Added
+
+- `options.modal.isModalMinimizedInitially` with the default being `true`
+
 ## [1.5.0] - 2025-03-11
 
 ### Fix
