@@ -1,3 +1,7 @@
+-add the lazy loading stuff?
+-is there a way to pauses videos when not in view? (use IntersectionObserver?)
+-fix the item previewer image sizing issue (it needs to be fixed)
+
 -why does autoplay happen for videos when deployed but not in dev?
 -fix issue with videos where the toolbar doesn't immediately hide when playing a video and mouse is not it carousel
 -Make images load lazily via the attributable available on img tag
