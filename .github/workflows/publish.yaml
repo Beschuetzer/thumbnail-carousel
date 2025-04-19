@@ -4,12 +4,14 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: 'Tag to publish'
+        description: 'Tag to publish (leave as "v0.0.0" to use package.json version)'
         required: true
         default: 'v0.0.0'
   push:
+    branches:
+      - main
     tags:
-      - 'v*.*.*' # Matches version tags like v1.0.0, v2.1.3, etc.
+      - 'v*.*.*'
 
 jobs:
   publish:
@@ -31,14 +33,28 @@ jobs:
       - name: Build the package
         run: npm run build
 
+      - name: Get package version
+        id: get_version
+        run: |
+          # Use jq to extract version from package.json and prepend "v"
+          version=$(jq -r '.version' package.json)
+          echo "version=v$version" >> $GITHUB_OUTPUT
+
       - name: Create and push tag
         if: github.event_name == 'workflow_dispatch'
         run: |
+          # If the dispatched tag input is the default, use the package version.
+          if [ "${{ github.event.inputs.tag }}" = "v0.0.0" ]; then
+            tag=${{ steps.get_version.outputs.version }}
+          else
+            tag=${{ github.event.inputs.tag }}
+          fi
+          echo "Using tag: $tag"
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git tag ${{ github.event.inputs.tag }}
-          git push origin ${{ github.event.inputs.tag }}
-
+          git tag "$tag"
+          git push origin "$tag"
+      
       - name: Publish to npm
         run: npm run publish
         env:
