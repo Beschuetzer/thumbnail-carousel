@@ -1,4 +1,5 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
 import { useCarouselContext } from "../context";
 import {
   CLASSNAME__CAROUSEL_ITEM,
@@ -16,12 +17,17 @@ export const CarouselItem = (props: CarouselItemProps) => {
   const { stylingLogic, optionsLogic } = useBusinessLogic({
     isCurrentItem: index === currentItemIndex,
   });
+  
+  // Set up Intersection Observer hook
+  const { ref: inViewRef, inView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
   //#endregion
 
   //#region Functions/Handlers
   async function onPress(e: MouseEvent) {
     setCurrentItemIndex(index as any);
-
     if (optionsLogic.isDefaultItemDisplayLocation) {
       setIsFullscreenMode(true);
     }
@@ -31,6 +37,7 @@ export const CarouselItem = (props: CarouselItemProps) => {
   //#region JSX
   return (
     <div
+      ref={inViewRef}
       onClick={(e) => onPress(e as any)}
       className={CLASSNAME__CAROUSEL_ITEM}
       style={stylingLogic.carouselItemStyle}
@@ -45,7 +52,8 @@ export const CarouselItem = (props: CarouselItemProps) => {
         draggable={false}
         style={stylingLogic.carouselItemCursorStyle}
         className={CLASSNAME__CAROUSEL_ITEM_THUMBNAIL}
-        src={srcThumbnail || resolveSrcMain(srcMain)}
+        // Only set the src if the item is in view; otherwise, leave it undefined
+        src={inView ? (srcThumbnail || resolveSrcMain(srcMain)) : undefined}
         alt={description || "user picture or video"}
       />
     </div>
