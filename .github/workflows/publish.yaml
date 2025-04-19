@@ -6,12 +6,12 @@ on:
       tag:
         description: 'Tag to publish (leave as "v0.0.0" to use package.json version)'
         required: true
-        default: 'v0.0.0'
+        default: "v0.0.0"
   push:
     branches:
       - main
     tags:
-      - 'v*.*.*'
+      - "v*.*.*"
 
 jobs:
   publish:
@@ -24,14 +24,17 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: "18.x"
+          registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build the package
         run: npm run build
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
 
       - name: Get package version
         id: get_version
@@ -53,7 +56,7 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git tag "$tag"
           git push origin "$tag"
-      
+
       - name: Publish to npm
         run: npm run publish
         env:
