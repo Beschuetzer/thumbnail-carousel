@@ -1,7 +1,7 @@
 # Workflow name
 name: Run Tests
 on: 
-  push:
+  pull_request:
     branches:
       - main
     paths:
