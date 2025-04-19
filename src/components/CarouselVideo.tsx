@@ -6,6 +6,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import { useInView } from "react-intersection-observer";
 import { getClassname, getIsVideoPlaying } from "../utils/utils";
 import {
   CarouselItemViewerToolbar,
@@ -113,7 +114,7 @@ export type CarouselVideoProps = {
 export const CarouselVideo = (
   props: CarouselVideoProps &
     CarouselItemProps &
-    Pick<CarouselItemViewerToolbarProps, "itemContainerRef">,
+    Pick<CarouselItemViewerToolbarProps, "itemContainerRef">
 ) => {
   //#region Init
   const {
@@ -141,18 +142,19 @@ export const CarouselVideo = (
   const [isLoaded, setIsLoaded] = useState(false);
   const [percent, setPercent] = useState(PROGRESS_BAR_PERCENT_INITIAL_VALUE);
   const [seekPercent, setSeekPercent] = useState(
-    PROGRESS_BAR_PERCENT_INITIAL_VALUE,
+    PROGRESS_BAR_PERCENT_INITIAL_VALUE
   );
   const [currentVideoSection, setCurrentVideoSection] = useState(
-    CAROUSEL_VIDEO_CURRENT_SECTION_INITIAL,
+    CAROUSEL_VIDEO_CURRENT_SECTION_INITIAL
   );
+  const { ref: inViewRef, inView } = useInView({ threshold: 0.5 });
   const videoRef = useRef<HTMLVideoElement>();
   const itemViewerToolbarRef = useRef<HTMLElement>();
   const isProgressBarMouseDownRef = useRef(false);
   const srcMainToUse = resolveSrcMain(srcMain, true);
   const type = useMemo(
     () => srcMainToUse?.slice(srcMainToUse?.lastIndexOf(".") + 1),
-    [srcMainToUse],
+    [srcMainToUse]
   );
   const { stylingLogic, optionsLogic } = useBusinessLogic({
     itemViewerToolbarRef,
@@ -161,7 +163,7 @@ export const CarouselVideo = (
   useResetCarouselVideoCurrentSection({
     element: itemContainerRef?.current,
     progressBarElement: itemContainerRef?.current?.querySelector(
-      `.${CLASSNAME__TOOLBAR_PROGRESS}`,
+      `.${CLASSNAME__TOOLBAR_PROGRESS}`
     ),
     currentSection: currentVideoSection,
     setCurrentSection: setCurrentVideoSection,
@@ -176,19 +178,19 @@ export const CarouselVideo = (
       if (state) {
         setIsVideoPlaying(state);
       } else {
-        setIsVideoPlaying((current) => current);
+        setIsVideoPlaying((current: boolean) => current);
       }
     },
-    [isVideoStateChangeInitiatedInternallyRef, setIsVideoPlaying],
+    [isVideoStateChangeInitiatedInternallyRef, setIsVideoPlaying]
   );
 
   const playVideo = useCallback(() => {
     if (videoRef.current) {
       if (getIsVideoPlaying(videoRef.current)) {
-        videoRef.current?.pause();
+        videoRef.current.pause();
         toggleIsVideoPlaying(false);
       } else {
-        videoRef.current?.play();
+        videoRef.current.play();
         toggleIsVideoPlaying(true);
       }
     }
@@ -196,7 +198,6 @@ export const CarouselVideo = (
 
   const handleItemNavigation = useCallback(() => {
     setIsLoaded(false);
-
     if (videoRef.current) {
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
@@ -213,7 +214,6 @@ export const CarouselVideo = (
   //#endregion
 
   //#region Side Fx
-  //Ensuring percent is valid value
   useLayoutEffect(() => {
     if (percent > 1) {
       setPercent(1);
@@ -222,7 +222,6 @@ export const CarouselVideo = (
     }
   }, [percent]);
 
-  //triggering a load event (https://stackoverflow.com/questions/41303012/updating-source-url-on-html5-video-with-react)
   useEffect(() => {
     setIsLoaded(false);
     setCurrentVideoCurrentTime(CURRENT_VIDEO_CURRENT_TIME_DEFAULT);
@@ -246,30 +245,28 @@ export const CarouselVideo = (
   useEffect(() => {
     function handleFullscreenChange(e: Event) {
       setCurrentVideoCurrentTime(
-        videoRef.current?.currentTime || CURRENT_VIDEO_CURRENT_TIME_DEFAULT,
+        videoRef.current?.currentTime || CURRENT_VIDEO_CURRENT_TIME_DEFAULT
       );
       if (!isFullscreenMode) return;
       playVideo();
     }
-
     document.addEventListener("fullscreenchange", handleFullscreenChange);
     document.addEventListener("mozfullscreenchange", handleFullscreenChange);
     document.addEventListener("MSFullscreenChange", handleFullscreenChange);
     document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
-
     return () => {
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
       document.removeEventListener(
         "mozfullscreenchange",
-        handleFullscreenChange,
+        handleFullscreenChange
       );
       document.removeEventListener(
         "MSFullscreenChange",
-        handleFullscreenChange,
+        handleFullscreenChange
       );
       document.removeEventListener(
         "webkitfullscreenchange",
-        handleFullscreenChange,
+        handleFullscreenChange
       );
     };
   }, [
@@ -286,9 +283,10 @@ export const CarouselVideo = (
   //#endregion
 
   //#region JSX
+  // Attach the inViewRef to the container so we know when it enters the viewport.
   return (
     <>
-      <div style={stylingLogic.carouselVideoContainerStyle}>
+      <div ref={inViewRef} style={stylingLogic.carouselVideoContainerStyle}>
         <CarouselVideoCurrentStateIndicator isVideoPlaying={isVideoPlaying} />
         <LoadingSpinner
           type="ring"
@@ -312,7 +310,7 @@ export const CarouselVideo = (
           }`}
           style={stylingLogic.getCarouselVideoStyle(
             !!isProgressBarMouseDownRef.current,
-            itemContainerHeight,
+            itemContainerHeight
           )}
           ref={videoRef as any}
           autoPlay={false}
@@ -321,10 +319,10 @@ export const CarouselVideo = (
           onLoadedData={handleOnLoadedData}
           onPlay={() => toggleIsVideoPlaying(true)}
           onEnded={() => toggleIsVideoPlaying(false)}
+          preload={inView ? "auto" : "none"}
         >
-          <source src={srcMainToUse} type={`video/${type}`} />
-          Your browser does not support the HTML5 video tag. Try using a
-          different browser.
+          {inView && <source src={srcMainToUse} type={`video/${type}`} />}
+          Your browser does not support the HTML5 video tag.
         </video>
       </div>
       <CarouselItemViewerToolbar
@@ -344,8 +342,8 @@ export const CarouselVideo = (
         setSeekPercent={setSeekPercent}
         videoRef={videoRef}
       />
-      <CarouselVideoProgressBarScreenshotViewerBackdrop 
-         isVisible={seekPercent > 0}
+      <CarouselVideoProgressBarScreenshotViewerBackdrop
+        isVisible={seekPercent > 0}
       />
       <CarouselVideoProgressBarScreenshotViewerMemoized
         currentVideoSection={currentVideoSection}
