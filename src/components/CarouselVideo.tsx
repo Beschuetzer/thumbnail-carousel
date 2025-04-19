@@ -242,6 +242,20 @@ export const CarouselVideo = (
     }
   }, [currentVideoCurrentTime]);
 
+  // New effect: play video when in view, pause when out of view
+  useEffect(() => {
+    if (videoRef.current) {
+      if (inView) {
+        // Optionally check autoPlay if needed.
+        videoRef.current.play();
+        toggleIsVideoPlaying(true);
+      } else {
+        videoRef.current.pause();
+        toggleIsVideoPlaying(false);
+      }
+    }
+  }, [inView, toggleIsVideoPlaying]);
+
   useEffect(() => {
     function handleFullscreenChange(e: Event) {
       setCurrentVideoCurrentTime(
