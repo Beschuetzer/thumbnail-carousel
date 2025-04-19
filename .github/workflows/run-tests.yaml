@@ -1,6 +1,11 @@
 # Workflow name
 name: Run Tests
 on: 
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'src/**'
   push:
     branches:
       - main
