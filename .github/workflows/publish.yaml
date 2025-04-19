@@ -41,7 +41,6 @@ jobs:
           echo "version=v$version" >> $GITHUB_OUTPUT
 
       - name: Create and push tag
-        if: github.event_name == 'workflow_dispatch'
         run: |
           # If the dispatched tag input is the default, use the package version.
           if [ "${{ github.event.inputs.tag }}" = "v0.0.0" ]; then
