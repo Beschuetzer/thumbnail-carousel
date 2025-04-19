@@ -1,4 +1,5 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import { CarouselItemProps } from "../types";
 import {
   CarouselItemViewerToolbar,
@@ -13,7 +14,7 @@ import { useRerenderOnExitFullscreenMode } from "../hooks/useRerenderOnExitFulls
 const RE_RENDER_DURATION = 1;
 export const CarouselImage = (
   props: CarouselItemProps &
-    Pick<CarouselItemViewerToolbarProps, "itemContainerRef">,
+    Pick<CarouselItemViewerToolbarProps, "itemContainerRef">
 ) => {
   const {
     options,
@@ -30,17 +31,23 @@ export const CarouselImage = (
   const { stylingLogic } = useBusinessLogic({ itemViewerToolbarRef });
   useRerenderOnExitFullscreenMode();
 
+  // Set up Intersection Observer hook
+  const { ref: inViewRef, inView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+
   const onImageClick = useCallback(
     (e: MouseEvent) => {
       if (e.detail === 2) {
         setIsFullscreenMode((current) => !current);
       }
     },
-    [setIsFullscreenMode],
+    [setIsFullscreenMode]
   );
 
   useLayoutEffect(() => {
-    //only re-render if there is a modal to display
+    // Only re-render if there is a modal to display
     if (!modal) return;
     clearTimeout(rerenderTimoutRef.current);
     rerenderTimoutRef.current = setTimeout(() => {
@@ -54,7 +61,7 @@ export const CarouselImage = (
 
   return (
     <>
-      <div style={stylingLogic.carouselImageContainerStlye}>
+      <div ref={inViewRef} style={stylingLogic.carouselImageContainerStlye}>
         <LoadingSpinner
           type="ring"
           show={!isLoaded}
@@ -67,7 +74,7 @@ export const CarouselImage = (
           draggable={false}
           style={stylingLogic.getCarouselImageStlye(itemContainerHeight)}
           className={isLoaded ? "" : CLASSNAME__HIDDEN}
-          src={srcMain as string}
+          src={inView ? (srcMain as string) : undefined}
           alt={description}
           onLoad={() => setIsLoaded(true)}
         />
