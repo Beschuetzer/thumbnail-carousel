@@ -6,11 +6,6 @@ on:
       - main
     paths:
       - 'src/**'
-  push:
-    branches:
-      - main
-    paths:
-      - 'src/**'
   workflow_dispatch:
 
 permissions:
