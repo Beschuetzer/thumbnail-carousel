@@ -12,6 +12,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Removed
  -->
+ 
+ ## [1.6.1] - 2025-04-23
+
+### Changed
+
+- default value for ` options.styling.itemViewerPreview.image.position` to `top`
+
+### Added
+
+- More storybook tests
 
  ## [1.6.0] - 2025-04-18
 

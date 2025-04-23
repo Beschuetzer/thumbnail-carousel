@@ -7,7 +7,7 @@ import { CarouselOptions } from "../types";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: "Thumbnail-Carousel/Item Viewer Preview",
+  title: "Thumbnail-Carousel/Item Viewer Screenshot Preview",
   component: Carousel,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
@@ -52,7 +52,7 @@ export const Story1: Story = {
       },
     },
   },
-  name: "The itemViewer preview can overflow when item display location is above",
+  name: "The itemViewer screenshot preview can overflow when item display location is above",
 };
 
 export const Story2: Story = {
@@ -65,7 +65,7 @@ export const Story2: Story = {
       },
     },
   },
-  name: "The itemViewer preview can overflow when item display location is below",
+  name: "The itemViewer screenshot preview can overflow when item display location is below",
 };
 
 export const Story3: Story = {
@@ -78,7 +78,7 @@ export const Story3: Story = {
       },
     },
   },
-  name: "The itemViewer preview is hidden when item display location is none",
+  name: "The itemViewer screenshot preview is hidden when item display location is none",
 };
 
 
@@ -95,5 +95,5 @@ export const Story4: Story = {
       },
     },
   },
-  name: "The itemViewer preview can overflow when item display location is above (different aspect ratio)",
+  name: "The itemViewer screenshot preview can overflow when item display location is above (different aspect ratio)",
 };
