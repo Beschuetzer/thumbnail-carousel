@@ -12,6 +12,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Removed
  -->
+
+ ## [1.6.2] - 2025-04-24
+
+### Fixed
+
+- issue where the `CarouselVideoProgressBarScreenshotViewer` would sometimes render in the incorrect position initially
+- issue where the video overlay would sometimes not cover the entire video
+- issue where the seek dot would overflow the progress bar
+
+
  
  ## [1.6.1] - 2025-04-23
 

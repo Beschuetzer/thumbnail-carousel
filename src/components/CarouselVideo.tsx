@@ -156,6 +156,9 @@ export const CarouselVideo = (
     () => srcMainToUse?.slice(srcMainToUse?.lastIndexOf(".") + 1),
     [srcMainToUse]
   );
+  const itemContainerHeightAdjusted = useMemo(() => {
+    return (parseInt(itemContainerHeight as string, 10) || 300) - 1;
+  }, [itemContainerHeight]);
   const { stylingLogic, optionsLogic } = useBusinessLogic({
     itemViewerToolbarRef,
   });
@@ -311,7 +314,7 @@ export const CarouselVideo = (
         <CarouselVideoCurrentTimeViewer
           isProgressBarMouseDownRef={isProgressBarMouseDownRef}
           isVideoPlaying={isVideoPlaying}
-          itemContainerHeight={itemContainerHeight}
+          itemContainerHeight={itemContainerHeightAdjusted}
           percent={percent}
           srcMain={srcMain}
           type={type}
@@ -324,7 +327,7 @@ export const CarouselVideo = (
           }`}
           style={stylingLogic.getCarouselVideoStyle(
             !!isProgressBarMouseDownRef.current,
-            itemContainerHeight
+            itemContainerHeightAdjusted,
           )}
           ref={videoRef as any}
           autoPlay={false}

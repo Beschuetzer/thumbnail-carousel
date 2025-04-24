@@ -30,6 +30,7 @@ import {
   BORDER_STRING_DEFAULT_SIZE,
   CAROUSEL_BORDER_RADIUS_DEFAULT,
   CAROUSEL_TOOLBAR_BUTTON_SIZE_DEFAULT,
+  CAROUSEL_VIDEO_SCREENSHOT_VIEWER_WIDTH_WITH_SPACING_DEFAULT,
 } from "../constants";
 import { CarouselModalInternalProps } from "../components/modal/CarouselModal";
 import {
@@ -362,7 +363,9 @@ export class StylingLogic {
     const translateYAmount =
       this.optionsLogic.isToolbarInVideo && isVideo
         ? `calc(-100% - 1${CAROUSEL_SPACING_UNIT})`
-        : `calc(-100% - 1${CAROUSEL_SPACING_UNIT} - ${2 * CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT}px)`
+        : `calc(-100% - 1${CAROUSEL_SPACING_UNIT} - ${
+            2 * CAROUSEL_ITEMS_MARGIN_HORIZONTAL_NON_ITEM_VIEWER_DEFAULT
+          }px)`;
 
     return {
       width: !shouldShowImageJSX ? width / 2 : width,
@@ -574,7 +577,7 @@ export class StylingLogic {
     );
     const spaceBetweenModalTopAndItemTop = CAROUSEL_ITEM_SPACING_DEFAULT * 2;
     let maxHeight = 0;
-    let heightBetweenItemTopAndToolbarBarTop = 270;
+    let heightBetweenItemTopAndToolbarBarTop = CAROUSEL_VIDEO_SCREENSHOT_VIEWER_WIDTH_WITH_SPACING_DEFAULT;
 
     if (!isMinimized) {
       if (this.isFullscreenMode) {
@@ -1084,6 +1087,7 @@ export class StylingLogic {
     textTranslateOffsetRef: React.MutableRefObject<TextTranslateOffset>
   ) {
     const { width } = this.optionsLogic.videoProgressBarScreenshotViewer;
+    const widthToUse = width + CAROUSEL_ITEM_SPACING_DEFAULT * 2;
     const {
       left: paddingBetweenContainerAndVideoLeft,
       right: paddingBetweenContainerAndVideoRight,
@@ -1131,12 +1135,13 @@ export class StylingLogic {
 
     let right = "auto";
 
-    if (videoRect && screenShotCanvasRect) {
+    if (videoRect) {
+      const screenShotCanvasRectWidth = screenShotCanvasRect?.width || widthToUse;
       const cursorLeftPosition = videoRect.left + videoRect.width * percent;
       const minCursorLeftValue =
-        videoRect.left + screenShotCanvasRect.width / 2;
+        videoRect.left + screenShotCanvasRectWidth / 2;
       const maxCursorLeftValue =
-        videoRect.right - screenShotCanvasRect.width / 2;
+        videoRect.right - screenShotCanvasRectWidth / 2;
 
       // console.log({
       //   cursorLeftPosition,
@@ -1157,9 +1162,19 @@ export class StylingLogic {
       }
     }
 
+    // console.log({
+    //   toolbarElementWidth: toolbarInnerContainerRect?.width,
+    //   screenShotCanvasRectWidth: screenShotCanvasRect?.width,
+    //   screenShotTextContainerRect: screenShotTextContainerRect?.width,
+    //   left,
+    //   right,
+    //   translateX,
+    //   percent,
+    //   bottom,
+    // });
     return {
       display: percent < 0 ? "none" : "block",
-      width: width + CAROUSEL_ITEM_SPACING_DEFAULT * 2,
+      width: widthToUse,
       pointerEvents: "none",
       textAlign: "center",
       position: "absolute",

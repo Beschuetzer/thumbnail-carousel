@@ -6,6 +6,7 @@ import { container } from "./decorators";
 import { customButtons } from "./custom-buttons";
 import { carouselShortcuts } from "./carousel-shortcuts";
 import extremeAspectRatio from "./assets/imgs/about/thumbnails/extreme-aspect-ratio.png";
+import extremeAspectRatioVideo from "./assets/clips/store-lookup.mp4";
 
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -140,12 +141,8 @@ export const Story7: Story = {
         description: "This image has an extreme aspect ratio",
       },
       {
-        srcMain: extremeAspectRatio,
-        description: "This image has an extreme aspect ratio",
-      },
-      {
-        srcMain: extremeAspectRatio,
-        description: "This image has an extreme aspect ratio",
+        srcMain: extremeAspectRatioVideo,
+        description: "This video has an extreme aspect ratio",
       },
     ],
     options: {
@@ -165,12 +162,8 @@ export const Story8: Story = {
         description: "This image has an extreme aspect ratio",
       },
       {
-        srcMain: extremeAspectRatio,
-        description: "This image has an extreme aspect ratio",
-      },
-      {
-        srcMain: extremeAspectRatio,
-        description: "This image has an extreme aspect ratio",
+        srcMain: extremeAspectRatioVideo,
+        description: "This video has an extreme aspect ratio",
       },
     ],
     options: {
