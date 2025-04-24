@@ -17,7 +17,7 @@ export const CarouselContainer = (props: CarouselTitleContainerProps) => {
 
   return (
     <div
-      style={{ ...{ width: "100%", overflowX: "hidden" }, ...style }}
+      style={{ ...{ width: "100%" }, ...style }}
       className={CLASSNAME__CAROUSEL_CONTAINER}
     >
       {!!text ? (

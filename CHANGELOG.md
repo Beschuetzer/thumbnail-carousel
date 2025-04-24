@@ -12,7 +12,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Removed
  -->
- 
+
+## [1.6.4] - 2025-04-24
+
+### Changed
+
+- removed the overflow hidden style on the container for now
+
 ## [1.6.3] - 2025-04-24
 
 ### Fixed
