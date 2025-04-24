@@ -12,8 +12,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Removed
  -->
+ 
+## [1.6.3] - 2025-04-24
 
- ## [1.6.2] - 2025-04-24
+### Fixed
+
+- how overflow is applied to the container (only x-axis is hidden)
+
+## [1.6.2] - 2025-04-24
 
 ### Fixed
 
@@ -21,9 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - issue where the video overlay would sometimes not cover the entire video
 - issue where the seek dot would overflow the progress bar
 
-
- 
- ## [1.6.1] - 2025-04-23
+## [1.6.1] - 2025-04-23
 
 ### Changed
 
@@ -33,7 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - More storybook tests
 
- ## [1.6.0] - 2025-04-18
+## [1.6.0] - 2025-04-18
 
 ### Added
 
